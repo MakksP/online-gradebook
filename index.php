@@ -33,7 +33,7 @@
                     <img src="images/gradebook_logo.png">
                 </div>
 
-                <form id="login_form">
+                <form id="login_form" action="serverActions/registerActions.php" method="post">
                     <label for="email" class="login_label">Wpisz email:</label>
                     <input type="email" name="email" class="login_input" placeholder="podaj email...">
 
@@ -45,7 +45,7 @@
                     </div>
                 </form>
 
-                <form id="register_form"></form>
+                <form id="register_form" action="serverActions/registerActions.php" method="post"></form>
 
             </div>
         </div>
