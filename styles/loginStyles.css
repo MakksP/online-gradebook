@@ -26,6 +26,7 @@ label{
 }
 
 .login_label{
+    font-family: 'Tilt Neon', sans-serif;
     font-size: 20px;
 }
 
@@ -42,4 +43,21 @@ label{
 
 #online_gradebook_logo{
     margin-bottom: 20px;
+}
+
+#login_button{
+    background-color: #4DCCBD;
+    width: 30%;
+    font-size: 15px;
+    font-family: 'Tilt Neon', sans-serif;
+    border-radius: 5px;
+}
+
+#login_button:hover{
+    background-color: #3CBBAC;
+    width: 30%;
+    font-size: 15px;
+    font-family: 'Tilt Neon', sans-serif;
+    border-radius: 5px;
+    cursor: pointer;
 }

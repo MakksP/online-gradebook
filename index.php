@@ -5,6 +5,10 @@
     <title>Online gradebook</title>
     <meta name="description" content="Welcome to my gradebook">
     <link rel="stylesheet" href="styles/loginStyles.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="main_container">
@@ -23,7 +27,7 @@
                 <input type="password" name="password" class="login_input" placeholder="podaj hasło...">
 
                 <div class="button_container">
-                    <input type="submit" value="Zaloguj">
+                    <input type="submit" id="login_button" value="Zaloguj">
                 </div>
 
             </form>
