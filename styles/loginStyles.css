@@ -1,0 +1,40 @@
+.main_container{
+    background-color: #626873;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+}
+
+#login_field{
+    background-color: #4f79a8;
+    width: 20%;
+    height: 20%;
+    position: relative;
+    left: 40%;
+    top: 40%;
+    border: 3px solid black;
+    border-radius: 10px;
+    margin: 5px;
+    text-align: center;
+    align-items: center;
+    padding-top: 5px;
+}
+
+label{
+    display: block;
+}
+
+.login_label{
+    font-size: 20px;
+}
+
+.login_input{
+    width: 60%;
+    height: 60%;
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+.button_container{
+    display: block;
+}
