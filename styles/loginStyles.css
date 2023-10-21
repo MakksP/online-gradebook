@@ -1,14 +1,15 @@
 .main_container{
-    background-color: #626873;
+    background-color: #231651;
     width: 100%;
     height: 100%;
     position: fixed;
+    text-align: center;
 }
 
 #login_field{
-    background-color: #4f79a8;
+    background-color: #2374AB;
     width: 20%;
-    height: 20%;
+    height: 30%;
     position: relative;
     left: 40%;
     top: 40%;
@@ -37,4 +38,8 @@ label{
 
 .button_container{
     display: block;
+}
+
+#online_gradebook_logo{
+    margin-bottom: 20px;
 }

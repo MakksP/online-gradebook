@@ -8,9 +8,13 @@
 </head>
 <body>
     <div class="main_container">
-        
+
 
         <div id="login_field">
+            <div id="online_gradebook_logo">
+                <img src="images/gradebook_logo.png">
+            </div>
+
             <form id="login_form">
                 <label for="email" class="login_label">Wpisz email:</label>
                 <input type="email" name="email" class="login_input" placeholder="podaj email...">
