@@ -1,5 +1,5 @@
 .card_button_container:hover{
-    height: 40px;
+    height: 48px;
     cursor: pointer;
     animation: hovered_card_button_anim;
     animation-duration: 500ms;
@@ -8,7 +8,7 @@
 }
 
 .card_button_container{
-    height: 25px;
+    height: 35px;
     cursor: pointer;
     animation: released_card_button_anim;
     animation-duration: 500ms;
@@ -16,11 +16,11 @@
 
 
 @keyframes hovered_card_button_anim {
-    from{height: 25px;}
-    to{height: 40px;}
+    from{height: 35px;}
+    to{height: 48px;}
 }
 
 @keyframes released_card_button_anim {
-    from{height: 40px;}
-    to{height: 25px;}
+    from{height: 48px;}
+    to{height: 35px;}
 }

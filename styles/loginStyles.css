@@ -82,6 +82,8 @@ label{
 .card_button{
     background-color: transparent;
     border: none;
+    font-family: 'Tilt Neon', sans-serif;
+    font-size: 20px;
 
 }
 
@@ -94,13 +96,14 @@ label{
 .card_button_container{
     background-color: #015289;
     width: 60%;
-    height: 25px;
+    height: 35px;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
     border-top: 2px solid black;
     border-left: 2px solid black;
     border-right: 2px solid black;
     align-self: end;
+
 
 }
 
