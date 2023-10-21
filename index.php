@@ -41,15 +41,17 @@
                     <input type="password" name="password" class="login_input" placeholder="podaj hasło...">
 
                     <div class="button_container">
-                        <input type="submit" id="login_button" value="Zaloguj">
+                        <input type="submit" id="login_button" class="form_button" value="Zaloguj">
                     </div>
                 </form>
+
+                <form id="register_form"></form>
 
             </div>
         </div>
 
     </div>
 
-
+    <script src="menuScripts.js"></script>
 </body>
 </html>

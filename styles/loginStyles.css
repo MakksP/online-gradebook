@@ -11,7 +11,7 @@
     height: 400px;
     position: relative;
     left: 40%;
-    top: 40%;
+    top: 30%;
 }
 
 #login_field{
@@ -51,7 +51,7 @@ label{
     margin-bottom: 20px;
 }
 
-#login_button{
+.form_button{
     background-color: #4DCCBD;
     width: 30%;
     font-size: 15px;
@@ -59,7 +59,7 @@ label{
     border-radius: 5px;
 }
 
-#login_button:hover{
+.form_button:hover{
     background-color: #3CBBAC;
     width: 30%;
     font-size: 15px;
@@ -105,6 +105,10 @@ label{
     align-self: end;
 
 
+}
+
+#login_card{
+    background-color: #D6FFF6;
 }
 
 
