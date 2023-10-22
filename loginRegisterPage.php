@@ -36,10 +36,11 @@
                 </div>
 
                 <div>
-                    <form id="login_form" action="serverActions/registerActions.php"></form>
+                    <form id="login_form"></form>
+                    <label id="incorrect_email_password"></label>
                 </div>
                 <div>
-                    <form id="register_form" action="serverActions/registerActions.php"></form>
+                    <form id="register_form"></form>
                     <label id="incorrect_teacher_password"></label>
                 </div>
 

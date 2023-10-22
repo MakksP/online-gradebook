@@ -19,3 +19,22 @@ $(document).ready(function (){
         })
     })
 });
+
+
+$(document).ready(function (){
+    $("#login_form").on('submit', function (e){
+        e.preventDefault();
+        $.ajax({
+            type: "POST",
+            url: "./serverActions/loginActions.php",
+            data: $(this).serialize(),
+            dataType: "json",
+            success: function (response){
+                window.location.href = response["redirect"];
+            },
+            error: function (response){
+                console.log(response);
+            }
+        })
+    })
+})
