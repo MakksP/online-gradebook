@@ -109,5 +109,9 @@ label{
     background-color: #D6FFF6;
 }
 
+.required_field{
+    color: red;
+}
+
 
 
