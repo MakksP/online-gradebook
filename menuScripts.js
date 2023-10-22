@@ -56,7 +56,7 @@ function fill_register_form() {
          <span class="required_field">*</span>
         
         <label for="password" class="login_label">Hasło nauczyciela:</label>
-        <input type="password" name="password" class="login_input" placeholder="podaj hasło nauczyciela...">
+        <input type="password" name="teacher_password" class="login_input" placeholder="podaj hasło nauczyciela...">
 
         <div class="button_container">
             <input type="submit" id="register_button" class="form_button" value="Zarejestruj się">

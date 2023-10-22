@@ -5,12 +5,12 @@ require "../dbConnection/databaseConnect.php";
         global $db_connection;
         $email = $_POST["email"];
         $password = $_POST["password"];
-        $sql_query = "INSERT INTO users (email, name, password, role, surname) VALUES (?, ?, ?, ?, ?)";
+        $name = $_POST["name"];
+        $surname = $_POST["surname"];
+        $teacher_password = $_POST["teacher_password"];
+        $sql_query = "INSERT INTO users (name, surname, email, password, role) VALUES (?, ?, ?, ?, ?)";
         if ($prepared_sql_query = $db_connection->prepare($sql_query)){
-            $str = "Maksymilian";
-            $str1 = "student";
-            $str2 = "Pietras";
-            $prepared_sql_query->bind_param("sssss", $email, $str ,$password, $str1, $str2);
+            $prepared_sql_query->bind_param("sssss", $name, $surname, $email, $password, $teacher_password);
             if ($prepared_sql_query->execute()){
                 echo `Pomyślnie dodano użytkownika`;
             } else {
@@ -23,7 +23,6 @@ require "../dbConnection/databaseConnect.php";
 
 
 }
-
 
 
 ?>
