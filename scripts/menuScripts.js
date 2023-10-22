@@ -1,5 +1,4 @@
 const INACTIVE_CARD_COLOR = "#015289";
-
 const ACTIVE_CARD_COLOR = "#D6FFF6";
 
 function changeCardsColor(activeCardId, inactiveCardId) {
@@ -24,17 +23,9 @@ function fill_login_form() {
         </div>`
 }
 
-document.getElementById("login_card").onclick = function (){
-    changeCardsColor("login_card", "register_card");
-    document.getElementById("login_field").style.height = "40%";
-    document.getElementById("register_form").innerHTML = ""
-    fill_login_form();
-}
-
 function fill_register_form() {
     document.getElementById("register_form").innerHTML =
         `
-
         <label for="name" class="login_label">Imię:</label>
         <input type="text" name="name" class="login_input" placeholder="podaj imię..." required>
         <span class="required_field">*</span>
@@ -55,13 +46,21 @@ function fill_register_form() {
         <input type="password" name="password" class="login_input" placeholder="potwierdź hasło..." required>
          <span class="required_field">*</span>
         
-        <label for="password" class="login_label">Hasło nauczyciela:</label>
-        <input type="password" name="teacher_password" class="login_input" placeholder="podaj hasło nauczyciela...">
+        <label for="teacher_password" class="login_label">Hasło nauczyciela:</label>
+        <input type="password" name="teacher_password" class="login_input" id="teacher_password" placeholder="podaj hasło nauczyciela...">
 
         <div class="button_container">
             <input type="submit" id="register_button" class="form_button" value="Zarejestruj się">
         </div>`
 }
+
+document.getElementById("login_card").onclick = function (){
+    changeCardsColor("login_card", "register_card");
+    document.getElementById("login_field").style.height = "40%";
+    document.getElementById("register_form").innerHTML = ""
+    fill_login_form();
+}
+
 
 document.getElementById("register_card").onclick = function (){
     changeCardsColor("register_card", "login_card")
@@ -69,3 +68,4 @@ document.getElementById("register_card").onclick = function (){
     document.getElementById("login_form").innerHTML = ""
     fill_register_form();
 }
+

@@ -10,6 +10,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
 </head>
 <body onload="fill_login_form()">
     <div class="main_container">
@@ -33,14 +35,42 @@
                     <img src="images/gradebook_logo.png" alt="gradebook_logo">
                 </div>
 
-                <form id="login_form" action="serverActions/registerActions.php" method="post"></form>
-                <form id="register_form" action="serverActions/registerActions.php" method="post"></form>
+                <div>
+                    <form id="login_form" action="serverActions/registerActions.php"></form>
+                </div>
+                <div>
+                    <form id="register_form" action="serverActions/registerActions.php"></form>
+                    <label id="incorrect_teacher_password"></label>
+                </div>
+
 
             </div>
         </div>
 
     </div>
+    <script src="scripts/menuScripts.js"></script>
 
-    <script src="menuScripts.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function (){
+            $("#register_form").on('submit', function (e){
+                e.preventDefault();
+                $.ajax({
+                    type: "POST",
+                    url: "./serverActions/registerActions.php",
+                    data: $(this).serialize(),
+                    success:function (response) {
+
+
+                    },
+                    error: function (response){
+                        $("#incorrect_teacher_password").text("Niepoprawne hasło nauczyciela").css("color", "red");
+
+                    }
+                })
+            })
+        });
+    </script>
+
 </body>
 </html>
