@@ -11,7 +11,7 @@ function changeCardsColor(activeCardId, inactiveCardId) {
 
 document.getElementById("login_card").onclick = function (){
     changeCardsColor("login_card", "register_card");
-    document.getElementById("login_field").style.height = "60%";
+    document.getElementById("login_field").style.height = "40%";
     document.getElementById("register_form").innerHTML = ""
 
     document.getElementById("login_form").innerHTML =
