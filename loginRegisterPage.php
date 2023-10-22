@@ -38,7 +38,7 @@
                 <div>
                     <form id="login_form" action="serverActions/registerActions.php"></form>
                 </div>
-                <div id="register_form_container">
+                <div>
                     <form id="register_form" action="serverActions/registerActions.php"></form>
                     <label id="incorrect_teacher_password"></label>
                 </div>

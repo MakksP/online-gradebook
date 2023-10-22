@@ -8,6 +8,15 @@ function changeCardsColor(activeCardId, inactiveCardId) {
     activeCard.style.backgroundColor = ACTIVE_CARD_COLOR
 }
 
+function set_default_fonts(formId) {
+    const element = document.getElementById(formId);
+    element.style.fontSize = "15px";
+    element.style.fontFamily = "Tilt Neon, sans-serif";
+    element.style.color = "black";
+    element.style.textShadow = "none"
+
+}
+
 function fill_login_form() {
     document.getElementById("login_form").innerHTML =
         `<label for="email" class="login_label">Wpisz email:</label>
@@ -21,6 +30,7 @@ function fill_login_form() {
         <div class="button_container">
             <input type="submit" id="login_button" class="form_button" value="Zaloguj">
         </div>`
+    set_default_fonts("login_form");
 }
 
 function fill_register_form() {
@@ -52,6 +62,7 @@ function fill_register_form() {
         <div class="button_container">
             <input type="submit" id="register_button" class="form_button" value="Zarejestruj się">
         </div>`
+    set_default_fonts("register_form")
 }
 
 document.getElementById("login_card").onclick = function (){
