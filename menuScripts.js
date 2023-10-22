@@ -11,6 +11,7 @@ function changeCardsColor(activeCardId, inactiveCardId) {
 
 document.getElementById("login_card").onclick = function (){
     changeCardsColor("login_card", "register_card");
+    document.getElementById("login_field").style.height = "60%";
     document.getElementById("register_form").innerHTML = ""
 
     document.getElementById("login_form").innerHTML =
@@ -27,10 +28,19 @@ document.getElementById("login_card").onclick = function (){
 
 document.getElementById("register_card").onclick = function (){
     changeCardsColor("register_card", "login_card")
+    document.getElementById("login_field").style.height = "80%";
     document.getElementById("login_form").innerHTML = ""
 
     document.getElementById("register_form").innerHTML =
-        `<label for="email" class="login_label">Wpisz email:</label>
+        `
+
+        <label for="name" class="login_label">Imię:</label>
+        <input type="text" name="name" class="login_input" placeholder="podaj imię...">
+        
+        <label for="surname" class="login_label">Nazwisko:</label>
+        <input type="text" name="surname" class="login_input" placeholder="podaj nazwisko...">
+
+        <label for="email" class="login_label">Wpisz email:</label>
         <input type="email" name="email" class="login_input" placeholder="podaj email...">
 
         <label for="password" class="login_label">Wpisz hasło:</label>
