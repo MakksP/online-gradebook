@@ -16,14 +16,18 @@ function get_and_draw_subjects(){
             $add_subject_button_content = '<i class="icon-plus-circled"></i>';
             echo "<button type='button' class='subject_button' id='new_subject_button'>$add_subject_button_content</button>";
         } else{
+            $prepared_sql_query->close();
+            $db_connection->close();
             echo "Nie udało się wykonać zapytania";
             http_response_code(400);
         }
 
     } else {
+        $db_connection->close();
         echo "Nie udało się przygotować zapytania";
         http_response_code(400);
     }
+    $prepared_sql_query->close();
     $db_connection->close();
 }
 

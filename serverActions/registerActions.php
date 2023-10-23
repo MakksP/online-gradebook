@@ -48,11 +48,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
             if ($prepared_sql_query->execute()){
                 echo "Pomyślnie dodano użytkownika";
             } else {
+                $prepared_sql_query->close();
+                $db_connection->close();
                 echo "Nie udało się wykonać zapytania";
+                http_response_code(400);
             }
             $prepared_sql_query->close();
     } else {
+            $db_connection->close();
             echo "Błąd przy tworzeniu zapytania";
+            http_response_code(400);
     }
     $db_connection->close();
 }

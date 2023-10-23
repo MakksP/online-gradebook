@@ -78,3 +78,19 @@
     background-color: #0CA76E;
     font-size: 35px;
 }
+
+.gradebook_grid_element{
+    font-family: 'Tilt Neon', sans-serif;
+    font-size: 20px;
+    margin: 15px;
+    color: #D6FFF6;
+    border-right: 3px solid black;
+    width: 20%;
+}
+
+.gradebook_grid_header{
+    width: 100%;
+    display: block;
+    border-bottom: 3px solid black;
+}
+

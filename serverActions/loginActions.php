@@ -22,15 +22,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
                     $response = array("redirect" => "./teacherHomePage.php");
                     echo json_encode($response);
                 } else {
+                    $prepared_sql_query->close();
+                    $db_connection->close();
                     echo "Podane hasło jest błędne";
-                    return;
+                    http_response_code(400);
                 }
             } else{
+                $prepared_sql_query->close();
+                $db_connection->close();
+                echo "Nie ma takiego użytkownika";
                 http_response_code(400);
-                return;
             }
         } else {
             echo "Nie udało się wykonać zapytania";
+            $prepared_sql_query->close();
+            $db_connection->close();
+            http_response_code(400);
         }
         $prepared_sql_query->close();
     }else {

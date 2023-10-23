@@ -28,7 +28,7 @@
     </div>
 
     <header id="subjects_header">
-        <h2>Prowadzone przez ciebie przedmioty:</h2>
+        <h2 id="header_text">Prowadzone przez ciebie przedmioty:</h2>
     </header>
 
     <div id="subjects_table">
@@ -40,6 +40,6 @@
 
 
 </main>
-
+    <script src="scripts/teacherSubjectsButtonScripts.js"></script>
 </body>
 </html>
