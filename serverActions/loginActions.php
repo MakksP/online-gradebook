@@ -1,5 +1,6 @@
 <?php
 require "../dbConnection/databaseConnect.php";
+require "../dbConnection/databaseQueries.php";
 
 session_start();
 
@@ -7,7 +8,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
     $db_connection = connect_to_database();
     $email = $_POST["email"];
     $password = $_POST["password"];
-    $sql_query = "SELECT password, userId, name, surname, role FROM users WHERE email = ?";
+    $sql_query = get_logging_in_user_data();
     if ($prepared_sql_query= $db_connection->prepare($sql_query)){
         $prepared_sql_query->bind_param("s", $email);
         if ($prepared_sql_query->execute()){
@@ -18,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
                     $_SESSION["name"] = $name;
                     $_SESSION["surname"] = $surname;
                     $_SESSION["role"] = $role;
-                    $response = array("redirect" => "./homePage.php");
+                    $response = array("redirect" => "./teacherHomePage.php");
                     echo json_encode($response);
                 } else {
                     echo "Podane hasło jest błędne";

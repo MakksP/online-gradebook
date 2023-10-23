@@ -41,3 +41,10 @@
     position: relative;
     right: 10px;
 }
+
+#subjects_table{
+    width: 80%;
+    height: 80%;
+    position: relative;
+    left: 5%;
+}

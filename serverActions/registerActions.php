@@ -4,6 +4,7 @@ const STUDENT_ROLE_STRING = "student";
 const TEACHER_PASSWORD = "imteacher";
 
 require "../dbConnection/databaseConnect.php";
+require "../dbConnection/databaseQueries.php";
 
 /**
  * @return array
@@ -41,7 +42,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
         $role = STUDENT_ROLE_STRING;
     }
     $hashed_password = password_hash($password, PASSWORD_BCRYPT);
-    $sql_query = "INSERT INTO users (name, surname, email, password, role) VALUES (?, ?, ?, ?, ?)";
+    $sql_query = get_insert_user_query();
     if ($prepared_sql_query = $db_connection->prepare($sql_query)){
             $prepared_sql_query->bind_param("sssss", $name, $surname, $email, $hashed_password, $role);
             if ($prepared_sql_query->execute()){
