@@ -14,7 +14,6 @@ if ($_SERVER["REQUEST_METHOD"] == "GET"){
             while ($prepared_sql_query->fetch()){
                 echo "<label class='student_label'>$student_name $student_surname $student_email</label>";
             }
-            echo "<button id='add_student_button'><i class='icon-plus-circled'></i></button>";
         } else {
             echo "Nie udało się wykonać zapytania";
             $prepared_sql_query->close();

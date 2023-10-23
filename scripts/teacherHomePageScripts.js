@@ -16,15 +16,6 @@ function draw_students_labels_in_subject(button_text, button_index) {
                     ${student_labels}
                 </div>`;
 
-            document.getElementById("add_student_button").onclick = function () {
-                document.getElementById("main_container").insertAdjacentHTML("beforeend",
-                    `
-                 <div id="add_user_pane"></div>                                                                      
-            `);
-
-
-            }
-
         },
         error: function (response) {
         }
@@ -35,8 +26,6 @@ for (let button_index = 0; button_index < buttons.length - ADD_SUBJECT_BUTTON; b
     buttons[button_index].onclick = function () {
         const button_text = buttons[button_index].innerHTML;
         draw_students_labels_in_subject(button_text, button_index);
-
-
     }
 }
 
