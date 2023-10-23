@@ -27,9 +27,8 @@ function entered_teacher_password($teacher_password)
     return strlen($teacher_password) != 0;
 }
 
-
 if ($_SERVER["REQUEST_METHOD"] == "POST"){
-    global $db_connection;
+    $db_connection = connect_to_database();
     list($email, $password, $name, $surname, $teacher_password) = getDataFromNewUser();
     if (entered_teacher_password($teacher_password)){
         if (strcmp($teacher_password, TEACHER_PASSWORD) == 0){
@@ -54,4 +53,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
     } else {
             echo "Błąd przy tworzeniu zapytania";
     }
+    $db_connection->close();
 }

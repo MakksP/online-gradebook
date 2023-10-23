@@ -4,7 +4,7 @@ require "../dbConnection/databaseConnect.php";
 session_start();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST"){
-    global $db_connection;
+    $db_connection = connect_to_database();
     $email = $_POST["email"];
     $password = $_POST["password"];
     $sql_query = "SELECT password, userId FROM users WHERE email = ?";
@@ -32,4 +32,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
     }else {
         echo "Błąd przy tworzeniu zapytania";
     }
+    $db_connection->close();
 }
