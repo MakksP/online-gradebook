@@ -33,7 +33,8 @@ $(document).ready(function (){
                 window.location.href = response["redirect"];
             },
             error: function (response){
-                console.log(response);
+                $("#incorrect_email_password").text("Nieprawidłowy email lub hasło").css("color", "red")
+                    .css("text-shadow", "-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000");
             }
         })
     })

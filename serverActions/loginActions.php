@@ -7,15 +7,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
     $db_connection = connect_to_database();
     $email = $_POST["email"];
     $password = $_POST["password"];
-    $sql_query = "SELECT password, userId FROM users WHERE email = ?";
+    $sql_query = "SELECT password, userId, name, surname, role FROM users WHERE email = ?";
     if ($prepared_sql_query= $db_connection->prepare($sql_query)){
         $prepared_sql_query->bind_param("s", $email);
         if ($prepared_sql_query->execute()){
-            $prepared_sql_query->bind_result($hashed_password, $userId);
+            $prepared_sql_query->bind_result($hashed_password, $userId, $name, $surname, $role);
             if ($prepared_sql_query->fetch()){
                 if (password_verify($password, $hashed_password)){
                     $_SESSION["userId"] = $userId;
-                    $response = array("redirect" => "../homePage.php");
+                    $_SESSION["name"] = $name;
+                    $_SESSION["surname"] = $surname;
+                    $_SESSION["role"] = $role;
+                    $response = array("redirect" => "./homePage.php");
                     echo json_encode($response);
                 } else {
                     echo "Podane hasło jest błędne";
