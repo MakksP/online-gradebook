@@ -40,6 +40,6 @@
 
 
 </main>
-    <script src="scripts/teacherSubjectsButtonScripts.js"></script>
+    <script src="scripts/teacherHomePageScripts.js"></script>
 </body>
 </html>

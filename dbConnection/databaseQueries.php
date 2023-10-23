@@ -12,4 +12,13 @@
                 JOIN subjects ON teachers_with_subjects.subjectid 
                                      = subjects.subjectId WHERE userId = ?";
     }
+
+    function get_students_by_subject(){
+        return "SELECT name, surname, email
+        FROM users JOIN lessonplans
+        ON users.lessonPlanId = lessonplans.lessonPlanId
+        JOIN subjects ON subjects.subjectId = lessonplans.subjectId
+        WHERE subjects.subjectName = ?";
+    }
+
 ?>
