@@ -18,7 +18,7 @@
 
 <?php session_start()?>
 
-<main class="main_container">
+<main id="main_container">
 
     <div id="icons_div">
         <i class="icon-home" id="home_page"></i>
