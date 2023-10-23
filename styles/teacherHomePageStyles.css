@@ -47,4 +47,34 @@
     height: 80%;
     position: relative;
     left: 5%;
+    background-color: #2374AB;
+    border: 3px solid black;
+    border-radius: 10px;
+    display: flex;
+}
+
+.subject_button{
+    background-color: #4DCCBD;
+    margin: 10px;
+    font-family: 'Tilt Neon', sans-serif;
+    font-size: 20px;
+    height: 50px;
+    width: 20%;
+    border: 2px groove black;
+    border-radius: 5px;
+}
+
+#new_subject_button{
+    background-color: #1db87f;
+    font-size: 35px;
+}
+
+.subject_button:hover{
+    background-color: #3CBBAC;
+    cursor: pointer;
+}
+
+#new_subject_button:hover{
+    background-color: #0CA76E;
+    font-size: 35px;
 }

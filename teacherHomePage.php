@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles/homePageStyles.css">
+    <link rel="stylesheet" href="styles/teacherHomePageStyles.css">
     <link rel="stylesheet" href="fontello/css/fontello.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
@@ -44,8 +44,10 @@
                 if ($prepared_sql_query->execute()){
                     $prepared_sql_query->bind_result($subject);
                     while ($prepared_sql_query->fetch()){
-                        echo "<button type='button'>$subject</button>";
+                        echo "<button type='button' class='subject_button'>$subject</button>";
                     }
+                    $add_subject_button_content = '<i class="icon-plus-circled"></i>';
+                    echo "<button type='button' class='subject_button' id='new_subject_button'>$add_subject_button_content</button>";
                 } else{
                     echo "Nie udało się wykonać zapytania";
                     http_response_code(400);
