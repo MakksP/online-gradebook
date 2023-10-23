@@ -97,5 +97,13 @@
 .student_label{
     display: block;
     margin-bottom: 10px;
+    width: 100%;
+}
+
+#add_student_button{
+    width: 90%;
+    height: 5%;
+    background-color: #1db87f;
+    font-size: 100%;
 }
 
