@@ -1,0 +1,49 @@
+@import "loginStyles";
+
+#subjects_to_add_pane{
+  position: absolute;
+  left: 35%;
+  top: 35%;
+  background-color: $button_color;
+  width: 21%;
+  height: 40%;
+  border: map-get($default_border_properties, width) map-get($default_border_properties, style) map-get($default_border_properties, color);
+  border-radius: 5px;
+}
+
+.not_teaching_subject_button{
+  font: {
+    family: $main_site_font;
+    size: $header_font_size;
+  };
+  display: block;
+  margin-bottom: 20px;
+}
+
+#subjects_to_add_pane_header{
+  font: {
+    family: $main_site_font;
+    size: 23px;
+  };
+  display: block;
+  float: left;
+  margin: {
+    top: 20px;
+    bottom: 15px;
+  };
+  width: 85%;
+  color: $site_background_color;
+  border-bottom: 2px solid $site_background_color;
+}
+
+#close_pane_button{
+  display: block;
+  float: right;
+  font-size: $header_font_size;
+  background-color: transparent;
+  border: none;
+}
+
+#close_pane_button:hover{
+  cursor: pointer;
+}

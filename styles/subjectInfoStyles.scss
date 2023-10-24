@@ -8,14 +8,14 @@
 
   margin: 15px;
   color: $white_contrast_color;
-  border: map-get($default_border_properties, width) map-get($default_border_properties, style) map-get($default_border_properties, color);
+  border-right: 3px solid black;
   width: 30%;
 }
 
 .gradebook_grid_header{
   width: 100%;
   display: block;
-  border: map-get($default_border_properties, width) map-get($default_border_properties, style) map-get($default_border_properties, color);
+  border-bottom: 3px solid black;
 }
 
 .student_label{
