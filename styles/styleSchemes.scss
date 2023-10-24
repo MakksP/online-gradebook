@@ -1,0 +1,33 @@
+@import "variables";
+
+
+@mixin main_container_scheme{
+  background-color: $site_background_color;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+}
+
+@mixin standard_header_font{
+  font: {
+    family: $main_site_font;
+    size: $header_font_size;
+  };
+}
+
+@mixin standard_form_font{
+  font: {
+    size: $form_font_size;
+    family: $main_site_font;
+  };
+}
+
+@mixin standard_border{
+  border: map-get($default_border_properties, width) map-get($default_border_properties, style) map-get($default_border_properties, color);
+}
+
+@mixin symbol_properties{
+  font-size: 50px;
+  color: $white_contrast_color;
+  display: inline;
+}

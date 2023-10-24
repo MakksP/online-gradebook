@@ -1,10 +1,8 @@
 @import "variables";
+@import "styleSchemes";
 
 .gradebook_grid_element{
-  font: {
-    family: $main_site_font;
-    size: $header_font_size;
-  };
+  @include standard_header_font;
 
   margin: 15px;
   color: $white_contrast_color;

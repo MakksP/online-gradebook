@@ -3,6 +3,7 @@
   width: 100%;
   height: 100%;
   position: fixed;
+  position: fixed;
 }
 
 #subjects_header {
@@ -70,7 +71,7 @@
 }
 
 .subject_button:hover {
-  background-color: #3CBBAC;
+  background-color: #33b3a4;
   cursor: pointer;
 }
 
