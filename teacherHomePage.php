@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="styles/teacherHomePageStyles.css">
     <link rel="stylesheet" href="styles/subjectInfoStyles.css">
     <link rel="stylesheet" href="fontello/css/fontello.css">
+    <link rel="stylesheet" href="styles/subjectsToAddPaneStyles.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
 </head>

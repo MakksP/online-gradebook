@@ -1,0 +1,41 @@
+#subjects_to_add_pane{
+    position: absolute;
+    left: 35%;
+    top: 35%;
+    background-color: #4DCCBD;
+    width: 21%;
+    height: 40%;
+    border: 3px solid black;
+    border-radius: 5px;
+}
+
+.not_teaching_subject_button{
+    font-family: 'Tilt Neon', sans-serif;
+    font-size: 20px;
+    display: block;
+    margin-bottom: 20px;
+}
+
+#subjects_to_add_pane_header{
+    font-family: 'Tilt Neon', sans-serif;
+    font-size: 23px;
+    display: block;
+    float: left;
+    margin-top: 20px;
+    margin-bottom: 15px;
+    width: 85%;
+    color: #231651;
+    border-bottom: 2px solid #231651;
+}
+
+#close_pane_button{
+    display: block;
+    float: right;
+    font-size: 20px;
+    background-color: transparent;
+    border: none;
+}
+
+#close_pane_button:hover{
+    cursor: pointer;
+}

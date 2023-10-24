@@ -21,4 +21,12 @@
         WHERE subjects.subjectName = ?";
     }
 
+    function get_not_teaching_subjects(){
+        return "
+                SELECT subjectName FROM subjects
+                LEFT JOIN teachers_with_subjects ON
+                subjects.subjectId = teachers_with_subjects.subjectid
+                WHERE userId != ? OR userId IS NULL";
+    }
+
 ?>
