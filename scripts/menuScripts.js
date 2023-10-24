@@ -1,25 +1,5 @@
-const INACTIVE_CARD_COLOR = "#015289";
-const ACTIVE_CARD_COLOR = "#D6FFF6";
-
-function changeCardsColor(activeCardId, inactiveCardId) {
-    let activeCard = document.getElementById(activeCardId)
-    let inactiveCard = document.getElementById(inactiveCardId)
-    inactiveCard.style.backgroundColor = INACTIVE_CARD_COLOR
-    activeCard.style.backgroundColor = ACTIVE_CARD_COLOR
-}
-
-function set_default_fonts(formId) {
-    const element = document.getElementById(formId);
-    element.style.fontSize = "15px";
-    element.style.fontFamily = "Tilt Neon, sans-serif";
-    element.style.color = "black";
-    element.style.textShadow = "none"
-
-}
-
-function fill_login_form() {
-    document.getElementById("login_form").innerHTML =
-        `<label for="email" class="login_label">Wpisz email:</label>
+function getLoginFormContent() {
+    return `<label for="email" class="login_label">Wpisz email:</label>
         <input type="email" name="email" class="login_input" placeholder="podaj email..." required>
          <span class="required_field">*</span>
 
@@ -29,13 +9,11 @@ function fill_login_form() {
 
         <div class="button_container">
             <input type="submit" id="login_button" class="form_button" value="Zaloguj">
-        </div>`
-    set_default_fonts("login_form");
+        </div>`;
 }
 
-function fill_register_form() {
-    document.getElementById("register_form").innerHTML =
-        `
+function getRegistrationFormContent() {
+    return `
         <label for="name" class="login_label">Imię:</label>
         <input type="text" name="name" class="login_input" placeholder="podaj imię..." required>
         <span class="required_field">*</span>
@@ -61,7 +39,40 @@ function fill_register_form() {
 
         <div class="button_container">
             <input type="submit" id="register_button" class="form_button" value="Zarejestruj się">
-        </div>`
+        </div>`;
+}
+
+const INACTIVE_CARD_COLOR = "#015289";
+const ACTIVE_CARD_COLOR = "#D6FFF6";
+
+function changeCardsColor(activeCardId, inactiveCardId) {
+    let activeCard = document.getElementById(activeCardId)
+    let inactiveCard = document.getElementById(inactiveCardId)
+    inactiveCard.style.backgroundColor = INACTIVE_CARD_COLOR
+    activeCard.style.backgroundColor = ACTIVE_CARD_COLOR
+}
+
+function set_default_fonts(formId) {
+    const element = document.getElementById(formId);
+    element.style.fontSize = "15px";
+    element.style.fontFamily = "Tilt Neon, sans-serif";
+    element.style.color = "black";
+    element.style.textShadow = "none"
+
+}
+
+
+function fill_login_form() {
+    document.getElementById("login_form").innerHTML =
+        getLoginFormContent()
+    set_default_fonts("login_form");
+}
+
+
+
+function fill_register_form() {
+    document.getElementById("register_form").innerHTML =
+        getRegistrationFormContent()
     set_default_fonts("register_form")
 }
 
