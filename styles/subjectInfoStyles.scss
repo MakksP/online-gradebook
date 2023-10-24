@@ -1,0 +1,27 @@
+@import "loginStyles";
+
+.gradebook_grid_element{
+  font: {
+    family: $main_site_font;
+    size: $header_font_size;
+  };
+
+  margin: 15px;
+  color: $white_contrast_color;
+  border: map-get($default_border_properties, width) map-get($default_border_properties, style) map-get($default_border_properties, color);
+  width: 30%;
+}
+
+.gradebook_grid_header{
+  width: 100%;
+  display: block;
+  border: map-get($default_border_properties, width) map-get($default_border_properties, style) map-get($default_border_properties, color);
+}
+
+.student_label{
+  display: block;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+

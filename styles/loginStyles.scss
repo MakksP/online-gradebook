@@ -1,10 +1,16 @@
 $site_background_color: #231651;
-$login_form_color: #2374AB;
+$pane_color: #2374AB;
 $main_site_font: 'Tilt Neon', sans-serif;
 $form_font_size: 15px;
 $header_font_size: 20px;
-$chosen_card_color: #D6FFF6;
-$form_button_color: #4DCCBD;
+$white_contrast_color: #D6FFF6;
+$button_color: #4DCCBD;
+
+$default_border_properties: (
+        width: 3px,
+        style: solid,
+        color: black
+);
 
 .main_container{
   background-color: $site_background_color;
@@ -23,11 +29,11 @@ $form_button_color: #4DCCBD;
 }
 
 #login_field{
-  background-color: $login_form_color;
+  background-color: $pane_color;
   width: 100%;
   height: 40%;
   border-radius: 10px;
-  border: 3px solid black;
+  border: map-get($default_border_properties, width) map-get($default_border_properties, style) map-get($default_border_properties, color);
   text-align: center;
   align-items: center;
   padding-top: 5px;
@@ -62,7 +68,7 @@ label{
 }
 
 .form_button{
-  background-color: $form_button_color;
+  background-color: $button_color;
   width: 30%;
   font: {
     size: $form_font_size;
@@ -73,7 +79,7 @@ label{
 }
 
 .form_button:hover{
-  background-color: darken($form_button_color, 10%);
+  background-color: darken($button_color, 10%);
   width: 30%;
 
   font: {
@@ -115,7 +121,7 @@ label{
 }
 
 .card_button_container{
-  background-color: darken($login_form_color, 10%);
+  background-color: darken($pane_color, 10%);
   width: 60%;
   height: 35px;
 
@@ -131,7 +137,7 @@ label{
 }
 
 #login_card{
-  background-color: $chosen_card_color;
+  background-color: $white_contrast_color;
 }
 
 .required_field{
