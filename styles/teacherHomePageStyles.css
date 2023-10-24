@@ -1,80 +1,82 @@
-#main_container{
-    background-color: #231651;
-    width: 100%;
-    height: 100%;
-    position: fixed;
+#main_container {
+  background-color: #231651;
+  width: 100%;
+  height: 100%;
+  position: fixed;
 }
 
-#subjects_header{
-    font-family: 'Tilt Neon', sans-serif;
-    font-size: 20px;
-    color: #FF8484;
-    text-align: center;
+#subjects_header {
+  font-family: "Tilt Neon", sans-serif;
+  font-size: 20px;
+  color: #FF8484;
+  text-align: center;
 }
 
-#home_page{
-    font-size: 50px;
-    color: #D6FFF6;
-    display: inline;
-    float: left;
+#home_page {
+  font-size: 50px;
+  color: #D6FFF6;
+  display: inline;
+  float: left;
 }
 
-#icons_div{
-    margin-left: 20px;
-    margin-top: 20px;
-    height: 60px;
+#icons_div {
+  margin-left: 20px;
+  margin-top: 20px;
+  height: 60px;
 }
 
-#user_symbol{
-    font-size: 50px;
-    color: #D6FFF6;
-    display: inline;
-    float: right;
-    text-align: center;
-    position: relative;
-    right: 20px;
+#user_symbol {
+  font-size: 50px;
+  color: #D6FFF6;
+  display: inline;
+  float: right;
+  text-align: center;
+  position: relative;
+  right: 20px;
 }
 
-#user_label{
-    display: block;
-    font-size: 20px;
-    position: relative;
-    right: 10px;
+#user_label {
+  display: block;
+  font-size: 20px;
+  position: relative;
+  right: 10px;
 }
 
-#subjects_table{
-    width: 80%;
-    height: 80%;
-    position: relative;
-    left: 5%;
-    background-color: #2374AB;
-    border: 3px solid black;
-    border-radius: 10px;
-    display: flex;
+#subjects_table {
+  width: 80%;
+  height: 80%;
+  position: relative;
+  left: 5%;
+  background-color: #2374AB;
+  border: 3px solid black;
+  border-radius: 10px;
+  display: flex;
 }
 
-.subject_button{
-    background-color: #4DCCBD;
-    margin: 10px;
-    font-family: 'Tilt Neon', sans-serif;
-    font-size: 20px;
-    height: 50px;
-    width: 20%;
-    border: 2px groove black;
-    border-radius: 5px;
+.subject_button {
+  background-color: #4DCCBD;
+  margin: 10px;
+  font-family: "Tilt Neon", sans-serif;
+  font-size: 20px;
+  height: 50px;
+  width: 20%;
+  border: 2px groove black;
+  border-radius: 5px;
 }
 
-#new_subject_button{
-    background-color: #1db87f;
-    font-size: 35px;
+#new_subject_button {
+  background-color: #1db87f;
+  font-size: 35px;
 }
 
-.subject_button:hover{
-    background-color: #3CBBAC;
-    cursor: pointer;
+.subject_button:hover {
+  background-color: #3CBBAC;
+  cursor: pointer;
 }
 
-#new_subject_button:hover{
-    background-color: #0CA76E;
-    font-size: 35px;
+#new_subject_button:hover {
+  background-color: #168c61;
+  font-size: 35px;
 }
+
+/*# sourceMappingURL=teacherHomePageStyles.css.map */

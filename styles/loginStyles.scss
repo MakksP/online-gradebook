@@ -1,16 +1,5 @@
-$site_background_color: #231651;
-$pane_color: #2374AB;
-$main_site_font: 'Tilt Neon', sans-serif;
-$form_font_size: 15px;
-$header_font_size: 20px;
-$white_contrast_color: #D6FFF6;
-$button_color: #4DCCBD;
+@import "variables";
 
-$default_border_properties: (
-        width: 3px,
-        style: solid,
-        color: black
-);
 
 .main_container{
   background-color: $site_background_color;
