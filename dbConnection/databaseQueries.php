@@ -29,4 +29,13 @@
                 WHERE userId != ? OR userId IS NULL";
     }
 
+    function assign_subject_to_you(){
+        return"
+                INSERT INTO teachers_with_subjects
+                (subjectId, userid) VALUES ((SELECT subjectId FROM subjects
+                WHERE subjectName = ?), ?)";
+
+
+    }
+
 ?>

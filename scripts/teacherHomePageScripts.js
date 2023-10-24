@@ -1,5 +1,7 @@
 const subjects_buttons = document.getElementsByClassName("subject_button");
 const add_subject_button = document.getElementById("new_subject_button");
+const not_teaching_subjects_buttons = document.getElementsByClassName("not_teaching_subject_button");
+const not_teaching_subjects_labels = document.getElementsByClassName("not_teaching_subject_label");
 const ADD_SUBJECT_BUTTON = 1;
 
 
@@ -26,23 +28,59 @@ function clearSubjectsToAddPane() {
     }
 }
 
-add_subject_button.onclick = function (){
-    $.ajax({
-       type: "GET",
-       url: "../serverActions/getNotTeachingSubjects.php",
-       success: function (response){
-           clearSubjectsToAddPane();
-           const main_container = document.getElementById("main_container");
-           main_container.insertAdjacentHTML("beforeend", getSubjectsToAddPane(response))
+function assignNotTeachingButtonsAction() {
+    for (let button_index = 0; button_index < not_teaching_subjects_buttons.length; button_index += 1) {
+        not_teaching_subjects_buttons[button_index].onclick = function () {
+            const subject_name = not_teaching_subjects_labels[button_index].innerHTML;
+            console.log(subject_name);
+            sendAddSubjectToTeacherRequest(subject_name);
+        }
+    }
+}
 
-           document.getElementById("close_pane_button").onclick = function (){
-               clearSubjectsToAddPane();
-           }
-       },
-       error: function (response){
+
+function sendAddSubjectToTeacherRequest(subject_name) {
+    $.ajax({
+        type: "POST",
+        url: "../serverActions/addSubjectToTeacher.php",
+        data: {subject_tag: subject_name},
+        success: function (response) {
+            document.getElementById(subject_name).remove();
+            assignNotTeachingButtonsAction();
             console.log(response);
-       }
+        },
+        error: function (response) {
+            console.log(response);
+        }
     });
+}
+
+
+function getNotTeachingSubjectsPane() {
+    $.ajax({
+        type: "GET",
+        url: "../serverActions/getNotTeachingSubjects.php",
+        success: function (response) {
+            clearSubjectsToAddPane();
+            const main_container = document.getElementById("main_container");
+            main_container.insertAdjacentHTML("beforeend", getSubjectsToAddPane(response))
+
+            document.getElementById("close_pane_button").onclick = function () {
+                clearSubjectsToAddPane();
+            }
+
+            assignNotTeachingButtonsAction();
+
+
+        },
+        error: function (response) {
+            console.log(response);
+        }
+    });
+}
+
+add_subject_button.onclick = function (){
+    getNotTeachingSubjectsPane();
 }
 
 

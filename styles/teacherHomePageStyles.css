@@ -61,7 +61,8 @@
   font-size: 20px;
   height: 50px;
   width: 20%;
-  border: 2px groove black;
+  border: 2px solid black;
+  border-style: groove;
   border-radius: 5px;
 }
 

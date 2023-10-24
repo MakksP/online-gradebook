@@ -47,3 +47,18 @@
 #close_pane_button:hover{
   cursor: pointer;
 }
+
+.not_teaching_subject_button{
+  background-color: $add_button_color;
+  @include button_style;
+  margin-left: 5px;
+}
+
+.not_teaching_subject_button:hover{
+  background-color: darken($add_button_color, 10%);
+  cursor: pointer;
+}
+
+.not_teaching_subject_label{
+  cursor: pointer;
+}

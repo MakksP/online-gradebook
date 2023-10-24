@@ -57,8 +57,7 @@
   @include standard_header_font;
   height: 50px;
   width: 20%;
-  border: 2px groove black;
-  border-radius: 5px;
+  @include button_style;
 }
 
 #new_subject_button{

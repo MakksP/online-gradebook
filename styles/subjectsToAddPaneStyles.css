@@ -40,4 +40,21 @@
   cursor: pointer;
 }
 
+.not_teaching_subject_button {
+  background-color: #1db87f;
+  border: 2px solid black;
+  border-style: groove;
+  border-radius: 5px;
+  margin-left: 5px;
+}
+
+.not_teaching_subject_button:hover {
+  background-color: #168c61;
+  cursor: pointer;
+}
+
+.not_teaching_subject_label {
+  cursor: pointer;
+}
+
 /*# sourceMappingURL=subjectsToAddPaneStyles.css.map */

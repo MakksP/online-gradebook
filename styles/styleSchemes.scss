@@ -31,3 +31,13 @@
   color: $white_contrast_color;
   display: inline;
 }
+
+@mixin thin_border{
+  border: map-get($thin_border_properties, width) map-get($thin_border_properties, style) map-get($thin_border_properties, color);
+}
+
+@mixin button_style{
+  @include thin_border;
+  border-style: groove;
+  border-radius: 5px;
+}

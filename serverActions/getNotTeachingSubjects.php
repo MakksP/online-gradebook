@@ -7,13 +7,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET'){
     $db_connection = connect_to_database();
     $sql_query = get_not_teaching_subjects();
     if ($prepared_sql_query = $db_connection->prepare($sql_query)){
-        $i = 48;
         $prepared_sql_query->bind_param("s", $_SESSION["userId"]);
         if ($prepared_sql_query->execute()){
             $prepared_sql_query->bind_result($not_teaching_subject);
             while ($prepared_sql_query->fetch()){
-                echo "<button class='not_teaching_subject_button'>
-                            <label>$not_teaching_subject</label>
+                echo "<button class='not_teaching_subject_button' id='$not_teaching_subject'>
+                            <label class='not_teaching_subject_label'>$not_teaching_subject</label>
                       </button>";
             }
         } else {
