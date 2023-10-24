@@ -2,8 +2,23 @@ const subjects_buttons = document.getElementsByClassName("subject_button");
 const add_subject_button = document.getElementById("new_subject_button");
 const ADD_SUBJECT_BUTTON = 1;
 
+function getSubjectsToAddPane(response) {
+    return `<div id='subjects_to_add_pane'>
+               <label id="subjects_to_add_pane_header">Możliwe przedmioty do dodania:</label>
+               <button id="close_pane_button"><i class="icon-cancel-circled"></i></button>
+               ${response}
+           </div>`;
+}
+
+function getStudentsListDiv(student_labels) {
+    return `<div class="gradebook_grid_element" id="student_names">
+                    <label class="gradebook_grid_header">Studenci:</label>
+                    ${student_labels}
+                </div>`;
+}
+
+
 add_subject_button.onclick = function (){
-    console.log("XXXXXXXXXXXXXXXXX");
     $.ajax({
        type: "GET",
        url: "../serverActions/getNotTeachingSubjects.php",
@@ -13,11 +28,7 @@ add_subject_button.onclick = function (){
                subjects_to_add_pane.remove();
            }
            const main_container = document.getElementById("main_container");
-           main_container.insertAdjacentHTML("beforeend", `<div id='subjects_to_add_pane'>
-               <label id="subjects_to_add_pane_header">Możliwe przedmioty do dodania:</label>
-               <button id="close_pane_button"><i class="icon-cancel-circled"></i></button>
-               ${response}
-           </div>`)
+           main_container.insertAdjacentHTML("beforeend", getSubjectsToAddPane(response))
 
 
            document.getElementById("close_pane_button").onclick = function (){
@@ -25,10 +36,11 @@ add_subject_button.onclick = function (){
            }
        },
        error: function (response){
-
+            console.log(response);
        }
     });
 }
+
 
 function draw_students_labels_in_subject(button_text, button_index) {
     $.ajax({
@@ -39,13 +51,11 @@ function draw_students_labels_in_subject(button_text, button_index) {
             let student_labels = response;
             document.getElementById("header_text").innerHTML = subjects_buttons[button_index].innerHTML;
             document.getElementById("subjects_table").innerHTML =
-                `<div class="gradebook_grid_element" id="student_names">
-                    <label class="gradebook_grid_header">Studenci:</label>
-                    ${student_labels}
-                </div>`;
+                getStudentsListDiv(student_labels);
 
         },
         error: function (response) {
+            console.log(response);
         }
     });
 }
