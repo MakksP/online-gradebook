@@ -39,6 +39,20 @@ function assignNotTeachingButtonsAction() {
 }
 
 
+function repaint_subjects_table() {
+    $.ajax({
+        type: "GET",
+        url: "../serverActions/getAndDrawSubjectsForRequest.php",
+        success: function (response) {
+            console.log(response);
+            document.getElementById("subjects_table").innerHTML = response;
+        },
+        error: function (response) {
+            console.log(response);
+        }
+    });
+}
+
 function sendAddSubjectToTeacherRequest(subject_name) {
     $.ajax({
         type: "POST",
@@ -46,6 +60,8 @@ function sendAddSubjectToTeacherRequest(subject_name) {
         data: {subject_tag: subject_name},
         success: function (response) {
             document.getElementById(subject_name).remove();
+            repaint_subjects_table();
+
             assignNotTeachingButtonsAction();
             console.log(response);
         },
@@ -68,10 +84,7 @@ function getNotTeachingSubjectsPane() {
             document.getElementById("close_pane_button").onclick = function () {
                 clearSubjectsToAddPane();
             }
-
             assignNotTeachingButtonsAction();
-
-
         },
         error: function (response) {
             console.log(response);

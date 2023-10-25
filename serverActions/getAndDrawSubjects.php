@@ -1,6 +1,6 @@
 <?php
-require 'dbConnection/databaseConnect.php';
-require 'dbConnection/databaseQueries.php';
+require  __DIR__ . '/../dbConnection/databaseConnect.php';
+require __DIR__ .'/../dbConnection/databaseQueries.php';
 
 function get_and_draw_subjects(){
     $db_connection = connect_to_database();
