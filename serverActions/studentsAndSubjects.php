@@ -12,7 +12,8 @@ if ($_SERVER["REQUEST_METHOD"] == "GET"){
         $prepared_sql_query->bind_result($student_name, $student_surname, $student_email);
         if ($prepared_sql_query->execute()){
             while ($prepared_sql_query->fetch()){
-                echo "<label class='student_label'>$student_name $student_surname $student_email</label>";
+                $grade_div_id = $student_email . "_grade_div";
+                echo "<label class='student_label'>$student_name $student_surname $student_email</label><div id='$grade_div_id'></div>";
             }
         } else {
             echo "Nie udało się wykonać zapytania";

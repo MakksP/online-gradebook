@@ -49,8 +49,11 @@
         </div>
 
     </div>
+    
+    <script src="scripts/constHtmlElements.js"></script>
     <script src="scripts/menuScripts.js"></script>
     <script src="scripts/menuAjaxScripts.js"></script>
+    <script src="scripts/initButtonsOnClick.js"></script>
 
 </body>
 </html>

@@ -42,6 +42,9 @@
 
 
 </main>
+    <script src="scripts/constHtmlElements.js"></script>
     <script src="scripts/teacherHomePageScripts.js"></script>
+    <script src="scripts/initButtonsOnClick.js"></script>
+<script src="scripts/studentsInSubjectsScripts.js"></script>
 </body>
 </html>
