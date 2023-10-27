@@ -1,0 +1,53 @@
+@import "variables";
+@import "styleSchemes";
+
+#main_container{
+  @include main_container_scheme;
+}
+
+#main_panel{
+  background-color: $nav_bar_color;
+  height: 100px;
+  width: 100%;
+}
+
+#logo_image{
+  height: 100%;
+  width: 100%;
+  vertical-align: middle;
+
+}
+
+ul{
+  height: 100%;
+  list-style: none;
+  li{
+    display: inline;
+  }
+}
+
+.nav_pane_button{
+  font-family: $main_site_font;
+  @include start_page_button;
+  margin-right: 5%;
+
+}
+
+.nav_pane_button:hover {
+  @include start_page_hover_button;
+
+}
+
+#logo_button{
+  @include start_page_button;
+  margin-right: 10%;
+
+}
+
+#logo_button:hover{
+  @include start_page_hover_button;
+}
+
+.nav_pane_label:hover{
+  cursor: pointer;
+}

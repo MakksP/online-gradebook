@@ -1,13 +1,3 @@
-const INACTIVE_CARD_COLOR = "#015289";
-const ACTIVE_CARD_COLOR = "#D6FFF6";
-
-function changeCardsColor(activeCardId, inactiveCardId) {
-    let activeCard = document.getElementById(activeCardId)
-    let inactiveCard = document.getElementById(inactiveCardId)
-    inactiveCard.style.backgroundColor = INACTIVE_CARD_COLOR
-    activeCard.style.backgroundColor = ACTIVE_CARD_COLOR
-}
-
 function set_default_fonts(formId) {
     const element_style = document.getElementById(formId).style;
     element_style.fontSize = "15px";

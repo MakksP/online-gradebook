@@ -41,3 +41,21 @@
   border-style: groove;
   border-radius: 5px;
 }
+
+@mixin start_page_button{
+  height: 99%;
+  width: 12%;
+  border: none;
+  background-color: transparent;
+  color: $white_contrast_color;
+  font-size: 20px;
+  border: {
+    left: 2px solid black;
+    right: 2px solid black;
+  }
+}
+
+@mixin start_page_hover_button{
+  background-color: darken(#383c44, 5%);
+  cursor: pointer;
+}
