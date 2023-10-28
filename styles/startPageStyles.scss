@@ -18,7 +18,7 @@
 
 }
 
-ul{
+#nav_list{
   height: 100%;
   list-style: none;
   text-align: right;
@@ -60,3 +60,68 @@ ul{
 #additional_info_button{
   width: 17%
 };
+
+#images_section{
+  width: 100%;
+  height: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.start_page_image{
+  margin: {
+    left: 5%;
+    right: 5%;
+  };
+  width: 50%;
+}
+
+.image_div{
+  width: 25%;
+  height: 100%;
+  position: relative;
+  top: 25%;
+  left: 5%;
+}
+
+.image_description{
+  display: block;
+  position: relative;
+  left: 10%;
+  @include standard_header_font;
+}
+
+#start_page_footer{
+  width: 80%;
+  height: 15%;
+  border-top: 2px solid $footer_border_color;
+  position: absolute;
+  left: 10%;
+  bottom: 3%;
+  display: flex;
+  padding-top: 10px;
+}
+
+#footer_logo_image{
+  width: 289px;
+  height: 126px;
+}
+
+.footer_div{
+  margin-right: 10%;
+  color: darken($footer_border_color, 30%);
+}
+
+.footer_list{
+  list-style: none;
+  padding: 0;
+  li {
+    position: relative;
+    left: 0;
+  }
+}
+
+#copyright{
+  color: darken($footer_border_color, 60%);
+}
