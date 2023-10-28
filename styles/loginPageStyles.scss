@@ -8,19 +8,17 @@
 
 #login_label{
   @include standard_header_font;
-  margin-bottom: 10%;
   display: block;
 }
 
 #main_pane{
-  width: 40%;
+  width: 35%;
   height: 60%;
   position: relative;
   left: 15%;
   top: 15%;
   text-align: center;
-  display: inline-block;
-  margin-right: 25%;
+
 }
 
 #login_form{
@@ -91,16 +89,18 @@
   @include form_icon_style;
 }
 
-#school_symbol{
-  width: 20%;
-  height: 35%;
-  display: inline-block;
+.login_icon{
+  width: 384px;
+  height: 384px;
   position: relative;
+  left: 60%;
+  bottom: 40%;
 }
 
-#school_symbol_image{
+.login_icon_image{
   width: 100%;
   height: 100%;
 }
+
 
 

@@ -32,7 +32,7 @@
                     <button class="nav_pane_button" id="login_button_nav"><label class="nav_pane_label">Zaloguj się</label></button>
                 </li>
                 <li>
-                    <button class="nav_pane_button" id="registration_button"><label class="nav_pane_label">Stwórz konto</label></button>
+                    <button class="nav_pane_button" id="registration_button_nav"><label class="nav_pane_label">Stwórz konto</label></button>
                 </li>
             </ul>
         </nav>
@@ -63,23 +63,24 @@
 
                 </div>
 
-
                 <div class="button_container">
                     <input type="submit" id="login_button" class="form_button" value="Zaloguj">
+
                 </div>
+                <span id="incorrect_email_password"></span>
             </form>
-            <label id="incorrect_email_password"></label>
 
         </section>
 
-        <aside id="school_symbol">
-            <img src="images/schoolSymbol.png" alt="schoolSymbol" id="school_symbol_image">
+        <aside class="login_icon">
+            <img src="images/schoolSymbol.png" alt="schoolSymbol" class="login_icon_image">
         </aside>
 
     </main>
-    
+
     <script src="scripts/constHtmlElements.js"></script>
     <script src="scripts/menuAjaxScripts.js"></script>
     <script src="scripts/initButtonsOnClick.js"></script>
+    <script src="scripts/startPageScripts.js"></script>
 </body>
 </html>
