@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="fontello/css/fontello.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
 </head>
@@ -23,12 +24,18 @@
             <form id="login_form">
                 <div class="form_element">
                     <label for="email" class="login_label">Email</label>
-                    <input type="email" name="email" class="login_input" required>
+                    <span class="form_field"><i class="icon-user" id="icon_login"></i>
+                        <input type="email" name="email" class="login_input" required>
+                    </span>
+
                 </div>
 
                 <div class="form_element">
-                    <label for="password" class="login_label">Hasło </label>
-                    <input type="password" name="password" class="login_input" required>
+                    <label for="password" class="login_label">Hasło</label>
+                    <span class="form_field"><i class="icon-key" id="icon_password"></i>
+                        <input type="password" name="password" class="login_input" id="password_field" required>
+                    </span>
+
                 </div>
 
 
@@ -43,7 +50,6 @@
     </main>
     
     <script src="scripts/constHtmlElements.js"></script>
-    <script src="scripts/menuScripts.js"></script>
     <script src="scripts/menuAjaxScripts.js"></script>
     <script src="scripts/initButtonsOnClick.js"></script>
 

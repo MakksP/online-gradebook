@@ -34,10 +34,10 @@
     size: 20px;
   };
   display: block;
-  text-align: left;
   position: relative;
+  left: 3%;
   margin-bottom: 5px;
-  width: 100%;
+  width: 20%;
 }
 
 .form_element{
@@ -53,12 +53,29 @@
 }
 
 .login_input{
-  display: block;
-  width: 100%;
+  @include login_form_input;
+  @include standard_form_font;
+  position: relative;
+  top: 5%;
   border: none;
   background-color: $form_input_background_color;
-  @include standard_form_font;
+
+
+}
+
+.form_field{
+  display: inline-flex;
   height: 30%;
+  background-color: $form_input_background_color;
+  width: 80%;
+}
+
+#icon_login{
+  @include form_icon_style;
+}
+
+#icon_password{
+  @include form_icon_style;
 }
 
 
