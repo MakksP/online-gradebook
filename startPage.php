@@ -17,7 +17,7 @@
 
 <main id="main_container">
 
-    <nav id="main_panel">
+    <nav id="nav_panel">
         <ul id="nav_list">
             <li>
                 <button id="logo_button"><img src="/images/gradebook_logo.png" alt="gradebook_logo.png" id="logo_image"></button>
