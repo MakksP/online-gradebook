@@ -19,6 +19,8 @@
   left: 15%;
   top: 15%;
   text-align: center;
+  display: inline-block;
+  margin-right: 25%;
 }
 
 #login_form{
@@ -87,6 +89,18 @@
 
 #icon_password{
   @include form_icon_style;
+}
+
+#school_symbol{
+  width: 20%;
+  height: 35%;
+  display: inline-block;
+  position: relative;
+}
+
+#school_symbol_image{
+  width: 100%;
+  height: 100%;
 }
 
 

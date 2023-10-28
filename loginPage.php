@@ -42,6 +42,8 @@
             <div id="online_gradebook_logo">
                 <img src="./images/gradebook_logo.png" alt="gradebook_logo">
             </div>
+
+
             <label id="login_label">Logowanie:</label>
 
             <form id="login_form">
@@ -69,6 +71,10 @@
             <label id="incorrect_email_password"></label>
 
         </section>
+
+        <aside id="school_symbol">
+            <img src="images/schoolSymbol.png" alt="schoolSymbol" id="school_symbol_image">
+        </aside>
 
     </main>
     
