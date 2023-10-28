@@ -29,10 +29,10 @@
                 <button class="nav_pane_button"><label class="nav_pane_label">O dzienniku</label></button>
             </li>
             <li>
-                <button class="nav_pane_button"><label class="nav_pane_label">Zaloguj się</label></button>
+                <button class="nav_pane_button" id="login_button"><label class="nav_pane_label">Zaloguj się</label></button>
             </li>
             <li>
-                <button class="nav_pane_button"><label class="nav_pane_label">Stwórz konto</label></button>
+                <button class="nav_pane_button" id="registration_button"><label class="nav_pane_label">Stwórz konto</label></button>
             </li>
         </ul>
     </nav>
@@ -112,6 +112,6 @@
 
 
 </main>
-
+<script src="scripts/startPageScripts.js">
 </body>
 </html>

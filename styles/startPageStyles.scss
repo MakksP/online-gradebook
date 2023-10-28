@@ -19,7 +19,7 @@
 }
 
 #nav_list{
-  height: 98%;
+  height: 100%;
   list-style: none;
   text-align: right;
   li{
@@ -50,7 +50,7 @@
 }
 
 #logo_button:hover{
-  @include start_page_hover_button;
+  cursor: pointer;
 }
 
 .nav_pane_label:hover{

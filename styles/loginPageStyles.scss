@@ -1,0 +1,64 @@
+@import "styleSchemes";
+@import "variables";
+
+
+#main_container{
+  @include main_container_scheme;
+}
+
+#login_label{
+  @include standard_header_font;
+  margin-bottom: 10%;
+  display: block;
+}
+
+#main_pane{
+  width: 30%;
+  height: 60%;
+  position: relative;
+  left: 20%;
+  top: 15%;
+  text-align: center;
+}
+
+#login_form{
+  height: 80%;
+  width: 80%;
+  position: relative;
+  left: 10%;
+}
+
+.login_label{
+  font: {
+    family: $main_site_font;
+    size: 20px;
+  };
+  display: block;
+  text-align: left;
+  position: relative;
+  margin-bottom: 5px;
+  width: 100%;
+}
+
+.form_element{
+  margin-bottom: 5%;
+  width: 100%;
+  height: 25%;
+}
+
+.button_container{
+  position: relative;
+  width: 100%;
+  left: 0;
+}
+
+.login_input{
+  display: block;
+  width: 100%;
+  border: none;
+  background-color: $form_input_background_color;
+  @include standard_form_font;
+  height: 30%;
+}
+
+
