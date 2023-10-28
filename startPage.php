@@ -23,7 +23,7 @@
                 <button id="logo_button"><img src="/images/gradebook_logo.png" alt="gradebook_logo.png" id="logo_image"></button>
             </li>
             <li>
-                <button class="nav_pane_button"><label class="nav_pane_label">Informacje dodatkowe</label></button>
+                <button class="nav_pane_button" id="additional_info_button"><label class="nav_pane_label">Informacje dodatkowe</label></button>
             </li>
             <li>
                 <button class="nav_pane_button"><label class="nav_pane_label">O dzienniku</label></button>

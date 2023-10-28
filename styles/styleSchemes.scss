@@ -49,10 +49,6 @@
   background-color: transparent;
   color: $white_contrast_color;
   font-size: 20px;
-  border: {
-    left: 2px solid black;
-    right: 2px solid black;
-  }
 }
 
 @mixin start_page_hover_button{
