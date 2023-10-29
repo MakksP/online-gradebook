@@ -2,8 +2,7 @@
 
 
 @mixin main_container_scheme{
-  width: 100%;
-  height: 100%;
+  @include whole_area_style;
   position: fixed;
 }
 
@@ -66,4 +65,28 @@
   font-size: 25px;
   text-align: center;
   top: 5px;
+}
+
+@mixin login_register_button_style{
+  @include whole_area_style;
+  background-color: $login_register_button_color;
+  border: none;
+  @include standard_header_font;
+}
+
+@mixin login_register_button_style_hover{
+  cursor: pointer;
+  background-color: darken($login_register_button_color, 10%);
+}
+
+@mixin whole_area_style{
+  width: 100%;
+  height: 100%;
+}
+
+@mixin form_style{
+  height: 80%;
+  width: 80%;
+  position: relative;
+  left: 10%;
 }

@@ -42,19 +42,19 @@
 
         <label id="login_label">Stwórz konto:</label>
 
-        <form id="login_form">
-            <div class="form_element">
-                <label for="surname" class="login_label">Nazwisko</label>
-                <span class="form_field">
-                        <input type="text" name="surname" class="login_input" required>
-                </span>
-            </div>
-
+        <form id="registration_form">
 
             <div class="form_element">
                 <label for="name" class="login_label">Imię</label>
                 <span class="form_field">
                         <input type="text" name="name" class="login_input" required>
+                </span>
+            </div>
+
+            <div class="form_element">
+                <label for="surname" class="login_label">Nazwisko</label>
+                <span class="form_field">
+                        <input type="text" name="surname" class="login_input" required>
                 </span>
             </div>
 
@@ -88,13 +88,13 @@
             <div class="form_element">
                 <label for="teacher_password" class="login_label">Hasło nauczyciela</label>
                 <span class="form_field"><i class="icon-key" id="icon_password"></i>
-                    <input type="password" name="teacher_password" class="login_input" id="password_field" required>
+                    <input type="password" name="teacher_password" class="login_input" id="password_field">
                 </span>
 
             </div>
 
             <div class="button_container">
-                <input type="submit" id="login_button" class="form_button" value="Zaloguj">
+                <input type="submit" id="registration_button" class="form_button" value="Zarejestruj się">
 
             </div>
             <span id="incorrect_email_password"></span>

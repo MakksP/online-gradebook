@@ -1,12 +1,12 @@
 $(document).ready(function (){
-    $("#register_form").on('submit', function (e){
+    $("#registration_form").on('submit', function (e){
         e.preventDefault();
         $.ajax({
             type: "POST",
             url: "./serverActions/registerActions.php",
             data: $(this).serialize(),
             success:function (response) {
-                $("#register_form").text("Pomyślnie utworzono konto!\nteraz możesz sie zalogować")
+                $("#registration_form").text("Pomyślnie utworzono konto!\nteraz możesz sie zalogować")
                     .css("color", "green").css("font-size", "30px")
                     .css("text-shadow", "-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000");
 
