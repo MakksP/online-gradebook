@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Online gradebook</title>
     <meta name="description" content="Welcome to my gradebook">
-    <link rel="stylesheet" href="styles/loginPageStyles.css">
+    <link rel="stylesheet" href="styles/loginRegisterPagesStyles.css">
     <link rel="stylesheet" href="styles/startPageStyles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -38,11 +38,7 @@
         </nav>
 
 
-        <section id="main_pane">
-            <div id="online_gradebook_logo">
-                <img src="./images/gradebook_logo.png" alt="gradebook_logo">
-            </div>
-
+        <section class="main_pane" id="login_main_pane">
 
             <label id="login_label">Logowanie:</label>
 
@@ -81,6 +77,5 @@
     <script src="scripts/constHtmlElements.js"></script>
     <script src="scripts/menuAjaxScripts.js"></script>
     <script src="scripts/initButtonsOnClick.js"></script>
-    <script src="scripts/startPageScripts.js"></script>
 </body>
 </html>

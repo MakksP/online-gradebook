@@ -112,6 +112,6 @@
 
 
 </main>
-<script src="scripts/startPageScripts.js"></script>
+<script src="scripts/initButtonsOnClick.js"></script>
 </body>
 </html>
