@@ -4,6 +4,7 @@ const not_teaching_subjects_labels = document.getElementsByClassName("not_teachi
 const add_subject_button = document.getElementById("new_subject_button");
 const login_button = document.getElementById("login_button_nav");
 const registration_button = document.getElementById("registration_button_nav");
+const home_page_button = document.getElementById("logo_button");
 const ADD_SUBJECT_BUTTON = 1;
 
 
@@ -46,6 +47,12 @@ if (login_button != null){
 if (registration_button != null){
     registration_button.onclick = function (){
         window.location.href = './registrationPage.php';
+    }
+}
+
+if (home_page_button != null){
+    home_page_button.onclick = function (){
+        window.location.href = './startPage.php'
     }
 }
 
