@@ -62,5 +62,18 @@ function get_not_teaching_subjects_pane() {
 }
 
 
+function logout(){
 
+    $.ajax({
+        type: "GET",
+        url: "../serverActions/logoutAction.php",
+        success: function (response){
+            window.location.href = "./startPage.php";
+        },
+        error: function (response){
+            console.log(response);
+        }
+    });
+
+}
 
