@@ -5,14 +5,12 @@
     <title>Online gradebook</title>
     <meta name="description" content="Welcome to my gradebook">
 
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles/teacherHomePageStyles.css">
-    <link rel="stylesheet" href="styles/subjectInfoStyles.css">
     <link rel="stylesheet" href="fontello/css/fontello.css">
-    <link rel="stylesheet" href="styles/subjectsToAddPaneStyles.css">
+    <link rel="stylesheet" href="styles/startPageStyles.css">
+    <link rel="stylesheet" href="styles/teacherHomePageStyles.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
 </head>
@@ -22,12 +20,31 @@
 
 <main id="main_container">
 
-    <div id="icons_div">
-        <i class="icon-home" id="home_page"></i>
-        <i class="icon-user-circle-o" id="user_symbol">
-            <label for="user_symbol" id="user_label"><?php echo $_SESSION["name"] . " " . $_SESSION["surname"] . " (" . $_SESSION["role"] . ")"?></label>
-        </i>
-    </div>
+    <nav id="nav_panel">
+        <ul id="nav_list">
+            <li>
+                <button id="logo_button"><img src="/images/gradebook_logo.png" alt="gradebook_logo.png" id="logo_image"></button>
+            </li>
+            <li>
+                <button class="nav_pane_button" id="additional_info_button"><label class="nav_pane_label">Informacje dodatkowe</label></button>
+            </li>
+            <li>
+                <button class="nav_pane_button"><label class="nav_pane_label">O dzienniku</label></button>
+            </li>
+            <li>
+                <div id="icons_div">
+
+                    <label for="user_symbol" id="user_label">
+                        <i class="icon-user"></i><?php echo $_SESSION["name"] . " " . $_SESSION["surname"] . " (" . $_SESSION["role"] . ")"?>
+                        <button id="logout_button">Wyloguj się <i class="icon-logout"></i></button>
+                    </label>
+
+                </div>
+            </li>
+        </ul>
+    </nav>
+
+
 
     <header id="subjects_header">
         <h2 id="header_text">Prowadzone przez ciebie przedmioty:</h2>

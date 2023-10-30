@@ -1,0 +1,32 @@
+@import "styleSchemes";
+@import "variables";
+
+#icons_div{
+  display: inline-block;
+  @include start_page_button;
+  width: 280px;
+  text-align: left;
+}
+
+#logout_button{
+  background-color: transparent;
+  border: none;
+  @include standard_form_font;
+  color: $white_contrast_color;
+  display: inline-block;
+  vertical-align: center;
+}
+
+#user_label{
+  position: relative;
+  top: 15%;
+}
+
+#logout_button{
+  margin-top: 2%;
+}
+
+#logout_button:hover{
+  cursor: pointer;
+  color: darken($white_contrast_color, 20%);
+}
