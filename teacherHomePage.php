@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="styles/startPageStyles.css">
     <link rel="stylesheet" href="styles/teacherHomePageStyles.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="scripts/constHtmlElements.js"></script>
 
 </head>
 <body>
@@ -20,31 +21,7 @@
 
 <main id="main_container">
 
-    <nav id="nav_panel">
-        <ul id="nav_list">
-            <li>
-                <button id="logo_button"><img src="/images/gradebook_logo.png" alt="gradebook_logo.png" id="logo_image"></button>
-            </li>
-            <li>
-                <button class="nav_pane_button" id="additional_info_button"><label class="nav_pane_label">Informacje dodatkowe</label></button>
-            </li>
-            <li>
-                <button class="nav_pane_button"><label class="nav_pane_label">O dzienniku</label></button>
-            </li>
-            <li>
-                <div id="icons_div">
-
-                    <label for="user_symbol" id="user_label">
-                        <i class="icon-user"></i><?php echo $_SESSION["name"] . " " . $_SESSION["surname"] . " (" . $_SESSION["role"] . ")"?>
-                        <button id="logout_button">Wyloguj się <i class="icon-logout"></i></button>
-                    </label>
-
-                </div>
-            </li>
-        </ul>
-    </nav>
-
-
+    <script>get_nav_bar("main_container")</script>
 
 
     <div id="options_table">
@@ -132,9 +109,8 @@
 
 
 </main>
-    <script src="scripts/constHtmlElements.js"></script>
     <script src="scripts/teacherHomePageScripts.js"></script>
     <script src="scripts/initButtonsOnClick.js"></script>
-<script src="scripts/studentsInSubjectsScripts.js"></script>
+    <script src="scripts/studentsInSubjectsScripts.js"></script>
 </body>
 </html>
