@@ -89,6 +89,7 @@
         <img src="images/newUser.png" alt="schoolSymbol" id="new_user"  class="login_icon_image">
     </aside>
 
+
 </main>
 
 <script src="scripts/menuAjaxScripts.js"></script>

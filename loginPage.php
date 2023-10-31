@@ -55,6 +55,7 @@
             <img src="images/schoolSymbol.png" alt="schoolSymbol" class="login_icon_image">
         </aside>
 
+
     </main>
 
     <script src="scripts/menuAjaxScripts.js"></script>
