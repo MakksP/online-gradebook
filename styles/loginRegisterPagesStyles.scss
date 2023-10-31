@@ -60,10 +60,9 @@
 
 #login_button{
   @include login_register_button_style;
-}
-
-#login_button:hover{
-  @include login_register_button_style_hover;
+  &:hover{
+    @include login_register_button_style_hover;
+  }
 }
 
 .login_input{
@@ -104,8 +103,7 @@
 
 #registration_button{
   @include login_register_button_style;
-}
-
-#registration_button:hover{
-  @include login_register_button_style_hover;
+  &:hover{
+    @include login_register_button_style_hover;
+  }
 }

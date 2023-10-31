@@ -36,22 +36,18 @@
     left: 2px solid black;
     right: 2px solid black;
   }
+  &:hover{
+    @include start_page_hover_button;
+  }
 }
 
-
-.nav_pane_button:hover {
-  @include start_page_hover_button;
-
-}
 
 #logo_button{
   @include start_page_button;
   margin-right: 5%;
-
-}
-
-#logo_button:hover{
-  cursor: pointer;
+  &:hover{
+    cursor: pointer;
+  }
 }
 
 .nav_pane_label:hover{

@@ -25,11 +25,10 @@
 
 #logout_button{
   margin-top: 2%;
-}
-
-#logout_button:hover{
-  cursor: pointer;
-  color: darken($white_contrast_color, 20%);
+  &:hover{
+    cursor: pointer;
+    color: darken($white_contrast_color, 20%);
+  }
 }
 
 #options_table{
@@ -60,14 +59,12 @@
   border: none;
   animation: hovered_button_release linear forwards;
   animation-duration: 200ms;
+  &:hover{
+    cursor: pointer;
+    animation: hovered_button linear forwards;
+    animation-duration: 200ms;
+  }
 }
-
-.options_table_button:hover{
-  cursor: pointer;
-  animation: hovered_button linear forwards;
-  animation-duration: 200ms;
-}
-
 .button_description{
   @include standard_header_font;
   display: block;

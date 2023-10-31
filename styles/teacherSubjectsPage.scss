@@ -9,4 +9,33 @@
 #subjects_table{
   @include user_pane_style;
   height: 70%;
+  justify-content: left;
+  display: flex;
+}
+
+.subject_button{
+  @include standard_header_font;
+  height: 20%;
+  width: 20%;
+  margin: {
+    left: 2%;
+    top: 1%;
+  }
+  background-color: $nav_bar_color;
+  border: none;
+  color: $white_contrast_color;
+  border-radius: 10px;
+  &:hover{
+    cursor: pointer;
+    background-color: darken($nav_bar_color, 10%);
+  }
+}
+
+
+#new_subject_button{
+  font-size: 50px;
+  background-color: $add_button_color;
+  &:hover{
+    background-color: darken($add_button_color, 10%);
+  }
 }
