@@ -12,10 +12,14 @@ function get_and_draw_subjects(){
         if ($prepared_sql_query->execute()){
             $prepared_sql_query->bind_result($subject);
             while ($prepared_sql_query->fetch()){
-                echo "<button type='button' class='subject_button'>$subject</button>";
+                echo "<div class='subject_div'>
+                           <button type='button' class='subject_button'>$subject</button>
+                           <button class='delete_button'><i class='icon-trash'></i></button>
+                           <button class='favourite_button'><i class='icon-star-circled'></i></button>
+                       </div>";
             }
             $add_subject_button_content = '<i class="icon-plus-circled"></i>';
-            echo "<button type='button' class='subject_button' id='new_subject_button'>$add_subject_button_content</button>";
+            echo "<div  class='subject_div'><button type='button' class='subject_button' id='new_subject_button'>$add_subject_button_content</button></div>";
         } else{
             $prepared_sql_query->close();
             $db_connection->close();
