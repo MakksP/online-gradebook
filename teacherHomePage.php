@@ -46,15 +46,35 @@
 
 
 
-    <header id="subjects_header">
-        <h2 id="header_text">Prowadzone przez ciebie przedmioty:</h2>
-    </header>
 
-    <div id="subjects_table">
-        <?php
-            require 'serverActions/getAndDrawSubjects.php';
-            get_and_draw_subjects();
-        ?>
+    <div id="options_table">
+        <header id="subjects_header">
+            <h2 id="header_text">Dostępne opcje:</h2>
+        </header>
+        <div id="buttons_area">
+            <div class="options_table_div">
+                <button id="subjects_button" class="options_table_button">
+                    <img src="/images/subjects.png" alt="subjects" class="option_button_image">
+                </button>
+                <label class="button_description">Twoje przedmioty</label>
+            </div>
+
+            <div class="options_table_div">
+                <button id="lesson_plans_button" class="options_table_button">
+                    <img src="/images/timetableButton.png" alt="subjects" class="option_button_image">
+
+                </button>
+                <label class="button_description">Plany lekcji</label>
+            </div>
+            <div class="options_table_div">
+                <button id="observed_button" class="options_table_button">
+                    <img src="/images/favourite.png" alt="subjects" class="option_button_image">
+
+                </button>
+                <label class="button_description">Obserwowane</label>
+            </div>
+
+        </div>
     </div>
 
 

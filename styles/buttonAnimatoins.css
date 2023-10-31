@@ -1,0 +1,9 @@
+@keyframes hovered_button {
+    from{width: 120px; height: 110px;}
+    to{width: 130px; height: 120px}
+}
+
+@keyframes hovered_button_release {
+    from{width: 130px; height: 120px}
+    to{width: 120px; height: 110px;}
+}

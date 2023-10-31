@@ -1,5 +1,6 @@
 @import "styleSchemes";
 @import "variables";
+@import "buttonAnimatoins.css";
 
 #icons_div{
   display: inline-block;
@@ -29,4 +30,71 @@
 #logout_button:hover{
   cursor: pointer;
   color: darken($white_contrast_color, 20%);
+}
+
+#options_table{
+  width: 60%;
+  height: 60%;
+  text-align: center;
+  margin: {
+    top: 7%;
+    left: 20%;
+  };
+}
+
+#header_text{
+  @include standard_header_font;
+}
+
+#main_container{
+  align-items: center;
+  justify-content: center;
+}
+
+#buttons_area{
+  width: 100%;
+  height: 35%;
+  margin-top: 5%;
+  background-color: $button_area_color;
+  @include thin_border;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+}
+
+.option_button_image{
+  @include whole_area_style;
+}
+
+.options_table_button {
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  border: none;
+  animation: hovered_button_release linear forwards;
+  animation-duration: 200ms;
+}
+
+.options_table_button:hover{
+  cursor: pointer;
+  animation: hovered_button linear forwards;
+  animation-duration: 200ms;
+}
+
+.button_description{
+  @include standard_header_font;
+  display: block;
+  height: min-content;
+  width: 100%;
+}
+
+.options_table_div{
+  width: 200px;
+  height: 110px;
+  margin: {
+    left: 10%;
+    right: 10%;
+    top:1%
+  };
+  text-align: center;
 }
