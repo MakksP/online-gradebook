@@ -14,7 +14,7 @@ function repaint_subjects_table() {
         url: "../serverActions/getAndDrawSubjectsForRequest.php",
         success: function (response) {
             console.log(response);
-            document.getElementById("subjects_table").innerHTML = response;
+            document.getElementById("subjects_table").insertAdjacentHTML("beforeend", response);
         },
         error: function (response) {
             console.log(response);

@@ -1,0 +1,12 @@
+@import "styleSchemes";
+@import "variables";
+
+
+#subjects_container{
+  @include user_container_style;
+}
+
+#subjects_table{
+  @include user_pane_style;
+  height: 70%;
+}

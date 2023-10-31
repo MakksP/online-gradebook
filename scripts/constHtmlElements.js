@@ -35,6 +35,8 @@ function get_nav_bar(elementId){
         </nav>`);
 }
 
+
+
 function get_footer(elementId){
     document.getElementById(elementId).insertAdjacentHTML("beforeend", `<footer id="start_page_footer">
         <div class="footer_div">

@@ -11,14 +11,17 @@
     <link rel="stylesheet" href="fontello/css/fontello.css">
     <link rel="stylesheet" href="styles/startPageStyles.css">
     <link rel="stylesheet" href="styles/teacherHomePageStyles.css">
+    <link rel="stylesheet" href="styles/teacherSubjectsPage.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="scripts/constHtmlElements.js"></script>
+    <script src="scripts/teacherHomePageScripts.js"></script>
 
 </head>
 <body>
 
 
 <main id="main_container">
+
     <nav id="nav_panel">
         <ul id="nav_list">
             <li>
@@ -43,42 +46,20 @@
         </ul>
     </nav>
 
-    <div id="options_table">
-        <header id="subjects_header">
-            <h2 id="header_text">Dostępne opcje:</h2>
-        </header>
-        <div id="buttons_area">
-            <div class="options_table_div">
-                <button id="subjects_button" class="options_table_button">
-                    <img src="/images/subjects.png" alt="subjects" class="option_button_image">
-                </button>
-                <label class="button_description">Twoje przedmioty</label>
-            </div>
 
-            <div class="options_table_div">
-                <button id="lesson_plans_button" class="options_table_button">
-                    <img src="/images/timetableButton.png" alt="subjects" class="option_button_image">
-
-                </button>
-                <label class="button_description">Plany lekcji</label>
-            </div>
-            <div class="options_table_div">
-                <button id="observed_button" class="options_table_button">
-                    <img src="/images/favourite.png" alt="subjects" class="option_button_image">
-
-                </button>
-                <label class="button_description">Obserwowane</label>
-            </div>
-
+    <section id="subjects_container">
+        <div id="subjects_table">
+            <script>repaint_subjects_table()</script>
         </div>
-    </div>
+
+    </section>
 
     <script>get_footer("main_container")</script>
 
 
 </main>
-    <script src="scripts/teacherHomePageScripts.js"></script>
-    <script src="scripts/initButtonsOnClick.js"></script>
-    <script src="scripts/studentsInSubjectsScripts.js"></script>
+
+<script src="scripts/initButtonsOnClick.js"></script>
+<script src="scripts/studentsInSubjectsScripts.js"></script>
 </body>
 </html>

@@ -1,4 +1,5 @@
 <?php
+session_start();
 require  __DIR__ . '/../dbConnection/databaseConnect.php';
 require __DIR__ .'/../dbConnection/databaseQueries.php';
 
