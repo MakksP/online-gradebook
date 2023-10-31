@@ -13,7 +13,7 @@ function get_and_draw_students_grades(subject_name) {
     });
 }
 
-function draw_students_labels_in_subject(button_text, button_index) {
+function draw_students_labels_in_subject(button_text, button_index, subjects_buttons) {
     $.ajax({
         type: "GET",
         url: "../serverActions/studentsAndSubjects.php",

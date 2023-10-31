@@ -25,9 +25,8 @@ function assign_not_teaching_buttons_action() {
 for (let button_index = 0; button_index < subjects_buttons.length - ADD_SUBJECT_BUTTON; button_index+=1){
     if (subjects_buttons[button_index] != null){
         subjects_buttons[button_index].onclick = function () {
-            clear_subjects_to_add_pane();
             const button_text = subjects_buttons[button_index].innerHTML;
-            draw_students_labels_in_subject(button_text, button_index);
+            draw_students_labels_in_subject(button_text, button_index, subjects_buttons);
         }
     }
 

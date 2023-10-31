@@ -1,7 +1,7 @@
 
 
 function clear_subjects_to_add_pane() {
-    const subjects_to_add_pane = document.getElementById("subjects_to_add_pane");
+    const subjects_to_add_pane = document.getElementById("subjects_table");
     if (subjects_to_add_pane != null) {
         subjects_to_add_pane.remove();
     }
@@ -13,7 +13,6 @@ function repaint_subjects_table() {
         type: "GET",
         url: "../serverActions/getAndDrawSubjectsForRequest.php",
         success: function (response) {
-            console.log(response);
             document.getElementById("subjects_table").insertAdjacentHTML("beforeend", response);
         },
         error: function (response) {

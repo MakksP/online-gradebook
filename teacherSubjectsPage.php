@@ -15,7 +15,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="scripts/constHtmlElements.js"></script>
     <script src="scripts/teacherHomePageScripts.js"></script>
-
 </head>
 <body>
 
@@ -48,8 +47,11 @@
 
 
     <section id="subjects_container">
+        <header id="subjects_header">
+            <h2 id="header_text">Dostępne opcje:</h2>
+        </header>
         <div id="subjects_table">
-            <script>repaint_subjects_table()</script>
+            <?php require 'serverActions/getAndDrawSubjects.php'; get_and_draw_subjects(); ?>
         </div>
 
     </section>
