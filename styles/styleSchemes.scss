@@ -42,8 +42,7 @@
 }
 
 @mixin start_page_button{
-  height: 100%;
-  width: 220px;
+  @include whole_area_style;
   border: none;
   background-color: transparent;
   color: $white_contrast_color;
@@ -97,14 +96,14 @@
   height: 60%;
   text-align: center;
   margin: {
-    top: 7%;
+    top: 4%;
     left: 20%;
   };
 }
 
 @mixin user_pane_style {
   width: 100%;
-  height: 30%;
+  height: 40%;
   margin-top: 5%;
   background-color: $button_area_color;
   @include thin_border;
