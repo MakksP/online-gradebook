@@ -98,7 +98,8 @@
 }
 
 .login_icon_image{
-  @include whole_area_style;
+  width: 100%;
+  height: auto;
 }
 
 #registration_button{
