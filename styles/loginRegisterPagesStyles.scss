@@ -8,7 +8,7 @@
 
 #login_label{
   @include standard_header_font;
-  display: block;
+  font-size: 2.3vw;
 }
 
 .main_pane{
@@ -23,6 +23,7 @@
 #login_main_pane{
   position: relative;
   top: 25%;
+  font-size: 2.5vw;
 }
 
 #login_form{
@@ -36,7 +37,7 @@
 .login_label{
   font: {
     family: $main_site_font;
-    size: 20px;
+    size: 1.5vw;
   };
   display: block;
   position: relative;
@@ -68,6 +69,7 @@
 .login_input{
   @include login_form_input;
   @include standard_form_font;
+  font-size: 1.5vh;
   position: relative;
   top: 5%;
   border: none;
@@ -79,6 +81,7 @@
   height: 40%;
   background-color: $form_input_background_color;
   width: 80%;
+  justify-content: space-between;
 }
 
 #icon_login{

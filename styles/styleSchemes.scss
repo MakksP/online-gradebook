@@ -55,15 +55,15 @@
 }
 
 @mixin login_form_input{
-  width: 80%;
+  width: 90%;
   height: 80%;
 
 }
 
 @mixin form_icon_style{
-  font-size: 2vw;
+  font-size: 3vh;
   text-align: left;
-  width: 20%;
+  width: 3.3vh;
 }
 
 @mixin login_register_button_style{
@@ -71,6 +71,8 @@
   background-color: $login_register_button_color;
   border: none;
   @include standard_header_font;
+  font-size: 2.5vw;
+  margin-top: 10%;
 }
 
 @mixin login_register_button_style_hover{
@@ -85,9 +87,9 @@
 
 @mixin form_style{
   height: 80%;
-  width: 80%;
+  width: 90%;
   position: relative;
-  left: 10%;
+  left: 5%;
 }
 
 @mixin user_container_style {
