@@ -94,20 +94,22 @@
 }
 
 #student_names{
-  @include whole_area_style;
+  width: 100%;
+  height: 90.5%;
   display: grid;
-  grid-template-rows: 30px 30px;
+  grid-template-rows: 2rem 2rem;
   grid-template-columns: 1fr 1fr;
-
+  text-align: left;
 }
 
 .student_label{
   height: 100%;
-  width: min-content;
-  white-space: nowrap;
   @include standard_form_font;
+  border-right: 2px solid black;
+
 }
 
-.grade_part{
-  text-align: left;
+.grade_button{
+  margin-left: 0.5rem;
 }
+
