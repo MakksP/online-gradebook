@@ -108,13 +108,22 @@
   @include standard_form_font;
   border: {
     right: 2px solid black;
+    bottom: 2px solid black;
   }
   display: flex;
   align-items: center;
 
 }
 
+.grade_part{
+  height: 100%;
+  display: flex;
+  align-items: center;
+  border: {
+    bottom: 2px solid black;
+  }
+}
+
 .grade_button{
   margin-left: 0.5rem;
 }
-
