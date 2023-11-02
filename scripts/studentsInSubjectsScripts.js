@@ -13,15 +13,14 @@ function get_and_draw_students_grades(subject_name) {
     });
 }
 
-function draw_students_labels_in_subject(button_text, button_index, subjects_buttons) {
+function draw_students_labels_in_subject(button_text) {
     $.ajax({
         type: "GET",
         url: "../serverActions/studentsAndSubjects.php",
         data: {subject_name: button_text},
         success: function (response) {
-            document.getElementById("header_text").innerHTML = subjects_buttons[button_index].innerHTML;
-            document.getElementById("subjects_table").innerHTML =
-                get_students_list_div(response);
+            document.getElementById("header_text").innerHTML = button_text;
+            document.getElementById("subjects_table").insertAdjacentHTML("beforeend", get_students_list_div(response));
 
             get_and_draw_students_grades(button_text);
 

@@ -8,9 +8,15 @@ function get_subjects_to_add_pane(response) {
 
 function get_students_list_div(student_labels) {
     return `<div class="gradebook_grid_element" id="student_names">
-                    <label class="gradebook_grid_header">Studenci:</label>
                     ${student_labels}
-                </div>`;
+            </div>`;
+}
+
+function get_students_in_subject_header(){
+    return `<div id="gradebook_grid_header">
+        <label class="gradebook_grid_students_header">Studenci:</label>
+        <label class="gradebook_grid_grades_header">Oceny:</label>
+    </div>`
 }
 
 function get_nav_bar(elementId){

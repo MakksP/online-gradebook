@@ -22,11 +22,18 @@ function assign_not_teaching_buttons_action() {
     }
 }
 
+function add_header_to_grades_table() {
+    document.getElementById("subjects_table").insertAdjacentHTML("beforeend", get_students_in_subject_header());
+}
+
 for (let button_index = 0; button_index < subjects_buttons.length - ADD_SUBJECT_BUTTON; button_index+=1){
     if (subjects_buttons[button_index] != null){
         subjects_buttons[button_index].onclick = function () {
             const button_text = subjects_buttons[button_index].innerHTML;
-            draw_students_labels_in_subject(button_text, button_index, subjects_buttons);
+            document.getElementById("subjects_table").innerHTML = '';
+            add_header_to_grades_table();
+
+            draw_students_labels_in_subject(button_text);
         }
     }
 
