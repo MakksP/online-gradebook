@@ -10,7 +10,7 @@
   @include user_pane_style;
   height: 80%;
   justify-content: left;
-  display: flex;
+  flex-wrap: wrap;
 }
 
 .subject_button{
@@ -30,7 +30,8 @@
 
 .subject_div{
   height: 35%;
-  width: 20%;
+  width: 160px;
+  min-width: 160px;
   margin: {
     left: 2%;
     top: 1%;
@@ -68,4 +69,45 @@
   @include additional_button_animations;
   grid-row: 2 / 3;
   grid-column: 2 / 3;
+}
+
+#gradebook_grid_header{
+  background-color: $nav_bar_color;
+  width: 100%;
+  height: 10%;
+  border-top: {
+    left-radius: 15px;
+    right-radius: 15px;
+  };
+  @include standard_header_font;
+  color: $white_contrast_color;
+  text-align: left;
+  display: flex;
+}
+
+#gradebook_grid_students_header{
+  width: 50%;
+}
+
+#gradebook_grid_grades_header{
+  width: 50%;
+}
+
+#student_names{
+  @include whole_area_style;
+  display: grid;
+  grid-template-rows: 30px 30px;
+  grid-template-columns: 1fr 1fr;
+
+}
+
+.student_label{
+  height: 100%;
+  width: min-content;
+  white-space: nowrap;
+  @include standard_form_font;
+}
+
+.grade_part{
+  text-align: left;
 }

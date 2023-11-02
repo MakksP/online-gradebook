@@ -7,6 +7,7 @@ const registration_button = document.getElementById("registration_button_nav");
 const home_page_button = document.getElementById("logo_button");
 const logout_button = document.getElementById("logout_button");
 const subjects_button = document.getElementById("subjects_button");
+const subjects_table = document.getElementById("subjects_table");
 const ADD_SUBJECT_BUTTON = 1;
 
 
@@ -23,16 +24,16 @@ function assign_not_teaching_buttons_action() {
 }
 
 function add_header_to_grades_table() {
-    document.getElementById("subjects_table").insertAdjacentHTML("beforeend", get_students_in_subject_header());
+    subjects_table.insertAdjacentHTML("beforeend", get_students_in_subject_header());
 }
+
 
 for (let button_index = 0; button_index < subjects_buttons.length - ADD_SUBJECT_BUTTON; button_index+=1){
     if (subjects_buttons[button_index] != null){
         subjects_buttons[button_index].onclick = function () {
             const button_text = subjects_buttons[button_index].innerHTML;
-            document.getElementById("subjects_table").innerHTML = '';
+            subjects_table.innerHTML = '';
             add_header_to_grades_table();
-
             draw_students_labels_in_subject(button_text);
         }
     }

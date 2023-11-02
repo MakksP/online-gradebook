@@ -14,8 +14,8 @@ function get_students_list_div(student_labels) {
 
 function get_students_in_subject_header(){
     return `<div id="gradebook_grid_header">
-        <label class="gradebook_grid_students_header">Studenci:</label>
-        <label class="gradebook_grid_grades_header">Oceny:</label>
+        <label id="gradebook_grid_students_header">Studenci:</label>
+        <label id="gradebook_grid_grades_header">Oceny:</label>
     </div>`
 }
 
