@@ -4,7 +4,9 @@
 
 #icons_div{
   color: $white_contrast_color;
-  font-size: 20px;
+  @include standard_form_font;
+  width: 250px;
+
   text-align: left;
   margin: {
     left: auto;
