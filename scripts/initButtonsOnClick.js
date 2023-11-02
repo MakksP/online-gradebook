@@ -33,6 +33,7 @@ for (let button_index = 0; button_index < subjects_buttons.length - ADD_SUBJECT_
         subjects_buttons[button_index].onclick = function () {
             const button_text = subjects_buttons[button_index].innerHTML;
             subjects_table.innerHTML = '';
+            subjects_table.style.display = "table";
             add_header_to_grades_table();
             draw_students_labels_in_subject(button_text);
         }

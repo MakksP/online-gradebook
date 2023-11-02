@@ -76,9 +76,10 @@
   width: 100%;
   height: 10%;
   border-top: {
-    left-radius: 15px;
-    right-radius: 15px;
+    left-radius: 10px;
+    right-radius: 10px;
   };
+  border-bottom: 2px solid black;
   @include standard_header_font;
   color: $white_contrast_color;
   text-align: left;
@@ -95,17 +96,21 @@
 
 #student_names{
   width: 100%;
-  height: 90.5%;
+  height: auto;
   display: grid;
   grid-template-rows: 2rem 2rem;
   grid-template-columns: 1fr 1fr;
   text-align: left;
 }
 
-.student_label{
+.student_label_div{
   height: 100%;
   @include standard_form_font;
-  border-right: 2px solid black;
+  border: {
+    right: 2px solid black;
+  }
+  display: flex;
+  align-items: center;
 
 }
 

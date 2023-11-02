@@ -13,7 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET"){
         if ($prepared_sql_query->execute()){
             while ($prepared_sql_query->fetch()){
                 $grade_div_id = $student_email . "_grade_div";
-                echo "<label class='student_label'>$student_name $student_surname $student_email</label><div id='$grade_div_id' class='grade_part'></div>";
+                echo "<div class='student_label_div'><label class='student_label'>$student_name $student_surname $student_email</label></div><div id='$grade_div_id' class='grade_part'></div>";
             }
         } else {
             echo "Nie udało się wykonać zapytania";
