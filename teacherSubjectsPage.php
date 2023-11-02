@@ -34,12 +34,12 @@
             </li>
             <li>
                 <div id="icons_div">
-
-                    <label for="user_symbol" id="user_label">
-                        <i class="icon-user"></i><?php session_start(); echo $_SESSION["name"] . " " . $_SESSION["surname"] . " (" . $_SESSION["role"] . ")"?>
+                    <div id="user_label">
+                        <div>
+                            <i class="icon-user"></i><?php session_start(); echo $_SESSION["name"] . " " . $_SESSION["surname"] . " (" . $_SESSION["role"] . ")"?>
+                        </div>
                         <button id="logout_button">Wyloguj się <i class="icon-logout"></i></button>
-                    </label>
-
+                    </div>
                 </div>
             </li>
         </ul>

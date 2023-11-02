@@ -15,10 +15,9 @@
 
 .subject_button{
   @include standard_header_font;
-  width: 100%;
-  height: 100%;
+  @include whole_area_style;
+  border: 2px solid black;
   background-color: $nav_bar_color;
-  border: none;
   color: $white_contrast_color;
   border-radius: 10px;
   &:hover{

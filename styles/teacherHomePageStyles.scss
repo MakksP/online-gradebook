@@ -3,10 +3,13 @@
 @import "buttonAnimatoins.css";
 
 #icons_div{
-  display: inline-block;
-  @include start_page_button;
-  width: 280px;
+  color: $white_contrast_color;
+  font-size: 20px;
   text-align: left;
+  margin: {
+    left: auto;
+    right: 4rem;
+  };
 }
 
 #logout_button{
@@ -19,8 +22,7 @@
 }
 
 #user_label{
-  position: relative;
-  top: 15%;
+
 }
 
 #logout_button{
@@ -76,8 +78,8 @@
   width: 200px;
   height: 110px;
   margin: {
-    left: 10%;
-    right: 10%;
+    left: 5%;
+    right: 5%;
     top:1%
   };
   text-align: center;

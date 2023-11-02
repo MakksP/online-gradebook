@@ -42,11 +42,12 @@
 }
 
 @mixin start_page_button{
-  @include whole_area_style;
   border: none;
   background-color: transparent;
+  @include whole_area_style;
   color: $white_contrast_color;
   font-size: 20px;
+  margin: auto 0;
 }
 
 @mixin start_page_hover_button{
