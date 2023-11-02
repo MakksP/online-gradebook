@@ -4,6 +4,22 @@ session_start();
 require '../dbConnection/databaseConnect.php';
 require '../dbConnection/databaseQueries.php';
 
+/**
+ * @param array $response
+ * @param $student_email
+ * @param $current_grade_button
+ * @return array
+ */
+function add_grade_to_array(array $response, $student_email, $current_grade_button)
+{
+    if (!isset($response[$student_email])) {
+        $response[$student_email] = array($current_grade_button);
+    } else {
+        $response[$student_email][] = $current_grade_button;
+    }
+    return $response;
+}
+
 if ($_SERVER['REQUEST_METHOD'] == 'GET'){
     $db_connection = connect_to_database();
     $sql_query = get_student_email_and_grade();
@@ -17,11 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET'){
                                                     <label class='grade_label'>$grade</label>
                                           </button>";
 
-                if (!isset($response[$student_email])){
-                    $response[$student_email] = array($current_grade_button);
-                } else {
-                    $response[$student_email][] = $current_grade_button;
-                }
+                $response = add_grade_to_array($response, $student_email, $current_grade_button);
 
             }
             echo json_encode($response);

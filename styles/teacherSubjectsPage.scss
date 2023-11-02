@@ -98,8 +98,10 @@
   width: 100%;
   height: auto;
   display: grid;
-  grid-template-rows: 2rem 2rem;
-  grid-template-columns: 1fr 1fr;
+  grid-template: {
+    rows: 2rem 2rem;
+    columns: 1fr 1fr;
+  };
   text-align: left;
 }
 
@@ -126,4 +128,9 @@
 
 .grade_button{
   margin-left: 0.5rem;
+}
+
+.grade_button{
+  @include thin_border;
+  border-radius: 5px;
 }

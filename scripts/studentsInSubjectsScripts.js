@@ -33,7 +33,8 @@ function draw_students_labels_in_subject(button_text) {
 
 function add_students_grades(response) {
     for (let student in response) {
-        console.log(response[student])
-        document.getElementById(student + "_grade_div").insertAdjacentHTML("beforeend", response[student]);
+        response[student].forEach(grade => {
+            document.getElementById(student + "_grade_div").insertAdjacentHTML("beforeend", grade);
+        })
     }
 }
