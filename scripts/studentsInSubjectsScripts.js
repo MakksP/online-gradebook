@@ -43,10 +43,43 @@ function draw_students_labels_in_subject(button_text) {
     });
 }
 
+function get_all_grade_buttons_from_div(button_labels, button_labels_index) {
+    return button_labels[button_labels_index].getElementsByClassName("grade_button");
+}
+
+function get_current_grade_button_value(grade_button) {
+    return grade_button.getElementsByTagName("label")[0].innerHTML;
+}
+
+function set_button_grade_color_by_grade_value() {
+    const button_labels = document.getElementsByClassName("grade_part")
+
+    for (let button_labels_index = 0; button_labels_index < button_labels.length; button_labels_index++) {
+        const grade_buttons = Array.from(get_all_grade_buttons_from_div(button_labels, button_labels_index));
+        grade_buttons.forEach(grade_button => {
+            const grade_value = get_current_grade_button_value(grade_button);
+            if (grade_value === '2') {
+                grade_button.style.backgroundColor = "#FE0000";
+            } else if (grade_value === '3') {
+                grade_button.style.backgroundColor = "#FFE500";
+            } else if (grade_value === '4') {
+                grade_button.style.backgroundColor = "#9BD33F";
+            } else if (grade_value === '5') {
+                grade_button.style.backgroundColor = "#257324";
+            }
+
+
+        });
+    }
+}
+
 function add_students_grades(response) {
     for (let student in response) {
         response[student].forEach(grade => {
-            document.getElementById(student + "_grade_div").insertAdjacentHTML("beforeend", grade);
-        })
+            const button_grade_id = student + "_grade_div";
+            document.getElementById(button_grade_id).insertAdjacentHTML("beforeend", grade);
+        });
     }
+    set_button_grade_color_by_grade_value();
+
 }
