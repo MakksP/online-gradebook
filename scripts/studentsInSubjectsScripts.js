@@ -1,11 +1,13 @@
-function get_and_draw_students_grades(subject_name) {
+
+function get_and_draw_students_grades(subject_name, student_grade_buttons) {
     $.ajax({
         type: "GET",
         url: "../serverActions/getStudentsGrades.php",
         data: {subject_name: subject_name},
         dataType: "json",
         success: function (response) {
-            add_students_grades(response);
+            add_students_grades(response, student_grade_buttons);
+            student_grade_buttons = init_student_grade_on_click_action(student_grade_buttons);
         },
         error: function (response) {
             console.log(response);
@@ -25,7 +27,7 @@ function set_rows_height_by_number_of_students() {
     document.getElementById("student_names").style.gridTemplateRows = grid_templates_row_style;
 }
 
-function draw_students_labels_in_subject(button_text) {
+function draw_students_labels_in_subject(button_text, student_grade_buttons) {
     $.ajax({
         type: "GET",
         url: "../serverActions/studentsAndSubjects.php",
@@ -34,7 +36,7 @@ function draw_students_labels_in_subject(button_text) {
             document.getElementById("header_text").innerHTML = button_text;
             document.getElementById("subjects_table").insertAdjacentHTML("beforeend", get_students_list_div(response));
             set_rows_height_by_number_of_students();
-            get_and_draw_students_grades(button_text);
+            get_and_draw_students_grades(button_text , student_grade_buttons);
 
         },
         error: function (response) {
@@ -60,6 +62,7 @@ function set_button_grade_color_by_grade_value() {
             const grade_value = get_current_grade_button_value(grade_button);
             if (grade_value === '2') {
                 grade_button.style.backgroundColor = "#FE0000";
+                grade_button.id
             } else if (grade_value === '3') {
                 grade_button.style.backgroundColor = "#FFE500";
             } else if (grade_value === '4') {
@@ -67,8 +70,6 @@ function set_button_grade_color_by_grade_value() {
             } else if (grade_value === '5') {
                 grade_button.style.backgroundColor = "#257324";
             }
-
-
         });
     }
 }

@@ -10,7 +10,7 @@ require '../dbConnection/databaseQueries.php';
  * @param $current_grade_button
  * @return array
  */
-function add_grade_to_array(array $response, $student_email, $current_grade_button)
+function add_grade_to_array(array $response, $student_email, $current_grade_button): array
 {
     if (!isset($response[$student_email])) {
         $response[$student_email] = array($current_grade_button);
@@ -26,10 +26,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET'){
     if ($prepared_sql_query = $db_connection->prepare($sql_query)){
         $prepared_sql_query->bind_param("s", $_GET["subject_name"]);
         if ($prepared_sql_query->execute()){
-            $prepared_sql_query->bind_result($student_email, $grade);
+            $prepared_sql_query->bind_result($student_email, $grade, $gradeId);
             $response = array();
             while ($prepared_sql_query->fetch()){
-                $current_grade_button = "<button class='grade_button'>
+                $current_grade_button = "<button class='grade_button' id='$gradeId'>
                                                     <label class='grade_label'>$grade</label>
                                           </button>";
 

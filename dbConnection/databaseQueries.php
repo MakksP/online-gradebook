@@ -40,7 +40,7 @@
 
     function get_student_email_and_grade(){
         return "
-                SELECT email, grade FROM grades
+                SELECT email, grade, gradeId FROM grades
                 JOIN users ON grades.userId
                 = users.userId JOIN subjects ON
                 grades.subjectId = subjects.subjectId

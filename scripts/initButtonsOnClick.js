@@ -8,6 +8,7 @@ const home_page_button = document.getElementById("logo_button");
 const logout_button = document.getElementById("logout_button");
 const subjects_button = document.getElementById("subjects_button");
 const subjects_table = document.getElementById("subjects_table");
+let student_grade_buttons;
 const ADD_SUBJECT_BUTTON = 1;
 
 
@@ -36,7 +37,7 @@ for (let button_index = 0; button_index < subjects_buttons.length - ADD_SUBJECT_
             subjects_table.innerHTML = '';
             subjects_table.style.display = "table";
             add_header_to_grades_table();
-            draw_students_labels_in_subject(button_text);
+            draw_students_labels_in_subject(button_text, student_grade_buttons);
         }
     }
 
@@ -78,5 +79,21 @@ if (subjects_button != null){
         window.location.href = "./teacherSubjectsPage.php"
     }
 }
+
+function init_student_grade_on_click_action(student_grade_buttons) {
+    student_grade_buttons = document.getElementsByClassName("grade_button");
+    for (let student_grade_button_index = 0; student_grade_button_index < student_grade_buttons.length; student_grade_button_index += 1) {
+        if (student_grade_buttons[student_grade_button_index] != null) {
+            student_grade_buttons[student_grade_button_index].onclick = function () {
+                console.log("ftgh");
+            }
+        }
+    }
+    return student_grade_buttons;
+}
+
+
+
+
 
 

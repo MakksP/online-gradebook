@@ -134,4 +134,11 @@
 .grade_button{
   @include thin_border;
   border-radius: 5px;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.grade_label:hover{
+  cursor: pointer;
 }
