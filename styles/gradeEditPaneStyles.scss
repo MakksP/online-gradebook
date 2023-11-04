@@ -1,0 +1,30 @@
+@import "variables";
+@import "styleSchemes";
+
+#grade_edit_pane{
+  height: 30%;
+  width: 20%;
+  background-color: $white_contrast_color;
+  position: absolute;
+  top: 30%;
+  left: 40%;
+  @include thin_border;
+  border-radius: 10px;
+  @include standard_form_font;
+  display: grid;
+}
+
+.available_grade_button{
+  height: 85%;
+  font-family: $main_site_font;
+  @include thin_border;
+  border-radius: 5px;
+  &:hover{
+    cursor: pointer;
+  }
+}
+
+#possible_grades{
+  display: flex;
+  justify-content: space-around;
+}

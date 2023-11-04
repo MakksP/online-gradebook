@@ -46,7 +46,7 @@ function get_nav_bar(elementId){
 function get_footer(elementId){
     document.getElementById(elementId).insertAdjacentHTML("beforeend", `<footer id="start_page_footer">
         <div class="footer_div">
-            <img src="images/gradebook_logo.png" alt="gradebook_logo.png" id="footer_logo_image">
+            <img src="/images/gradebook_logo.png" alt="gradebook_logo.png" id="footer_logo_image">
         </div>
         
         <div id="login_to_system" class="footer_div">
@@ -103,7 +103,7 @@ function get_grade_edit_pane(name, surname, grade, description, date){
     return `
         <div id="grade_edit_pane">
             <div id="student_name_label">
-                <label>Ocena studenta: ${name} ${surname}</label>
+                <label>Ocena studenta:<br>${name} ${surname}</label>
             </div>
             <div id="grade_symbol">
                 <label>${grade}</label>
@@ -111,9 +111,9 @@ function get_grade_edit_pane(name, surname, grade, description, date){
             <div id="change_grade_div">
                 <label>Zmień ocenę:</label>
                 <div id="possible_grades">
-                    <button class="available_grade_button">${available_grades[0]}</button>
-                    <button class="available_grade_button">${available_grades[1]}</button>
-                    <button class="available_grade_button">${available_grades[2]}</button>
+                    <button class="available_grade_button"><label>${available_grades[0]}</label></button>
+                    <button class="available_grade_button"><label>${available_grades[1]}</label></button>
+                    <button class="available_grade_button"><label>${available_grades[2]}</label></button>
                 </div>
             </div>
             <div id="description">
