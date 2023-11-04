@@ -28,3 +28,23 @@
   display: flex;
   justify-content: space-around;
 }
+
+#close_button_div{
+  display: flex;
+  justify-content: right;
+}
+
+#close_button{
+  border: none;
+  background-color: transparent;
+  font-size: 100%;
+  width: min-content;
+  height: min-content;
+  &:hover{
+    cursor: pointer;
+  }
+}
+
+.grade_label:hover{
+  cursor: pointer;
+}

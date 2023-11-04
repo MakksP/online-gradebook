@@ -102,6 +102,9 @@ function get_grade_edit_pane(name, surname, grade, description, date){
     const available_grades = find_rest_of_grades(grade);
     return `
         <div id="grade_edit_pane">
+            <div id="close_button_div">
+                <button id="close_button"><i class="icon-cancel-circled"></i></button>
+            </div>
             <div id="student_name_label">
                 <label>Ocena studenta:<br>${name} ${surname}</label>
             </div>
@@ -111,9 +114,9 @@ function get_grade_edit_pane(name, surname, grade, description, date){
             <div id="change_grade_div">
                 <label>Zmień ocenę:</label>
                 <div id="possible_grades">
-                    <button class="available_grade_button"><label>${available_grades[0]}</label></button>
-                    <button class="available_grade_button"><label>${available_grades[1]}</label></button>
-                    <button class="available_grade_button"><label>${available_grades[2]}</label></button>
+                    <button class="available_grade_button"><label class="grade_label">${available_grades[0]}</label></button>
+                    <button class="available_grade_button"><label class="grade_label">${available_grades[1]}</label></button>
+                    <button class="available_grade_button"><label class="grade_label">${available_grades[2]}</label></button>
                 </div>
             </div>
             <div id="description">

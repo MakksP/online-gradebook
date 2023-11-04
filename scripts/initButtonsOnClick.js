@@ -93,8 +93,9 @@ function init_student_grade_on_click_action(student_grade_buttons) {
     return student_grade_buttons;
 }
 
-
-
-
-
+function grade_edit_close_button_onclick() {
+    document.getElementById("close_button").onclick = function () {
+        document.getElementById("grade_edit_pane").remove();
+    }
+}
 
