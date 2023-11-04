@@ -48,4 +48,10 @@
                 ORDER BY email";
     }
 
+    function get_grade_data(){
+        return "SELECT name, surname, grade, description, dateOfAssessment
+                FROM grades JOIN users ON grades.userId = users.userId
+                WHERE gradeId = ?";
+    }
+
 ?>

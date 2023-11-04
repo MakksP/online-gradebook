@@ -85,7 +85,7 @@ function init_student_grade_on_click_action(student_grade_buttons) {
     for (let student_grade_button_index = 0; student_grade_button_index < student_grade_buttons.length; student_grade_button_index += 1) {
         if (student_grade_buttons[student_grade_button_index] != null) {
             student_grade_buttons[student_grade_button_index].onclick = function () {
-                console.log("ftgh");
+                create_grade_edit_pane(student_grade_buttons[student_grade_button_index].id)
             }
         }
     }

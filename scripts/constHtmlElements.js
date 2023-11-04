@@ -97,3 +97,34 @@ function get_footer(elementId){
         </div>
     </footer>`);
 }
+
+function get_grade_edit_pane(name, surname, grade, description, date){
+    const available_grades = find_rest_of_grades(grade);
+    return `
+        <div id="grade_edit_pane">
+            <div id="student_name_label">
+                <label>Ocena studenta: ${name} ${surname}</label>
+            </div>
+            <div id="grade_symbol">
+                <label>${grade}</label>
+            </div>
+            <div id="change_grade_div">
+                <label>Zmień ocenę:</label>
+                <div id="possible_grades">
+                    <button class="available_grade_button">${available_grades[0]}</button>
+                    <button class="available_grade_button">${available_grades[1]}</button>
+                    <button class="available_grade_button">${available_grades[2]}</button>
+                </div>
+            </div>
+            <div id="description">
+                <input type="text" id="dscription_input" value="${description}" />
+            </div>
+            <div id="date">
+                <input type="text" id="date_input" value="${date}" />
+            </div>
+            <div id="save">
+                <button id="save_changes_button">Zapisz</button>
+            </div>
+        </div>
+    `
+}

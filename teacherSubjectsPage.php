@@ -63,5 +63,6 @@
 
 <script src="scripts/initButtonsOnClick.js"></script>
 <script src="scripts/studentsInSubjectsScripts.js"></script>
+<script src="scripts/teacherGradesScripts.js"></script>
 </body>
 </html>
