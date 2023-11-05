@@ -99,3 +99,15 @@ function grade_edit_close_button_onclick() {
     }
 }
 
+
+function create_change_grade_button_onclick_action(available_grades_buttons, grade, name, surname, description, date) {
+    available_grades_buttons.forEach(button => button.onclick = function () {
+        document.getElementById("grade_edit_pane").remove();
+        grade = get_grade_value_of_pressed_button(button);
+        add_grade_edit_pane_to_subjects_table(name, surname, grade, description, date);
+        available_grades_buttons = Array.from(document.getElementsByClassName("available_grade_button"));
+        create_change_grade_button_onclick_action(available_grades_buttons, grade, name, surname, description, date);
+        available_grades_buttons.forEach(available_grade_button => {set_specific_grade_button_color(available_grade_button)});
+    });
+    return {available_grades_buttons, grade};
+}
