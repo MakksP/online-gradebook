@@ -48,28 +48,3 @@
 .grade_label:hover{
   cursor: pointer;
 }
-
-#subjects_to_add_pane{
-  overflow: auto;
-  display: flex;
-  flex-wrap: wrap;
-  align-content: baseline;
-}
-
-
-#close_pane_button{
-  background-color: transparent;
-  border: none;
-  display: flex;
-  width: 100%;
-  height: min-content;
-  font-size: 100%;
-  justify-content: flex-end;
-  &:hover{
-    cursor: pointer;
-  }
-}
-
-#subjects_to_add_pane_header{
-  width: 100%;
-}

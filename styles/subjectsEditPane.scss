@@ -1,0 +1,48 @@
+@import "variables";
+@import "styleSchemes";
+
+#subjects_to_add_pane{
+  overflow: auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: baseline;
+}
+
+
+#close_pane_button{
+  background-color: transparent;
+  border: none;
+  display: flex;
+  width: 100%;
+  height: min-content;
+  font-size: 100%;
+  justify-content: flex-end;
+  &:hover{
+    cursor: pointer;
+  }
+}
+
+#subjects_to_add_pane_header{
+  width: 100%;
+}
+
+.not_teaching_subject_button{
+  margin: {
+    top: 2%;
+    bottom: 2%;
+    left: 2%;
+  };
+  background-color: $nav_bar_color;
+  @include standard_form_font;
+  color: $white_contrast_color;
+  @include thin_border;
+  border-radius: 5px;
+  &:hover{
+    cursor: pointer;
+    background-color: darken($nav_bar_color, 10%);
+  }
+}
+
+.not_teaching_subject_label:hover{
+  cursor: pointer;
+}
