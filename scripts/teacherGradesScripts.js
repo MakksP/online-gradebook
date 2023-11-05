@@ -14,6 +14,19 @@ function get_current_grade_description_and_date() {
     return {description, date};
 }
 
+function repaint_grade_edit_pane(name, surname, grade, description, date, grade_id) {
+    add_grade_edit_pane_to_subjects_table(name, surname, grade, description, date);
+    let available_grades_buttons = Array.from(document.getElementsByClassName("available_grade_button"));
+    const new_grade_data_package = create_change_grade_button_onclick_action(available_grades_buttons, grade, name, surname, grade_id);
+
+    available_grades_buttons = new_grade_data_package.available_grades_buttons;
+    grade = new_grade_data_package.grade;
+    available_grades_buttons.forEach(available_grade_button => {
+        set_specific_grade_button_color(available_grade_button)
+    });
+    create_save_button_onclick_action(grade, grade_id);
+}
+
 function create_grade_edit_pane(grade_id){
     $.ajax({
         type: "GET",
@@ -26,14 +39,7 @@ function create_grade_edit_pane(grade_id){
             let grade = response[2];
             let description = response[3];
             let date = response[4];
-            add_grade_edit_pane_to_subjects_table(name, surname, grade, description, date);
-            let available_grades_buttons = Array.from(document.getElementsByClassName("available_grade_button"));
-            const new_grade_data_package = create_change_grade_button_onclick_action(available_grades_buttons, grade, name, surname, grade_id);
-
-            available_grades_buttons = new_grade_data_package.available_grades_buttons;
-            grade = new_grade_data_package.grade;
-            available_grades_buttons.forEach(available_grade_button => {set_specific_grade_button_color(available_grade_button)});
-            create_save_button_onclick_action(grade, grade_id);
+            repaint_grade_edit_pane(name, surname, grade, description, date, grade_id);
 
         },
         error: function (response){
@@ -64,4 +70,10 @@ function update_grade(grade_id, grade, description_and_date) {
             console.log(response);
         }
     });
+}
+
+function repaint_subject_table_dynamic_content() {
+    const current_subject_name = document.getElementsByTagName("h2")[0].innerHTML
+    document.getElementById("student_names").remove();
+    draw_students_labels_in_subject(current_subject_name, student_grade_buttons);
 }

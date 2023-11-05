@@ -35,6 +35,7 @@ function draw_students_labels_in_subject(button_text, student_grade_buttons) {
         success: function (response) {
             document.getElementById("header_text").innerHTML = button_text;
             document.getElementById("subjects_table").insertAdjacentHTML("beforeend", get_students_list_div(response));
+
             set_rows_height_by_number_of_students();
             get_and_draw_students_grades(button_text , student_grade_buttons);
 

@@ -105,12 +105,7 @@ function create_change_grade_button_onclick_action(available_grades_buttons, gra
         const description_and_date = get_current_grade_description_and_date();
         document.getElementById("grade_edit_pane").remove();
         grade = get_grade_value_of_pressed_button(button);
-        add_grade_edit_pane_to_subjects_table(name, surname, grade, description_and_date.description, description_and_date.date);
-        available_grades_buttons = Array.from(document.getElementsByClassName("available_grade_button"));
-        available_grades_buttons.forEach(available_grade_button => {set_specific_grade_button_color(available_grade_button)});
-        create_save_button_onclick_action(grade, grade_id);
-        create_change_grade_button_onclick_action(available_grades_buttons, grade, name, surname, grade_id);
-
+        repaint_grade_edit_pane(name, surname, grade, description_and_date.description, description_and_date.date, grade_id);
     });
     return {available_grades_buttons, grade};
 }
@@ -120,6 +115,7 @@ function create_save_button_onclick_action(grade, grade_id) {
     document.getElementById("save_changes_button").onclick = function () {
         const description_and_date = get_current_grade_description_and_date();
         update_grade(grade_id, grade, description_and_date);
+        repaint_subject_table_dynamic_content();
     }
 }
 
