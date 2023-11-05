@@ -9,10 +9,10 @@ function get_and_draw_subjects(){
     if ($prepared_sql_query = $db_connection->prepare($sql_query)){
         $prepared_sql_query->bind_param("s", $_SESSION["userId"]);
         if ($prepared_sql_query->execute()){
-            $prepared_sql_query->bind_result($subject);
+            $prepared_sql_query->bind_result($subject, $subjectId);
             while ($prepared_sql_query->fetch()){
                 echo "<div class='subject_div'>
-                           <button type='button' class='subject_button'>$subject</button>
+                           <button type='button' class='subject_button' id='$subjectId'>$subject</button>
                            <button class='delete_button'><i class='icon-trash'></i></button>
                            <button class='favourite_button'><i class='icon-star-circled'></i></button>
                        </div>";

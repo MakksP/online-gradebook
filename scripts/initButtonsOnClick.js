@@ -8,6 +8,7 @@ const home_page_button = document.getElementById("logo_button");
 const logout_button = document.getElementById("logout_button");
 const subjects_button = document.getElementById("subjects_button");
 const subjects_table = document.getElementById("subjects_table");
+const delete_subject_button = document.getElementsByClassName("delete_button");
 let student_grade_buttons;
 const ADD_SUBJECT_BUTTON = 1;
 
@@ -116,6 +117,30 @@ function create_save_button_onclick_action(grade, grade_id) {
         const description_and_date = get_current_grade_description_and_date();
         update_grade(grade_id, grade, description_and_date);
         repaint_subject_table_dynamic_content();
+    }
+}
+
+function get_subject_to_delete_id(delete_button_index) {
+    return delete_subject_button[delete_button_index].closest("div").getElementsByClassName("subject_button")[0].id;
+}
+
+for (let delete_button_index = 0; delete_button_index < delete_subject_button.length; delete_button_index += 1){
+    if (delete_subject_button[delete_button_index] != null){
+        delete_subject_button[delete_button_index].onclick = function (){
+            const subject_to_delete_id = get_subject_to_delete_id(delete_button_index);
+            console.log(subject_to_delete_id)
+            $.ajax({
+                type: "POST",
+                url: "../serverActions/deleteSubject.php",
+                data: {subjectId: subject_to_delete_id},
+                success: function (response){
+                    console.log(response);
+                },
+                error: function (response){
+                    console.log(response);
+                }
+            });
+        }
     }
 }
 

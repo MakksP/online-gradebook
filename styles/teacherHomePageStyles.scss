@@ -54,7 +54,8 @@
 }
 
 .options_table_button {
-  @include whole_area_style;
+  width: 8vw;
+  height: auto;
   background-color: transparent;
   border: none;
   animation: hovered_button_release linear forwards;

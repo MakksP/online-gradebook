@@ -8,7 +8,7 @@
     }
 
     function get_teaching_subjects(){
-        return "SELECT subjectName FROM teachers_with_subjects
+        return "SELECT subjectName, subjects.subjectId FROM teachers_with_subjects
                 JOIN subjects ON teachers_with_subjects.subjectid 
                                      = subjects.subjectId WHERE userId = ?";
     }
@@ -61,6 +61,13 @@
             dateOfAssessment = ?
             WHERE gradeId = ?
             ";
+    }
+
+    function delete_subject(){
+        return "
+                DELETE FROM teachers_with_subjects
+                WHERE userId = ? AND subjectId = ?
+        ";
     }
 
 ?>
