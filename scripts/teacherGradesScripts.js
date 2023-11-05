@@ -28,12 +28,12 @@ function create_grade_edit_pane(grade_id){
             let date = response[4];
             add_grade_edit_pane_to_subjects_table(name, surname, grade, description, date);
             let available_grades_buttons = Array.from(document.getElementsByClassName("available_grade_button"));
-            const new_grade_data_package = create_change_grade_button_onclick_action(available_grades_buttons, grade, name, surname);
+            const new_grade_data_package = create_change_grade_button_onclick_action(available_grades_buttons, grade, name, surname, grade_id);
 
             available_grades_buttons = new_grade_data_package.available_grades_buttons;
             grade = new_grade_data_package.grade;
             available_grades_buttons.forEach(available_grade_button => {set_specific_grade_button_color(available_grade_button)});
-            create_save_button_onclick_action(grade);
+            create_save_button_onclick_action(grade, grade_id);
 
         },
         error: function (response){
@@ -45,4 +45,23 @@ function create_grade_edit_pane(grade_id){
 function find_rest_of_grades(grade){
     let available_grades = [2, 3, 4, 5]
     return available_grades.filter(current_grade => current_grade !== parseInt(grade));
+}
+
+function update_grade(grade_id, grade, description_and_date) {
+    $.ajax({
+        type: "POST",
+        url: "../serverActions/updateGradeData.php",
+        data: {
+            grade_id: grade_id,
+            grade: grade,
+            description: description_and_date.description,
+            date: description_and_date.date
+        },
+        success: function (response) {
+            console.log(response);
+        },
+        error: function (response) {
+            console.log(response);
+        }
+    });
 }

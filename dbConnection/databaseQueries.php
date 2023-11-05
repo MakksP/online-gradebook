@@ -54,4 +54,13 @@
                 WHERE gradeId = ?";
     }
 
+    function update_grade(){
+        return "
+            UPDATE grades SET grade = ?,
+            description = ?,
+            dateOfAssessment = ?
+            WHERE gradeId = ?
+            ";
+    }
+
 ?>
