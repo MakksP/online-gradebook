@@ -126,7 +126,7 @@ function get_grade_edit_pane(name, surname, grade, description, date){
                 <input type="text" id="date_input" value="${date}" />
             </div>
             <div id="save">
-                <button id="save_changes_button">Zapisz</button>
+                <button type="submit" id="save_changes_button">Zapisz</button>
             </div>
         </div>
     `

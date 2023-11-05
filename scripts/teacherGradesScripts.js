@@ -8,6 +8,12 @@ function get_grade_value_of_pressed_button(button) {
 }
 
 
+function get_current_grade_description_and_date() {
+    const description = document.getElementById("dscription_input").value;
+    const date = document.getElementById("date_input").value;
+    return {description, date};
+}
+
 function create_grade_edit_pane(grade_id){
     $.ajax({
         type: "GET",
@@ -20,14 +26,14 @@ function create_grade_edit_pane(grade_id){
             let grade = response[2];
             let description = response[3];
             let date = response[4];
-
             add_grade_edit_pane_to_subjects_table(name, surname, grade, description, date);
             let available_grades_buttons = Array.from(document.getElementsByClassName("available_grade_button"));
-            const new_grade_data_package = create_change_grade_button_onclick_action(available_grades_buttons, grade, name, surname, description, date);
+            const new_grade_data_package = create_change_grade_button_onclick_action(available_grades_buttons, grade, name, surname);
 
             available_grades_buttons = new_grade_data_package.available_grades_buttons;
             grade = new_grade_data_package.grade;
             available_grades_buttons.forEach(available_grade_button => {set_specific_grade_button_color(available_grade_button)});
+            create_save_button_onclick_action(grade);
 
         },
         error: function (response){
