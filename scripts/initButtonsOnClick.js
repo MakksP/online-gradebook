@@ -124,22 +124,13 @@ function get_subject_to_delete_id(delete_button_index) {
     return delete_subject_button[delete_button_index].closest("div").getElementsByClassName("subject_button")[0].id;
 }
 
+
 for (let delete_button_index = 0; delete_button_index < delete_subject_button.length; delete_button_index += 1){
     if (delete_subject_button[delete_button_index] != null){
         delete_subject_button[delete_button_index].onclick = function (){
             const subject_to_delete_id = get_subject_to_delete_id(delete_button_index);
-            console.log(subject_to_delete_id)
-            $.ajax({
-                type: "POST",
-                url: "../serverActions/deleteSubject.php",
-                data: {subjectId: subject_to_delete_id},
-                success: function (response){
-                    console.log(response);
-                },
-                error: function (response){
-                    console.log(response);
-                }
-            });
+            delete_subject(subject_to_delete_id);
+            location.reload();
         }
     }
 }

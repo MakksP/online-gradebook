@@ -1,7 +1,7 @@
 function get_subjects_to_add_pane(response) {
-    return `<div id='subjects_to_add_pane'>
-               <label id="subjects_to_add_pane_header">Możliwe przedmioty do dodania:</label>
+    return `<div id='subjects_to_add_pane' class="appearing_pane">
                <button id="close_pane_button"><i class="icon-cancel-circled"></i></button>
+               <label id="subjects_to_add_pane_header">Możliwe przedmioty do dodania:</label>
                ${response}
            </div>`;
 }
@@ -101,7 +101,7 @@ function get_footer(elementId){
 function get_grade_edit_pane(name, surname, grade, description, date){
     const available_grades = find_rest_of_grades(grade);
     return `
-        <div id="grade_edit_pane">
+        <div id="grade_edit_pane" class="appearing_pane">
             <div id="close_button_div">
                 <button id="close_button"><i class="icon-cancel-circled"></i></button>
             </div>

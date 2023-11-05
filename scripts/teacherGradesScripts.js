@@ -77,3 +77,17 @@ function repaint_subject_table_dynamic_content() {
     document.getElementById("student_names").remove();
     draw_students_labels_in_subject(current_subject_name, student_grade_buttons);
 }
+
+function delete_subject(subject_to_delete_id) {
+    $.ajax({
+        type: "POST",
+        url: "../serverActions/deleteSubject.php",
+        data: {subjectId: subject_to_delete_id},
+        success: function (response) {
+            console.log(response);
+        },
+        error: function (response) {
+            console.log(response);
+        }
+    });
+}
