@@ -73,6 +73,7 @@ function add_grade_to_database(grade, description, date, response) {
     });
 }
 
+
 function serve_add_grade_action(student_email, subject_name) {
     $.ajax({
         type: "GET",
@@ -87,12 +88,7 @@ function serve_add_grade_action(student_email, subject_name) {
             set_button_grade_color_by_grade_value("possible_grades", "available_grade_button");
             create_close_grade_add_pane_onclick_action();
             available_grade_button_onclick_action();
-            document.getElementById("save_grade_button").onclick = function (){
-                let grade = document.getElementById("chosen_grade_label").innerHTML;
-                let description = document.getElementById("add_grade_pane_description_input").value;
-                let date = document.getElementById("add_grade_pane_date_input").value;
-                add_grade_to_database(grade, description, date, response);
-            }
+            create_save_grade_button_onclick_action(response);
         },
         error: function (response) {
             console.log(response);

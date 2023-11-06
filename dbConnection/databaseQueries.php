@@ -86,4 +86,9 @@
                 subjectId, userId) VALUES (?, ?, ?, ?, ?)";
     }
 
+    function delete_grade(){
+        return "DELETE FROM grades WHERE
+                gradeId = ?";
+    }
+
 ?>

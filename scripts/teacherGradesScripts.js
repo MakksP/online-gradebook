@@ -14,6 +14,7 @@ function get_current_grade_description_and_date() {
     return {description, date};
 }
 
+
 function repaint_grade_edit_pane(name, surname, grade, description, date, grade_id) {
     add_grade_edit_pane_to_subjects_table(name, surname, grade, description, date);
     let available_grades_buttons = Array.from(document.getElementsByClassName("available_grade_button"));
@@ -25,6 +26,7 @@ function repaint_grade_edit_pane(name, surname, grade, description, date, grade_
         set_specific_grade_button_color(available_grade_button)
     });
     create_save_button_onclick_action(grade, grade_id);
+    create_delete_grade_button_onclick_action(grade_id);
 }
 
 function create_grade_edit_pane(grade_id){

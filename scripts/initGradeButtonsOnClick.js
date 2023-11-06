@@ -65,3 +65,32 @@ function available_grade_button_onclick_action() {
         }
     });
 }
+
+function create_save_grade_button_onclick_action(response) {
+    document.getElementById("save_grade_button").onclick = function () {
+        let grade = document.getElementById("chosen_grade_label").innerHTML;
+        let description = document.getElementById("add_grade_pane_description_input").value;
+        let date = document.getElementById("add_grade_pane_date_input").value;
+        add_grade_to_database(grade, description, date, response);
+        repaint_subject_table_dynamic_content();
+        document.getElementById("add_grade_pane").remove();
+    }
+}
+
+function create_delete_grade_button_onclick_action(grade_id) {
+    document.getElementById("delete_grade_button").onclick = function () {
+        $.ajax({
+            type: "POST",
+            url: "../serverActions/deleteGrade.php",
+            data: {grade_id: grade_id},
+            success: function (response){
+                console.log(response);
+                repaint_subject_table_dynamic_content();
+                document.getElementById("grade_edit_pane").remove();
+            },
+            error: function (response){
+                console.log(response);
+            }
+        });
+    }
+}
