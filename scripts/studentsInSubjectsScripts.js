@@ -46,8 +46,8 @@ function draw_students_labels_in_subject(button_text, student_grade_buttons) {
     });
 }
 
-function get_all_grade_buttons_from_div(button_labels, button_labels_index) {
-    return button_labels[button_labels_index].getElementsByClassName("grade_button");
+function get_all_grade_buttons_from_div(button_labels, button_labels_index, button_type) {
+    return button_labels[button_labels_index].getElementsByClassName(button_type);
 }
 
 function get_current_grade_button_value(grade_button) {
@@ -68,10 +68,10 @@ function set_specific_grade_button_color(grade_button) {
     }
 }
 
-function set_button_grade_color_by_grade_value() {
-    const button_labels = document.getElementsByClassName("grade_part")
+function set_button_grade_color_by_grade_value(button_container_class_name, button_type) {
+    const button_labels = Array.from(document.getElementsByClassName(button_container_class_name));
     for (let button_labels_index = 0; button_labels_index < button_labels.length; button_labels_index++) {
-        const grade_buttons = Array.from(get_all_grade_buttons_from_div(button_labels, button_labels_index));
+        const grade_buttons = Array.from(get_all_grade_buttons_from_div(button_labels, button_labels_index, button_type));
         grade_buttons.forEach(grade_button => {
             set_specific_grade_button_color(grade_button);
         });
@@ -100,7 +100,7 @@ function add_students_grades(response) {
     }
     remove_all_empty_grade_buttons();
     create_add_new_grade_button_onclick_action();
-    set_button_grade_color_by_grade_value();
+    set_button_grade_color_by_grade_value("grade_part", "grade_button");
 
 }
 
@@ -120,6 +120,7 @@ function serve_add_grade_action(student_email, subject_name) {
         dataType: "json",
         success: function (response) {
             document.getElementById("subjects_table").insertAdjacentHTML("beforeend", get_add_grade_pane(response['name'], response['surname']));
+            set_button_grade_color_by_grade_value("possible_grades", "available_grade_button");
             create_close_grade_add_pane_onclick_action();
         },
         error: function (response) {

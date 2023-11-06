@@ -113,7 +113,7 @@ function get_grade_edit_pane(name, surname, grade, description, date){
             </div>
             <div id="change_grade_div">
                 <label>Zmień ocenę:</label>
-                <div id="possible_grades">
+                <div class="possible_grades">
                     <button class="available_grade_button"><label class="grade_label">${available_grades[0]}</label></button>
                     <button class="available_grade_button"><label class="grade_label">${available_grades[1]}</label></button>
                     <button class="available_grade_button"><label class="grade_label">${available_grades[2]}</label></button>
@@ -142,9 +142,12 @@ function get_add_grade_pane(name, surname){
             <div id="student_name_label">
                 <label>Dodaj ocenę dla studenta:<br>${name} ${surname}</label>
             </div>
+            <div id="chosen_grade_div">
+                <label id="chosen_grade_label"></label>
+            </div>
             <div id="change_grade_div">
                 <label>Wybierz ocenę:</label>
-                <div id="possible_grades">
+                <div class="possible_grades">
                     <button class="available_grade_button"><label class="grade_label">${available_grades[0]}</label></button>
                     <button class="available_grade_button"><label class="grade_label">${available_grades[1]}</label></button>
                     <button class="available_grade_button"><label class="grade_label">${available_grades[2]}</label></button>
