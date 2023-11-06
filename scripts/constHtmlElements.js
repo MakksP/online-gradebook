@@ -120,10 +120,10 @@ function get_grade_edit_pane(name, surname, grade, description, date){
                 </div>
             </div>
             <div id="description">
-                <input type="text" id="dscription_input" value="${description}" />
+                <input type="text" id="edit_grade_pane_description_input" value="${description}" />
             </div>
             <div id="date">
-                <input type="text" id="date_input" value="${date}" />
+                <input type="text" id="edit_grade_pane_date_input" value="${date}" />
             </div>
             <div id="save">
                 <button type="submit" id="save_changes_button">Zapisz</button>
@@ -155,10 +155,10 @@ function get_add_grade_pane(name, surname){
                 </div>
             </div>
             <div id="description">
-                <input type="text" id="dscription_input"/>
+                <input type="text" id="add_grade_pane_description_input"/>
             </div>
             <div id="date">
-                <input type="text" id="date_input"/>
+                <input type="text" id="add_grade_pane_date_input"/>
             </div>
             <div id="save">
                 <button type="submit" id="save_grade_button">Zapisz</button>

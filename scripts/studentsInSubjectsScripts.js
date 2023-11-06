@@ -53,6 +53,26 @@ function add_students_grades(response) {
 }
 
 
+function add_grade_to_database(grade, description, date, response) {
+    $.ajax({
+        type: "POST",
+        url: "./serverActions/addNewGrade.php",
+        data: {
+            grade: grade,
+            description: description,
+            date: date,
+            subjectId: response["subjectId"],
+            userId: response["userId"]
+        },
+        success: function (response) {
+            console.log(response)
+        },
+        error: function (response) {
+            console.log(response)
+        }
+    });
+}
+
 function serve_add_grade_action(student_email, subject_name) {
     $.ajax({
         type: "GET",
@@ -66,10 +86,13 @@ function serve_add_grade_action(student_email, subject_name) {
             document.getElementById("subjects_table").insertAdjacentHTML("beforeend", get_add_grade_pane(response['name'], response['surname']));
             set_button_grade_color_by_grade_value("possible_grades", "available_grade_button");
             create_close_grade_add_pane_onclick_action();
-            let grade;
-            let description;
-            let date;
-            available_grade_button_onclick_action(grade);
+            available_grade_button_onclick_action();
+            document.getElementById("save_grade_button").onclick = function (){
+                let grade = document.getElementById("chosen_grade_label").innerHTML;
+                let description = document.getElementById("add_grade_pane_description_input").value;
+                let date = document.getElementById("add_grade_pane_date_input").value;
+                add_grade_to_database(grade, description, date, response);
+            }
         },
         error: function (response) {
             console.log(response);

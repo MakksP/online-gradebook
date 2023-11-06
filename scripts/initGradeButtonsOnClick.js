@@ -57,10 +57,10 @@ function create_save_button_onclick_action(grade, grade_id) {
 }
 
 
-function available_grade_button_onclick_action(grade) {
+function available_grade_button_onclick_action() {
     Array.from(document.getElementsByClassName("available_grade_button")).forEach(button => {
         button.onclick = function () {
-            grade = button.getElementsByTagName("label")[0].innerHTML;
+            let grade = button.getElementsByTagName("label")[0].innerHTML;
             change_chosen_grade_value_in_label(grade);
         }
     });

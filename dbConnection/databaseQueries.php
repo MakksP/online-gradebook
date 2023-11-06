@@ -80,4 +80,10 @@
                 subjectName = ?";
     }
 
+    function insert_new_grade_to_database(){
+        return "
+                INSERT INTO grades (grade, description, dateOfAssessment,
+                subjectId, userId) VALUES (?, ?, ?, ?, ?)";
+    }
+
 ?>

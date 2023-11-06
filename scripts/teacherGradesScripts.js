@@ -9,8 +9,8 @@ function get_grade_value_of_pressed_button(button) {
 
 
 function get_current_grade_description_and_date() {
-    const description = document.getElementById("dscription_input").value;
-    const date = document.getElementById("date_input").value;
+    const description = document.getElementById("edit_grade_pane_description_input").value;
+    const date = document.getElementById("edit_grade_pane_date_input").value;
     return {description, date};
 }
 
