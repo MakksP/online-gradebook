@@ -56,3 +56,7 @@ function remove_all_empty_grade_buttons() {
 function get_student_email_from_student_label_div(button) {
     return button.closest("div").id.substring(0, (button.closest("div").id.indexOf("_")));
 }
+
+function change_chosen_grade_value_in_label(grade) {
+    document.getElementById("chosen_grade_label").innerHTML = grade;
+}

@@ -53,7 +53,6 @@ function add_students_grades(response) {
 }
 
 
-
 function serve_add_grade_action(student_email, subject_name) {
     $.ajax({
         type: "GET",
@@ -67,6 +66,10 @@ function serve_add_grade_action(student_email, subject_name) {
             document.getElementById("subjects_table").insertAdjacentHTML("beforeend", get_add_grade_pane(response['name'], response['surname']));
             set_button_grade_color_by_grade_value("possible_grades", "available_grade_button");
             create_close_grade_add_pane_onclick_action();
+            let grade;
+            let description;
+            let date;
+            available_grade_button_onclick_action(grade);
         },
         error: function (response) {
             console.log(response);
