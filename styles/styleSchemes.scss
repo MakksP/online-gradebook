@@ -135,3 +135,19 @@
     animation-duration: 100ms;
   }
 }
+
+@mixin close_pane_button_style{
+  border: none;
+  background-color: transparent;
+  font-size: 100%;
+  width: min-content;
+  height: min-content;
+  &:hover{
+    cursor: pointer;
+  }
+}
+
+@mixin close_button_div_style{
+  display: flex;
+  justify-content: right;
+}

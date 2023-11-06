@@ -9,6 +9,7 @@ const logout_button = document.getElementById("logout_button");
 const subjects_button = document.getElementById("subjects_button");
 const subjects_table = document.getElementById("subjects_table");
 const delete_subject_button = document.getElementsByClassName("delete_button");
+const add_new_grade_buttons = document.getElementsByClassName("new_grade_button");
 let student_grade_buttons;
 const ADD_SUBJECT_BUTTON = 1;
 
@@ -81,9 +82,12 @@ if (subjects_button != null){
     }
 }
 
+
 function init_student_grade_on_click_action(student_grade_buttons) {
     student_grade_buttons = document.getElementsByClassName("grade_button");
+
     for (let student_grade_button_index = 0; student_grade_button_index < student_grade_buttons.length; student_grade_button_index += 1) {
+
         if (student_grade_buttons[student_grade_button_index] != null) {
             student_grade_buttons[student_grade_button_index].onclick = function () {
                 create_grade_edit_pane(student_grade_buttons[student_grade_button_index].id)
@@ -95,7 +99,7 @@ function init_student_grade_on_click_action(student_grade_buttons) {
 }
 
 function grade_edit_close_button_onclick() {
-    document.getElementById("close_button").onclick = function () {
+    document.getElementById("grade_edit_close_button").onclick = function () {
         document.getElementById("grade_edit_pane").remove();
     }
 }
@@ -133,5 +137,14 @@ for (let delete_button_index = 0; delete_button_index < delete_subject_button.le
             location.reload();
         }
     }
+}
+
+
+function create_add_new_grade_button_onclick_action(){
+    Array.from(add_new_grade_buttons).forEach(button => button.onclick = function (){
+        const student_email = get_student_email_from_student_label_div(button);
+        const subject_name = document.getElementsByTagName("h2")[0].innerHTML
+        serve_add_grade_action(student_email, subject_name);
+    });
 }
 

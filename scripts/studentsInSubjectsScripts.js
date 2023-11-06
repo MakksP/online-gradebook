@@ -6,7 +6,7 @@ function get_and_draw_students_grades(subject_name, student_grade_buttons) {
         data: {subject_name: subject_name},
         dataType: "json",
         success: function (response) {
-            add_students_grades(response, student_grade_buttons);
+            add_students_grades(response);
             student_grade_buttons = init_student_grade_on_click_action(student_grade_buttons);
         },
         error: function (response) {
@@ -70,7 +70,6 @@ function set_specific_grade_button_color(grade_button) {
 
 function set_button_grade_color_by_grade_value() {
     const button_labels = document.getElementsByClassName("grade_part")
-
     for (let button_labels_index = 0; button_labels_index < button_labels.length; button_labels_index++) {
         const grade_buttons = Array.from(get_all_grade_buttons_from_div(button_labels, button_labels_index));
         grade_buttons.forEach(grade_button => {
@@ -81,11 +80,37 @@ function set_button_grade_color_by_grade_value() {
 
 function add_students_grades(response) {
     for (let student in response) {
+        let button_grade_id;
         response[student].forEach(grade => {
-            const button_grade_id = student + "_grade_div";
+            button_grade_id = student + "_grade_div";
             document.getElementById(button_grade_id).insertAdjacentHTML("beforeend", grade);
         });
+        document.getElementById(button_grade_id).insertAdjacentHTML("beforeend", get_new_grade_button());
     }
+    create_add_new_grade_button_onclick_action();
     set_button_grade_color_by_grade_value();
 
+}
+
+function get_student_email_from_student_label_div(button) {
+    return button.closest("div").id.substring(0, (button.closest("div").id.indexOf("_")));
+}
+
+function serve_add_grade_action(student_email, subject_name) {
+    $.ajax({
+        type: "GET",
+        url: "./serverActions/getSubjectAndUserIds.php",
+        data: {
+            email: student_email,
+            subject_name: subject_name
+        },
+        dataType: "json",
+        success: function (response) {
+            document.getElementById("subjects_table").insertAdjacentHTML("beforeend", get_add_grade_pane(response['name'], response['surname']));
+            document.getElementById("")
+        },
+        error: function (response) {
+            console.log(response);
+        }
+    });
 }

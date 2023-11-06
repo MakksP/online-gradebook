@@ -70,4 +70,13 @@
         ";
     }
 
+    function get_subject_and_user_ids(){
+        return "SELECT subjects.subjectId, users.userId, name, surname 
+                FROM users JOIN lessonplans ON
+                users.lessonPlanId = lessonplans.lessonPlanId
+                JOIN subjects ON subjects.subjectId = lessonplans.subjectId
+                WHERE email = ? AND
+                subjectName = ?";
+    }
+
 ?>

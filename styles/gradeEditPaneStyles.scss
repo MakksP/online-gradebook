@@ -29,22 +29,22 @@
   justify-content: space-around;
 }
 
-#close_button_div{
-  display: flex;
-  justify-content: right;
+#grade_edit_close_button_div{
+  @include close_button_div_style;
 }
 
-#close_button{
-  border: none;
-  background-color: transparent;
-  font-size: 100%;
-  width: min-content;
-  height: min-content;
-  &:hover{
-    cursor: pointer;
-  }
+#grade_edit_close_button{
+  @include close_pane_button_style;
 }
 
 .grade_label:hover{
   cursor: pointer;
+}
+
+#grade_add_close_button_div{
+  @include close_button_div_style;
+}
+
+#grade_add_close_button{
+  @include close_pane_button_style;
 }
