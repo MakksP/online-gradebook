@@ -18,6 +18,7 @@
     <script src="scripts/constHtmlElements.js"></script>
     <script src="scripts/teacherHomePageScripts.js"></script>
     <script src="scripts/calculateFunctions.js"></script>
+    <script src="scripts/initGradeButtonsOnClick.js"></script>
 </head>
 <body>
 
