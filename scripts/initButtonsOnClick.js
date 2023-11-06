@@ -148,3 +148,8 @@ function create_add_new_grade_button_onclick_action(){
     });
 }
 
+function create_close_grade_add_pane_onclick_action() {
+    document.getElementById("grade_add_close_button").onclick = function () {
+        document.getElementById("add_grade_pane").remove();
+    }
+}

@@ -78,15 +78,27 @@ function set_button_grade_color_by_grade_value() {
     }
 }
 
+
+function remove_all_empty_grade_buttons() {
+    const grade_buttons = Array.from(document.getElementsByClassName("grade_button"));
+    grade_buttons.forEach(button => {
+        if (button.id.length === 0) {
+            button.remove();
+        }
+    });
+}
+
 function add_students_grades(response) {
     for (let student in response) {
         let button_grade_id;
         response[student].forEach(grade => {
             button_grade_id = student + "_grade_div";
             document.getElementById(button_grade_id).insertAdjacentHTML("beforeend", grade);
+
         });
         document.getElementById(button_grade_id).insertAdjacentHTML("beforeend", get_new_grade_button());
     }
+    remove_all_empty_grade_buttons();
     create_add_new_grade_button_onclick_action();
     set_button_grade_color_by_grade_value();
 
@@ -95,6 +107,7 @@ function add_students_grades(response) {
 function get_student_email_from_student_label_div(button) {
     return button.closest("div").id.substring(0, (button.closest("div").id.indexOf("_")));
 }
+
 
 function serve_add_grade_action(student_email, subject_name) {
     $.ajax({
@@ -107,7 +120,7 @@ function serve_add_grade_action(student_email, subject_name) {
         dataType: "json",
         success: function (response) {
             document.getElementById("subjects_table").insertAdjacentHTML("beforeend", get_add_grade_pane(response['name'], response['surname']));
-            document.getElementById("")
+            create_close_grade_add_pane_onclick_action();
         },
         error: function (response) {
             console.log(response);

@@ -125,19 +125,6 @@
   }
 }
 
-.grade_button{
-  margin-left: 0.5rem;
-  height: 85%;
-  width: 1.8rem;
-}
-
-.grade_button{
-  @include thin_border;
-  border-radius: 5px;
-  &:hover {
-    cursor: pointer;
-  }
-}
 
 .grade_label:hover{
   cursor: pointer;

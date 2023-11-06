@@ -15,13 +15,7 @@
 }
 
 .available_grade_button{
-  height: 85%;
-  font-family: $main_site_font;
-  @include thin_border;
-  border-radius: 5px;
-  &:hover{
-    cursor: pointer;
-  }
+  @include button_in_appearing_pane_style;
 }
 
 #possible_grades{
@@ -47,4 +41,17 @@
 
 #grade_add_close_button{
   @include close_pane_button_style;
+  &:hover{
+    cursor: pointer;
+  }
+}
+
+.new_grade_button{
+  @include button_in_table_style;
+  background-color: $add_button_color;
+  color: $white_contrast_color;
+}
+
+.grade_button{
+  @include button_in_table_style;
 }

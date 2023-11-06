@@ -151,3 +151,28 @@
   display: flex;
   justify-content: right;
 }
+
+
+@mixin button_in_appearing_pane_style {
+  height: 85%;
+  font-family: $main_site_font;
+  @include thin_border;
+  border-radius: 5px;
+  &:hover{
+    cursor: pointer;
+  }
+}
+
+@mixin button_in_table_style{
+  margin-left: 0.5rem;
+  height: 85%;
+  width: 1.8rem;
+  @include thin_border;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &:hover {
+    cursor: pointer;
+  }
+}
