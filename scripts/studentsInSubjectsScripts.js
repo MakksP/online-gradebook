@@ -26,7 +26,7 @@ function draw_students_labels_in_subject(button_text, student_grade_buttons) {
             document.getElementById("subjects_table").insertAdjacentHTML("beforeend", get_students_list_div(response));
 
             set_rows_height_by_number_of_students();
-            get_and_draw_students_grades(button_text , student_grade_buttons);
+            get_and_draw_students_grades(button_text ,student_grade_buttons);
 
         },
         error: function (response) {
@@ -44,11 +44,28 @@ function add_students_grades(response) {
             document.getElementById(button_grade_id).insertAdjacentHTML("beforeend", grade);
 
         });
-        document.getElementById(button_grade_id).insertAdjacentHTML("beforeend", get_new_grade_button());
     }
-    remove_all_empty_grade_buttons();
-    create_add_new_grade_button_onclick_action();
-    set_button_grade_color_by_grade_value("grade_part", "grade_button");
+    $.ajax({
+       type: "GET",
+       url:"./serverActions/getAllStudentsMailInSubject.php",
+        data: {subject_name: get_current_subject_name()},
+        dataType: "json",
+        success: function (response){
+           let button_grade_id;
+           Array.from(response).forEach(student => {
+               button_grade_id = student + "_grade_div";
+               document.getElementById(button_grade_id).insertAdjacentHTML("beforeend", get_new_grade_button());
+           })
+            create_add_new_grade_button_onclick_action();
+            set_button_grade_color_by_grade_value("grade_part", "grade_button");
+
+        },
+        error: function (response){
+            console.log(response);
+        }
+    });
+
+
 
 }
 
@@ -94,4 +111,8 @@ function serve_add_grade_action(student_email, subject_name) {
             console.log(response);
         }
     });
+}
+
+function get_current_subject_name() {
+    return document.getElementsByTagName("h2")[0].innerHTML;
 }

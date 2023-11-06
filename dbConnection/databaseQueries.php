@@ -40,13 +40,20 @@
 
     function get_student_email_and_grade(){
         return "
-                SELECT email, grade, gradeId FROM users
-                LEFT JOIN grades ON grades.userId
-                = users.userId JOIN lessonplans ON
-                users.lessonPlanId = lessonplans.lessonPlanId
-                JOIN subjects ON lessonplans.subjectId = subjects.subjectId
+                SELECT email, grade, gradeId FROM grades
+                JOIN users ON grades.userId
+                = users.userId JOIN subjects ON
+                grades.subjectId = subjects.subjectId
                 WHERE subjectName = ?
                 ORDER BY email";
+    }
+
+    function get_all_students_belonging_to_subject(){
+        return "SELECT email from users
+                JOIN lessonplans ON users.lessonPlanId
+                = lessonplans.lessonPlanId JOIN subjects ON
+                lessonplans.subjectId = subjects.subjectId
+                WHERE subjectName = ?";
     }
 
     function get_grade_data(){

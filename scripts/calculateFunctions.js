@@ -44,14 +44,6 @@ function set_button_grade_color_by_grade_value(button_container_class_name, butt
 
 
 
-function remove_all_empty_grade_buttons() {
-    const grade_buttons = Array.from(document.getElementsByClassName("grade_button"));
-    grade_buttons.forEach(button => {
-        if (button.id.length === 0) {
-            button.remove();
-        }
-    });
-}
 
 function get_student_email_from_student_label_div(button) {
     return button.closest("div").id.substring(0, (button.closest("div").id.indexOf("_")));
