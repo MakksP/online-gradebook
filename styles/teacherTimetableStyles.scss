@@ -89,3 +89,24 @@
 #first_hour{
   border-left: 2px solid black;
 }
+
+.timetable_element_button{
+  background-color: transparent;
+  border: none;
+  border-right: 2px solid black;
+}
+
+$button_id: 9;
+@while($button_id <= 49){
+  #timetable_#{$button_id} {
+    border: none;
+  }
+  $button_id: $button_id + 10;
+}
+
+@for $button_id from 0 through 39{
+  #timetable_#{$button_id}{
+    border-bottom: 2px solid black;
+  }
+}
+

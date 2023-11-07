@@ -18,6 +18,7 @@
     <script src="scripts/teacherHomePageScripts.js"></script>
     <script src="scripts/calculateFunctions.js"></script>
     <script src="scripts/initGradeButtonsOnClick.js"></script>
+
 </head>
 <body>
 
@@ -106,6 +107,8 @@
                     <label>Piątek</label>
                 </div>
             </header>
+            <script src="scripts/teacherTimetableScripts.js"></script>
+            <script>fill_timetable_with_elements()</script>
         </div>
 
     </section>

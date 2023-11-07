@@ -177,3 +177,7 @@ function get_add_grade_pane(name, surname){
 function get_new_grade_button(){
     return "<button class='new_grade_button'><i class=\"icon-plus-circled\"></i></button>";
 }
+
+function get_single_raw_timetable_element(element_index){
+    return "<button class='timetable_element_button' id='timetable_" + element_index + "'><label class='timetable_element_label'></label></button>"
+}
