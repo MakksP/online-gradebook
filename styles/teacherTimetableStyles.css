@@ -39,6 +39,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  border-right: 2px solid black;
 }
 
 .day_div {
@@ -47,6 +48,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  border-right: 2px solid black;
 }
 
 #monday {
@@ -77,10 +79,16 @@
 
 #filler {
   border-top-left-radius: 12px;
+  border-right: none;
 }
 
 #last_hour {
   border-top-right-radius: 12px;
+  border-right: none;
+}
+
+#first_hour {
+  border-left: 2px solid black;
 }
 
 /*# sourceMappingURL=teacherTimetableStyles.css.map */

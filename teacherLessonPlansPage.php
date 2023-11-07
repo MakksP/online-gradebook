@@ -58,7 +58,7 @@
                 <div class="hour_div" id="filler">
                     <label></label>
                 </div>
-                <div class="hour_div">
+                <div class="hour_div" id="first_hour">
                     <label>8:15 - 9:00</label>
                 </div>
                 <div class="hour_div">
