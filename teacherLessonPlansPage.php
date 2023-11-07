@@ -18,6 +18,7 @@
     <script src="scripts/teacherHomePageScripts.js"></script>
     <script src="scripts/calculateFunctions.js"></script>
     <script src="scripts/initGradeButtonsOnClick.js"></script>
+    <script src="scripts/teacherTimetableScripts.js"></script>
 
 </head>
 <body>
@@ -55,7 +56,7 @@
     <section id="subjects_container">
 
         <aside id="timetables_panel">
-            <?php  ?>
+            <script>get_all_timetables()</script>
         </aside>
         <div id="timetable">
             <header id="hours">

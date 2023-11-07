@@ -181,3 +181,9 @@ function get_new_grade_button(){
 function get_single_raw_timetable_element(element_index){
     return "<button class='timetable_element_button' id='timetable_" + element_index + "'><label class='timetable_element_label'></label></button>"
 }
+
+function get_timetable_tag(timetable_id){
+    return `<div class="timetable_tag_div">
+                <label>Plan ${timetable_id}</label>
+            </div>`
+}

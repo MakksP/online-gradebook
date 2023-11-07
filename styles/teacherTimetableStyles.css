@@ -286,12 +286,26 @@
   margin-top: 2%;
   margin-right: 5%;
   border: 2px solid black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  font-family: "Tilt Neon", sans-serif;
+  font-size: 2vh;
   border-radius: 5px;
 }
 
 #header_text {
   text-align: center;
   margin-top: 5%;
+}
+
+.timetable_tag_div {
+  border: 2px solid black;
+  border-radius: 5px;
+  background-color: #FFFFFF;
+  width: 80%;
+  height: 5%;
 }
 
 /*# sourceMappingURL=teacherTimetableStyles.css.map */

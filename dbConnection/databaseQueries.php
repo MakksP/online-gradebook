@@ -98,4 +98,10 @@
                 gradeId = ?";
     }
 
+    function get_all_timetables_id(){
+        return "
+                SELECT DISTINCT lessonPlanId FROM lessonPlans
+                ";
+    }
+
 ?>

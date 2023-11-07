@@ -121,10 +121,23 @@ $button_id: 9;
     right: 5%;
   };
   @include thin_border;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  @include timetable_font;
   border-radius: 5px;
 }
 
 #header_text{
   text-align: center;
   margin-top: 5%;
+}
+
+.timetable_tag_div{
+  @include thin_border;
+  border-radius: 5px;
+  background-color: $white_contrast_color;
+  width: 80%;
+  height: 5%;
 }

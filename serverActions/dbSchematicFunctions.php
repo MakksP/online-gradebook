@@ -34,7 +34,9 @@ function select_php_query_core($query, $type_of_params, ...$params)
     $db_connection = connect_to_database();
     $sql_query = $query();
     if ($prepared_sql_query = $db_connection->prepare($sql_query)) {
-        $prepared_sql_query->bind_param($type_of_params, ...$params);
+        if ($type_of_params != null){
+            $prepared_sql_query->bind_param($type_of_params, ...$params);
+        }
         if ($prepared_sql_query->execute()) {
             $results = bind_dynamic_results($prepared_sql_query);
             $prepared_sql_query->bind_result(...$results);
