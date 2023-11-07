@@ -49,11 +49,13 @@
         </ul>
     </nav>
 
-
+    <header id="subjects_header">
+        <h2 id="header_text">Plany lekcji</h2>
+    </header>
     <section id="subjects_container">
-        <header id="subjects_header">
-            <h2 id="header_text">Plany lekcji</h2>
-        </header>
+
+        <aside id="timetables_panel">
+        </aside>
         <div id="timetable">
             <header id="hours">
                 <div class="hour_div" id="filler">

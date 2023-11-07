@@ -3,6 +3,8 @@
 
 #subjects_container{
   width: 75%;
+  display: flex;
+  margin-left: 10%;
 }
 
 #timetable{
@@ -110,3 +112,14 @@ $button_id: 9;
   }
 }
 
+#timetables_panel{
+  background-color: $nav_bar_color;
+  height: 80%;
+  width: 10%;
+  margin-top: 2%;
+}
+
+#header_text{
+  text-align: center;
+  margin-top: 5%;
+}

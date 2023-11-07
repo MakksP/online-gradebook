@@ -1,12 +1,14 @@
 @import "buttonAnimatoins.css";
 #subjects_container {
   width: 75%;
+  display: flex;
+  margin-left: 10%;
 }
 
 #timetable {
   width: 100%;
   height: 40%;
-  margin-top: 5%;
+  margin-top: 2%;
   background-color: #D9D9D9;
   border: 2px solid black;
   border-radius: 15px;
@@ -275,6 +277,18 @@
 
 #timetable_39 {
   border-bottom: 2px solid black;
+}
+
+#timetables_panel {
+  background-color: #383c44;
+  height: 80%;
+  width: 10%;
+  margin-top: 2%;
+}
+
+#header_text {
+  text-align: center;
+  margin-top: 5%;
 }
 
 /*# sourceMappingURL=teacherTimetableStyles.css.map */
