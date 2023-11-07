@@ -116,7 +116,12 @@ $button_id: 9;
   background-color: $nav_bar_color;
   height: 80%;
   width: 10%;
-  margin-top: 2%;
+  margin: {
+    top: 2%;
+    right: 5%;
+  };
+  @include thin_border;
+  border-radius: 5px;
 }
 
 #header_text{

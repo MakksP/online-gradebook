@@ -55,6 +55,7 @@
     <section id="subjects_container">
 
         <aside id="timetables_panel">
+            <?php  ?>
         </aside>
         <div id="timetable">
             <header id="hours">

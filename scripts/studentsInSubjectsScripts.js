@@ -70,6 +70,9 @@ function add_students_grades(response) {
 }
 
 
+const SUBJECT_ID_INDEX = 0;
+const USER_ID_INDEX = 1;
+
 function add_grade_to_database(grade, description, date, response) {
     $.ajax({
         type: "POST",
@@ -78,8 +81,8 @@ function add_grade_to_database(grade, description, date, response) {
             grade: grade,
             description: description,
             date: date,
-            subjectId: response["subjectId"],
-            userId: response["userId"]
+            subjectId: response[SUBJECT_ID_INDEX],
+            userId: response[USER_ID_INDEX]
         },
         success: function (response) {
             console.log(response)
@@ -91,6 +94,10 @@ function add_grade_to_database(grade, description, date, response) {
 }
 
 
+const NAME_INDEX = 2;
+
+const SURNAME_INDEX = 3;
+
 function serve_add_grade_action(student_email, subject_name) {
     $.ajax({
         type: "GET",
@@ -101,7 +108,8 @@ function serve_add_grade_action(student_email, subject_name) {
         },
         dataType: "json",
         success: function (response) {
-            document.getElementById("subjects_table").insertAdjacentHTML("beforeend", get_add_grade_pane(response['name'], response['surname']));
+            document.getElementById("subjects_table").insertAdjacentHTML("beforeend", get_add_grade_pane(response[NAME_INDEX], response[SURNAME_INDEX]));
+            console.log(response);
             set_button_grade_color_by_grade_value("possible_grades", "available_grade_button");
             create_close_grade_add_pane_onclick_action();
             available_grade_button_onclick_action();
