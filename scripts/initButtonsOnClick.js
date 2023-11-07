@@ -7,6 +7,7 @@ const registration_button = document.getElementById("registration_button_nav");
 const home_page_button = document.getElementById("logo_button");
 const logout_button = document.getElementById("logout_button");
 const subjects_button = document.getElementById("subjects_button");
+const lesson_plans_button = document.getElementById("lesson_plans_button");
 const subjects_table = document.getElementById("subjects_table");
 const delete_subject_button = document.getElementsByClassName("delete_button");
 let student_grade_buttons;
@@ -78,6 +79,12 @@ if (logout_button != null){
 if (subjects_button != null){
     subjects_button.onclick = function (){
         window.location.href = "./teacherSubjectsPage.php"
+    }
+}
+
+if (lesson_plans_button != null){
+    lesson_plans_button.onclick = function (){
+        window.location.href = "./teacherLessonPlansPage.php"
     }
 }
 
