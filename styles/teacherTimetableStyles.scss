@@ -15,23 +15,69 @@
 
 #hours{
   display: contents;
-  font: {
-    family: $main_site_font;
-    size: 2vh;
-  };
+  @include timetable_font;
   height: min-content;
   justify-content: right;
+  color: $white_contrast_color;
 }
 
 #days{
   display: contents;
+  color: $white_contrast_color;
+  @include timetable_font;
 }
 
 .hour_div{
-  margin-right: 2%;
+  background-color: $nav_bar_color;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .day_div{
-  grid-column: 1/4;
-  width: min-content;
+  width: 100%;
+  background-color: $nav_bar_color;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#monday{
+  grid-column: 1;
+  grid-row: 2;
+}
+
+#tuesday{
+  grid-column: 1;
+  grid-row: 3;
+}
+
+#wednesday{
+  grid-column: 1;
+  grid-row: 4;
+}
+
+#thursday{
+  grid-column: 1;
+  grid-row: 5;
+}
+
+#friday{
+  grid-column: 1;
+  grid-row: 6;
+  border: {
+    bottom-left-radius: 12px;
+  };
+}
+
+#filler{
+  border: {
+    top-left-radius: 12px;
+  };
+}
+
+#last_hour{
+  border: {
+    top-right-radius: 12px;
+  };
 }

@@ -55,7 +55,7 @@
         </header>
         <div id="timetable">
             <header id="hours">
-                <div class="hour_div">
+                <div class="hour_div" id="filler">
                     <label></label>
                 </div>
                 <div class="hour_div">
@@ -85,24 +85,24 @@
                 <div class="hour_div">
                     <label>16:15 - 17:00</label>
                 </div>
-                <div class="hour_div">
+                <div class="hour_div" id="last_hour">
                     <label>17:15 - 18:00</label>
                 </div>
             </header>
             <header id="days">
-                <div class="day_div">
+                <div class="day_div" id="monday">
                     <label>Poniedziałek</label>
                 </div>
-                <div class="day_div">
+                <div class="day_div" id="tuesday">
                     <label>Wtorek</label>
                 </div>
-                <div class="day_div">
+                <div class="day_div" id="wednesday">
                     <label>Środa</label>
                 </div>
-                <div class="day_div">
+                <div class="day_div" id="thursday">
                     <label>Czwartek</label>
                 </div>
-                <div class="day_div">
+                <div class="day_div" id="friday">
                     <label>Piątek</label>
                 </div>
             </header>

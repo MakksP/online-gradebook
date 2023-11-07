@@ -24,19 +24,63 @@
   font-size: 2vh;
   height: min-content;
   justify-content: right;
+  color: #FFFFFF;
 }
 
 #days {
   display: contents;
+  color: #FFFFFF;
+  font-family: "Tilt Neon", sans-serif;
+  font-size: 2vh;
 }
 
 .hour_div {
-  margin-right: 2%;
+  background-color: #383c44;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .day_div {
-  grid-column: 1/4;
-  width: min-content;
+  width: 100%;
+  background-color: #383c44;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#monday {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+#tuesday {
+  grid-column: 1;
+  grid-row: 3;
+}
+
+#wednesday {
+  grid-column: 1;
+  grid-row: 4;
+}
+
+#thursday {
+  grid-column: 1;
+  grid-row: 5;
+}
+
+#friday {
+  grid-column: 1;
+  grid-row: 6;
+  border-bottom-left-radius: 12px;
+}
+
+#filler {
+  border-top-left-radius: 12px;
+}
+
+#last_hour {
+  border-top-right-radius: 12px;
 }
 
 /*# sourceMappingURL=teacherTimetableStyles.css.map */

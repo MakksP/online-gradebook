@@ -176,3 +176,10 @@
     cursor: pointer;
   }
 }
+
+@mixin timetable_font{
+  font: {
+    family: $main_site_font;
+    size: 2vh;
+  };
+}
