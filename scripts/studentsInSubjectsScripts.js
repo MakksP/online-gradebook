@@ -2,7 +2,7 @@
 function get_and_draw_students_grades(subject_name, student_grade_buttons) {
     $.ajax({
         type: "GET",
-        url: "../serverActions/getStudentsGrades.php",
+        url: "../serverActions/teacherGradesActions/getStudentsGrades.php",
         data: {subject_name: subject_name},
         dataType: "json",
         success: function (response) {
@@ -19,7 +19,7 @@ function get_and_draw_students_grades(subject_name, student_grade_buttons) {
 function draw_students_labels_in_subject(button_text, student_grade_buttons) {
     $.ajax({
         type: "GET",
-        url: "../serverActions/studentsAndSubjects.php",
+        url: "../serverActions/teacherSubjectsActions/studentsAndSubjects.php",
         data: {subject_name: button_text},
         success: function (response) {
             document.getElementById("header_text").innerHTML = button_text;
@@ -47,7 +47,7 @@ function add_students_grades(response) {
     }
     $.ajax({
        type: "GET",
-       url:"./serverActions/getAllStudentsMailInSubject.php",
+       url:"./serverActions/teacherSubjectsActions/getAllStudentsMailInSubject.php",
         data: {subject_name: get_current_subject_name()},
         dataType: "json",
         success: function (response){
@@ -76,7 +76,7 @@ const USER_ID_INDEX = 1;
 function add_grade_to_database(grade, description, date, response) {
     $.ajax({
         type: "POST",
-        url: "./serverActions/addNewGrade.php",
+        url: "./serverActions/teacherGradesActions/addNewGrade.php",
         data: {
             grade: grade,
             description: description,
@@ -101,7 +101,7 @@ const SURNAME_INDEX = 3;
 function serve_add_grade_action(student_email, subject_name) {
     $.ajax({
         type: "GET",
-        url: "./serverActions/getSubjectAndUserIds.php",
+        url: "./serverActions/teacherSubjectsActions/getSubjectAndUserIds.php",
         data: {
             email: student_email,
             subject_name: subject_name
@@ -123,4 +123,18 @@ function serve_add_grade_action(student_email, subject_name) {
 
 function get_current_subject_name() {
     return document.getElementsByTagName("h2")[0].innerHTML;
+}
+
+function delete_subject(subject_to_delete_id) {
+    $.ajax({
+        type: "POST",
+        url: "../serverActions/teacherSubjectsActions/deleteSubject.php",
+        data: {subjectId: subject_to_delete_id},
+        success: function (response) {
+            console.log(response);
+        },
+        error: function (response) {
+            console.log(response);
+        }
+    });
 }

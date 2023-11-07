@@ -55,7 +55,7 @@
             <h2 id="header_text">Dostępne opcje:</h2>
         </header>
         <div id="subjects_table">
-            <?php require 'serverActions/getAndDrawSubjects.php'; get_and_draw_subjects(); ?>
+            <?php require 'serverActions/teacherSubjectsActions/getAndDrawSubjects.php'; get_and_draw_subjects(); ?>
         </div>
 
     </section>

@@ -1,9 +1,9 @@
 <?php
 session_start();
 
-require '../dbConnection/databaseConnect.php';
-require '../dbConnection/databaseQueries.php';
-require './dbSchematicFunctions.php';
+require '../../dbConnection/databaseConnect.php';
+require '../../dbConnection/databaseQueries.php';
+require '../dbSchematicFunctions.php';
 
 
 

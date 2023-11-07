@@ -32,7 +32,7 @@ function repaint_grade_edit_pane(name, surname, grade, description, date, grade_
 function create_grade_edit_pane(grade_id){
     $.ajax({
         type: "GET",
-        url: "../serverActions/getGradeData.php",
+        url: "../serverActions/teacherGradesActions/getGradeData.php",
         data: {grade_id: grade_id},
         dataType: "json",
         success: function (response){
@@ -58,7 +58,7 @@ function find_rest_of_grades(grade){
 function update_grade(grade_id, grade, description_and_date) {
     $.ajax({
         type: "POST",
-        url: "../serverActions/updateGradeData.php",
+        url: "../serverActions/teacherGradesActions/updateGradeData.php",
         data: {
             grade_id: grade_id,
             grade: grade,
@@ -78,18 +78,4 @@ function repaint_subject_table_dynamic_content() {
     const current_subject_name = get_current_subject_name();
     document.getElementById("student_names").remove();
     draw_students_labels_in_subject(current_subject_name, student_grade_buttons);
-}
-
-function delete_subject(subject_to_delete_id) {
-    $.ajax({
-        type: "POST",
-        url: "../serverActions/deleteSubject.php",
-        data: {subjectId: subject_to_delete_id},
-        success: function (response) {
-            console.log(response);
-        },
-        error: function (response) {
-            console.log(response);
-        }
-    });
 }

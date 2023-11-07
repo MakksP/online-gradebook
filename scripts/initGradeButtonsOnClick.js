@@ -82,7 +82,7 @@ function create_delete_grade_button_onclick_action(grade_id) {
     document.getElementById("delete_grade_button").onclick = function () {
         $.ajax({
             type: "POST",
-            url: "../serverActions/deleteGrade.php",
+            url: "../serverActions/teacherGradesActions/deleteGrade.php",
             data: {grade_id: grade_id},
             success: function (response){
                 console.log(response);

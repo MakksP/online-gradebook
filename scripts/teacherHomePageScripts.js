@@ -11,7 +11,7 @@ function clear_subjects_to_add_pane() {
 function send_add_subject_to_teacher_request(subject_name) {
     $.ajax({
         type: "POST",
-        url: "../serverActions/addSubjectToTeacher.php",
+        url: "../serverActions/teacherSubjectsActions/addSubjectToTeacher.php",
         data: {subject_tag: subject_name},
         success: function (response) {
             location.reload();
@@ -27,7 +27,7 @@ function send_add_subject_to_teacher_request(subject_name) {
 function get_not_teaching_subjects_pane() {
     $.ajax({
         type: "GET",
-        url: "../serverActions/getNotTeachingSubjects.php",
+        url: "../serverActions/teacherSubjectsActions/getNotTeachingSubjects.php",
         success: function (response) {
             clear_subjects_to_add_pane();
             const main_container = document.getElementById("subjects_table");

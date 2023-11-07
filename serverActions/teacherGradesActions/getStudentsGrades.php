@@ -1,8 +1,9 @@
 <?php
 session_start();
 
-require '../dbConnection/databaseConnect.php';
-require '../dbConnection/databaseQueries.php';
+require '../../dbConnection/databaseConnect.php';
+require '../../dbConnection/databaseQueries.php';
+
 
 /**
  * @param array $response
