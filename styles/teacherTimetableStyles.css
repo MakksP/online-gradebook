@@ -76,6 +76,9 @@
 #friday {
   grid-column: 1;
   grid-row: 6;
+}
+
+#friday {
   border-bottom-left-radius: 12px;
 }
 

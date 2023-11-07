@@ -46,33 +46,24 @@
   border-right: 2px solid black;
 }
 
-#monday{
-  grid-column: 1;
-  grid-row: 2;
+$days_of_week: ("monday", "tuesday", "wednesday", "thursday", "friday");
+$days_of_week_index: 1;
+@while $days_of_week_index < 6{
+  $day_tag: "#" + nth($days_of_week, $days_of_week_index);
+  #{$day_tag}{
+    grid: {
+      column: 1;
+      row: $days_of_week_index + 1;
+    }
+  }
+  @if($day_tag == "#friday"){
+    #{$day_tag}{
+      border-bottom-left-radius: 12px;
+    };
+  }
+  $days_of_week_index: $days_of_week_index + 1;
 }
 
-#tuesday{
-  grid-column: 1;
-  grid-row: 3;
-}
-
-#wednesday{
-  grid-column: 1;
-  grid-row: 4;
-}
-
-#thursday{
-  grid-column: 1;
-  grid-row: 5;
-}
-
-#friday{
-  grid-column: 1;
-  grid-row: 6;
-  border: {
-    bottom-left-radius: 12px;
-  };
-}
 
 #filler{
   border: {

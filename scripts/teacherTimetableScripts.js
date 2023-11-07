@@ -14,7 +14,7 @@ function add_all_timetables_tag_to_timetables_pane(response) {
 function get_all_timetables(){
     $.ajax({
         type: "GET",
-        url: "../serverActions/getAllTimetables.php",
+        url: "../serverActions/teacherTimetablesActions/getAllTimetables.php",
         dataType: "json",
         success: function (response){
             add_all_timetables_tag_to_timetables_pane(response);
