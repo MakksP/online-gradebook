@@ -1,0 +1,100 @@
+@import "buttonAnimatoins.css";
+.appearing_pane {
+  height: 30%;
+  width: 20%;
+  background-color: #FFFFFF;
+  position: absolute;
+  top: 30%;
+  left: 40%;
+  border: 2px solid black;
+  border-radius: 10px;
+  font-size: 15px;
+  font-family: "Tilt Neon", sans-serif;
+  display: grid;
+}
+
+.available_grade_button {
+  height: 85%;
+  font-family: "Tilt Neon", sans-serif;
+  border: 2px solid black;
+  border-radius: 5px;
+}
+.available_grade_button:hover {
+  cursor: pointer;
+}
+
+.possible_grades {
+  display: flex;
+  justify-content: space-around;
+}
+
+#grade_edit_close_button_div {
+  display: flex;
+  justify-content: right;
+}
+
+#grade_edit_close_button {
+  border: none;
+  background-color: transparent;
+  font-size: 100%;
+  width: min-content;
+  height: min-content;
+}
+#grade_edit_close_button:hover {
+  cursor: pointer;
+}
+
+.grade_label:hover {
+  cursor: pointer;
+}
+
+#grade_add_close_button_div {
+  display: flex;
+  justify-content: right;
+}
+
+#grade_add_close_button {
+  border: none;
+  background-color: transparent;
+  font-size: 100%;
+  width: min-content;
+  height: min-content;
+}
+#grade_add_close_button:hover {
+  cursor: pointer;
+}
+#grade_add_close_button:hover {
+  cursor: pointer;
+}
+
+.new_grade_button {
+  margin-left: 0.5rem;
+  height: 85%;
+  width: 1.8rem;
+  border: 2px solid black;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #258518;
+  color: #FFFFFF;
+}
+.new_grade_button:hover {
+  cursor: pointer;
+}
+
+.grade_button {
+  margin-left: 0.5rem;
+  height: 85%;
+  width: 1.8rem;
+  border: 2px solid black;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.grade_button:hover {
+  cursor: pointer;
+}
+
+/*# sourceMappingURL=gradeEditPaneStyles.css.map */

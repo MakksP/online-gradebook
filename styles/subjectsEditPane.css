@@ -1,0 +1,46 @@
+@import "buttonAnimatoins.css";
+#subjects_to_add_pane {
+  overflow: auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: baseline;
+}
+
+#close_pane_button {
+  background-color: transparent;
+  border: none;
+  display: flex;
+  width: 100%;
+  height: min-content;
+  font-size: 100%;
+  justify-content: flex-end;
+}
+#close_pane_button:hover {
+  cursor: pointer;
+}
+
+#subjects_to_add_pane_header {
+  width: 100%;
+}
+
+.not_teaching_subject_button {
+  margin-top: 2%;
+  margin-bottom: 2%;
+  margin-left: 2%;
+  background-color: #383c44;
+  font-size: 15px;
+  font-family: "Tilt Neon", sans-serif;
+  color: #FFFFFF;
+  border: 2px solid black;
+  border-radius: 5px;
+}
+.not_teaching_subject_button:hover {
+  cursor: pointer;
+  background-color: #212328;
+}
+
+.not_teaching_subject_label:hover {
+  cursor: pointer;
+}
+
+/*# sourceMappingURL=subjectsEditPane.css.map */

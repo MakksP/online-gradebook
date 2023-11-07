@@ -1,0 +1,157 @@
+@import "buttonAnimatoins.css";
+#subjects_container {
+  width: 60%;
+  height: 60%;
+  text-align: center;
+  margin-top: 4%;
+  margin-left: 20%;
+}
+
+#subjects_table {
+  width: 100%;
+  height: 40%;
+  margin-top: 5%;
+  background-color: #D9D9D9;
+  border: 2px solid black;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  height: 80%;
+  justify-content: left;
+  flex-wrap: wrap;
+}
+
+.subject_button {
+  font-family: "Tilt Neon", sans-serif;
+  font-size: 25px;
+  width: 100%;
+  height: 100%;
+  border: 2px solid black;
+  background-color: #383c44;
+  color: #FFFFFF;
+  border-radius: 10px;
+  grid-row: 1/2;
+  grid-column: 1/3;
+}
+.subject_button:hover {
+  cursor: pointer;
+  background-color: #212328;
+}
+
+.subject_div {
+  height: 35%;
+  width: 160px;
+  min-width: 160px;
+  margin-left: 2%;
+  margin-top: 1%;
+  margin-right: 5%;
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: 60% 60%;
+  justify-items: center;
+}
+
+#new_subject_button {
+  font-size: 50px;
+  background-color: #258518;
+}
+#new_subject_button:hover {
+  background-color: #195a10;
+}
+
+.delete_button {
+  width: 50%;
+  height: 100%;
+  font-size: 20px;
+  border: none;
+  display: block;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border: 2px solid black;
+  border-top: none;
+  background-color: #f83c54;
+  animation: additional_button_release linear forwards;
+  animation-duration: 100ms;
+  grid-row: 2/3;
+  grid-column: 1/2;
+}
+.delete_button:hover {
+  cursor: pointer;
+  animation: additional_button_hover linear forwards;
+  animation-duration: 100ms;
+}
+
+.favourite_button {
+  width: 50%;
+  height: 100%;
+  font-size: 20px;
+  border: none;
+  display: block;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border: 2px solid black;
+  border-top: none;
+  background: linear-gradient(to right, #ef3e3d, #ffcb27);
+  animation: additional_button_release linear forwards;
+  animation-duration: 100ms;
+  grid-row: 2/3;
+  grid-column: 2/3;
+}
+.favourite_button:hover {
+  cursor: pointer;
+  animation: additional_button_hover linear forwards;
+  animation-duration: 100ms;
+}
+
+#gradebook_grid_header {
+  background-color: #383c44;
+  width: 100%;
+  height: 10%;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom: 2px solid black;
+  font-family: "Tilt Neon", sans-serif;
+  font-size: 25px;
+  color: #FFFFFF;
+  text-align: left;
+  display: flex;
+}
+
+#gradebook_grid_students_header {
+  width: 50%;
+}
+
+#gradebook_grid_grades_header {
+  width: 50%;
+}
+
+#student_names {
+  width: 100%;
+  height: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  text-align: left;
+}
+
+.student_label_div {
+  height: 100%;
+  font-size: 15px;
+  font-family: "Tilt Neon", sans-serif;
+  border-right: 2px solid black;
+  border-bottom: 2px solid black;
+  display: flex;
+  align-items: center;
+}
+
+.grade_part {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  border-bottom: 2px solid black;
+}
+
+.grade_label:hover {
+  cursor: pointer;
+}
+
+/*# sourceMappingURL=teacherSubjectsPage.css.map */
