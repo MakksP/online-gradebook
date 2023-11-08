@@ -41,7 +41,7 @@ function serve_timetable_data(button) {
         success: function (response) {
             const day_of_week_indexes = {"poniedziałek": 1, "wtorek": 2, "środa": 3, "czwartek": 4, "piątek": 5};
             const hour_indexes = get_hour_indexes();
-            console.log(hour_indexes);
+            console.log(response)
         },
         error: function (response) {
             console.log(response);

@@ -106,8 +106,9 @@
 
     function get_timetable_details(){
         return "
-            SELECT dayOfWeek, startTime, endTime, subjectId
-            FROM lessonplans WHERE lessonPlanId = ?
+                SELECT dayOfWeek, startTime, endTime, subjectName
+                FROM lessonplans JOIN subjects ON subjects.subjectId
+                = lessonplans.subjectId WHERE lessonPlanId = ?
         ";
     }
 
