@@ -183,7 +183,7 @@ function get_single_raw_timetable_element(element_index){
 }
 
 function get_timetable_tag(timetable_id){
-    return `<div class="timetable_tag_div">
-                <label>Plan ${timetable_id}</label>
-            </div>`
+    return `<button class="timetable_tag_button">
+                <label class="timetable_tag_label">Plan ${timetable_id}</label>
+            </button>`
 }

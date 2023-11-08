@@ -116,7 +116,6 @@ $button_id: 9;
   flex-direction: column;
   align-items: center;
   gap: 5px;
-  @include timetable_font;
   border-radius: 5px;
 }
 
@@ -125,10 +124,19 @@ $button_id: 9;
   margin-top: 5%;
 }
 
-.timetable_tag_div{
+.timetable_tag_button{
   @include thin_border;
+  @include timetable_font;
   border-radius: 5px;
   background-color: $white_contrast_color;
-  width: 80%;
-  height: 5%;
+  width: 10vh;
+  height: 2vw;
+  &:hover{
+    cursor: pointer;
+    background-color: darken($white_contrast_color, 10%);
+  }
+}
+
+.timetable_tag_label:hover{
+  cursor: pointer;
 }
