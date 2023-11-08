@@ -104,4 +104,11 @@
                 ";
     }
 
+    function get_timetable_details(){
+        return "
+            SELECT dayOfWeek, startTime, endTime, subjectId
+            FROM lessonplans WHERE lessonPlanId = ?
+        ";
+    }
+
 ?>

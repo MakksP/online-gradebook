@@ -56,7 +56,7 @@
     <section id="subjects_container">
 
         <aside id="timetables_panel">
-            <script>get_all_timetables()</script>
+            <?php require './serverActions/teacherTimetablesActions/getAllTimetables.php'; get_all_timetables_buttons(); ?>
         </aside>
         <div id="timetable">
             <header id="hours">
@@ -125,5 +125,6 @@
 <script src="scripts/initButtonsOnClick.js"></script>
 <script src="scripts/studentsInSubjectsScripts.js"></script>
 <script src="scripts/teacherGradesScripts.js"></script>
+<script src="scripts/initTimetableButtonsOnclick.js"></script>
 </body>
 </html>
