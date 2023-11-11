@@ -65,6 +65,11 @@
   color: $white_contrast_color;
 }
 
+.existing_subject_element{
+  display: flex;
+  align-items: baseline;
+}
+
 #title_div{
   font-weight: bold;
 }
@@ -102,3 +107,15 @@
   }
 }
 
+.delete_subject_button{
+  background-color: $delete_color;
+  font-size: 100%;
+  border: none;
+  @include thin_border;
+  border-radius: 5px;
+  height: min-content;
+  margin-left: 5px;
+  &:hover{
+    cursor: pointer;
+  }
+}

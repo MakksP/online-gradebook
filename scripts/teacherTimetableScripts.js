@@ -120,8 +120,34 @@ function get_subjects_from_database_and_add_to_pane() {
         success: function (response) {
             Array.from(response).forEach(subject => {
                 document.getElementById("available_subjects").insertAdjacentHTML("beforeend",
-                    `<div class='existing_subject_div'><label>${subject}</label></div>`)
+                    `<div class='existing_subject_element'>
+                        <div class='existing_subject_div'>
+                            <label class="existing_subject_label">${subject}</label>
+                        </div>
+                        <button class="delete_subject_button"><i class="icon-trash"></i></button>
+                    </div>` )
             });
+
+        },
+        error: function (response) {
+            console.log(response);
+        }
+    });
+}
+
+function serve_add_subject_action(new_subject_name, new_subject_ects_points, new_subject_semester) {
+    $.ajax({
+        type: "POST",
+        url: "../serverActions/teacherTimetablesActions/addNewSubject.php",
+        data: {
+            subject_name: new_subject_name,
+            ects_points: new_subject_ects_points,
+            semester: new_subject_semester
+        },
+        success: function (response) {
+            document.getElementById("edit_subject_pane").remove();
+            add_edit_subject_pane();
+            get_subjects_from_database_and_add_to_pane();
 
         },
         error: function (response) {
