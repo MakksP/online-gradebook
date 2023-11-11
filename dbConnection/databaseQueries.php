@@ -116,4 +116,9 @@
         return "SELECT subjectName FROM subjects";
     }
 
+    function insert_new_subject(){
+        return "INSERT INTO subjects (ectsPoints, semester, subjectName)
+                VALUES (?, ?, ?)";
+    }
+
 ?>

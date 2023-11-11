@@ -200,8 +200,10 @@ function get_edit_subject_pane(){
             <div id="available_subjects"></div>
             <div id="new_subject_input_div">
                 <label for="new_subject_input" id="new_subject_description">
-                    Nazwa nowego przdmiotu:
-                    <input type="text" id="new_subject_input">
+                    Dane nowego przdmiotu:
+                    <input type="text" id="new_subject_name_input" class="new_subject_input" placeholder="nazwa przedmiotu...">
+                    <input type="text" id="new_subject_ects_points_input" class="new_subject_input" placeholder="ilość punktów ECTS...">
+                    <input type="text" id="new_subject_semester_input" class="new_subject_input" placeholder="semestr...">
                     <button type="button" id="confirm_new_subject_button">Zatwierdź przedmiot</button>
                 </label>
             </div>

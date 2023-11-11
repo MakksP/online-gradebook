@@ -37,6 +37,7 @@
 
 #edit_subject_pane{
   @include appearing_pane_style;
+  border-radius: 0;
   position: relative;
   bottom: 50%;
   left: 40%;
@@ -68,12 +69,17 @@
   font-weight: bold;
 }
 
-#new_subject_input_div{
+#new_subject_description{
   display: flex;
+  flex-direction: column;
+}
+
+#new_subject_input_div{
   margin-top: 15px;
   margin-left: 5px;
   gap: 5px;
   @include standard_form_font;
+  width: 80%;
 }
 
 #confirm_new_subject_button{
@@ -88,6 +94,11 @@
   }
 }
 
-#new_subject_input{
+.new_subject_input{
   @include standard_form_font;
+  margin: {
+    top: 5px;
+    bottom: 5px;
+  }
 }
+
