@@ -210,3 +210,17 @@ function get_edit_subject_pane(){
         </div>
     `;
 }
+
+function add_existing_subjects_to_pane(response) {
+    Array.from(response).forEach(subject => {
+        document.getElementById("available_subjects").insertAdjacentHTML("beforeend",
+            `<div class='existing_subject_element'>
+                        <div class='existing_subject_div'>
+                            <label class="existing_subject_label">${subject}</label>
+                        </div>
+                        <button class="delete_subject_button"><i class="icon-trash"></i></button>
+                    </div>`)
+
+
+    });
+}

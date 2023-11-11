@@ -121,4 +121,8 @@
                 VALUES (?, ?, ?)";
     }
 
+    function delete_subject_from_database(){
+        return "DELETE FROM subjects WHERE subjectName = ?";
+    }
+
 ?>

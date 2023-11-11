@@ -1,5 +1,5 @@
 const timetable_tag_buttons = Array.from(document.getElementsByClassName("timetable_tag_button"));
-const add_new_subject = document.getElementById("add_subject_button");
+const edit_subjects = document.getElementById("add_subject_button");
 
 function get_plan_id(button){
     const button_label = button.getElementsByTagName("label")[0].innerHTML;
@@ -15,11 +15,27 @@ timetable_tag_buttons.forEach(button => {
     }
 });
 
-
-add_new_subject.onclick = function (){
+edit_subjects.onclick = function (){
     remove_edit_subject_pane();
     add_edit_subject_pane();
     get_subjects_from_database_and_add_to_pane();
+}
+
+
+
+function create_delete_subject_button_onclick_action(){
+    Array.from(document.getElementsByClassName("delete_subject_button")).forEach(delete_button => {
+        delete_button.onclick = function (){
+            const subject_to_delete = get_subject_to_delete_name(delete_button)
+            document.getElementById("edit_subject_pane").innerHTML
+                = `<div id='ask_to_remove_subject_div'>
+                        <label>Czy na pewno chcesz usunąć przedmiot<br>${subject_to_delete}</label>
+                        <button class="delete_subject_decision"></button>
+                        <button class="delete_subject_decision"></button>
+                   </div>`
+            //delete_subject_from_database_action(subject_to_delete);
+        }
+    });
 }
 
 
