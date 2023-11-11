@@ -105,8 +105,10 @@ function remove_edit_subject_pane() {
     }
 }
 
+
 function add_edit_subject_pane() {
     document.getElementById("main_container").insertAdjacentHTML("beforeend", get_edit_subject_pane());
+    create_confirm_new_subject_button_onclick_action();
     appearing_pane_close_button_onclick("add_new_subject_close_button", "edit_subject_pane");
 }
 

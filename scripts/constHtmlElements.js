@@ -202,6 +202,7 @@ function get_edit_subject_pane(){
                 <label for="new_subject_input" id="new_subject_description">
                     Nazwa nowego przdmiotu:
                     <input type="text" id="new_subject_input">
+                    <button type="button" id="confirm_new_subject_button">Zatwierdź przedmiot</button>
                 </label>
             </div>
         </div>

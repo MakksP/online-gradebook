@@ -16,9 +16,14 @@ timetable_tag_buttons.forEach(button => {
 });
 
 
-
 add_new_subject.onclick = function (){
     remove_edit_subject_pane();
     add_edit_subject_pane();
     get_subjects_from_database_and_add_to_pane();
+}
+
+function create_confirm_new_subject_button_onclick_action() {
+    document.getElementById("confirm_new_subject_button").onclick = function () {
+        console.log(document.getElementById("new_subject_input").value)
+    }
 }

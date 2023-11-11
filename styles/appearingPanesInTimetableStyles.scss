@@ -42,6 +42,7 @@
   left: 40%;
   display: flex;
   flex-direction: column;
+  overflow: auto;
 }
 
 #add_new_subject_close_button_div{
@@ -50,4 +51,43 @@
 
 #add_new_subject_close_button{
   @include close_pane_button_style;
+}
+
+.existing_subject_div{
+  background-color: $nav_bar_color;
+  @include thin_border;
+  width: 80%;
+  margin:{
+    left: 5px;
+    top: 5px;
+  }
+  color: $white_contrast_color;
+}
+
+#title_div{
+  font-weight: bold;
+}
+
+#new_subject_input_div{
+  display: flex;
+  margin-top: 15px;
+  margin-left: 5px;
+  gap: 5px;
+  @include standard_form_font;
+}
+
+#confirm_new_subject_button{
+  background: linear-gradient($add_button_color 100%, $four_grade_color 5%);
+  font-size: 0.8vw;
+  @include thin_border;
+  @include standard_form_font;
+  border-radius: 5px;
+  &:hover{
+    cursor: pointer;
+    background: linear-gradient(darken($add_button_color, 10%) 100%, darken($four_grade_color, 10%) 5%);
+  }
+}
+
+#new_subject_input{
+  @include standard_form_font;
 }
