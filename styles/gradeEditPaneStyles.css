@@ -1,11 +1,11 @@
 @import "buttonAnimatoins.css";
 .appearing_pane {
-  height: 30%;
-  width: 20%;
-  background-color: #FFFFFF;
   position: absolute;
   top: 30%;
   left: 40%;
+  height: 30%;
+  width: 20%;
+  background-color: #FFFFFF;
   border: 2px solid black;
   border-radius: 10px;
   font-size: 15px;

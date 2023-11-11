@@ -10,12 +10,6 @@ function create_add_new_grade_button_onclick_action(){
     });
 }
 
-function create_close_grade_add_pane_onclick_action() {
-    document.getElementById("grade_add_close_button").onclick = function () {
-        document.getElementById("add_grade_pane").remove();
-    }
-}
-
 function init_student_grade_on_click_action(student_grade_buttons) {
     student_grade_buttons = document.getElementsByClassName("grade_button");
 
@@ -29,12 +23,6 @@ function init_student_grade_on_click_action(student_grade_buttons) {
         }
     }
     return student_grade_buttons;
-}
-
-function grade_edit_close_button_onclick() {
-    document.getElementById("grade_edit_close_button").onclick = function () {
-        document.getElementById("grade_edit_pane").remove();
-    }
 }
 
 

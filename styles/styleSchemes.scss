@@ -183,3 +183,18 @@
     size: 1vw;
   };
 }
+
+@mixin add_button_styles{
+  background: linear-gradient($add_button_color 100%, $four_grade_color 5%);
+  font-size: 0.8vw;
+}
+
+@mixin appearing_pane_style{
+  height: 30%;
+  width: 20%;
+  background-color: $white_contrast_color;
+  @include thin_border;
+  border-radius: 10px;
+  @include standard_form_font;
+  display: grid;
+}

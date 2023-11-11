@@ -103,3 +103,10 @@ for (let delete_button_index = 0; delete_button_index < delete_subject_button.le
         }
     }
 }
+
+function appearing_pane_close_button_onclick(button_id, element_to_remove_id) {
+    document.getElementById(button_id).onclick = function () {
+        document.getElementById(element_to_remove_id).remove();
+    }
+}
+

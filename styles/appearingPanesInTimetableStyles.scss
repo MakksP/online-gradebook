@@ -21,6 +21,7 @@
   };
   align-self: end;
   border-bottom: none;
+
   &:hover{
     cursor: pointer;
     animation: add_subject_button_hover linear forwards;
@@ -32,4 +33,21 @@
 
 #add_subject_label:hover{
   cursor: pointer;
+}
+
+#edit_subject_pane{
+  @include appearing_pane_style;
+  position: relative;
+  bottom: 50%;
+  left: 40%;
+  display: flex;
+  flex-direction: column;
+}
+
+#add_new_subject_close_button_div{
+  @include close_button_div_style;
+}
+
+#add_new_subject_close_button{
+  @include close_pane_button_style;
 }

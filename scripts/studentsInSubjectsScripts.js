@@ -111,7 +111,7 @@ function serve_add_grade_action(student_email, subject_name) {
             document.getElementById("subjects_table").insertAdjacentHTML("beforeend", get_add_grade_pane(response[NAME_INDEX], response[SURNAME_INDEX]));
             console.log(response);
             set_button_grade_color_by_grade_value("possible_grades", "available_grade_button");
-            create_close_grade_add_pane_onclick_action();
+            appearing_pane_close_button_onclick("grade_add_close_button", "add_grade_pane");
             available_grade_button_onclick_action();
             create_save_grade_button_onclick_action(response);
         },

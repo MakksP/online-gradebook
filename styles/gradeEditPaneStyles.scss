@@ -2,16 +2,10 @@
 @import "styleSchemes";
 
 .appearing_pane{
-  height: 30%;
-  width: 20%;
-  background-color: $white_contrast_color;
   position: absolute;
   top: 30%;
   left: 40%;
-  @include thin_border;
-  border-radius: 10px;
-  @include standard_form_font;
-  display: grid;
+  @include appearing_pane_style;
 }
 
 .available_grade_button{

@@ -112,4 +112,8 @@
         ";
     }
 
+    function get_all_subjects(){
+        return "SELECT subjectName FROM subjects";
+    }
+
 ?>

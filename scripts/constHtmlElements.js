@@ -185,5 +185,25 @@ function get_single_raw_timetable_element(element_index){
 function get_timetable_tag(timetable_id){
     return `<button class="timetable_tag_button">
                 <label class="timetable_tag_label">Plan ${timetable_id}</label>
-            </button>`
+            </button>`;
+}
+
+function get_edit_subject_pane(){
+    return `
+        <div id="edit_subject_pane">
+            <div id="add_new_subject_close_button_div">
+                <button id="add_new_subject_close_button"><i class="icon-cancel-circled"></i></button>
+            </div>
+            <div id="title_div">
+                <label>Edytuj przedmioty</label>
+            </div>
+            <div id="available_subjects"></div>
+            <div id="new_subject_input_div">
+                <label for="new_subject_input" id="new_subject_description">
+                    Nazwa nowego przdmiotu:
+                    <input type="text" id="new_subject_input">
+                </label>
+            </div>
+        </div>
+    `;
 }

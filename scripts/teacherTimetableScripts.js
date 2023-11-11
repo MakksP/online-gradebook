@@ -97,3 +97,33 @@ function serve_timetable_data(button) {
         }
     });
 }
+
+function remove_edit_subject_pane() {
+    const edit_subject_pane = document.getElementById("edit_subject_pane");
+    if (edit_subject_pane !== null){
+        edit_subject_pane.remove();
+    }
+}
+
+function add_edit_subject_pane() {
+    document.getElementById("main_container").insertAdjacentHTML("beforeend", get_edit_subject_pane());
+    appearing_pane_close_button_onclick("add_new_subject_close_button", "edit_subject_pane");
+}
+
+function get_subjects_from_database_and_add_to_pane() {
+    $.ajax({
+        type: "GET",
+        url: "../serverActions/teacherTimetablesActions/getAllSubjects.php",
+        dataType: "json",
+        success: function (response) {
+            Array.from(response).forEach(subject => {
+                document.getElementById("available_subjects").insertAdjacentHTML("beforeend",
+                    `<div class='existing_subject_div'><label>${subject}</label></div>`)
+            });
+
+        },
+        error: function (response) {
+            console.log(response);
+        }
+    });
+}

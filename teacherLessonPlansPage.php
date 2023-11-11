@@ -55,7 +55,7 @@
         <h2 id="header_text">Plany lekcji</h2>
     </header>
     <section id="subjects_container">
-        <button id="add_subject_button"><label id="add_subject_label">Dodaj przedmiot</label></button>
+        <button id="add_subject_button"><label id="add_subject_label">Edytuj przedmioty</label></button>
         <aside id="timetables_panel">
             <?php require './serverActions/teacherTimetablesActions/getAllTimetables.php'; get_all_timetables_buttons(); ?>
         </aside>

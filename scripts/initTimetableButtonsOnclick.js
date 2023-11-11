@@ -1,4 +1,5 @@
 const timetable_tag_buttons = Array.from(document.getElementsByClassName("timetable_tag_button"));
+const add_new_subject = document.getElementById("add_subject_button");
 
 function get_plan_id(button){
     const button_label = button.getElementsByTagName("label")[0].innerHTML;
@@ -15,3 +16,9 @@ timetable_tag_buttons.forEach(button => {
 });
 
 
+
+add_new_subject.onclick = function (){
+    remove_edit_subject_pane();
+    add_edit_subject_pane();
+    get_subjects_from_database_and_add_to_pane();
+}

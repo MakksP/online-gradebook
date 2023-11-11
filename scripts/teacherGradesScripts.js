@@ -1,6 +1,6 @@
 function add_grade_edit_pane_to_subjects_table(name, surname, grade, description, date) {
     document.getElementById("subjects_table").insertAdjacentHTML("beforeend", get_grade_edit_pane(name, surname, grade, description, date));
-    grade_edit_close_button_onclick();
+    appearing_pane_close_button_onclick("grade_edit_close_button", "grade_edit_pane");
 }
 
 function get_grade_value_of_pressed_button(button) {
