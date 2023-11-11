@@ -127,5 +127,7 @@
 <script src="scripts/studentsInSubjectsScripts.js"></script>
 <script src="scripts/teacherGradesScripts.js"></script>
 <script src="scripts/initTimetableButtonsOnclick.js"></script>
+<script src="scripts/timetableCellsScripts.js"></script>
+<script src="scripts/timetableNewSubjectsScripts.js"></script>
 </body>
 </html>
