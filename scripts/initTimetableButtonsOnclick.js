@@ -87,15 +87,16 @@ function serve_setting_subject_pane_creating(button, response) {
     const day_of_week = get_day_of_week_of_selected_subject(button_id);
     const hour = find_hour_by_index(get_hour_indexes(), button_id % hours_per_day);
 
-    console.log(hour)
+    add_subjects_to_list(response);
+    document.getElementById("day_label").innerHTML = "Dzień: " + day_of_week;
+    document.getElementById("hour_label").innerHTML = "Godzina: " + hour;
+
     if (subject_is_assigned_to_cell(subject_name)) {
         header.innerHTML = subject_name;
         set_subject_label.insertAdjacentHTML("afterbegin", "Zamień na:")
-        add_subjects_to_list(response);
-        document.getElementById("day_label").innerHTML = "Dzień: " + day_of_week;
-        document.getElementById("hour_label").innerHTML = "Godzina: " + hour;
     } else {
-
+        header.innerHTML = "Pusta godzina";
+        set_subject_label.insertAdjacentHTML("afterbegin", "Dodaj przedmiot:")
     }
 }
 

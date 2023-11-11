@@ -43,8 +43,6 @@ function set_button_grade_color_by_grade_value(button_container_class_name, butt
 }
 
 
-
-
 function get_student_email_from_student_label_div(button) {
     return button.closest("div").id.substring(0, (button.closest("div").id.indexOf("_")));
 }
