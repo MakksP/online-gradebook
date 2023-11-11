@@ -37,6 +37,7 @@
 
 #edit_subject_pane{
   @include appearing_pane_style;
+  font-size: 1vw;
   border-radius: 0;
   position: relative;
   bottom: 50%;
@@ -118,4 +119,54 @@
   &:hover{
     cursor: pointer;
   }
+}
+
+#ask_to_remove_subject_div{
+  font-size: 2vh;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: space-around;
+  @include whole_area_style;
+}
+
+#decision_buttons_div{
+  display: flex;
+  justify-content: space-around;
+}
+
+.delete_subject_decision{
+  width: 10vh;
+  height: 5vh;
+  @include thin_border;
+  border-radius: 5px;
+  @include timetable_font;
+}
+
+#subject_name_span{
+  font-weight: bold;
+}
+
+#delete_subject_decision_label{
+  text-align: center;
+}
+
+#delete_subject_yes{
+  background: linear-gradient($add_button_color 100%, $four_grade_color 5%);
+  &:hover{
+    cursor: pointer;
+    background: linear-gradient(darken($add_button_color, 10%) 100%, darken($four_grade_color, 10%) 5%);
+  }
+}
+
+#delete_subject_no{
+  background-color: $delete_color;
+  &:hover{
+    cursor: pointer;
+    background-color: darken($delete_color, 10%);
+  }
+}
+
+.delete_subject_label:hover{
+  cursor: pointer;
 }

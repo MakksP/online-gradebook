@@ -216,11 +216,23 @@ function add_existing_subjects_to_pane(response) {
         document.getElementById("available_subjects").insertAdjacentHTML("beforeend",
             `<div class='existing_subject_element'>
                         <div class='existing_subject_div'>
-                            <label class="existing_subject_label">${subject}</label>
+                            <label class="existing_subject_label"><span id="subject_name_span">${subject}</span></label>
                         </div>
                         <button class="delete_subject_button"><i class="icon-trash"></i></button>
                     </div>`)
 
 
     });
+}
+
+
+function get_ask_to_remove_subject_div(subject_to_delete) {
+    return `<div id='ask_to_remove_subject_div'>
+                        <label id="delete_subject_decision_label">Czy na pewno chcesz usunąć przedmiot<br>${subject_to_delete}</label>
+                        <div id="decision_buttons_div">
+                            <button class="delete_subject_decision" id="delete_subject_yes"><label class="delete_subject_label">TAK</label></button>
+                            <button class="delete_subject_decision" id="delete_subject_no"><label class="delete_subject_label">NIE</label></button>
+                        </div>
+                        
+                   </div>`;
 }

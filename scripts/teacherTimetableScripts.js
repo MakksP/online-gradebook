@@ -151,10 +151,11 @@ function serve_add_subject_action(new_subject_name, new_subject_ects_points, new
 
 
 function get_subject_to_delete_name(delete_button) {
-    return delete_button.closest("div").getElementsByClassName("existing_subject_label")[0].innerHTML;
+    return delete_button.closest("div").querySelector(".existing_subject_label #subject_name_span").innerHTML;
 }
 
 function delete_subject_from_database_action(subject_to_delete) {
+    console.log(subject_to_delete)
     $.ajax({
         type: "POST",
         url: "../serverActions/teacherTimetablesActions/deleteSubject.php",
@@ -168,4 +169,10 @@ function delete_subject_from_database_action(subject_to_delete) {
             console.log(response);
         }
     });
+}
+
+function repaint_edit_subject_pane() {
+    remove_edit_subject_pane();
+    add_edit_subject_pane();
+    get_subjects_from_database_and_add_to_pane();
 }
