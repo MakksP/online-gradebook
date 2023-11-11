@@ -3,16 +3,35 @@
 
 #subjects_container{
   width: 75%;
-  display: flex;
+  display: grid;
   margin-left: 10%;
+  grid-template-columns: 2fr 10fr;
+  grid-template-rows: 1fr 12fr;
+
+
+  @media (min-width: 768px) {
+    grid-template-columns: 1fr 5fr;
+    grid-template-rows: 0.5fr 6fr;
+  }
+
+  @media (min-width: 1200px) {
+    grid-template-columns: 2fr 10fr;
+    grid-template-rows: 1fr 12fr;
+  }
 }
 
 #timetable{
   @include user_pane_style;
+  margin-top: 0;
   display: grid;
   height: 80%;
-  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  border-radius: 1vw;
+  grid: {
+    template-columns: repeat(11, 9.1%);
+    template-rows: repeat(6, 17%);
+    row: 2;
+  };
+  overflow: hidden;
 }
 
 #hours{
@@ -56,27 +75,16 @@ $days_of_week_index: 1;
       row: $days_of_week_index + 1;
     }
   }
-  @if($day_tag == "#friday"){
-    #{$day_tag}{
-      border-bottom-left-radius: 12px;
-    };
-  }
   $days_of_week_index: $days_of_week_index + 1;
 }
 
 
 #filler{
-  border: {
-    top-left-radius: 12px;
-    right: none;
-  };
+  border-right: none;
 }
 
 #last_hour{
-  border: {
-    top-right-radius: 12px;
-    right: none;
-  };
+  border-right: none;
 }
 
 #first_hour{
@@ -84,9 +92,13 @@ $days_of_week_index: 1;
 }
 
 .timetable_element_button{
-  background-color: transparent;
+  background-color: $button_area_color;
   border: none;
   border-right: 2px solid black;
+  &:hover{
+    background-color: darken($button_area_color, 10%);
+    cursor: pointer;
+  }
 }
 
 $button_id: 9;
@@ -106,9 +118,8 @@ $button_id: 9;
 #timetables_panel{
   background-color: $nav_bar_color;
   height: 80%;
-  width: 10%;
+  width: 55%;
   margin: {
-    top: 2%;
     right: 5%;
   };
   @include thin_border;
@@ -117,6 +128,7 @@ $button_id: 9;
   align-items: center;
   gap: 5px;
   border-radius: 5px;
+  grid-row: 2;
 }
 
 #header_text{
@@ -127,10 +139,10 @@ $button_id: 9;
 .timetable_tag_button{
   @include thin_border;
   @include timetable_font;
+
   border-radius: 5px;
   background-color: $white_contrast_color;
-  width: 10vh;
-  height: 2vw;
+  width: 5vw;
   &:hover{
     cursor: pointer;
     background-color: darken($white_contrast_color, 10%);
@@ -140,3 +152,8 @@ $button_id: 9;
 .timetable_tag_label:hover{
   cursor: pointer;
 }
+
+.timetable_element_label:hover{
+  cursor: pointer;
+}
+

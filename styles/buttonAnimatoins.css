@@ -17,3 +17,15 @@
     from{height: 40%}
     to{height: 30%}
 }
+
+
+@keyframes add_subject_button_hover {
+    from{height: 90%}
+    to{height: 100%}
+}
+
+@keyframes add_subject_button_hover_release {
+    from{height: 100%}
+    to{height: 90%}
+}
+

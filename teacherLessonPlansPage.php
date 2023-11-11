@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="styles/teacherHomePageStyles.css">
     <link rel="stylesheet" href="styles/teacherSubjectsPage.css">
     <link rel="stylesheet" href="styles/teacherTimetableStyles.css">
+    <link rel="stylesheet" href="styles/appearingPanesInTimetableStyles.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="scripts/constHtmlElements.js"></script>
     <script src="scripts/teacherHomePageScripts.js"></script>
@@ -54,7 +55,7 @@
         <h2 id="header_text">Plany lekcji</h2>
     </header>
     <section id="subjects_container">
-
+        <button id="add_subject_button"><label id="add_subject_label">Dodaj przedmiot</label></button>
         <aside id="timetables_panel">
             <?php require './serverActions/teacherTimetablesActions/getAllTimetables.php'; get_all_timetables_buttons(); ?>
         </aside>
