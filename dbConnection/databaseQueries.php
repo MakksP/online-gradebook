@@ -125,4 +125,16 @@
         return "DELETE FROM subjects WHERE subjectName = ?";
     }
 
+    function get_subject_by_id(){
+        return "SELECT subjectId FROM subjects
+                WHERE subjectName = ?";
+    }
+
+    function update_timetable_cell(){
+        return "
+                 UPDATE lessonplans SET subjectId = ?
+                 WHERE startTime = ? AND dayOfWeek = ?
+                 AND lessonPlanId = ?";
+    }
+
 ?>
