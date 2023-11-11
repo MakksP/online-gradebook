@@ -17,6 +17,16 @@ function get_hour_text_representation(hour_counter, minutes) {
     }
 }
 
+function find_hour_by_index(hours, hour_index) {
+    const position_without_seconds = 5;
+    for (let [key, value] of hours.entries()) {
+        if (value === hour_index) {
+            return key.substring(0, position_without_seconds);
+        }
+    }
+    return null;
+}
+
 function get_hour_indexes() {
     const total_hours = 20;
 
@@ -98,18 +108,18 @@ function serve_timetable_data(button) {
     });
 }
 
-function remove_edit_subject_pane() {
-    const edit_subject_pane = document.getElementById("edit_subject_pane");
-    if (edit_subject_pane !== null){
-        edit_subject_pane.remove();
+function remove_edit_pane(pane_id) {
+    const pane = document.getElementById(pane_id);
+    if (pane !== null){
+        pane.remove();
     }
 }
 
 
-function add_edit_subject_pane() {
-    document.getElementById("main_container").insertAdjacentHTML("beforeend", get_edit_subject_pane());
-    create_confirm_new_subject_button_onclick_action();
-    appearing_pane_close_button_onclick("add_new_subject_close_button", "edit_subject_pane");
+function add_new_appearing_pane_to_main_container(pane_content, confirm_button_onclick_action, close_button_id, pane_id){
+    document.getElementById("main_container").insertAdjacentHTML("beforeend", pane_content());
+    confirm_button_onclick_action();
+    appearing_pane_close_button_onclick(close_button_id, pane_id);
 }
 
 
@@ -139,7 +149,8 @@ function serve_add_subject_action(new_subject_name, new_subject_ects_points, new
         },
         success: function (response) {
             document.getElementById("edit_subject_pane").remove();
-            add_edit_subject_pane();
+            add_new_appearing_pane_to_main_container(get_edit_subject_pane, create_confirm_new_subject_button_onclick_action,
+                "add_new_subject_close_button", "edit_subject_pane");
             get_subjects_from_database_and_add_to_pane();
 
         },
@@ -172,7 +183,11 @@ function delete_subject_from_database_action(subject_to_delete) {
 }
 
 function repaint_edit_subject_pane() {
-    remove_edit_subject_pane();
-    add_edit_subject_pane();
+    remove_edit_pane("edit_subject_pane");
+    add_new_appearing_pane_to_main_container(get_edit_subject_pane, create_confirm_new_subject_button_onclick_action, "add_new_subject_close_button", "edit_subject_pane");
     get_subjects_from_database_and_add_to_pane();
+}
+
+function subject_is_assigned_to_cell(subject_name) {
+    return subject_name.length > 0;
 }

@@ -112,6 +112,8 @@
   background-color: #D9D9D9;
   border: none;
   border-right: 2px solid black;
+  font-family: "Tilt Neon", sans-serif;
+  font-size: 0.72vw;
 }
 .timetable_element_button:hover {
   background-color: silver;

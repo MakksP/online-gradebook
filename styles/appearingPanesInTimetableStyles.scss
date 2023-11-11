@@ -39,9 +39,7 @@
   @include appearing_pane_style;
   font-size: 1vw;
   border-radius: 0;
-  position: relative;
-  bottom: 50%;
-  left: 40%;
+  @include appearing_pane_position;
   display: flex;
   flex-direction: column;
   overflow: auto;
@@ -89,15 +87,10 @@
 }
 
 #confirm_new_subject_button{
-  background: linear-gradient($add_button_color 100%, $four_grade_color 5%);
   font-size: 0.8vw;
   @include thin_border;
   @include standard_form_font;
-  border-radius: 5px;
-  &:hover{
-    cursor: pointer;
-    background: linear-gradient(darken($add_button_color, 10%) 100%, darken($four_grade_color, 10%) 5%);
-  }
+  @include timetable_add_button_colors;
 }
 
 .new_subject_input{
@@ -118,6 +111,7 @@
   margin-left: 5px;
   &:hover{
     cursor: pointer;
+    background-color: darken($delete_color, 10%);
   }
 }
 
@@ -152,11 +146,7 @@
 }
 
 #delete_subject_yes{
-  background: linear-gradient($add_button_color 100%, $four_grade_color 5%);
-  &:hover{
-    cursor: pointer;
-    background: linear-gradient(darken($add_button_color, 10%) 100%, darken($four_grade_color, 10%) 5%);
-  }
+  @include timetable_add_button_colors;
 }
 
 #delete_subject_no{
@@ -169,4 +159,59 @@
 
 .delete_subject_label:hover{
   cursor: pointer;
+}
+
+#assign_subject_pane_div{
+  @include appearing_pane_style;
+  @include appearing_pane_position;
+  display: flex;
+  flex-direction: column;
+}
+
+#assign_subject_pane_close_button_div{
+  @include close_button_div_style;
+  height: min-content;
+}
+
+#assign_subject_pane_close_button{
+  @include close_pane_button_style;
+}
+
+#assign_subject_pane_header{
+  align-self: center;
+}
+
+#set_subject_div{
+  margin-left: 10px;
+  @include timetable_font;
+}
+
+#select_subject{
+  width: min-content;
+  @include timetable_font;
+  background-color: $nav_bar_color;
+  color: $white_contrast_color;
+}
+
+#subject_time_div{
+  margin: {
+    left: 10px;
+    top: 20px
+  };
+  ;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  @include timetable_font;
+}
+
+#confirm_setting_new_subject{
+  @include timetable_add_button_colors;
+  @include thin_border;
+}
+
+#confirm_setting_new_subject_div{
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
 }

@@ -95,6 +95,10 @@ $days_of_week_index: 1;
   background-color: $button_area_color;
   border: none;
   border-right: 2px solid black;
+  font: {
+    family: $main_site_font;
+    size: 0.72vw;
+  };
   &:hover{
     background-color: darken($button_area_color, 10%);
     cursor: pointer;

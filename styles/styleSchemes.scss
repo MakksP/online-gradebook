@@ -198,3 +198,20 @@
   @include standard_form_font;
   display: grid;
 }
+
+@mixin appearing_pane_position{
+  position: relative;
+  bottom: 50%;
+  left: 40%;
+}
+
+@mixin timetable_add_button_colors{
+  @include timetable_font;
+  background: linear-gradient($add_button_color 100%, $four_grade_color 5%);
+  @include thin_border;
+  border-radius: 5px;
+  &:hover{
+    cursor: pointer;
+    background: linear-gradient(darken($add_button_color, 10%) 100%, darken($four_grade_color, 10%) 5%);
+  }
+}

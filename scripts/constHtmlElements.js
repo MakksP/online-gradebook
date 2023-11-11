@@ -236,3 +236,27 @@ function get_ask_to_remove_subject_div(subject_to_delete) {
                         
                    </div>`;
 }
+
+
+function get_assign_subject_to_timetable_pane(){
+    return `
+            <div id="assign_subject_pane_div">
+                <div id="assign_subject_pane_close_button_div">
+                    <button id="assign_subject_pane_close_button"><i class="icon-cancel-circled"></i></button>
+                </div>
+                <h3 id="assign_subject_pane_header"></h3>
+                <div id="set_subject_div">
+                    <label id="set_subject_label" for="select_subject">
+                        <select id="select_subject"></select>
+                    </label>
+                </div>
+                <div id="subject_time_div">
+                    <label id="day_label"></label>
+                    <label id="hour_label"></label>
+                </div>
+                <div id="confirm_setting_new_subject_div">
+                    <button id="confirm_setting_new_subject">Zatwierdź zmiany</button>
+                </div>
+            </div>
+    `;
+}
