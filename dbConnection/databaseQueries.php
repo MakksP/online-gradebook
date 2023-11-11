@@ -137,4 +137,9 @@
                  AND lessonPlanId = ?";
     }
 
+    function insert_timetable_cell(){
+        return "INSERT INTO lessonplans (dayOfWeek, startTime, lessonPlanId, subjectId)
+                VALUES (?, ?, ?, ?)";
+    }
+
 ?>
