@@ -66,7 +66,7 @@ function update_subject_in_database(subject_id, hour, day, timetable_id) {
     });
 }
 
-function update_existing_position_in_timetable(subject_name, hour, day, timetable_id) {
+function serve_cell_set_action(subject_name, hour, day, timetable_id, action) {
     $.ajax({
         type: "GET",
         url: "../serverActions/teacherTimetablesActions/getSubjectById.php",
@@ -76,7 +76,7 @@ function update_existing_position_in_timetable(subject_name, hour, day, timetabl
         dataType: "json",
         success: function (response) {
             const subject_id = response[0]
-            update_subject_in_database(subject_id, hour, day, timetable_id);
+            action(subject_id, hour, day, timetable_id);
         },
         error: function (response) {
             console.log(response)
@@ -103,30 +103,11 @@ function insert_subject_in_database(subject_id, hour, day, timetable_id) {
     });
 }
 
-
-function insert_subject_in_timetable_ceil_to_database(subject_name, hour, day, timetable_id) {
-    $.ajax({
-        type: "GET",
-        url: "../serverActions/teacherTimetablesActions/getSubjectById.php",
-        data: {
-            subject_name: subject_name
-        },
-        dataType: "json",
-        success: function (response) {
-            const subject_id = response[0]
-            insert_subject_in_database(subject_id, hour, day, timetable_id);
-        },
-        error: function (response) {
-            console.log(response)
-        }
-    });
-}
-
 function serve_subject_setting_to_database(subject_name, set_subject_header, hour, day, timetable_id) {
     if (set_subject_header !== "Pusta godzina"){
-        update_existing_position_in_timetable(subject_name, hour, day, timetable_id);
+        serve_cell_set_action(subject_name, hour, day, timetable_id, update_subject_in_database);
     } else {
-        insert_subject_in_timetable_ceil_to_database(subject_name, hour, day, timetable_id);
+        serve_cell_set_action(subject_name, hour, day, timetable_id, insert_subject_in_database);
     }
 
 }
