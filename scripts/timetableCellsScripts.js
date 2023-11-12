@@ -45,7 +45,21 @@ function serve_setting_subject_pane_creating(button, response) {
 
     document.getElementById("delete_subject_from_cell").onclick = function (){
         let {hour, day, timetable_id} = get_subject_in_timetable_data();
-
+        $.ajax({
+            type: "POST",
+            url: "../serverActions/teacherTimetablesActions/deleteSubjectFromTimetable.php",
+            data: {
+              hour: hour,
+              day: day,
+              timetable_id: timetable_id
+            },
+            success: function (response){
+                repaint_timetable_and_close_set_subject_pane(timetable_id);
+            },
+            error: function (response){
+                console.log(response);
+            }
+        });
     }
 
     if (subject_is_assigned_to_cell(subject_name)) {

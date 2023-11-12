@@ -142,4 +142,11 @@
                 VALUES (?, ?, ?, ?)";
     }
 
+    function delete_subject_from_timetable_cell(){
+        return "
+                DELETE FROM lessonplanssubjects WHERE
+                lessonPlanId = ? AND dayOfWeek = ?
+                AND startTime = ?";
+    }
+
 ?>
