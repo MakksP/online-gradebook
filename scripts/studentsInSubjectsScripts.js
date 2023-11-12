@@ -41,7 +41,10 @@ function add_students_grades(response) {
         let button_grade_id;
         response[student].forEach(grade => {
             button_grade_id = student + "_grade_div";
-            document.getElementById(button_grade_id).insertAdjacentHTML("beforeend", grade);
+            const button_grade = document.getElementById(button_grade_id);
+            if (button_grade !== null){
+                button_grade.insertAdjacentHTML("beforeend", grade);
+            }
 
         });
     }

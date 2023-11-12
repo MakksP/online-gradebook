@@ -75,13 +75,10 @@ Array.from(timetable_element_button).forEach(button => {
     }
 });
 
+
 function confirm_setting_new_subject_onclick_action(){
     document.getElementById("confirm_setting_new_subject").onclick = function (){
-        const hour_label = document.getElementById("hour_label").innerHTML
-        const day_label = document.getElementById("day_label").innerHTML
-        const hour = hour_label.substring(hour_label.indexOf(" ") + 1);
-        const day = day_label.substring(day_label.indexOf(" ") + 1)
-        let timetable_id = get_timetable_id();
+        let {hour, day, timetable_id} = get_subject_in_timetable_data();
         const subject_name = document.getElementById("select_subject").value;
         serve_subject_setting_to_database(subject_name, document.getElementById("assign_subject_pane_header").innerHTML, hour, day, timetable_id);
     }

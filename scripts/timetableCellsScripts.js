@@ -23,20 +23,30 @@ function set_changing_elements_in_set_subject_pane(header, header_content, set_s
     document.getElementById("delete_subject_from_cell").style.visibility = delete_subject_button_visibility;
 }
 
-function serve_setting_subject_pane_creating(button, response) {
-    const subject_name = button.querySelector(".timetable_element_label").innerHTML;
-    add_new_appearing_pane_to_main_container(get_assign_subject_to_timetable_pane, confirm_setting_new_subject_onclick_action,
-        "assign_subject_pane_close_button", "assign_subject_pane_div");
+function get_data_about_subject_while_creating_set_pane(button) {
     const hours_per_day = 10;
     const header = document.getElementById("assign_subject_pane_header");
     const set_subject_label = document.getElementById("set_subject_label")
     const button_id = button.id.substring(button.id.indexOf("_") + 1);
     const day_of_week = get_day_of_week_of_selected_subject(button_id);
     const hour = find_hour_by_index(get_hour_indexes(), button_id % hours_per_day);
+    return {header, set_subject_label, day_of_week, hour};
+}
+
+function serve_setting_subject_pane_creating(button, response) {
+    const subject_name = button.querySelector(".timetable_element_label").innerHTML;
+    add_new_appearing_pane_to_main_container(get_assign_subject_to_timetable_pane, confirm_setting_new_subject_onclick_action,
+        "assign_subject_pane_close_button", "assign_subject_pane_div");
+    const {header, set_subject_label, day_of_week, hour} = get_data_about_subject_while_creating_set_pane(button);
 
     add_subjects_to_list(response);
     document.getElementById("day_label").innerHTML = "Dzień: " + day_of_week;
     document.getElementById("hour_label").innerHTML = "Godzina: " + hour;
+
+    document.getElementById("delete_subject_from_cell").onclick = function (){
+        let {hour, day, timetable_id} = get_subject_in_timetable_data();
+
+    }
 
     if (subject_is_assigned_to_cell(subject_name)) {
         set_changing_elements_in_set_subject_pane(header, subject_name, set_subject_label, "Zamień na:", "visible");
@@ -118,4 +128,13 @@ function serve_subject_setting_to_database(subject_name, set_subject_header, hou
     } else {
         serve_cell_set_action(subject_name, hour, day, timetable_id, insert_subject_in_database);
     }
+}
+
+function get_subject_in_timetable_data() {
+    const hour_label = document.getElementById("hour_label").innerHTML
+    const day_label = document.getElementById("day_label").innerHTML
+    const hour = hour_label.substring(hour_label.indexOf(" ") + 1);
+    const day = day_label.substring(day_label.indexOf(" ") + 1)
+    let timetable_id = get_timetable_id();
+    return {hour, day, timetable_id};
 }

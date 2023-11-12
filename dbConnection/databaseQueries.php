@@ -15,9 +15,9 @@
 
     function get_students_by_subject(){
         return "SELECT name, surname, email
-        FROM users JOIN lessonplans
-        ON users.lessonPlanId = lessonplans.lessonPlanId
-        JOIN subjects ON subjects.subjectId = lessonplans.subjectId
+        FROM users JOIN lessonplanssubjects
+        ON users.lessonPlanId = lessonplanssubjects.lessonPlanId
+        JOIN subjects ON subjects.subjectId = lessonplanssubjects.subjectId
         WHERE subjects.subjectName = ?";
     }
 
@@ -50,9 +50,9 @@
 
     function get_all_students_belonging_to_subject(){
         return "SELECT email from users
-                JOIN lessonplans ON users.lessonPlanId
-                = lessonplans.lessonPlanId JOIN subjects ON
-                lessonplans.subjectId = subjects.subjectId
+                JOIN lessonplanssubjects ON users.lessonPlanId
+                = lessonplanssubjects.lessonPlanId JOIN subjects ON
+                lessonplanssubjects.subjectId = subjects.subjectId
                 WHERE subjectName = ?";
     }
 
@@ -80,9 +80,9 @@
 
     function get_subject_and_user_ids(){
         return "SELECT subjects.subjectId, users.userId, name, surname 
-                FROM users JOIN lessonplans ON
-                users.lessonPlanId = lessonplans.lessonPlanId
-                JOIN subjects ON subjects.subjectId = lessonplans.subjectId
+                FROM users JOIN lessonplanssubjects ON
+                users.lessonPlanId = lessonplanssubjects.lessonPlanId
+                JOIN subjects ON subjects.subjectId = lessonplanssubjects.subjectId
                 WHERE email = ? AND
                 subjectName = ?";
     }
@@ -100,15 +100,15 @@
 
     function get_all_timetables_id(){
         return "
-                SELECT DISTINCT lessonPlanId FROM lessonPlans
+                SELECT DISTINCT lessonPlanId FROM lessonplans
                 ";
     }
 
     function get_timetable_details(){
         return "
                 SELECT dayOfWeek, startTime, endTime, subjectName
-                FROM lessonplans JOIN subjects ON subjects.subjectId
-                = lessonplans.subjectId WHERE lessonPlanId = ?
+                FROM lessonplanssubjects JOIN subjects ON subjects.subjectId
+                = lessonplanssubjects.subjectId WHERE lessonPlanId = ?
         ";
     }
 
@@ -132,13 +132,13 @@
 
     function update_timetable_cell(){
         return "
-                 UPDATE lessonplans SET subjectId = ?
+                 UPDATE lessonplanssubjects SET subjectId = ?
                  WHERE startTime = ? AND dayOfWeek = ?
                  AND lessonPlanId = ?";
     }
 
     function insert_timetable_cell(){
-        return "INSERT INTO lessonplans (dayOfWeek, startTime, lessonPlanId, subjectId)
+        return "INSERT INTO lessonplanssubjects (dayOfWeek, startTime, lessonPlanId, subjectId)
                 VALUES (?, ?, ?, ?)";
     }
 
