@@ -180,7 +180,7 @@
 @mixin timetable_font{
   font: {
     family: $main_site_font;
-    size: 1vw;
+    size: 100%;
   };
 }
 
@@ -195,7 +195,7 @@
   background-color: $white_contrast_color;
   @include thin_border;
   border-radius: 10px;
-  @include standard_form_font;
+  @include timetable_font;
   display: grid;
 }
 

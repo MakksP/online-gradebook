@@ -30,8 +30,8 @@
   justify-content: center;
   margin-top: 0;
   display: grid;
-  height: 80%;
   border-radius: 1vw;
+  height: 60%;
   grid-template-columns: repeat(11, 9.1%);
   grid-template-rows: repeat(6, 17%);
   grid-row: 2;
@@ -41,7 +41,7 @@
 #hours {
   display: contents;
   font-family: "Tilt Neon", sans-serif;
-  font-size: 1vw;
+  font-size: 100%;
   height: min-content;
   justify-content: right;
   color: #FFFFFF;
@@ -51,7 +51,7 @@
   display: contents;
   color: #FFFFFF;
   font-family: "Tilt Neon", sans-serif;
-  font-size: 1vw;
+  font-size: 100%;
 }
 
 .hour_div {
@@ -113,7 +113,7 @@
   border: none;
   border-right: 2px solid black;
   font-family: "Tilt Neon", sans-serif;
-  font-size: 0.72vw;
+  text-align: left;
 }
 .timetable_element_button:hover {
   background-color: silver;
@@ -302,7 +302,7 @@
 
 #timetables_panel {
   background-color: #383c44;
-  height: 80%;
+  height: 60%;
   width: 55%;
   margin-right: 5%;
   border: 2px solid black;
@@ -322,7 +322,7 @@
 .timetable_tag_button {
   border: 2px solid black;
   font-family: "Tilt Neon", sans-serif;
-  font-size: 1vw;
+  font-size: 100%;
   margin-top: 5%;
   border-radius: 5px;
   background-color: #FFFFFF;
@@ -337,8 +337,24 @@
   cursor: pointer;
 }
 
+.timetable_element_label {
+  font-size: 60%;
+  font-weight: bold;
+}
 .timetable_element_label:hover {
   cursor: pointer;
+}
+
+@media screen and (min-width: 800px) {
+  #timetable {
+    height: 80%;
+  }
+  #timetables_panel {
+    height: 80%;
+  }
+  .timetable_element_label {
+    font-size: 80%;
+  }
 }
 
 /*# sourceMappingURL=teacherTimetableStyles.css.map */
