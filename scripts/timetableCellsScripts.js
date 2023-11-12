@@ -58,7 +58,7 @@ function update_subject_in_database(subject_id, hour, day, timetable_id) {
             lesson_plan_id: timetable_id
         },
         success: function (response) {
-            console.log(response);
+            repaint_timetable_and_close_set_subject_pane(timetable_id);
         },
         error: function (response) {
             console.log(response);
@@ -84,6 +84,11 @@ function serve_cell_set_action(subject_name, hour, day, timetable_id, action) {
     });
 }
 
+function repaint_timetable_and_close_set_subject_pane(timetable_id) {
+    serve_timetable_data(document.getElementById("timetable_button_" + timetable_id));
+    document.getElementById("assign_subject_pane_div").remove();
+}
+
 function insert_subject_in_database(subject_id, hour, day, timetable_id) {
     $.ajax({
         type: "POST",
@@ -95,7 +100,7 @@ function insert_subject_in_database(subject_id, hour, day, timetable_id) {
             lesson_plan_id: timetable_id
         },
         success: function (response) {
-            console.log(response);
+            repaint_timetable_and_close_set_subject_pane(timetable_id);
         },
         error: function (response) {
             console.log(response);
@@ -109,5 +114,4 @@ function serve_subject_setting_to_database(subject_name, set_subject_header, hou
     } else {
         serve_cell_set_action(subject_name, hour, day, timetable_id, insert_subject_in_database);
     }
-
 }

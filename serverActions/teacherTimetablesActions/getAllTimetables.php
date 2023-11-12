@@ -11,7 +11,7 @@ function get_all_timetables_buttons(){
         if ($prepared_sql_query->execute()){
             $prepared_sql_query->bind_result($lessonPlanId);
             while ($prepared_sql_query->fetch()){
-                echo "<button class='timetable_tag_button'>
+                echo "<button class='timetable_tag_button' id='timetable_button_$lessonPlanId'>
                                             <label class='timetable_tag_label'>Plan $lessonPlanId</label>
                                         </button>";
             }
