@@ -17,6 +17,12 @@ function get_day_of_week_of_selected_subject(button_id) {
     return day_of_week_indexes[parseInt(button_id / hours_per_day)]
 }
 
+function set_changing_elements_in_set_subject_pane(header, header_content, set_subject_label, subject_label_content, delete_subject_button_visibility) {
+    header.innerHTML = header_content;
+    set_subject_label.insertAdjacentHTML("afterbegin", subject_label_content)
+    document.getElementById("delete_subject_from_cell").style.visibility = delete_subject_button_visibility;
+}
+
 function serve_setting_subject_pane_creating(button, response) {
     const subject_name = button.querySelector(".timetable_element_label").innerHTML;
     add_new_appearing_pane_to_main_container(get_assign_subject_to_timetable_pane, confirm_setting_new_subject_onclick_action,
@@ -33,11 +39,9 @@ function serve_setting_subject_pane_creating(button, response) {
     document.getElementById("hour_label").innerHTML = "Godzina: " + hour;
 
     if (subject_is_assigned_to_cell(subject_name)) {
-        header.innerHTML = subject_name;
-        set_subject_label.insertAdjacentHTML("afterbegin", "Zamień na:")
+        set_changing_elements_in_set_subject_pane(header, subject_name, set_subject_label, "Zamień na:", "visible");
     } else {
-        header.innerHTML = "Pusta godzina";
-        set_subject_label.insertAdjacentHTML("afterbegin", "Dodaj przedmiot:")
+        set_changing_elements_in_set_subject_pane(header, "Pusta godzina", set_subject_label, "Dodaj przedmiot:", "hidden");
     }
 }
 

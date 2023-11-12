@@ -67,27 +67,36 @@
 .existing_subject_element{
   display: flex;
   align-items: baseline;
+  justify-content: center;
 }
 
 #title_div{
   font-weight: bold;
+  text-align: center;
 }
 
 #new_subject_description{
   display: flex;
   flex-direction: column;
+  width: 80%;
+  padding-bottom: 2rem;
 }
 
 #new_subject_input_div{
-  margin-top: 15px;
-  margin-left: 5px;
+  display: flex;
+  justify-content: space-around;
+  margin: {
+    top: 15px;
+    left: 5px;
+  };
   gap: 5px;
-  @include standard_form_font;
-  width: 80%;
+  @include timetable_font;
+  width: 100%;
 }
 
 #confirm_new_subject_button{
   font-size: 0.8vw;
+  margin-top: 1rem;
   @include thin_border;
   @include standard_form_font;
   @include timetable_add_button_colors;
@@ -109,10 +118,7 @@
   border-radius: 5px;
   height: min-content;
   margin-left: 5px;
-  &:hover{
-    cursor: pointer;
-    background-color: darken($delete_color, 10%);
-  }
+  @include delete_button_hover_style;
 }
 
 #ask_to_remove_subject_div{
@@ -151,10 +157,7 @@
 
 #delete_subject_no{
   background-color: $delete_color;
-  &:hover{
-    cursor: pointer;
-    background-color: darken($delete_color, 10%);
-  }
+  @include delete_button_hover_style;
 }
 
 .delete_subject_label:hover{
@@ -164,6 +167,7 @@
 #assign_subject_pane_div{
   @include appearing_pane_style;
   @include appearing_pane_position;
+  height: auto;
   display: flex;
   flex-direction: column;
 }
@@ -179,9 +183,12 @@
 
 #assign_subject_pane_header{
   align-self: center;
+  font-size: 1vw;
 }
 
 #set_subject_div{
+  display: flex;
+  text-align: center;
   margin-left: 10px;
   @include timetable_font;
 }
@@ -195,7 +202,7 @@
 
 #subject_time_div{
   margin: {
-    left: 10px;
+    left: 25px;
     top: 20px
   };
   display: flex;
@@ -206,11 +213,23 @@
 
 #confirm_setting_new_subject{
   @include timetable_add_button_colors;
-  @include thin_border;
+  width: 80%;
 }
 
 #confirm_setting_new_subject_div{
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   margin-top: 20px;
+  padding-bottom: 1rem;
+}
+
+#delete_subject_from_cell{
+  @include thin_border;
+  @include timetable_font;
+  border-radius: 5px;
+  background-color: $delete_color;
+  margin-top: 1rem;
+  width: 80%;
+  @include delete_button_hover_style;
 }

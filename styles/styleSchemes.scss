@@ -190,7 +190,7 @@
 }
 
 @mixin appearing_pane_style{
-  height: 30%;
+  height: 40%;
   width: 20%;
   background-color: $white_contrast_color;
   @include thin_border;
@@ -213,5 +213,12 @@
   &:hover{
     cursor: pointer;
     background: linear-gradient(darken($add_button_color, 10%) 100%, darken($four_grade_color, 10%) 5%);
+  }
+}
+
+@mixin delete_button_hover_style{
+  &:hover{
+    cursor: pointer;
+    background-color: darken($delete_color, 10%);
   }
 }
