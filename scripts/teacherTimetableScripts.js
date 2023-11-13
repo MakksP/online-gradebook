@@ -210,3 +210,8 @@ function paint_add_student_to_timetable_pane() {
         }
     });
 }
+
+function get_student_email_from_select() {
+    const student = document.getElementById("choose_student").value;
+    return student.substring(student.lastIndexOf(" ") + 1)
+}

@@ -85,9 +85,24 @@ function confirm_setting_new_subject_onclick_action(){
     }
 }
 
+
 function add_student_to_timetable_onclick_action() {
     document.getElementById("add_student_to_timetable_button").onclick = function () {
-
+        const email = get_student_email_from_select();
+        $.ajax({
+            type: "POST",
+            url: "../serverActions/teacherTimetablesActions/addStudentToTimetable.php",
+            data: {
+                student_email: email
+            },
+            success: function (response){
+                document.getElementById("add_student_to_timetable_pane_div").remove();
+                paint_add_student_to_timetable_pane();
+            },
+            error: function (response){
+                console.log(response);
+            }
+        });
     }
 }
 

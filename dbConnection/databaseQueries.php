@@ -167,4 +167,10 @@
             AND lessonPlanId IS NULL";
     }
 
+    function add_student_to_timetable(){
+        return "
+                UPDATE users SET lessonPlanId = 1
+                WHERE email = ?";
+    }
+
 ?>
