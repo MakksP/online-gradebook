@@ -137,8 +137,15 @@ function get_students_in_timetable_from_database(timetable_id) {
         data: {
             timetable_id: timetable_id
         },
+        dataType: "json",
         success: function (response) {
-            console.log(response)
+            for (let students_data_index = 0; students_data_index < response.length; students_data_index += 3){
+                document.getElementById("existing_students_in_timetable").insertAdjacentHTML("beforeend",
+                    `<div class='student_in_timetable_div'>
+                        <div class='student_data'>${response[students_data_index]} ${response[students_data_index + 1]} ${response[students_data_index + 2]}</div> 
+                        <button class='delete_student_from_timetable_button'><i class=\"icon-trash\"></i></button>
+                    </div>`)
+            }
         },
         error: function (response) {
             console.log(response)

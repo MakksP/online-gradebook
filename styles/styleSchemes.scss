@@ -223,3 +223,25 @@
     background-color: darken($delete_color, 10%);
   }
 }
+
+@mixin delete_element_int_timetable_button_style{
+  background-color: $delete_color;
+  font-size: 100%;
+  border: none;
+  @include thin_border;
+  border-radius: 5px;
+  height: min-content;
+  margin-left: 5px;
+  @include delete_button_hover_style;
+}
+
+@mixin timetable_appearing_pane_main_element_style{
+  background-color: $nav_bar_color;
+  @include thin_border;
+  width: 80%;
+  margin:{
+    left: 5px;
+    top: 5px;
+  }
+  color: $white_contrast_color;
+}

@@ -50,14 +50,7 @@
 }
 
 .existing_subject_div{
-  background-color: $nav_bar_color;
-  @include thin_border;
-  width: 80%;
-  margin:{
-    left: 5px;
-    top: 5px;
-  }
-  color: $white_contrast_color;
+  @include timetable_appearing_pane_main_element_style;
 }
 
 .existing_subject_element{
@@ -107,14 +100,7 @@
 }
 
 .delete_subject_button{
-  background-color: $delete_color;
-  font-size: 100%;
-  border: none;
-  @include thin_border;
-  border-radius: 5px;
-  height: min-content;
-  margin-left: 5px;
-  @include delete_button_hover_style;
+  @include delete_element_int_timetable_button_style;
 }
 
 #ask_to_remove_subject_div{
@@ -231,8 +217,10 @@
 #add_student_to_timetable_pane_div{
   @include appearing_pane_style;
   @include appearing_pane_position;
+  border-radius: 0;
   text-align: center;
   align-items: center;
+  overflow: auto;
 }
 
 #add_student_to_timetable_pane_close_button{
@@ -265,10 +253,29 @@
 }
 
 #add_student_to_timetable_button{
-  overflow: auto;
-  margin-top: 1rem;
+  margin: {
+    top: 1rem;
+    bottom: 1rem;
+  };
   @include thin_border;
   @include timetable_font;
   @include timetable_add_button_colors;
   width: 80%;
 }
+
+.student_in_timetable_div{
+  display: flex;
+  align-items: baseline;
+  margin-bottom: 1rem;
+}
+
+.student_data{
+  @include timetable_appearing_pane_main_element_style;
+}
+
+.delete_student_from_timetable_button{
+  @include delete_element_int_timetable_button_style;
+}
+
+
+
