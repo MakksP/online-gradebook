@@ -91,8 +91,18 @@ function add_student_to_timetable_onclick_action() {
     }
 }
 
+function get_current_timetable_id() {
+    let timetable_id = document.getElementById("header_text").innerHTML;
+    timetable_id = timetable_id.substring(timetable_id.indexOf("  "));
+    timetable_id = timetable_id.substring(0, timetable_id.indexOf(")"));
+    return timetable_id;
+}
+
+
 add_new_student_button.onclick = function (){
     add_new_appearing_pane_to_main_container(get_add_student_to_timetable_pane, add_student_to_timetable_onclick_action,
         "add_student_to_timetable_pane_close_button", "add_student_to_timetable_pane_div");
+    const timetable_id = get_current_timetable_id();
 
+    get_students_in_timetable_from_database(timetable_id);
 }

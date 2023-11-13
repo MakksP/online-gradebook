@@ -129,3 +129,19 @@ function repaint_edit_subject_pane() {
     get_subjects_from_database_and_add_to_pane();
 }
 
+
+function get_students_in_timetable_from_database(timetable_id) {
+    $.ajax({
+        type: "GET",
+        url: "../serverActions/teacherTimetablesActions/getStudentsInTimetable.php",
+        data: {
+            timetable_id: timetable_id
+        },
+        success: function (response) {
+            console.log(response)
+        },
+        error: function (response) {
+            console.log(response)
+        }
+    });
+}

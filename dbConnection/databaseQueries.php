@@ -149,4 +149,9 @@
                 AND startTime = ?";
     }
 
+    function get_students_in_timetable(){
+        return "SELECT name, surname, email FROM users
+                WHERE lessonPlanId = ?";
+    }
+
 ?>
