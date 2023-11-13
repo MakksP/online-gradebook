@@ -184,10 +184,29 @@ function delete_student_from_timetable(email) {
 }
 
 
+function fill_student_select_with_options(response) {
+    for (let student_data_index = 0; student_data_index < response.length; student_data_index += 3) {
+        let new_option = document.createElement("option");
+        new_option.value = response[student_data_index] + " " + response[student_data_index + 1] + " " + response[student_data_index + 2];
+        new_option.text = response[student_data_index] + " " + response[student_data_index + 1] + " " + response[student_data_index + 2];
+        document.getElementById("choose_student").add(new_option);
+    }
+}
+
 function paint_add_student_to_timetable_pane() {
     add_new_appearing_pane_to_main_container(get_add_student_to_timetable_pane, add_student_to_timetable_onclick_action,
         "add_student_to_timetable_pane_close_button", "add_student_to_timetable_pane_div");
     const timetable_id = get_current_timetable_id();
-
     get_students_in_timetable_from_database(timetable_id);
+    $.ajax({
+        type: "GET",
+        url: "../serverActions/teacherTimetablesActions/getNotAssignedToTimetableStudents.php",
+        dataType: "json",
+        success: function (response){
+            fill_student_select_with_options(response);
+        },
+        error: function (response){
+            console.log(response);
+        }
+    });
 }

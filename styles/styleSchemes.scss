@@ -245,3 +245,10 @@
   }
   color: $white_contrast_color;
 }
+
+@mixin select_style{
+  width: min-content;
+  @include timetable_font;
+  background-color: $nav_bar_color;
+  color: $white_contrast_color;
+}

@@ -160,4 +160,11 @@
                 WHERE email = ?";
     }
 
+    function get_not_assigned_to_timetable_students(){
+        return "
+            SELECT name, surname, email FROM
+            users WHERE role = 'student'
+            AND lessonPlanId IS NULL";
+    }
+
 ?>

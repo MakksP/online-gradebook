@@ -174,10 +174,7 @@
 }
 
 #select_subject{
-  width: min-content;
-  @include timetable_font;
-  background-color: $nav_bar_color;
-  color: $white_contrast_color;
+  @include select_style;
 }
 
 #subject_time_div{
@@ -242,6 +239,9 @@
 
 #choose_student_label{
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 #choose_student{
@@ -249,7 +249,8 @@
     top: 1rem;
     bottom: 1rem;
   };
-  width: 70%;
+  @include select_style;
+  width: 80%;
 }
 
 #add_student_to_timetable_button{
@@ -276,6 +277,5 @@
 .delete_student_from_timetable_button{
   @include delete_element_int_timetable_button_style;
 }
-
 
 
