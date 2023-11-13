@@ -98,6 +98,7 @@
 
 #filler {
   border-right: none;
+  display: flex;
 }
 
 #last_hour {
@@ -355,6 +356,27 @@
   .timetable_element_label {
     font-size: 80%;
   }
+}
+#add_new_student_button {
+  width: 60%;
+  height: 70%;
+  background: linear-gradient(#258518 100%, #9BD33F 5%);
+  font-size: 0.8vw;
+  font-family: "Tilt Neon", sans-serif;
+  font-size: 100%;
+  background: linear-gradient(#258518 100%, #9BD33F 5%);
+  border: 2px solid black;
+  border-radius: 5px;
+  color: #FFFFFF;
+  font-size: 2vw;
+  border: 2px solid black;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+}
+#add_new_student_button:hover {
+  cursor: pointer;
+  background: linear-gradient(#195a10 100%, #81b52a 5%);
 }
 
 /*# sourceMappingURL=teacherTimetableStyles.css.map */

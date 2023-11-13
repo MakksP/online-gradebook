@@ -62,7 +62,10 @@
         <div id="timetable">
             <header id="hours">
                 <div class="hour_div" id="filler">
-                    <label></label>
+                    <button id="add_new_student_button">
+                        <i class="icon-user-plus"></i>
+                    </button>
+
                 </div>
                 <div class="hour_div" id="first_hour">
                     <label>8:15 - 9:00</label>

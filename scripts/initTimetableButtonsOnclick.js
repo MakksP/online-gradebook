@@ -1,6 +1,7 @@
 const timetable_tag_buttons = Array.from(document.getElementsByClassName("timetable_tag_button"));
 const edit_subjects = document.getElementById("add_subject_button");
 const timetable_element_button = document.getElementsByClassName("timetable_element_button");
+const add_new_student_button = document.getElementById("add_new_student_button");
 
 function get_plan_id(button){
     const button_label = button.getElementsByTagName("label")[0].innerHTML;
@@ -84,3 +85,6 @@ function confirm_setting_new_subject_onclick_action(){
     }
 }
 
+add_new_student_button.onclick = function (){
+
+}
