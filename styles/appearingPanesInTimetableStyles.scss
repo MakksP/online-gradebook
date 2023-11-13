@@ -38,8 +38,6 @@
   @include appearing_pane_style;
   border-radius: 0;
   @include appearing_pane_position;
-  display: flex;
-  flex-direction: column;
   overflow: auto;
 }
 
@@ -166,8 +164,6 @@
   @include appearing_pane_style;
   @include appearing_pane_position;
   height: auto;
-  display: flex;
-  flex-direction: column;
 }
 
 #assign_subject_pane_close_button_div{
@@ -230,4 +226,49 @@
   margin-top: 1rem;
   width: 80%;
   @include delete_button_hover_style;
+}
+
+#add_student_to_timetable_pane_div{
+  @include appearing_pane_style;
+  @include appearing_pane_position;
+  text-align: center;
+  align-items: center;
+}
+
+#add_student_to_timetable_pane_close_button{
+  @include close_pane_button_style;
+}
+
+#add_student_to_timetable_pane_close_button_div{
+  @include close_button_div_style;
+  height: min-content;
+}
+
+#add_student_to_timetable_pane_div > :first-child{
+  margin-left: auto;
+}
+
+#choose_student_div{
+  width: 100%;
+}
+
+#choose_student_label{
+  width: 100%;
+}
+
+#choose_student{
+  margin: {
+    top: 1rem;
+    bottom: 1rem;
+  };
+  width: 70%;
+}
+
+#add_student_to_timetable_button{
+  overflow: auto;
+  margin-top: 1rem;
+  @include thin_border;
+  @include timetable_font;
+  @include timetable_add_button_colors;
+  width: 80%;
 }

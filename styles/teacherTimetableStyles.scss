@@ -186,7 +186,6 @@ $button_id: 9;
 #add_new_student_button{
   width: 60%;
   height: 70%;
-  @include add_button_styles;
   @include timetable_add_button_colors;
   color: $white_contrast_color;
   font-size: 2vw;

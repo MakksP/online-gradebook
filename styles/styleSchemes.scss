@@ -196,7 +196,8 @@
   @include thin_border;
   border-radius: 10px;
   @include timetable_font;
-  display: grid;
+  display: flex;
+  flex-direction: column;
 }
 
 @mixin appearing_pane_position{

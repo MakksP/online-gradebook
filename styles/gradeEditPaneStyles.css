@@ -10,7 +10,8 @@
   border-radius: 10px;
   font-family: "Tilt Neon", sans-serif;
   font-size: 100%;
-  display: grid;
+  display: flex;
+  flex-direction: column;
 }
 
 .available_grade_button {

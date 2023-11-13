@@ -261,3 +261,24 @@ function get_assign_subject_to_timetable_pane(){
             </div>
     `;
 }
+
+function get_add_student_to_timetable_pane(){
+    return `
+        <div id="add_student_to_timetable_pane_div">
+            <div id="add_student_to_timetable_pane_close_button_div">
+                <button id="add_student_to_timetable_pane_close_button"><i class="icon-cancel-circled"></i></button>
+            </div>
+            <h3 id="add_student_to_timetable_pane_header">Edytuj użytkowników w planie </h3>
+            
+            <div id="existing_students_in_timetable"></div>
+            
+            <div id="choose_student_div">
+                <label id="choose_student_label" for="choose_student">
+                    Dodaj użytkownika
+                    <select id="choose_student"></select>
+                </label>
+            </div>
+            <button id="add_student_to_timetable_button">Dodaj użytkownika</button> 
+        </div>
+    `;
+}

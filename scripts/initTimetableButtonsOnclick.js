@@ -85,6 +85,14 @@ function confirm_setting_new_subject_onclick_action(){
     }
 }
 
+function add_student_to_timetable_onclick_action() {
+    document.getElementById("add_student_to_timetable_button").onclick = function () {
+
+    }
+}
+
 add_new_student_button.onclick = function (){
+    add_new_appearing_pane_to_main_container(get_add_student_to_timetable_pane, add_student_to_timetable_onclick_action,
+        "add_student_to_timetable_pane_close_button", "add_student_to_timetable_pane_div");
 
 }
