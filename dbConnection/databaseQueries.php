@@ -154,4 +154,10 @@
                 WHERE lessonPlanId = ?";
     }
 
+    function delete_student_from_timetable(){
+        return "
+                UPDATE users SET lessonPlanId = null
+                WHERE email = ?";
+    }
+
 ?>

@@ -282,3 +282,10 @@ function get_add_student_to_timetable_pane(){
         </div>
     `;
 }
+
+function get_student_in_timetable_div(response, students_data_index) {
+    return `<div class='student_in_timetable_div'>
+                        <div class='student_data'>${response[students_data_index]} ${response[students_data_index + 1]} ${response[students_data_index + 2]}</div> 
+                        <button class='delete_student_from_timetable_button'><i class=\"icon-trash\"></i></button>
+                    </div>`;
+}

@@ -130,6 +130,18 @@ function repaint_edit_subject_pane() {
 }
 
 
+function add_existing_student_in_timetable_to_pane(response) {
+    for (let students_data_index = 0; students_data_index < response.length; students_data_index += 3) {
+        document.getElementById("existing_students_in_timetable").insertAdjacentHTML("beforeend",
+            get_student_in_timetable_div(response, students_data_index))
+    }
+}
+
+function get_student_data_connected_with_delete_button(button) {
+    return button.closest("div").querySelector(".student_data").innerHTML;
+}
+
+
 function get_students_in_timetable_from_database(timetable_id) {
     $.ajax({
         type: "GET",
@@ -139,16 +151,43 @@ function get_students_in_timetable_from_database(timetable_id) {
         },
         dataType: "json",
         success: function (response) {
-            for (let students_data_index = 0; students_data_index < response.length; students_data_index += 3){
-                document.getElementById("existing_students_in_timetable").insertAdjacentHTML("beforeend",
-                    `<div class='student_in_timetable_div'>
-                        <div class='student_data'>${response[students_data_index]} ${response[students_data_index + 1]} ${response[students_data_index + 2]}</div> 
-                        <button class='delete_student_from_timetable_button'><i class=\"icon-trash\"></i></button>
-                    </div>`)
-            }
+            add_existing_student_in_timetable_to_pane(response);
+            const delete_student_from_timetable_buttons = document.getElementsByClassName("delete_student_from_timetable_button");
+            create_delete_student_from_timetable_onclick_action(delete_student_from_timetable_buttons);
         },
         error: function (response) {
             console.log(response)
         }
     });
+}
+
+function get_student_email(button) {
+    const student = get_student_data_connected_with_delete_button(button);
+    return  student.substring(student.lastIndexOf(" ") + 1)
+}
+
+function delete_student_from_timetable(email) {
+    $.ajax({
+        type: "POST",
+        url: "../serverActions/teacherTimetablesActions/deleteStudentFromTimetable.php",
+        data: {
+            student_email: email
+        },
+        success: function (response) {
+            document.getElementById("add_student_to_timetable_pane_div").remove();
+            paint_add_student_to_timetable_pane();
+        },
+        error: function (response) {
+            console.log(response);
+        }
+    });
+}
+
+
+function paint_add_student_to_timetable_pane() {
+    add_new_appearing_pane_to_main_container(get_add_student_to_timetable_pane, add_student_to_timetable_onclick_action,
+        "add_student_to_timetable_pane_close_button", "add_student_to_timetable_pane_div");
+    const timetable_id = get_current_timetable_id();
+
+    get_students_in_timetable_from_database(timetable_id);
 }

@@ -99,10 +99,17 @@ function get_current_timetable_id() {
 }
 
 
-add_new_student_button.onclick = function (){
-    add_new_appearing_pane_to_main_container(get_add_student_to_timetable_pane, add_student_to_timetable_onclick_action,
-        "add_student_to_timetable_pane_close_button", "add_student_to_timetable_pane_div");
-    const timetable_id = get_current_timetable_id();
 
-    get_students_in_timetable_from_database(timetable_id);
+add_new_student_button.onclick = function (){
+    paint_add_student_to_timetable_pane();
+}
+
+
+function create_delete_student_from_timetable_onclick_action(delete_student_from_timetable_buttons) {
+    Array.from(delete_student_from_timetable_buttons).forEach(button => {
+        button.onclick = function () {
+            const email = get_student_email(button);
+            delete_student_from_timetable(email);
+        }
+    });
 }
