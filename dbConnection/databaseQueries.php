@@ -183,4 +183,8 @@
         return "INSERT INTO lessonplans () VALUES ()";
     }
 
+    function delete_timetable_from_database(){
+        return "DELETE FROM lessonplans WHERE lessonPlanId = ?";
+    }
+
 ?>

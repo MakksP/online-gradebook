@@ -216,10 +216,33 @@ function get_student_email_from_select() {
     return student.substring(student.lastIndexOf(" ") + 1)
 }
 
+
+function delete_timetable_from_database(timetable_id) {
+    $.ajax({
+        type: "POST",
+        url: "../serverActions/teacherTimetablesActions/deleteTimetableFromDatabase.php",
+        data: {
+            timetable_id: timetable_id
+        },
+        success: function (response) {
+            location.reload();
+            console.log(response);
+        },
+        error: function (response) {
+            console.log(response);
+        }
+    });
+}
+
+
 function add_ask_to_delete_timetable_pane(wanted_to_delete_timetable) {
     document.getElementById("main_container").insertAdjacentHTML("beforeend",
         get_ask_to_remove_subject_div(wanted_to_delete_timetable, "Czy na pewno chcesz plan zajęć?",
             "delete_timetable_decision", "delete_timetable_yes", "delete_timetable_no", "delete_timetable_pane"));
+
+        create_close_ask_to_delete_timetable_onclick_action();
+        const timetable_id = wanted_to_delete_timetable.substring(wanted_to_delete_timetable.indexOf(" ") + 1)
+        create_delete_timetable_onclick_action(timetable_id);
 }
 
 function add_timetable_to_database() {
@@ -227,6 +250,7 @@ function add_timetable_to_database() {
         type: "POST",
         url: "../serverActions/teacherTimetablesActions/addNewTimetable.php",
         success: function (response) {
+            location.reload();
             console.log(response);
         },
         error: function (response) {

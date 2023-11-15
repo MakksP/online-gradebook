@@ -148,3 +148,15 @@ delete_timetable_buttons.forEach(button => {
     }
 });
 
+function create_close_ask_to_delete_timetable_onclick_action() {
+    document.getElementById("delete_timetable_no").onclick = function () {
+        document.getElementById("delete_timetable_pane").remove();
+    }
+}
+
+function create_delete_timetable_onclick_action(timetable_id) {
+    document.getElementById("delete_timetable_yes").onclick = function () {
+        delete_timetable_from_database(timetable_id);
+    }
+}
+
