@@ -23,10 +23,16 @@
 
     function get_not_teaching_subjects(){
         return "
-                SELECT subjectName FROM subjects
-                LEFT JOIN teachers_with_subjects ON
-                subjects.subjectId = teachers_with_subjects.subjectid
-                WHERE userId != ? OR userId IS NULL";
+                    SELECT subjects.subjectName 
+                    FROM subjects
+                    LEFT JOIN teachers_with_subjects ON subjects.subjectId = teachers_with_subjects.subjectid
+                    WHERE 
+                      (teachers_with_subjects.userId != ? OR teachers_with_subjects.userId IS NULL)
+                      AND subjects.subjectId NOT IN (
+                        SELECT subjectid
+                        FROM teachers_with_subjects
+                        WHERE userId = ?
+                      );";
     }
 
     function assign_subject_to_you(){
