@@ -31,13 +31,13 @@ function add_header_to_grades_table() {
 }
 
 
-
 for (let button_index = 0; button_index < subjects_buttons.length - ADD_SUBJECT_BUTTON; button_index+=1){
     if (subjects_buttons[button_index] != null){
         subjects_buttons[button_index].onclick = function () {
             const button_text = subjects_buttons[button_index].innerHTML;
             subjects_table.innerHTML = '';
             subjects_table.style.display = "table";
+            add_grade_and_attendance_buttons_to_subject_table();
             add_header_to_grades_table();
             draw_students_labels_in_subject(button_text, student_grade_buttons);
         }

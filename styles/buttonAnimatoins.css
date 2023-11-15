@@ -29,3 +29,13 @@
     to{height: 90%}
 }
 
+@keyframes grades_attendances_buttons_hover {
+    from{height: 85%}
+    to{height: 100%}
+}
+
+@keyframes grades_attendances_buttons_hover_release {
+    from{height: 100%}
+    to{height: 85%}
+}
+

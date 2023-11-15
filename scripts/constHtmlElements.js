@@ -289,3 +289,12 @@ function get_student_in_timetable_div(response, students_data_index) {
                         <button class='delete_student_from_timetable_button'><i class=\"icon-trash\"></i></button>
                     </div>`;
 }
+
+function get_subjects_table_grade_and_attendance_buttons(){
+    return `
+        <div id="subjects_table_buttons_div">
+            <button class="subject_section_button" id="grades_section">Oceny</button>
+            <button class="subject_section_button" id="attendances_section">Obecności</button>
+        </div>            
+    `;
+}

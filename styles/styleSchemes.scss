@@ -252,3 +252,13 @@
   background-color: $nav_bar_color;
   color: $white_contrast_color;
 }
+
+@mixin subject_section_buttons_animation{
+  animation: grades_attendances_buttons_hover_release linear forwards;
+  animation-duration: 100ms;
+  &:hover{
+    cursor: pointer;
+    animation: grades_attendances_buttons_hover linear forwards;
+    animation-duration: 100ms;
+  }
+}
