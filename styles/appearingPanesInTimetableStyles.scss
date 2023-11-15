@@ -284,4 +284,21 @@
    width: 80%;
  }
 
+#delete_timetable_pane{
+  @include appearing_pane_style;
+  @include appearing_pane_position;
+  justify-content: space-around;
+}
+
+#delete_timetable_yes{
+  @include timetable_add_button_colors;
+}
+
+#delete_timetable_no{
+  @include thin_border;
+  @include timetable_font;
+  border-radius: 5px;
+  background-color: $delete_color;
+  @include delete_button_hover_style;
+}
 

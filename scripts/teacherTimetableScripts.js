@@ -215,3 +215,22 @@ function get_student_email_from_select() {
     const student = document.getElementById("choose_student").value;
     return student.substring(student.lastIndexOf(" ") + 1)
 }
+
+function add_ask_to_delete_timetable_pane(wanted_to_delete_timetable) {
+    document.getElementById("main_container").insertAdjacentHTML("beforeend",
+        get_ask_to_remove_subject_div(wanted_to_delete_timetable, "Czy na pewno chcesz plan zajęć?",
+            "delete_timetable_decision", "delete_timetable_yes", "delete_timetable_no", "delete_timetable_pane"));
+}
+
+function add_timetable_to_database() {
+    $.ajax({
+        type: "POST",
+        url: "../serverActions/teacherTimetablesActions/addNewTimetable.php",
+        success: function (response) {
+            console.log(response);
+        },
+        error: function (response) {
+            console.log(response);
+        },
+    });
+}

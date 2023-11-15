@@ -3,6 +3,7 @@ const edit_subjects = document.getElementById("add_subject_button");
 const timetable_element_button = document.getElementsByClassName("timetable_element_button");
 const add_new_student_button = document.getElementById("add_new_student_button");
 const new_timetable_button = document.getElementById("new_timetable_button");
+const delete_timetable_buttons = Array.from(document.getElementsByClassName("delete_timetable"));
 
 function get_plan_id(button){
     const button_label = button.getElementsByTagName("label")[0].innerHTML;
@@ -33,7 +34,9 @@ function create_delete_subject_button_onclick_action(){
     Array.from(document.getElementsByClassName("delete_subject_button")).forEach(delete_button => {
         delete_button.onclick = function (){
             const subject_to_delete = get_subject_to_delete_name(delete_button)
-            document.getElementById("edit_subject_pane").innerHTML = get_ask_to_remove_subject_div(subject_to_delete)
+            document.getElementById("edit_subject_pane").innerHTML
+                = get_ask_to_remove_subject_div(subject_to_delete, "Czy na pewno chcesz usunąć przedmiot",
+                "delete_subject_decision", "delete_subject_yes", "delete_subject_no", "ask_to_remove_subject_div");
             create_delete_subject_yes_onclick_action(subject_to_delete);
             create_delete_subject_no_onclick_action();
         }
@@ -131,14 +134,17 @@ function create_delete_student_from_timetable_onclick_action(delete_student_from
 }
 
 new_timetable_button.onclick = function (){
-    $.ajax({
-        type: "POST",
-        url: "../serverActions/teacherTimetablesActions/addNewTimetable.php",
-        success: function (response){
-            console.log(response);
-        },
-        error: function (response){
-            console.log(response);
-        },
-    });
+    add_timetable_to_database();
 }
+
+
+delete_timetable_buttons.forEach(button => {
+    if (button != null){
+        button.onclick = function (){
+            const wanted_to_delete_timetable = button.closest("div").querySelector(".timetable_tag_label").innerHTML;
+            add_ask_to_delete_timetable_pane(wanted_to_delete_timetable);
+
+        }
+    }
+});
+

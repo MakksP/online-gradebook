@@ -226,12 +226,12 @@ function add_existing_subjects_to_pane(response) {
 }
 
 
-function get_ask_to_remove_subject_div(subject_to_delete) {
-    return `<div id='ask_to_remove_subject_div'>
-                        <label id="delete_subject_decision_label">Czy na pewno chcesz usunąć przedmiot<br>${subject_to_delete}</label>
+function get_ask_to_remove_subject_div(element_to_delete, question, class_name, delete_yes, delete_no, pane_name) {
+    return `<div id=${pane_name}>
+                        <label id="delete_subject_decision_label">${question}<br>${element_to_delete}</label>
                         <div id="decision_buttons_div">
-                            <button class="delete_subject_decision" id="delete_subject_yes"><label class="delete_subject_label">TAK</label></button>
-                            <button class="delete_subject_decision" id="delete_subject_no"><label class="delete_subject_label">NIE</label></button>
+                            <button class=${class_name} id=${delete_yes}><label class="delete_subject_label">TAK</label></button>
+                            <button class=${class_name} id=${delete_no}><label class="delete_subject_label">NIE</label></button>
                         </div>
                         
                    </div>`;
