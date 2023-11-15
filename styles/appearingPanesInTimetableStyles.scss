@@ -278,4 +278,10 @@
   @include delete_element_int_timetable_button_style;
 }
 
+#new_timetable_button{
+   @include timetable_add_button_colors;
+   margin-top: 20px;
+   width: 80%;
+ }
+
 

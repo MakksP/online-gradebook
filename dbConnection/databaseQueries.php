@@ -179,4 +179,8 @@
                 WHERE email = ?";
     }
 
+    function add_new_timetable(){
+        return "INSERT INTO lessonplans () VALUES ()";
+    }
+
 ?>

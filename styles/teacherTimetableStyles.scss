@@ -124,10 +124,7 @@ $button_id: 9;
 #timetables_panel{
   background-color: $nav_bar_color;
   height: 60%;
-  width: 55%;
-  margin: {
-    right: 5%;
-  };
+  width: 70%;
   @include thin_border;
   display: flex;
   flex-direction: column;
@@ -135,6 +132,7 @@ $button_id: 9;
   gap: 5px;
   border-radius: 5px;
   grid-row: 2;
+  overflow: auto;
 }
 
 #header_text{
@@ -193,4 +191,15 @@ $button_id: 9;
   border-radius: 20px;
   display: flex;
   align-items: center;
+}
+
+#timetable_buttons_container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.delete_timetable{
+  @include delete_element_int_timetable_button_style;
 }

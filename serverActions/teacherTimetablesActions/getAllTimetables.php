@@ -11,9 +11,11 @@ function get_all_timetables_buttons(){
         if ($prepared_sql_query->execute()){
             $prepared_sql_query->bind_result($lessonPlanId);
             while ($prepared_sql_query->fetch()){
-                echo "<button class='timetable_tag_button' id='timetable_button_$lessonPlanId'>
+                echo "   <div class='timetable_button_row'>
+                        <button class='timetable_tag_button' id='timetable_button_$lessonPlanId'>
                                             <label class='timetable_tag_label'>Plan $lessonPlanId</label>
-                                        </button>";
+                                        </button><button class='delete_timetable'><i class='icon-trash'></i></button>
+                                        </div>";
             }
         } else {
             echo "Nie udało się wykonać zapytania";

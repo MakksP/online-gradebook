@@ -2,6 +2,7 @@ const timetable_tag_buttons = Array.from(document.getElementsByClassName("timeta
 const edit_subjects = document.getElementById("add_subject_button");
 const timetable_element_button = document.getElementsByClassName("timetable_element_button");
 const add_new_student_button = document.getElementById("add_new_student_button");
+const new_timetable_button = document.getElementById("new_timetable_button");
 
 function get_plan_id(button){
     const button_label = button.getElementsByTagName("label")[0].innerHTML;
@@ -126,5 +127,18 @@ function create_delete_student_from_timetable_onclick_action(delete_student_from
             const email = get_student_email(button);
             delete_student_from_timetable(email);
         }
+    });
+}
+
+new_timetable_button.onclick = function (){
+    $.ajax({
+        type: "POST",
+        url: "../serverActions/teacherTimetablesActions/addNewTimetable.php",
+        success: function (response){
+            console.log(response);
+        },
+        error: function (response){
+            console.log(response);
+        },
     });
 }

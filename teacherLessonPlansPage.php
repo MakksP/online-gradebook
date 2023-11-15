@@ -57,7 +57,10 @@
     <section id="subjects_container">
         <button id="add_subject_button"><label id="add_subject_label">Edytuj przedmioty</label></button>
         <aside id="timetables_panel">
-            <?php require './serverActions/teacherTimetablesActions/getAllTimetables.php'; get_all_timetables_buttons(); ?>
+            <div id="timetable_buttons_container">
+                <?php require './serverActions/teacherTimetablesActions/getAllTimetables.php'; get_all_timetables_buttons(); ?>
+            </div>
+            <button id="new_timetable_button"><i class="icon-list-add"></i></button>
         </aside>
         <div id="timetable">
             <header id="hours">
