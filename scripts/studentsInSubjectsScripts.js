@@ -16,7 +16,7 @@ function get_and_draw_students_grades(subject_name, student_grade_buttons) {
 }
 
 
-function draw_students_labels_in_subject(button_text, student_grade_buttons) {
+function draw_students_labels_in_subject(button_text, student_grade_buttons, checking_student_data) {
     $.ajax({
         type: "GET",
         url: "../serverActions/teacherSubjectsActions/studentsAndSubjects.php",
@@ -26,7 +26,7 @@ function draw_students_labels_in_subject(button_text, student_grade_buttons) {
             document.getElementById("subjects_table").insertAdjacentHTML("beforeend", get_students_list_div(response));
 
             set_rows_height_by_number_of_students();
-            get_and_draw_students_grades(button_text ,student_grade_buttons);
+            checking_student_data(button_text, student_grade_buttons);
 
         },
         error: function (response) {
@@ -153,4 +153,14 @@ function add_grade_and_attendance_buttons_to_subject_table() {
 function serve_subject_table_buttons_color_after_click(darken_element, lighten_element) {
     document.getElementById(darken_element).style.backgroundColor = "#383c44";
     document.getElementById(lighten_element).style.backgroundColor = "#666d7c";
+}
+
+function clear_student_data_section_in_table() {
+    Array.from(document.getElementsByClassName("grade_part")).forEach(element => {
+        element.innerHTML = "";
+    });
+}
+
+function get_subject_name() {
+    return document.getElementById("header_text").innerHTML;
 }

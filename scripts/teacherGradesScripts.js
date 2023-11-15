@@ -77,5 +77,5 @@ function update_grade(grade_id, grade, description_and_date) {
 function repaint_subject_table_dynamic_content() {
     const current_subject_name = get_current_subject_name();
     document.getElementById("student_names").remove();
-    draw_students_labels_in_subject(current_subject_name, student_grade_buttons);
+    draw_students_labels_in_subject(current_subject_name, student_grade_buttons, get_and_draw_students_grades);
 }

@@ -31,6 +31,8 @@ function add_header_to_grades_table() {
 }
 
 
+
+
 for (let button_index = 0; button_index < subjects_buttons.length - ADD_SUBJECT_BUTTON; button_index+=1){
     if (subjects_buttons[button_index] != null){
         subjects_buttons[button_index].onclick = function () {
@@ -39,7 +41,9 @@ for (let button_index = 0; button_index < subjects_buttons.length - ADD_SUBJECT_
             subjects_table.style.display = "table";
             add_grade_and_attendance_buttons_to_subject_table();
             add_header_to_grades_table();
-            draw_students_labels_in_subject(button_text, student_grade_buttons);
+
+            create_grades_onclick_action();
+            draw_students_labels_in_subject(button_text, student_grade_buttons, get_and_draw_students_grades);
         }
     }
 
@@ -111,16 +115,26 @@ function appearing_pane_close_button_onclick(button_id, element_to_remove_id) {
 }
 
 
+function change_grades_header(header) {
+    document.getElementById("gradebook_grid_grades_header").innerHTML = header;
+}
+
 function create_attendance_onclick_action() {
     document.getElementById("attendances_section").onclick = function () {
         serve_subject_table_buttons_color_after_click("grades_section", "attendances_section");
+        clear_student_data_section_in_table();
+        change_grades_header("Obecności:");
     }
 }
+
+
 
 
 function create_grades_onclick_action() {
     document.getElementById("grades_section").onclick = function () {
         serve_subject_table_buttons_color_after_click("attendances_section", "grades_section");
+        document.getElementById("subjects_table").innerHTML = "";
+        add_header_to_grades_table();
+        draw_students_labels_in_subject(get_subject_name(), student_grade_buttons, get_and_draw_students_grades);
     }
 }
-
