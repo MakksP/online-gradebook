@@ -110,3 +110,17 @@ function appearing_pane_close_button_onclick(button_id, element_to_remove_id) {
     }
 }
 
+
+function create_attendance_onclick_action() {
+    document.getElementById("attendances_section").onclick = function () {
+        serve_subject_table_buttons_color_after_click("grades_section", "attendances_section");
+    }
+}
+
+
+function create_grades_onclick_action() {
+    document.getElementById("grades_section").onclick = function () {
+        serve_subject_table_buttons_color_after_click("attendances_section", "grades_section");
+    }
+}
+

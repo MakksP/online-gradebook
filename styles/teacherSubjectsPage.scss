@@ -163,3 +163,7 @@
 
   @include subject_section_buttons_animation
 }
+
+#grades_section{
+  background-color: lighten($nav_bar_color, 20%);
+}

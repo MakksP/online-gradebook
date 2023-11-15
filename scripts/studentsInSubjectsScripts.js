@@ -142,6 +142,15 @@ function delete_subject(subject_to_delete_id) {
     });
 }
 
+
 function add_grade_and_attendance_buttons_to_subject_table() {
     document.getElementById("table_container").insertAdjacentHTML("afterbegin", get_subjects_table_grade_and_attendance_buttons());
+    create_attendance_onclick_action();
+    create_grades_onclick_action();
+}
+
+
+function serve_subject_table_buttons_color_after_click(darken_element, lighten_element) {
+    document.getElementById(darken_element).style.backgroundColor = "#383c44";
+    document.getElementById(lighten_element).style.backgroundColor = "#666d7c";
 }
