@@ -13,8 +13,16 @@
   flex-wrap: wrap;
 }
 
+#table_container{
+  width: 100%;
+  height: 40%;
+  margin-top: 2%;
+  display: flex;
+  justify-content: center;
+}
+
 .subject_button{
-  @include standard_header_font;
+  @include timetable_font;
   @include whole_area_style;
   border: 2px solid black;
   background-color: $nav_bar_color;
@@ -39,12 +47,12 @@
   }
   display: grid;
   grid-template-columns: auto auto;
-  grid-template-rows: 60% 60%;
+  grid-template-rows: 100% 100%;
   justify-items: center;
 }
 
 #new_subject_button{
-  font-size: 50px;
+  font-size: 30px;
   background-color: $add_button_color;
   &:hover{
     background-color: darken($add_button_color, 10%);
@@ -59,6 +67,7 @@
   @include additional_button_animations;
   grid-row: 2 / 3;
   grid-column: 1 / 2;
+  font-size: 100%;;
 }
 
 .favourite_button{
@@ -69,6 +78,7 @@
   @include additional_button_animations;
   grid-row: 2 / 3;
   grid-column: 2 / 3;
+  font-size: 100%;
 }
 
 #gradebook_grid_header{
