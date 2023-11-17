@@ -251,12 +251,6 @@ function get_single_raw_timetable_element(element_index){
     return "<button class='timetable_element_button' id='timetable_" + element_index + "'><label class='timetable_element_label'></label></button>"
 }
 
-function get_timetable_tag(timetable_id){
-    return `<button class="timetable_tag_button">
-                <label class="timetable_tag_label">Plan ${timetable_id}</label>
-            </button>`;
-}
-
 function get_edit_subject_pane(){
     return `
         <div id="edit_subject_pane">

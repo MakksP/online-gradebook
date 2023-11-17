@@ -72,5 +72,6 @@
 <script src="scripts/studentsInSubjectsScripts.js"></script>
 <script src="scripts/teacherGradesScripts.js"></script>
 <script src="scripts/teacherTimetableScripts.js"></script>
+<script src="scripts/initAttendanceButtonsOnClick.js"></script>
 </body>
 </html>

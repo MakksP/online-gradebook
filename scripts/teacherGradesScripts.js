@@ -157,4 +157,19 @@ function parse_string_attendance_to_int(was_present){
     return was_present === "Obecny" ? 1 : 0;
 }
 
+function delete_grade_from_database(grade_id) {
+    $.ajax({
+        type: "POST",
+        url: "../serverActions/teacherGradesActions/deleteGrade.php",
+        data: {grade_id: grade_id},
+        success: function (response) {
+            repaint_subject_table_dynamic_content(get_and_draw_students_grades);
+            document.getElementById("grade_edit_pane").remove();
+        },
+        error: function (response) {
+            console.log(response);
+        }
+    });
+}
+
 
