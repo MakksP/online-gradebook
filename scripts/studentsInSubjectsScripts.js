@@ -15,6 +15,23 @@ function get_and_draw_students_grades(subject_name, student_grade_buttons) {
     });
 }
 
+function get_and_draw_students_attendances(subject_name, student_attendance_buttons) {
+    $.ajax({
+        type: "GET",
+        url: "../serverActions/teacherGradesActions/getStudentsAttendances.php",
+        data: {subject_name: subject_name},
+        dataType: "json",
+        success: function (response) {
+            console.log(response)
+            add_students_attendances(response);
+            student_attendance_buttons = init_student_grade_on_click_action(student_attendance_buttons);
+        },
+        error: function (response) {
+            console.log(response);
+        }
+    });
+}
+
 
 function draw_students_labels_in_subject(button_text, student_grade_buttons, checking_student_data) {
     $.ajax({
@@ -67,9 +84,53 @@ function add_students_grades(response) {
             console.log(response);
         }
     });
+}
 
 
+function parse_button_attendance_string_to_html(attendance) {
+    let html_button_attendance = document.createElement("div");
+    html_button_attendance.innerHTML += attendance
+    return html_button_attendance.querySelector(".attendance_button");
+}
 
+function add_students_attendances(response) {
+    for (let student in response) {
+        let button_attendance_id;
+        response[student].forEach(attendance => {
+            button_attendance_id = student + "_grade_div";
+            const button_attendance = document.getElementById(button_attendance_id);
+            if (button_attendance !== null){
+                let html_button_attendance = parse_button_attendance_string_to_html(attendance);
+                const html_button_attendance_attendance_value = html_button_attendance.querySelector(".attendance_label");
+                if (html_button_attendance_attendance_value.innerHTML === 0){
+                    html_button_attendance_attendance_value.innerHTML = "Nieobecny";
+                } else{
+                    html_button_attendance_attendance_value.innerHTML = "Obecny";
+                }
+                button_attendance.insertAdjacentHTML("beforeend", html_button_attendance.outerHTML);
+            }
+
+        });
+    }
+    /*$.ajax({
+        type: "GET",
+        url:"./serverActions/teacherSubjectsActions/getAllStudentsMailInSubject.php",
+        data: {subject_name: get_current_subject_name()},
+        dataType: "json",
+        success: function (response){
+            let button_attendance_id;
+            Array.from(response).forEach(student => {
+                button_attendance_id = student + "_grade_div";
+                document.getElementById(button_attendance_id).insertAdjacentHTML("beforeend", get_new_grade_button());
+            })
+            create_add_new_grade_button_onclick_action();
+            set_button_grade_color_by_grade_value("grade_part", "grade_button");
+
+        },
+        error: function (response){
+            console.log(response);
+        }
+    });*/
 }
 
 
@@ -155,11 +216,14 @@ function serve_subject_table_buttons_color_after_click(darken_element, lighten_e
     document.getElementById(lighten_element).style.backgroundColor = "#666d7c";
 }
 
-function clear_student_data_section_in_table() {
-    Array.from(document.getElementsByClassName("grade_part")).forEach(element => {
-        element.innerHTML = "";
-    });
+function change_grades_header(header) {
+    document.getElementById("gradebook_grid_grades_header").innerHTML = header;
 }
+
+function clear_whole_students_table() {
+    document.getElementById("student_names").remove();
+}
+
 
 function get_subject_name() {
     return document.getElementById("header_text").innerHTML;

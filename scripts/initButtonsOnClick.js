@@ -114,15 +114,13 @@ function appearing_pane_close_button_onclick(button_id, element_to_remove_id) {
     }
 }
 
-
-function change_grades_header(header) {
-    document.getElementById("gradebook_grid_grades_header").innerHTML = header;
-}
-
 function create_attendance_onclick_action() {
     document.getElementById("attendances_section").onclick = function () {
         serve_subject_table_buttons_color_after_click("grades_section", "attendances_section");
-        clear_student_data_section_in_table();
+        clear_whole_students_table();
+        //todo dodać wyświetlanie ocen z bazy
+        const subject_name = document.getElementById("header_text").innerHTML;
+        draw_students_labels_in_subject(subject_name, student_grade_buttons, get_and_draw_students_attendances);
         change_grades_header("Obecności:");
     }
 }

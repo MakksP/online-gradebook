@@ -54,6 +54,16 @@
                 ORDER BY email";
     }
 
+function get_student_email_and_attendance(){
+    return "
+                SELECT email, wasPresent, attendanceId FROM attendances
+                JOIN users ON attendances.userId
+                = users.userId JOIN subjects ON
+                attendances.subjectId = subjects.subjectId
+                WHERE subjectName = ?
+                ORDER BY email";
+}
+
     function get_all_students_belonging_to_subject(){
         return "SELECT email from users
                 JOIN lessonplanssubjects ON users.lessonPlanId
