@@ -197,4 +197,10 @@ function get_student_email_and_attendance(){
         return "DELETE FROM lessonplans WHERE lessonPlanId = ?";
     }
 
+    function add_attendance(){
+        return "
+            INSERT INTO attendances (date, subjectId, userId, wasPresent)
+            VALUES (?, ?, ?, ?)";
+    }
+
 ?>

@@ -22,7 +22,6 @@ function get_and_draw_students_attendances(subject_name, student_attendance_butt
         data: {subject_name: subject_name},
         dataType: "json",
         success: function (response) {
-            console.log(response)
             add_students_button(response, "attendance");
             student_attendance_buttons = init_student_grade_on_click_action(student_attendance_buttons);
         },
@@ -145,6 +144,25 @@ function add_grade_to_database(grade, description, date, response) {
     });
 }
 
+function add_attendance_to_database(grade, date, response) {
+    $.ajax({
+        type: "POST",
+        url: "./serverActions/teacherGradesActions/addNewAttendance.php",
+        data: {
+            wasPresent: grade,
+            date: date,
+            subjectId: response[SUBJECT_ID_INDEX],
+            userId: response[USER_ID_INDEX]
+        },
+        success: function (response) {
+            console.log(response)
+        },
+        error: function (response) {
+            console.log(response)
+        }
+    });
+}
+
 
 const NAME_INDEX = 2;
 
@@ -172,14 +190,16 @@ function serve_add_grade_attendance_action(student_email, subject_name, type_of_
                 button_type = "available_grade_button"
                 set_button_grade_color_by_grade_value("possible_grades", button_type);
                 appearing_pane_close_button_onclick("grade_add_close_button", "add_grade_pane");
+                available_grade_button_onclick_action("available_grade_button");
+                create_save_grade_attendance_button_onclick_action(response, "save_grade_button");
             } else if (type_of_value === "attendance"){
                 button_type = "available_attendance_button";
                 set_button_grade_color_by_grade_value("possible_attendances", button_type);
                 appearing_pane_close_button_onclick("attendance_add_close_button", "add_attendance_pane");
+                available_grade_button_onclick_action("available_attendance_button");
+                create_save_grade_attendance_button_onclick_action(response, "save_attendance_button");
             }
 
-            //available_grade_button_onclick_action();
-           // create_save_grade_button_onclick_action(response);
         },
         error: function (response) {
             console.log(response);
@@ -229,4 +249,20 @@ function clear_whole_students_table() {
 
 function get_subject_name() {
     return document.getElementById("header_text").innerHTML;
+}
+
+function parse_attendance_from_text_to_value(grade) {
+    if (grade === "Nieobecny") {
+        return 0;
+    } else {
+        return 1
+    }
+}
+
+function repaint_attendance_part() {
+    serve_subject_table_buttons_color_after_click("grades_section", "attendances_section");
+    clear_whole_students_table();
+    const subject_name = document.getElementById("header_text").innerHTML;
+    draw_students_labels_in_subject(subject_name, student_grade_buttons, get_and_draw_students_attendances);
+    change_grades_header("Obecności:");
 }

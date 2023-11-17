@@ -194,10 +194,6 @@ function get_add_attendance_pane(name, surname){
                     <button class="available_attendance_button"><label class="grade_label">${available_attendances[1]}</label></button>
                 </div>
             </div>
-            <div id="week">
-                <label>Tydzien:</label>
-                <input type="text" id="add_attendance_pane_week_input"/>
-            </div>
             <div id="date">
                 <label>Data:</label>
                 <input type="text" id="add_attendance_pane_date_input"/>

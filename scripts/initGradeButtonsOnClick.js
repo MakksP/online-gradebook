@@ -50,28 +50,44 @@ function create_save_button_onclick_action(grade, grade_id) {
     document.getElementById("save_changes_button").onclick = function () {
         const description_and_date = get_current_grade_description_and_date();
         update_grade(grade_id, grade, description_and_date);
-        repaint_subject_table_dynamic_content();
+        repaint_subject_table_dynamic_content(get_and_draw_students_grades);
     }
 }
 
 
-function available_grade_button_onclick_action() {
-    Array.from(document.getElementsByClassName("available_grade_button")).forEach(button => {
+function available_grade_button_onclick_action(buttons_class) {
+    Array.from(document.getElementsByClassName(buttons_class)).forEach(button => {
         button.onclick = function () {
-            let grade = button.getElementsByTagName("label")[0].innerHTML;
-            change_chosen_grade_value_in_label(grade);
+            let button_value = button.getElementsByTagName("label")[0].innerHTML;
+            if (buttons_class === "available_grade_button"){
+                change_chosen_grade_attendance_value_in_label(button_value, "chosen_grade_label");
+            } else if (buttons_class === "available_attendance_button"){
+                change_chosen_grade_attendance_value_in_label(button_value, "chosen_attendance_label");
+            }
         }
     });
 }
 
-function create_save_grade_button_onclick_action(response) {
-    document.getElementById("save_grade_button").onclick = function () {
-        let grade = document.getElementById("chosen_grade_label").innerHTML;
-        let description = document.getElementById("add_grade_pane_description_input").value;
-        let date = document.getElementById("add_grade_pane_date_input").value;
-        add_grade_to_database(grade, description, date, response);
-        repaint_subject_table_dynamic_content();
-        document.getElementById("add_grade_pane").remove();
+
+function create_save_grade_attendance_button_onclick_action(response, save_button_id) {
+    document.getElementById(save_button_id).onclick = function () {
+        if (save_button_id === "save_grade_button"){
+            let grade = document.getElementById("chosen_grade_label").innerHTML;
+            let description = document.getElementById("add_grade_pane_description_input").value;
+            let date = document.getElementById("add_grade_pane_date_input").value;
+            add_grade_to_database(grade, description, date, response);
+            repaint_subject_table_dynamic_content(get_and_draw_students_grades);
+            document.getElementById("add_grade_pane").remove();
+
+        } else if (save_button_id === "save_attendance_button"){
+            let grade = document.getElementById("chosen_attendance_label").innerHTML;
+            let date = document.getElementById("add_attendance_pane_date_input").value;
+            grade = parse_attendance_from_text_to_value(grade);
+            add_attendance_to_database(grade, date, response);
+            repaint_attendance_part();
+            document.getElementById("add_attendance_pane").remove();
+        }
+
     }
 }
 
@@ -82,8 +98,7 @@ function create_delete_grade_button_onclick_action(grade_id) {
             url: "../serverActions/teacherGradesActions/deleteGrade.php",
             data: {grade_id: grade_id},
             success: function (response){
-                console.log(response);
-                repaint_subject_table_dynamic_content();
+                repaint_subject_table_dynamic_content(get_and_draw_students_grades);
                 document.getElementById("grade_edit_pane").remove();
             },
             error: function (response){
