@@ -6,7 +6,7 @@ function get_and_draw_students_grades(subject_name, student_grade_buttons) {
         data: {subject_name: subject_name},
         dataType: "json",
         success: function (response) {
-            add_students_grades(response);
+            add_students_button(response, "grade");
             student_grade_buttons = init_student_grade_on_click_action(student_grade_buttons);
         },
         error: function (response) {
@@ -23,7 +23,7 @@ function get_and_draw_students_attendances(subject_name, student_attendance_butt
         dataType: "json",
         success: function (response) {
             console.log(response)
-            add_students_attendances(response);
+            add_students_button(response, "attendance");
             student_attendance_buttons = init_student_grade_on_click_action(student_attendance_buttons);
         },
         error: function (response) {
@@ -53,14 +53,19 @@ function draw_students_labels_in_subject(button_text, student_grade_buttons, che
 }
 
 
-function add_students_grades(response) {
+function add_students_button(response, type_of_value) {
     for (let student in response) {
-        let button_grade_id;
-        response[student].forEach(grade => {
-            button_grade_id = student + "_grade_div";
-            const button_grade = document.getElementById(button_grade_id);
-            if (button_grade !== null){
-                button_grade.insertAdjacentHTML("beforeend", grade);
+        let button_id;
+        response[student].forEach(value => {
+            button_id = student + "_grade_div";
+            const button = document.getElementById(button_id);
+            if (button !== null){
+                if (type_of_value === "attendance"){
+                    parse_and_add_attendance_button_to_table(value, button);
+                } else if (type_of_value === "grade"){
+                    button.insertAdjacentHTML("beforeend", value);
+                }
+
             }
 
         });
@@ -71,13 +76,25 @@ function add_students_grades(response) {
         data: {subject_name: get_current_subject_name()},
         dataType: "json",
         success: function (response){
-           let button_grade_id;
+           let button_id;
            Array.from(response).forEach(student => {
-               button_grade_id = student + "_grade_div";
-               document.getElementById(button_grade_id).insertAdjacentHTML("beforeend", get_new_grade_button());
+               button_id = student + "_grade_div";
+               if (type_of_value === "grade"){
+                   document.getElementById(button_id).insertAdjacentHTML("beforeend", get_new_grade_button());
+               } else if (type_of_value === "attendance"){
+                   document.getElementById(button_id).insertAdjacentHTML("beforeend", get_new_attendance_button());
+               }
+
            })
-            create_add_new_grade_button_onclick_action();
-            set_button_grade_color_by_grade_value("grade_part", "grade_button");
+            let value_button;
+            if (type_of_value === "grade"){
+                create_add_new_grade_button_onclick_action();
+                value_button = "grade_button";
+            } else if (type_of_value === "attendance"){
+                create_add_new_attendance_button_onclick_action();
+                value_button = "attendance_button";
+            }
+            set_button_grade_color_by_grade_value("grade_part", value_button);
 
         },
         error: function (response){
@@ -93,44 +110,15 @@ function parse_button_attendance_string_to_html(attendance) {
     return html_button_attendance.querySelector(".attendance_button");
 }
 
-function add_students_attendances(response) {
-    for (let student in response) {
-        let button_attendance_id;
-        response[student].forEach(attendance => {
-            button_attendance_id = student + "_grade_div";
-            const button_attendance = document.getElementById(button_attendance_id);
-            if (button_attendance !== null){
-                let html_button_attendance = parse_button_attendance_string_to_html(attendance);
-                const html_button_attendance_attendance_value = html_button_attendance.querySelector(".attendance_label");
-                if (html_button_attendance_attendance_value.innerHTML === 0){
-                    html_button_attendance_attendance_value.innerHTML = "Nieobecny";
-                } else{
-                    html_button_attendance_attendance_value.innerHTML = "Obecny";
-                }
-                button_attendance.insertAdjacentHTML("beforeend", html_button_attendance.outerHTML);
-            }
-
-        });
+function parse_and_add_attendance_button_to_table(attendance, button_attendance) {
+    let html_button_attendance = parse_button_attendance_string_to_html(attendance);
+    const html_button_attendance_attendance_value = html_button_attendance.querySelector(".attendance_label");
+    if (html_button_attendance_attendance_value.innerHTML === "0") {
+        html_button_attendance_attendance_value.innerHTML = "Nieobecny";
+    } else {
+        html_button_attendance_attendance_value.innerHTML = "Obecny";
     }
-    /*$.ajax({
-        type: "GET",
-        url:"./serverActions/teacherSubjectsActions/getAllStudentsMailInSubject.php",
-        data: {subject_name: get_current_subject_name()},
-        dataType: "json",
-        success: function (response){
-            let button_attendance_id;
-            Array.from(response).forEach(student => {
-                button_attendance_id = student + "_grade_div";
-                document.getElementById(button_attendance_id).insertAdjacentHTML("beforeend", get_new_grade_button());
-            })
-            create_add_new_grade_button_onclick_action();
-            set_button_grade_color_by_grade_value("grade_part", "grade_button");
-
-        },
-        error: function (response){
-            console.log(response);
-        }
-    });*/
+    button_attendance.insertAdjacentHTML("beforeend", html_button_attendance.outerHTML);
 }
 
 
@@ -162,7 +150,7 @@ const NAME_INDEX = 2;
 
 const SURNAME_INDEX = 3;
 
-function serve_add_grade_action(student_email, subject_name) {
+function serve_add_grade_attendance_action(student_email, subject_name, type_of_value) {
     $.ajax({
         type: "GET",
         url: "./serverActions/teacherSubjectsActions/getSubjectAndUserIds.php",
@@ -172,12 +160,26 @@ function serve_add_grade_action(student_email, subject_name) {
         },
         dataType: "json",
         success: function (response) {
-            document.getElementById("subjects_table").insertAdjacentHTML("beforeend", get_add_grade_pane(response[NAME_INDEX], response[SURNAME_INDEX]));
-            console.log(response);
-            set_button_grade_color_by_grade_value("possible_grades", "available_grade_button");
-            appearing_pane_close_button_onclick("grade_add_close_button", "add_grade_pane");
-            available_grade_button_onclick_action();
-            create_save_grade_button_onclick_action(response);
+            let using_student_value;
+            if (type_of_value === "grade"){
+                using_student_value = get_add_grade_pane;
+            } else if (type_of_value === "attendance"){
+                using_student_value = get_add_attendance_pane;
+            }
+            document.getElementById("subjects_table").insertAdjacentHTML("beforeend", using_student_value(response[NAME_INDEX], response[SURNAME_INDEX]));
+            let button_type;
+            if (type_of_value === "grade"){
+                button_type = "available_grade_button"
+                set_button_grade_color_by_grade_value("possible_grades", button_type);
+            } else if (type_of_value === "attendance"){
+                button_type = "available_attendance_button";
+                set_button_grade_color_by_grade_value("possible_attendances", button_type);
+
+            }
+
+           // appearing_pane_close_button_onclick("grade_add_close_button", "add_grade_pane");
+            //available_grade_button_onclick_action();
+           // create_save_grade_button_onclick_action(response);
         },
         error: function (response) {
             console.log(response);

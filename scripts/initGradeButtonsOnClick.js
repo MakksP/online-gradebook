@@ -1,4 +1,5 @@
 const add_new_grade_buttons = document.getElementsByClassName("new_grade_button");
+const new_attendance_button = document.getElementsByClassName("new_attendance_button");
 
 
 
@@ -6,7 +7,15 @@ function create_add_new_grade_button_onclick_action(){
     Array.from(add_new_grade_buttons).forEach(button => button.onclick = function (){
         const student_email = get_student_email_from_student_label_div(button);
         const subject_name = get_current_subject_name()
-        serve_add_grade_action(student_email, subject_name);
+        serve_add_grade_attendance_action(student_email, subject_name, "grade");
+    });
+}
+
+function create_add_new_attendance_button_onclick_action(){
+    Array.from(new_attendance_button).forEach(button => button.onclick = function (){
+        const student_email = get_student_email_from_student_label_div(button);
+        const subject_name = get_current_subject_name()
+        serve_add_grade_attendance_action(student_email, subject_name, "attendance");
     });
 }
 

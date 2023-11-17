@@ -22,7 +22,6 @@ function set_specific_grade_button_color(grade_button) {
     const grade_value = get_current_grade_button_value(grade_button);
     if (grade_value === '2') {
         grade_button.style.backgroundColor = "#FE0000";
-        grade_button.id
     } else if (grade_value === '3') {
         grade_button.style.backgroundColor = "#FFE500";
     } else if (grade_value === '4') {
@@ -32,12 +31,27 @@ function set_specific_grade_button_color(grade_button) {
     }
 }
 
+function set_specific_attendance_button_color(grade_button) {
+    const grade_value = get_current_grade_button_value(grade_button);
+    console.log(grade_value)
+    if (grade_value === "Nieobecny") {
+        grade_button.style.backgroundColor = "#FE0000";
+    } else if (grade_value === "Obecny") {
+        grade_button.style.backgroundColor = "#257324";
+    }
+}
+
 function set_button_grade_color_by_grade_value(button_container_class_name, button_type) {
     const button_labels = Array.from(document.getElementsByClassName(button_container_class_name));
     for (let button_labels_index = 0; button_labels_index < button_labels.length; button_labels_index++) {
         const grade_buttons = Array.from(get_all_grade_buttons_from_div(button_labels, button_labels_index, button_type));
         grade_buttons.forEach(grade_button => {
-            set_specific_grade_button_color(grade_button);
+            if (button_type === "attendance_button" || button_type === "available_attendance_button"){
+                console.log(grade_button)
+                set_specific_attendance_button_color(grade_button);
+            } else if (button_type === "grade_button"){
+                set_specific_grade_button_color(grade_button);
+            }
         });
     }
 }
