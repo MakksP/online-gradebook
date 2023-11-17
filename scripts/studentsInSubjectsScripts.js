@@ -171,13 +171,13 @@ function serve_add_grade_attendance_action(student_email, subject_name, type_of_
             if (type_of_value === "grade"){
                 button_type = "available_grade_button"
                 set_button_grade_color_by_grade_value("possible_grades", button_type);
+                appearing_pane_close_button_onclick("grade_add_close_button", "add_grade_pane");
             } else if (type_of_value === "attendance"){
                 button_type = "available_attendance_button";
                 set_button_grade_color_by_grade_value("possible_attendances", button_type);
-
+                appearing_pane_close_button_onclick("attendance_add_close_button", "add_attendance_pane");
             }
 
-           // appearing_pane_close_button_onclick("grade_add_close_button", "add_grade_pane");
             //available_grade_button_onclick_action();
            // create_save_grade_button_onclick_action(response);
         },

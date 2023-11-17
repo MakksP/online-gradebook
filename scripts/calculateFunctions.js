@@ -45,11 +45,11 @@ function set_button_grade_color_by_grade_value(button_container_class_name, butt
     const button_labels = Array.from(document.getElementsByClassName(button_container_class_name));
     for (let button_labels_index = 0; button_labels_index < button_labels.length; button_labels_index++) {
         const grade_buttons = Array.from(get_all_grade_buttons_from_div(button_labels, button_labels_index, button_type));
+        console.log(button_type)
         grade_buttons.forEach(grade_button => {
             if (button_type === "attendance_button" || button_type === "available_attendance_button"){
-                console.log(grade_button)
                 set_specific_attendance_button_color(grade_button);
-            } else if (button_type === "grade_button"){
+            } else if (button_type === "grade_button" || button_type === "available_grade_button"){
                 set_specific_grade_button_color(grade_button);
             }
         });

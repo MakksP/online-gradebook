@@ -182,13 +182,13 @@ function get_add_attendance_pane(name, surname){
                 <button id="attendance_add_close_button"><i class="icon-cancel-circled"></i></button>
             </div>
             <div id="student_name_label">
-                <label>Dodaj ocenę dla studenta:<br>${name} ${surname}</label>
+                <label>Dodaj obecność dla studenta:<br>${name} ${surname}</label>
             </div>
             <div id="chosen_attendance_div">
                 <label id="chosen_attendance_label"></label>
             </div>
             <div id="change_attendance_div">
-                <label>Wybierz ocenę:</label>
+                <label>Wybierz obecność:</label>
                 <div class="possible_attendances">
                     <button class="available_attendance_button"><label class="grade_label">${available_attendances[0]}</label></button>
                     <button class="available_attendance_button"><label class="grade_label">${available_attendances[1]}</label></button>
