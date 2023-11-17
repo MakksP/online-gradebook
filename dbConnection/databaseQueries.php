@@ -215,4 +215,8 @@ function get_student_email_and_attendance(){
                 wasPresent = ? WHERE attendanceId = ?;";
     }
 
+    function delete_attendance(){
+        return "DELETE FROM attendances WHERE attendanceId = ?";
+    }
+
 ?>

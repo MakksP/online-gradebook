@@ -232,6 +232,9 @@ function get_edit_attendance_pane(name, surname, was_present, date){
             <div class="save">
                 <button type="submit" id="save_attendance_edit_button">Zapisz</button>
             </div>
+            <div class="delete">
+                <button type="submit" id="delete_attendance_edit_button">Usuń obecność</button>
+            </div>
         </div>
     `
 }

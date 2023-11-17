@@ -131,3 +131,10 @@ function save_changes_in_attendance_button_onclick_action(attendance_id){
         send_update_attendance_to_database(date, was_present, attendance_id);
     }
 }
+
+
+function create_delete_attendance_onclick_action(attendance_id) {
+    document.getElementById("delete_attendance_edit_button").onclick = function () {
+        delete_attendance_from_database(attendance_id);
+    }
+}

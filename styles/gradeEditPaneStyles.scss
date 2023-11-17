@@ -135,3 +135,11 @@
 #save_attendance_edit_button{
   @include timetable_add_button_colors;
 }
+
+#delete_attendance_edit_button{
+  @include thin_border;
+  @include timetable_font;
+  border-radius: 5px;
+  background-color: $delete_color;
+  @include delete_button_hover_style;
+}

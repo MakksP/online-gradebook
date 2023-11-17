@@ -68,6 +68,7 @@ function create_attendance_edit_pane(attendance_id){
             const current_attendance_button = document.getElementsByClassName("available_attendance_edit_button")[0];
             choose_color_for_available_attendance_in_edit_pane(current_attendance_button);
             create_swap_attendance_onclick_action(current_attendance_button);
+            create_delete_attendance_onclick_action(attendance_id);
         },
         error: function (response){
             console.log(response);
@@ -88,6 +89,24 @@ function send_update_attendance_to_database(date, was_present, attendance_id) {
         success: function (response) {
             repaint_attendance_part();
             document.getElementById("add_attendance_pane").remove();
+            console.log(response);
+        },
+        error: function (response) {
+            console.log(response);
+        }
+    });
+}
+
+function delete_attendance_from_database(attendance_id) {
+    $.ajax({
+        type: "POST",
+        url: "../serverActions/teacherGradesActions/deleteAttendance.php",
+        data: {
+            attendanceId: attendance_id
+        },
+        success: function (response) {
+            repaint_attendance_part();
+            document.getElementById("edit_attendance_pane").remove();
             console.log(response);
         },
         error: function (response) {
