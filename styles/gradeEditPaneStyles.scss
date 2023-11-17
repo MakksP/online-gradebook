@@ -5,6 +5,7 @@
   position: absolute;
   top: 30%;
   left: 40%;
+  gap: 5%;
   @include appearing_pane_style;
 }
 
@@ -50,3 +51,65 @@
   @include button_in_table_style;
 }
 
+.attendance_button{
+  @include button_in_table_style;
+  color: $white_contrast_color;
+  width: min-content;
+}
+
+.attendance_label:hover{
+  cursor: pointer;
+}
+
+.new_attendance_button{
+  @include button_in_table_style;
+  background-color: $add_button_color;
+  color: $white_contrast_color;
+}
+
+#attendance_add_close_button{
+  @include close_pane_button_style;
+  &:hover{
+    cursor: pointer;
+  }
+}
+
+#attendance_add_close_button_div{
+  display: flex;
+  justify-content: end;
+}
+
+.available_attendance_button{
+  @include button_in_table_style;
+  color: $white_contrast_color;
+  width: min-content;
+}
+
+.possible_attendances{
+  display: flex;
+  justify-content: space-around;
+}
+
+#save_grade_button{
+  @include timetable_add_button_colors;
+  width: 80%;
+}
+
+#save_changes_button{
+  @include timetable_add_button_colors;
+  width: 80%;
+}
+
+#delete_grade_button{
+  @include thin_border;
+  @include timetable_font;
+  border-radius: 5px;
+  background-color: $delete_color;
+  width: 80%;
+  @include delete_button_hover_style;
+}
+
+#save_attendance_button{
+  @include timetable_add_button_colors;
+  width: 80%;
+}

@@ -3,6 +3,7 @@
   position: absolute;
   top: 30%;
   left: 40%;
+  gap: 5%;
   height: 40%;
   width: 20%;
   background-color: #FFFFFF;
@@ -96,6 +97,134 @@
 }
 .grade_button:hover {
   cursor: pointer;
+}
+
+.attendance_button {
+  margin-left: 0.5rem;
+  height: 85%;
+  width: 1.8rem;
+  border: 2px solid black;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #FFFFFF;
+  width: min-content;
+}
+.attendance_button:hover {
+  cursor: pointer;
+}
+
+.attendance_label:hover {
+  cursor: pointer;
+}
+
+.new_attendance_button {
+  margin-left: 0.5rem;
+  height: 85%;
+  width: 1.8rem;
+  border: 2px solid black;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #258518;
+  color: #FFFFFF;
+}
+.new_attendance_button:hover {
+  cursor: pointer;
+}
+
+#attendance_add_close_button {
+  border: none;
+  background-color: transparent;
+  font-size: 100%;
+  width: min-content;
+  height: min-content;
+}
+#attendance_add_close_button:hover {
+  cursor: pointer;
+}
+#attendance_add_close_button:hover {
+  cursor: pointer;
+}
+
+#attendance_add_close_button_div {
+  display: flex;
+  justify-content: end;
+}
+
+.available_attendance_button {
+  margin-left: 0.5rem;
+  height: 85%;
+  width: 1.8rem;
+  border: 2px solid black;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #FFFFFF;
+  width: min-content;
+}
+.available_attendance_button:hover {
+  cursor: pointer;
+}
+
+.possible_attendances {
+  display: flex;
+  justify-content: space-around;
+}
+
+#save_grade_button {
+  font-family: "Tilt Neon", sans-serif;
+  font-size: 100%;
+  background: linear-gradient(#258518 100%, #9BD33F 5%);
+  border: 2px solid black;
+  border-radius: 5px;
+  width: 80%;
+}
+#save_grade_button:hover {
+  cursor: pointer;
+  background: linear-gradient(#195a10 100%, #81b52a 5%);
+}
+
+#save_changes_button {
+  font-family: "Tilt Neon", sans-serif;
+  font-size: 100%;
+  background: linear-gradient(#258518 100%, #9BD33F 5%);
+  border: 2px solid black;
+  border-radius: 5px;
+  width: 80%;
+}
+#save_changes_button:hover {
+  cursor: pointer;
+  background: linear-gradient(#195a10 100%, #81b52a 5%);
+}
+
+#delete_grade_button {
+  border: 2px solid black;
+  font-family: "Tilt Neon", sans-serif;
+  font-size: 100%;
+  border-radius: 5px;
+  background-color: #f83c54;
+  width: 80%;
+}
+#delete_grade_button:hover {
+  cursor: pointer;
+  background-color: #f60b29;
+}
+
+#save_attendance_button {
+  font-family: "Tilt Neon", sans-serif;
+  font-size: 100%;
+  background: linear-gradient(#258518 100%, #9BD33F 5%);
+  border: 2px solid black;
+  border-radius: 5px;
+  width: 80%;
+}
+#save_attendance_button:hover {
+  cursor: pointer;
+  background: linear-gradient(#195a10 100%, #81b52a 5%);
 }
 
 /*# sourceMappingURL=gradeEditPaneStyles.css.map */
