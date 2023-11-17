@@ -1,5 +1,5 @@
-function add_grade_edit_pane_to_subjects_table(name, surname, grade, description, date) {
-    document.getElementById("subjects_table").insertAdjacentHTML("beforeend", get_grade_edit_pane(name, surname, grade, description, date));
+function add_grade_edit_pane_to_main_container(name, surname, grade, description, date) {
+    document.getElementById("main_container").insertAdjacentHTML("beforeend", get_grade_edit_pane(name, surname, grade, description, date));
     appearing_pane_close_button_onclick("grade_edit_close_button", "grade_edit_pane");
 }
 
@@ -16,7 +16,7 @@ function get_current_grade_description_and_date() {
 
 
 function repaint_grade_edit_pane(name, surname, grade, description, date, grade_id) {
-    add_grade_edit_pane_to_subjects_table(name, surname, grade, description, date);
+    add_grade_edit_pane_to_main_container(name, surname, grade, description, date);
     let available_grades_buttons = Array.from(document.getElementsByClassName("available_grade_button"));
     const new_grade_data_package = create_change_grade_button_onclick_action(available_grades_buttons, grade, name, surname, grade_id);
 
@@ -45,6 +45,52 @@ function create_grade_edit_pane(grade_id){
 
         },
         error: function (response){
+            console.log(response);
+        }
+    });
+}
+
+
+
+function create_attendance_edit_pane(attendance_id){
+    $.ajax({
+        type: "GET",
+        url: "../serverActions/teacherGradesActions/getAttendanceData.php",
+        data: {attendance_id: attendance_id},
+        dataType: "json",
+        success: function (response){
+            const name = response[0];
+            const surname = response[1];
+            let wasPresent = response[2];
+            let date = response[3];
+            add_new_appearing_with_parameters_pane_to_main_container(get_edit_attendance_pane,
+                save_changes_in_attendance_button_onclick_action, "attendance_edit_close_button", "edit_attendance_pane", name, surname, wasPresent, date, attendance_id);
+            const current_attendance_button = document.getElementsByClassName("available_attendance_edit_button")[0];
+            choose_color_for_available_attendance_in_edit_pane(current_attendance_button);
+            create_swap_attendance_onclick_action(current_attendance_button);
+        },
+        error: function (response){
+            console.log(response);
+        }
+    });
+}
+
+
+function send_update_attendance_to_database(date, was_present, attendance_id) {
+    $.ajax({
+        type: "POST",
+        url: "../serverActions/teacherGradesActions/updateAttendanceData.php",
+        data: {
+            date: date,
+            wasPresent: parse_string_attendance_to_int(was_present),
+            attendanceId: attendance_id
+        },
+        success: function (response) {
+            repaint_attendance_part();
+            document.getElementById("add_attendance_pane").remove();
+            console.log(response);
+        },
+        error: function (response) {
             console.log(response);
         }
     });
@@ -79,3 +125,17 @@ function repaint_subject_table_dynamic_content(value_function) {
     document.getElementById("student_names").remove();
     draw_students_labels_in_subject(current_subject_name, student_grade_buttons, get_and_draw_students_grades);
 }
+
+function calculate_available_attendance(was_present){
+    return was_present === 1 ? "Nieobecny" : "Obecny";
+}
+
+function parse_int_attendance_to_string(was_present){
+    return was_present === 1 ? "Obecny" : "Nieobecny";
+}
+
+function parse_string_attendance_to_int(was_present){
+    return was_present === "Obecny" ? 1 : 0;
+}
+
+

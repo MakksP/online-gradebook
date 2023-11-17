@@ -1,9 +1,6 @@
 @import "buttonAnimatoins.css";
 .appearing_pane {
-  position: absolute;
-  top: 30%;
-  left: 40%;
-  gap: 5%;
+  position: relative;
   height: 40%;
   width: 20%;
   background-color: #FFFFFF;
@@ -13,6 +10,11 @@
   font-size: 100%;
   display: flex;
   flex-direction: column;
+  position: relative;
+  bottom: 50%;
+  left: 40%;
+  align-items: center;
+  gap: 5%;
 }
 
 .available_grade_button {
@@ -33,6 +35,7 @@
 #grade_edit_close_button_div {
   display: flex;
   justify-content: right;
+  width: 100%;
 }
 
 #grade_edit_close_button {
@@ -53,6 +56,7 @@
 #grade_add_close_button_div {
   display: flex;
   justify-content: right;
+  width: 100%;
 }
 
 #grade_add_close_button {
@@ -152,6 +156,7 @@
 #attendance_add_close_button_div {
   display: flex;
   justify-content: end;
+  width: 100%;
 }
 
 .available_attendance_button {
@@ -181,7 +186,6 @@
   background: linear-gradient(#258518 100%, #9BD33F 5%);
   border: 2px solid black;
   border-radius: 5px;
-  width: 80%;
 }
 #save_grade_button:hover {
   cursor: pointer;
@@ -194,7 +198,6 @@
   background: linear-gradient(#258518 100%, #9BD33F 5%);
   border: 2px solid black;
   border-radius: 5px;
-  width: 80%;
 }
 #save_changes_button:hover {
   cursor: pointer;
@@ -207,7 +210,6 @@
   font-size: 100%;
   border-radius: 5px;
   background-color: #f83c54;
-  width: 80%;
 }
 #delete_grade_button:hover {
   cursor: pointer;
@@ -220,9 +222,51 @@
   background: linear-gradient(#258518 100%, #9BD33F 5%);
   border: 2px solid black;
   border-radius: 5px;
-  width: 80%;
 }
 #save_attendance_button:hover {
+  cursor: pointer;
+  background: linear-gradient(#195a10 100%, #81b52a 5%);
+}
+
+#attendance_edit_close_button_div {
+  display: flex;
+  justify-content: right;
+  width: 100%;
+}
+
+#attendance_edit_close_button {
+  border: none;
+  background-color: transparent;
+  font-size: 100%;
+  width: min-content;
+  height: min-content;
+}
+#attendance_edit_close_button:hover {
+  cursor: pointer;
+}
+#attendance_edit_close_button:hover {
+  cursor: pointer;
+}
+
+#student_name_label {
+  text-align: center;
+}
+
+.available_attendance_edit_button {
+  border: 2px solid black;
+  font-family: "Tilt Neon", sans-serif;
+  font-size: 100%;
+  border-radius: 5px;
+}
+
+#save_attendance_edit_button {
+  font-family: "Tilt Neon", sans-serif;
+  font-size: 100%;
+  background: linear-gradient(#258518 100%, #9BD33F 5%);
+  border: 2px solid black;
+  border-radius: 5px;
+}
+#save_attendance_edit_button:hover {
   cursor: pointer;
   background: linear-gradient(#195a10 100%, #81b52a 5%);
 }

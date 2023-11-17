@@ -2,11 +2,11 @@
 @import "styleSchemes";
 
 .appearing_pane{
-  position: absolute;
-  top: 30%;
-  left: 40%;
-  gap: 5%;
+  position: relative;
   @include appearing_pane_style;
+  @include appearing_pane_position;
+  align-items: center;
+  gap: 5%;
 }
 
 .available_grade_button{
@@ -77,6 +77,7 @@
 #attendance_add_close_button_div{
   display: flex;
   justify-content: end;
+  width: 100%;
 }
 
 .available_attendance_button{
@@ -92,12 +93,10 @@
 
 #save_grade_button{
   @include timetable_add_button_colors;
-  width: 80%;
 }
 
 #save_changes_button{
   @include timetable_add_button_colors;
-  width: 80%;
 }
 
 #delete_grade_button{
@@ -105,11 +104,34 @@
   @include timetable_font;
   border-radius: 5px;
   background-color: $delete_color;
-  width: 80%;
   @include delete_button_hover_style;
 }
 
 #save_attendance_button{
   @include timetable_add_button_colors;
-  width: 80%;
+}
+
+#attendance_edit_close_button_div{
+  @include close_button_div_style;
+}
+
+#attendance_edit_close_button{
+  @include close_pane_button_style;
+  &:hover{
+    cursor: pointer;
+  }
+}
+
+#student_name_label{
+  text-align: center;
+}
+
+.available_attendance_edit_button{
+  @include thin_border;
+  @include timetable_font;
+  border-radius: 5px;
+}
+
+#save_attendance_edit_button{
+  @include timetable_add_button_colors;
 }

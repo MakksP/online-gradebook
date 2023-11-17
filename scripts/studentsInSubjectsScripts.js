@@ -23,7 +23,7 @@ function get_and_draw_students_attendances(subject_name, student_attendance_butt
         dataType: "json",
         success: function (response) {
             add_students_button(response, "attendance");
-            student_attendance_buttons = init_student_grade_on_click_action(student_attendance_buttons);
+            student_attendance_buttons = init_student_attendance_on_click_action(student_attendance_buttons);
         },
         error: function (response) {
             console.log(response);
@@ -184,7 +184,7 @@ function serve_add_grade_attendance_action(student_email, subject_name, type_of_
             } else if (type_of_value === "attendance"){
                 using_student_value = get_add_attendance_pane;
             }
-            document.getElementById("subjects_table").insertAdjacentHTML("beforeend", using_student_value(response[NAME_INDEX], response[SURNAME_INDEX]));
+            document.getElementById("main_container").insertAdjacentHTML("beforeend", using_student_value(response[NAME_INDEX], response[SURNAME_INDEX]));
             let button_type;
             if (type_of_value === "grade"){
                 button_type = "available_grade_button"
@@ -265,4 +265,26 @@ function repaint_attendance_part() {
     const subject_name = document.getElementById("header_text").innerHTML;
     draw_students_labels_in_subject(subject_name, student_grade_buttons, get_and_draw_students_attendances);
     change_grades_header("Obecności:");
+}
+
+function create_swap_attendance_onclick_action(current_attendance_button) {
+    current_attendance_button.onclick = function () {
+        if (current_attendance_button.querySelector(".grade_label").innerHTML === "Nieobecny"){
+            document.getElementById("chosen_attendance_label").innerHTML = "Nieobecny";
+            current_attendance_button.querySelector(".grade_label").innerHTML = "Obecny";
+            current_attendance_button.style.backgroundColor = "#258518";
+        } else {
+            document.getElementById("chosen_attendance_label").innerHTML = "Obecny";
+            current_attendance_button.querySelector(".grade_label").innerHTML = "Nieobecny";
+            current_attendance_button.style.backgroundColor = "#f83c54";
+        }
+    }
+}
+
+function choose_color_for_available_attendance_in_edit_pane(current_attendance_button) {
+    if (current_attendance_button.querySelector(".grade_label").innerHTML === "Obecny") {
+        current_attendance_button.style.backgroundColor = "#258518";
+    } else {
+        current_attendance_button.style.backgroundColor = "#f83c54";
+    }
 }

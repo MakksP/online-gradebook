@@ -34,6 +34,21 @@ function init_student_grade_on_click_action(student_grade_buttons) {
     return student_grade_buttons;
 }
 
+function init_student_attendance_on_click_action(student_attendance_buttons) {
+    student_attendance_buttons = document.getElementsByClassName("attendance_button");
+
+    for (let student_attendance_button_index = 0; student_attendance_button_index < student_attendance_buttons.length; student_attendance_button_index += 1) {
+
+        if (student_attendance_buttons[student_attendance_button_index] != null) {
+            student_attendance_buttons[student_attendance_button_index].onclick = function () {
+                create_attendance_edit_pane(student_attendance_buttons[student_attendance_button_index].id)
+
+            }
+        }
+    }
+    return student_attendance_buttons;
+}
+
 
 function create_change_grade_button_onclick_action(available_grades_buttons, grade, name, surname, grade_id) {
     available_grades_buttons.forEach(button => button.onclick = function () {
@@ -105,5 +120,14 @@ function create_delete_grade_button_onclick_action(grade_id) {
                 console.log(response);
             }
         });
+    }
+}
+
+function save_changes_in_attendance_button_onclick_action(attendance_id){
+    document.getElementById("save_attendance_edit_button").onclick = function (){
+        const date = document.getElementById("edit_attendance_pane_date_input").value
+        const was_present = document.getElementById("chosen_attendance_label").innerHTML
+
+        send_update_attendance_to_database(date, was_present, attendance_id);
     }
 }

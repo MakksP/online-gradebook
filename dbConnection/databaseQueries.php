@@ -78,6 +78,13 @@ function get_student_email_and_attendance(){
                 WHERE gradeId = ?";
     }
 
+    function get_attendance_data(){
+        return "
+                SELECT name, surname, wasPresent, date
+                FROM attendances JOIN users ON attendances.userId = users.userId
+                WHERE attendanceId = ?";
+    }
+
     function update_grade(){
         return "
             UPDATE grades SET grade = ?,
@@ -201,6 +208,11 @@ function get_student_email_and_attendance(){
         return "
             INSERT INTO attendances (date, subjectId, userId, wasPresent)
             VALUES (?, ?, ?, ?)";
+    }
+
+    function update_attendance(){
+        return "UPDATE attendances SET date = ?,
+                wasPresent = ? WHERE attendanceId = ?;";
     }
 
 ?>

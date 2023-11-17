@@ -114,6 +114,7 @@ function appearing_pane_close_button_onclick(button_id, element_to_remove_id) {
     }
 }
 
+
 function create_attendance_onclick_action() {
     document.getElementById("attendances_section").onclick = function () {
         repaint_attendance_part();
