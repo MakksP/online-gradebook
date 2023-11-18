@@ -14,7 +14,7 @@
     }
 
     function get_students_by_subject(){
-        return "SELECT name, surname, email
+        return "SELECT DISTINCT name, surname, email
         FROM users JOIN lessonplanssubjects
         ON users.lessonPlanId = lessonplanssubjects.lessonPlanId
         JOIN subjects ON subjects.subjectId = lessonplanssubjects.subjectId
@@ -65,7 +65,7 @@ function get_student_email_and_attendance(){
 }
 
     function get_all_students_belonging_to_subject(){
-        return "SELECT email from users
+        return "SELECT DISTINCT email from users
                 JOIN lessonplanssubjects ON users.lessonPlanId
                 = lessonplanssubjects.lessonPlanId JOIN subjects ON
                 lessonplanssubjects.subjectId = subjects.subjectId

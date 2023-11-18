@@ -33,6 +33,7 @@ function get_and_draw_students_attendances(subject_name, student_attendance_butt
 
 
 function draw_students_labels_in_subject(button_text, student_grade_buttons, checking_student_data) {
+    console.log(button_text)
     $.ajax({
         type: "GET",
         url: "../serverActions/teacherSubjectsActions/studentsAndSubjects.php",

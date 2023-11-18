@@ -30,7 +30,7 @@ function get_not_teaching_subjects_pane() {
         url: "../serverActions/teacherSubjectsActions/getNotTeachingSubjects.php",
         success: function (response) {
             clear_subjects_to_add_pane();
-            const main_container = document.getElementById("subjects_table");
+            const main_container = document.getElementById("main_container");
             main_container.insertAdjacentHTML("beforeend", get_subjects_to_add_pane(response))
 
             document.getElementById("close_pane_button").onclick = function () {

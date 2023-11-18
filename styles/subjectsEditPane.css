@@ -4,6 +4,7 @@
   display: flex;
   flex-wrap: wrap;
   align-content: baseline;
+  text-align: center;
 }
 
 #close_pane_button {
