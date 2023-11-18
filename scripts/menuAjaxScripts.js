@@ -12,7 +12,8 @@ $(document).ready(function (){
 
             },
             error: function (response){
-                $("#incorrect_teacher_password").text("Niepoprawne hasło nauczyciela").css("color", "red")
+                console.log(response)
+                $("#incorrect_email_password").text("Niepoprawne hasło nauczyciela").css("color", "red")
                     .css("text-shadow", "-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000");
 
             }

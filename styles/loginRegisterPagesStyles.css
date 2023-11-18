@@ -13,11 +13,12 @@
 
 .main_pane {
   width: 35%;
-  height: 60%;
   position: relative;
   left: 15%;
   top: 10%;
   text-align: center;
+  display: flex;
+  flex-direction: column;
 }
 
 #login_main_pane {
@@ -27,14 +28,12 @@
 }
 
 #login_form {
-  height: 80%;
   width: 90%;
   position: relative;
   left: 5%;
 }
 
 #registration_form {
-  height: 80%;
   width: 90%;
   position: relative;
   left: 5%;
@@ -80,10 +79,9 @@
 
 .login_input {
   width: 90%;
-  height: 80%;
   font-size: 15px;
   font-family: "Tilt Neon", sans-serif;
-  font-size: 1.5vh;
+  font-size: 2.3vh;
   position: relative;
   top: 5%;
   border: none;
@@ -115,7 +113,7 @@
   height: 35%;
   position: relative;
   left: 60%;
-  bottom: 40%;
+  bottom: 10%;
 }
 
 .login_icon_image {

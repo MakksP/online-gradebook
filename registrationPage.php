@@ -80,7 +80,10 @@
                 <input type="submit" id="registration_button" class="form_button" value="Zarejestruj się">
 
             </div>
-            <span id="incorrect_email_password"></span>
+            <div id="wrong_registration_data">
+                <span id="incorrect_email_password"></span>
+            </div>
+
         </form>
 
     </section>

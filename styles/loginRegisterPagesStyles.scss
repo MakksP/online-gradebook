@@ -13,11 +13,12 @@
 
 .main_pane{
   width: 35%;
-  height: 60%;
   position: relative;
   left: 15%;
   top: 10%;
   text-align: center;
+  display: flex;
+  flex-direction: column;
 }
 
 #login_main_pane{
@@ -69,7 +70,7 @@
 .login_input{
   @include login_form_input;
   @include standard_form_font;
-  font-size: 1.5vh;
+  font-size: 2.3vh;
   position: relative;
   top: 5%;
   border: none;
@@ -97,7 +98,7 @@
   height: 35%;
   position: relative;
   left: 60%;
-  bottom: 40%;
+  bottom: 10%;
 }
 
 .login_icon_image{
