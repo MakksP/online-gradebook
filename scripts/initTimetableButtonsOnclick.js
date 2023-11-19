@@ -7,7 +7,7 @@ const delete_timetable_buttons = Array.from(document.getElementsByClassName("del
 
 function get_plan_id(button){
     const button_label = button.getElementsByTagName("label")[0].innerHTML;
-    return button_label.substring(button_label.indexOf(" "));
+    return button_label.substring(button_label.indexOf(" ") + 1);
 }
 
 

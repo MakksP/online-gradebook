@@ -226,6 +226,23 @@ function delete_subject(subject_to_delete_id) {
     });
 }
 
+function favourite_element_action(subject_name, action_file) {
+    $.ajax({
+        type: "POST",
+        url: "./serverActions/favouriteActions/" + action_file,
+        data: {
+            elementName: subject_name
+        },
+        success: function (response) {
+            location.reload();
+            console.log(response);
+        },
+        error: function (response) {
+            console.log(response);
+        }
+    });
+}
+
 
 function add_grade_and_attendance_buttons_to_subject_table() {
     document.getElementById("table_container").insertAdjacentHTML("afterbegin", get_subjects_table_grade_and_attendance_buttons());

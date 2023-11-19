@@ -5,7 +5,6 @@ const logout_button = document.getElementById("logout_button");
 const subjects_button = document.getElementById("subjects_button");
 const lesson_plans_button = document.getElementById("lesson_plans_button");
 const subjects_table = document.getElementById("subjects_table");
-const favourite_button = document.getElementsByClassName("favourite_button")
 let student_grade_buttons;
 const ADD_SUBJECT_BUTTON = 1;
 

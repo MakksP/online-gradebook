@@ -219,4 +219,20 @@ function get_student_email_and_attendance(){
         return "DELETE FROM attendances WHERE attendanceId = ?";
     }
 
+    function add_favourite_element(){
+        return "INSERT INTO favourites (elementName, userId)
+                VALUES (?, ?)";
+    }
+
+    function get_all_favourite_elements(){
+        return "SELECT elementName FROM favourites
+                WHERE userId = ?";
+    }
+
+    function delete_favourite_element(){
+        return "DELETE FROM favourites WHERE
+                elementName = ?
+                AND userId = ?";
+    }
+
 ?>

@@ -29,9 +29,9 @@ function insert_php_query_core($query, $type_of_params, $success_info, ...$param
 
 
 /**
- * @return void
+ * @return array|null
  */
-function select_php_query_core($query, $type_of_params, ...$params)
+function select_php_query_core($query, $type_of_params, $return_response, ...$params): ?array
 {
     $db_connection = connect_to_database();
     $sql_query = $query();
@@ -48,7 +48,14 @@ function select_php_query_core($query, $type_of_params, ...$params)
                     $response[] = $result;
                 }
             }
+            if ($return_response){
+                $prepared_sql_query->close();
+                $db_connection->close();
+                return $response;
+            }
             echo json_encode($response);
+
+
         } else {
             echo "Nie udało się wykonać zapytania";
             $prepared_sql_query->close();
@@ -62,6 +69,7 @@ function select_php_query_core($query, $type_of_params, ...$params)
     }
     $prepared_sql_query->close();
     $db_connection->close();
+    return null;
 }
 
 function bind_dynamic_results($prepared_sql_query): array

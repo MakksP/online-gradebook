@@ -5,5 +5,5 @@ require '../../dbConnection/databaseQueries.php';
 require '../dbSchematicFunctions.php';
 
 if ($_SERVER["REQUEST_METHOD"] == 'GET'){
-    select_php_query_core('get_timetable_details', "s", $_GET["planId"]);
+    select_php_query_core('get_timetable_details', "s", false, $_GET["planId"]);
 }

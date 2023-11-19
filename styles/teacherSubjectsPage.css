@@ -115,6 +115,29 @@
   animation-duration: 100ms;
 }
 
+.delete_favourite_button {
+  width: 50%;
+  height: 100%;
+  font-size: 20px;
+  border: none;
+  display: block;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border: 2px solid black;
+  border-top: none;
+  background: linear-gradient(to right, #ef3e3d, #ffcb27);
+  animation: additional_button_release linear forwards;
+  animation-duration: 100ms;
+  grid-row: 2/3;
+  grid-column: 2/3;
+  font-size: 100%;
+}
+.delete_favourite_button:hover {
+  cursor: pointer;
+  animation: additional_button_hover linear forwards;
+  animation-duration: 100ms;
+}
+
 #gradebook_grid_header {
   background-color: #383c44;
   width: 100%;

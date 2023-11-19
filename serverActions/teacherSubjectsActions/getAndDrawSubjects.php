@@ -1,6 +1,7 @@
 <?php
 require __DIR__ . '/../../dbConnection/databaseConnect.php';
 require __DIR__ . '/../../dbConnection/databaseQueries.php';
+require __DIR__ . '/../../serverActions/dbSchematicFunctions.php';
 
 function get_and_draw_subjects(){
     $db_connection = connect_to_database();
@@ -9,8 +10,25 @@ function get_and_draw_subjects(){
     if ($prepared_sql_query = $db_connection->prepare($sql_query)){
         $prepared_sql_query->bind_param("s", $_SESSION["userId"]);
         if ($prepared_sql_query->execute()){
+            $favourite_elements = select_php_query_core('get_all_favourite_elements', "s", true, $_SESSION["userId"]);
             $prepared_sql_query->bind_result($subject, $subjectId);
+            $is_favourite_flag = false;
             while ($prepared_sql_query->fetch()){
+                foreach ($favourite_elements as $favourite_element){
+                    if (strcmp($favourite_element, $subject) == 0){
+                        echo "<div class='subject_div'>
+                           <button type='button' class='subject_button' id='$subjectId'>$subject</button>
+                           <button class='delete_button'><i class='icon-trash'></i></button>
+                           <button class='delete_favourite_button'><i class='icon-block'></i></button>
+                       </div>";
+                        $is_favourite_flag = true;
+                        break;
+                    }
+                }
+                if ($is_favourite_flag){
+                    $is_favourite_flag = false;
+                    continue;
+                }
                 echo "<div class='subject_div'>
                            <button type='button' class='subject_button' id='$subjectId'>$subject</button>
                            <button class='delete_button'><i class='icon-trash'></i></button>

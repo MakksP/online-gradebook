@@ -2,6 +2,8 @@ const not_teaching_subjects_buttons = document.getElementsByClassName("not_teach
 const not_teaching_subjects_labels = document.getElementsByClassName("not_teaching_subject_label");
 const delete_subject_button = document.getElementsByClassName("delete_button");
 const subjects_buttons = document.getElementsByClassName("subject_button");
+const favourite_buttons = document.getElementsByClassName("favourite_button")
+const delete_favourite_buttons = document.getElementsByClassName("delete_favourite_button");
 const add_subject_button = document.getElementById("new_subject_button");
 
 
@@ -54,3 +56,22 @@ if (add_subject_button != null){
         get_not_teaching_subjects_pane();
     }
 }
+
+
+Array.from(favourite_buttons).forEach(button => {
+    if (button !== null){
+        button.onclick = function (){
+            const subject_name = button.closest("div").querySelector(".subject_button").innerHTML;
+            favourite_element_action(subject_name, "addNewFavouriteItem.php");
+        }
+    }
+});
+
+Array.from(delete_favourite_buttons).forEach(button => {
+    if (button !== null){
+        button.onclick = function (){
+            const subject_name = button.closest("div").querySelector(".subject_button").innerHTML;
+            favourite_element_action(subject_name, "deleteFavouriteItem.php");
+        }
+    }
+});

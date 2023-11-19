@@ -260,3 +260,14 @@
     animation-duration: 100ms;
   }
 }
+
+@mixin favourite_add_delete_button_style{
+  @include additional_button_style;
+  @include thin_border;
+  border-top: none;
+  background: linear-gradient(to right, $favorite_gradient_color_left, $favorite_gradient_color_right);
+  @include additional_button_animations;
+  grid-row: 2 / 3;
+  grid-column: 2 / 3;
+  font-size: 100%;
+}
