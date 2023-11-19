@@ -90,7 +90,6 @@
 
 .form_field {
   display: inline-flex;
-  height: 40%;
   background-color: #e0e4ec;
   width: 80%;
   justify-content: space-between;
@@ -113,7 +112,7 @@
   height: 35%;
   position: relative;
   left: 60%;
-  bottom: 10%;
+  bottom: 40%;
 }
 
 .login_icon_image {
@@ -134,6 +133,10 @@
 #registration_button:hover {
   cursor: pointer;
   background-color: #784968;
+}
+
+#login_div {
+  bottom: 15%;
 }
 
 /*# sourceMappingURL=loginRegisterPagesStyles.css.map */

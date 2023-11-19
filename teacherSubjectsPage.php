@@ -18,7 +18,10 @@
     <script src="scripts/constHtmlElements.js"></script>
     <script src="scripts/teacherHomePageScripts.js"></script>
     <script src="scripts/calculateFunctions.js"></script>
-    <script src="scripts/initGradeButtonsOnClick.js"></script>
+    <script src="scripts/initGradeButtonsOnclick.js"></script>
+    <script src="scripts/constMainHtmlElements.js"></script>
+    <script src="scripts/constGradesHtmlElements.js"></script>
+    <script src="scripts/constAttendanceHtmlElements.js"></script>
 </head>
 <body>
 
@@ -68,10 +71,11 @@
 
 </main>
 
-<script src="scripts/initButtonsOnClick.js"></script>
+<script src="scripts/initMainButtonsOnclick.js"></script>
+<script src="scripts/initSubjectsButtonsOnclick.js"></script>
 <script src="scripts/studentsInSubjectsScripts.js"></script>
 <script src="scripts/teacherGradesScripts.js"></script>
 <script src="scripts/teacherTimetableScripts.js"></script>
-<script src="scripts/initAttendanceButtonsOnClick.js"></script>
+<script src="scripts/initAttendanceButtonsOnclick.js"></script>
 </body>
 </html>

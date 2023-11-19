@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="styles/teacherHomePageStyles.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="scripts/constHtmlElements.js"></script>
+    <script src="scripts/constMainHtmlElements.js"></script>
 
 </head>
 <body>
@@ -78,7 +79,7 @@
 
 </main>
     <script src="scripts/teacherHomePageScripts.js"></script>
-    <script src="scripts/initButtonsOnClick.js"></script>
+    <script src="scripts/initMainButtonsOnclick.js"></script>
     <script src="scripts/studentsInSubjectsScripts.js"></script>
 </body>
 </html>

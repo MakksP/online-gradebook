@@ -69,3 +69,13 @@ function create_delete_grade_button_onclick_action(grade_id) {
         delete_grade_from_database(grade_id);
     }
 }
+
+
+function create_grades_onclick_action() {
+    document.getElementById("grades_section").onclick = function () {
+        serve_subject_table_buttons_color_after_click("attendances_section", "grades_section");
+        document.getElementById("subjects_table").innerHTML = "";
+        add_header_to_grades_table();
+        draw_students_labels_in_subject(get_subject_name(), student_grade_buttons, get_and_draw_students_grades);
+    }
+}

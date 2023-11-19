@@ -79,7 +79,6 @@
 
 .form_field{
   display: inline-flex;
-  height: 40%;
   background-color: $form_input_background_color;
   width: 80%;
   justify-content: space-between;
@@ -98,7 +97,7 @@
   height: 35%;
   position: relative;
   left: 60%;
-  bottom: 10%;
+  bottom: 40%;
 }
 
 .login_icon_image{
@@ -111,4 +110,8 @@
   &:hover{
     @include login_register_button_style_hover;
   }
+}
+
+#login_div{
+  bottom: 15%;
 }

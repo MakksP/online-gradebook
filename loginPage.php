@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="fontello/css/fontello.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="scripts/constHtmlElements.js"></script>
+    <script src="scripts/constMainHtmlElements.js"></script>
 
 
 </head>
@@ -52,7 +53,7 @@
 
         </section>
 
-        <aside class="login_icon">
+        <aside class="login_icon" id="login_div">
             <img src="images/schoolSymbol.png" alt="schoolSymbol" class="login_icon_image">
         </aside>
 
@@ -60,6 +61,6 @@
     </main>
 
     <script src="scripts/menuAjaxScripts.js"></script>
-    <script src="scripts/initButtonsOnClick.js"></script>
+    <script src="scripts/initMainButtonsOnclick.js"></script>
 </body>
 </html>

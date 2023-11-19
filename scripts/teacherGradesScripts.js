@@ -172,4 +172,8 @@ function delete_grade_from_database(grade_id) {
     });
 }
 
+function add_header_to_grades_table() {
+    subjects_table.insertAdjacentHTML("beforeend", get_students_in_subject_header());
+}
+
 

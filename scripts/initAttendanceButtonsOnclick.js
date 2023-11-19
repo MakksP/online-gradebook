@@ -59,3 +59,9 @@ function create_add_new_attendance_button_onclick_action(){
         serve_add_grade_attendance_action(student_email, subject_name, "attendance");
     });
 }
+
+function create_attendance_onclick_action() {
+    document.getElementById("attendances_section").onclick = function () {
+        repaint_attendance_part();
+    }
+}
