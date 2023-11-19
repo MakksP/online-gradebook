@@ -14,8 +14,7 @@ function get_and_draw_favourites(){
             while ($prepared_sql_query->fetch()){
                 echo "<div class='subject_div'>
                    <button type='button' class='subject_button'>$subject</button>
-                   <button class='delete_button'><i class='icon-trash'></i></button>
-                   <button class='delete_favourite_button'><i class='icon-block'></i></button>
+                   <button class='delete_favourite_button' style='grid-column: 1/3'><i class='icon-block'></i></button>
                </div>";
             }
 

@@ -70,7 +70,6 @@
 }
 
 .delete_button {
-  width: 50%;
   height: 100%;
   font-size: 20px;
   border: none;
@@ -93,7 +92,6 @@
 }
 
 .favourite_button {
-  width: 50%;
   height: 100%;
   font-size: 20px;
   border: none;
@@ -116,7 +114,6 @@
 }
 
 .delete_favourite_button {
-  width: 50%;
   height: 100%;
   font-size: 20px;
   border: none;
