@@ -22,22 +22,46 @@ for (let delete_button_index = 0; delete_button_index < delete_subject_button.le
     }
 }
 
-for (let button_index = 0; button_index < subjects_buttons.length - ADD_SUBJECT_BUTTON; button_index+=1){
-    if (subjects_buttons[button_index] != null){
-        subjects_buttons[button_index].onclick = function () {
-            const button_text = subjects_buttons[button_index].innerHTML;
-            subjects_table.innerHTML = '';
-            subjects_table.style.display = "table";
-            add_grade_and_attendance_buttons_to_subject_table();
-            add_header_to_grades_table();
+function create_subject_buttons_onclick_action(dont_consider_add_subject_button) {
+    for (let button_index = 0; button_index < subjects_buttons.length - dont_consider_add_subject_button; button_index += 1) {
+        if (subjects_buttons[button_index] != null) {
+            subjects_buttons[button_index].onclick = function () {
+                const button_text = subjects_buttons[button_index].innerHTML;
+                subjects_table.innerHTML = '';
+                subjects_table.style.display = "table";
+                add_grade_and_attendance_buttons_to_subject_table();
+                add_header_to_grades_table();
 
-            create_grades_onclick_action();
-            draw_students_labels_in_subject(button_text, student_grade_buttons, get_and_draw_students_grades);
+                create_grades_onclick_action();
+                draw_students_labels_in_subject(button_text, student_grade_buttons, get_and_draw_students_grades);
+            }
         }
-    }
 
+    }
 }
 
+function create_add_favourite_element_onclick_action() {
+    Array.from(favourite_buttons).forEach(button => {
+        if (button !== null) {
+            button.onclick = function () {
+                const subject_name = button.closest("div").querySelector(".subject_button").innerHTML;
+                favourite_element_action(subject_name, "addNewFavouriteItem.php");
+            }
+        }
+    });
+}
+
+
+function create_delete_favourite_element_onclick_action() {
+    Array.from(delete_favourite_buttons).forEach(button => {
+        if (button !== null) {
+            button.onclick = function () {
+                const subject_name = button.closest("div").querySelector(".subject_button").innerHTML;
+                favourite_element_action(subject_name, "deleteFavouriteItem.php");
+            }
+        }
+    });
+}
 
 function assign_not_teaching_buttons_action() {
     for (let button_index = 0; button_index < not_teaching_subjects_buttons.length; button_index += 1) {
@@ -58,20 +82,3 @@ if (add_subject_button != null){
 }
 
 
-Array.from(favourite_buttons).forEach(button => {
-    if (button !== null){
-        button.onclick = function (){
-            const subject_name = button.closest("div").querySelector(".subject_button").innerHTML;
-            favourite_element_action(subject_name, "addNewFavouriteItem.php");
-        }
-    }
-});
-
-Array.from(delete_favourite_buttons).forEach(button => {
-    if (button !== null){
-        button.onclick = function (){
-            const subject_name = button.closest("div").querySelector(".subject_button").innerHTML;
-            favourite_element_action(subject_name, "deleteFavouriteItem.php");
-        }
-    }
-});

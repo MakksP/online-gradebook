@@ -55,11 +55,11 @@
 
     <section id="subjects_container">
         <header id="subjects_header">
-            <h2 id="header_text">Dostępne opcje:</h2>
+            <h2 id="header_text">Obserwowane:</h2>
         </header>
         <section id="table_container">
             <div id="subjects_table">
-                <?php require 'serverActions/teacherSubjectsActions/getAndDrawSubjects.php'; get_and_draw_subjects(); ?>
+                <?php require 'serverActions/favouriteActions/getAndDrawFavourite.php'; get_and_draw_favourites(); ?>
             </div>
         </section>
 
@@ -78,7 +78,7 @@
 <script src="scripts/teacherTimetableScripts.js"></script>
 <script src="scripts/initAttendanceButtonsOnclick.js"></script>
 
-<script>create_subject_buttons_onclick_action(ADD_SUBJECT_BUTTON);
+<script>create_subject_buttons_onclick_action(PANE_WITHOUT_ADD_BUTTON);
     create_add_favourite_element_onclick_action();
     create_delete_favourite_element_onclick_action();</script>
 </body>

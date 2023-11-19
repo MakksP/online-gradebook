@@ -3,10 +3,12 @@ const registration_button = document.getElementById("registration_button_nav");
 const home_page_button = document.getElementById("logo_button");
 const logout_button = document.getElementById("logout_button");
 const subjects_button = document.getElementById("subjects_button");
+const observed_button = document.getElementById("observed_button")
 const lesson_plans_button = document.getElementById("lesson_plans_button");
 const subjects_table = document.getElementById("subjects_table");
 let student_grade_buttons;
 const ADD_SUBJECT_BUTTON = 1;
+const PANE_WITHOUT_ADD_BUTTON = 0;
 
 
 
@@ -24,7 +26,7 @@ if (registration_button != null){
 
 if (home_page_button != null){
     home_page_button.onclick = function (){
-        window.location.href = './startPage.php'
+        window.location.href = './startPage.php';
     }
 }
 
@@ -36,13 +38,19 @@ if (logout_button != null){
 
 if (subjects_button != null){
     subjects_button.onclick = function (){
-        window.location.href = "./teacherSubjectsPage.php"
+        window.location.href = "./teacherSubjectsPage.php";
     }
 }
 
 if (lesson_plans_button != null){
     lesson_plans_button.onclick = function (){
-        window.location.href = "./teacherLessonPlansPage.php"
+        window.location.href = "./teacherLessonPlansPage.php";
+    }
+}
+
+if (observed_button !== null){
+    observed_button.onclick = function (){
+        window.location.href = "./favouritePage.php";
     }
 }
 
