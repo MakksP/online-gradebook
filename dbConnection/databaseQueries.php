@@ -235,4 +235,18 @@ function get_student_email_and_attendance(){
                 AND userId = ?";
     }
 
+    function add_element_to_archive(){
+        return "INSERT INTO archives (email, grade, name, surname, subjectName)
+                VALUE (?, ?, ?, ?, ?)";
+    }
+
+    function get_student_data_by_id(){
+        return "SELECT name, surname, email FROM users
+                WHERE userId = ?";
+    }
+
+    function get_subject_name_by_id(){
+        return "SELECT subjectName FROM subjects
+                WHERE subjectId = ?";
+    }
 ?>

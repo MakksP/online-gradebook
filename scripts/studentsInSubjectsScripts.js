@@ -126,6 +126,8 @@ const SUBJECT_ID_INDEX = 0;
 const USER_ID_INDEX = 1;
 
 function add_grade_to_database(grade, description, date, response) {
+    const user_id = response[USER_ID_INDEX];
+    const subject_id = response[SUBJECT_ID_INDEX];
     $.ajax({
         type: "POST",
         url: "./serverActions/teacherGradesActions/addNewGrade.php",
@@ -133,10 +135,11 @@ function add_grade_to_database(grade, description, date, response) {
             grade: grade,
             description: description,
             date: date,
-            subjectId: response[SUBJECT_ID_INDEX],
-            userId: response[USER_ID_INDEX]
+            subjectId: subject_id,
+            userId: user_id
         },
         success: function (response) {
+            get_student_name_surname_email_by_id(user_id, subject_id, grade);
             console.log(response)
         },
         error: function (response) {

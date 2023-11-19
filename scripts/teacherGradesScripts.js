@@ -176,4 +176,60 @@ function add_header_to_grades_table() {
     subjects_table.insertAdjacentHTML("beforeend", get_students_in_subject_header());
 }
 
+function add_grade_to_archive(email, grade, name, surname, subject_name) {
+    $.ajax({
+        type: "POST",
+        url: "../serverActions/archivesActions/addToArchive.php",
+        data: {
+            email: email,
+            grade: grade,
+            name: name,
+            surname: surname,
+            subjectName: subject_name
+        },
+        success: function (response){
+            console.log(response);
+        },
+        error: function (response){
+            console.log(response);
+        }
+    });
+}
+
+function get_subject_name_by_id_and_add_to_archive(subject_id, student_email, grade, student_name, student_surname) {
+    $.ajax({
+        type: "GET",
+        url: "../serverActions/studentDataActions/getSubjectNameById.php",
+        dataType: "json",
+        data: {
+            subjectId: subject_id
+        },
+        success: function (response) {
+            add_grade_to_archive(student_email, grade, student_name, student_surname, response[0]);
+        },
+        error: function (response) {
+            console.log(response);
+        }
+    });
+}
+
+function get_student_name_surname_email_by_id(user_id, subject_id, grade) {
+    $.ajax({
+        type: "GET",
+        url: "../serverActions/studentDataActions/getStudentNameSurnameEmailById.php",
+        dataType: "json",
+        data: {
+            userId: user_id
+        },
+        success: function (response) {
+            const student_name = response[0];
+            const student_surname = response[1];
+            const student_email = response[2];
+            get_subject_name_by_id_and_add_to_archive(subject_id, student_email, grade, student_name, student_surname);
+        },
+        error: function (response) {
+            console.log(response);
+        }
+    });
+}
 
