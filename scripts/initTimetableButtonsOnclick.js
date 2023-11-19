@@ -160,3 +160,16 @@ function create_delete_timetable_onclick_action(timetable_id) {
     }
 }
 
+function create_student_data_onclick_action() {
+    Array.from(document.getElementsByClassName("student_data")).forEach(student_button => {
+        student_button.onclick = function (){
+            const student_email = student_button.innerHTML.substring(student_button.innerHTML.lastIndexOf(" ") + 1)
+            const student_name = student_button.innerHTML.substring(0, student_button.innerHTML.indexOf(" "))
+            const student_surname = student_button.innerHTML.substring(student_button.innerHTML.indexOf(" ") + 1, student_button.innerHTML.lastIndexOf(" "))
+            window.location.href = "./studentDataPage.php?student_name=" + encodeURIComponent(student_name)
+            + "&student_surname=" + encodeURIComponent(student_surname) + "&student_email=" + encodeURIComponent(student_email);
+        }
+
+    });
+}
+

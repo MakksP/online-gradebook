@@ -141,6 +141,7 @@ function add_existing_student_in_timetable_to_pane(response) {
     for (let students_data_index = 0; students_data_index < response.length; students_data_index += 3) {
         document.getElementById("existing_students_in_timetable").insertAdjacentHTML("beforeend",
             get_student_in_timetable_div(response, students_data_index))
+        create_student_data_onclick_action();
     }
 }
 
