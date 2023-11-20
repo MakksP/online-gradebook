@@ -1,0 +1,15 @@
+@import "variables";
+@import "styleSchemes";
+
+#subjects_table{
+  flex-direction: column;
+}
+
+.student_data_element{
+  display: flex;
+  justify-content: space-around;
+  @include timetable_font;
+  border: {
+    bottom: 2px solid black;
+  }
+}

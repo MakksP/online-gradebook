@@ -273,4 +273,10 @@ function get_student_email_and_attendance(){
                 (SELECT subjectId FROM subjects
                 WHERE subjectName = ?)";
     }
+
+    function get_archive_student_data(){
+        return "
+                SELECT subjectName, grade FROM archives
+                WHERE email = ?";
+    }
 ?>
