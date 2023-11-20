@@ -42,7 +42,7 @@
             <li>
                 <div id="icons_div">
                     <div id="user_label">
-                        <div>
+                        <div id="user_data">
                             <i class="icon-user"></i><?php session_start(); echo $_SESSION["name"] . " " . $_SESSION["surname"] . " (" . $_SESSION["role"] . ")"?>
                         </div>
                         <button id="logout_button">Wyloguj się <i class="icon-logout"></i></button>

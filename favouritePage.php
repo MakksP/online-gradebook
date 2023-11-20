@@ -42,7 +42,7 @@
             <li>
                 <div id="icons_div">
                     <div id="user_label">
-                        <div>
+                        <div id="user_data">
                             <i class="icon-user"></i><?php session_start(); echo $_SESSION["name"] . " " . $_SESSION["surname"] . " (" . $_SESSION["role"] . ")"?>
                         </div>
                         <button id="logout_button">Wyloguj się <i class="icon-logout"></i></button>
@@ -78,7 +78,7 @@
 <script src="scripts/teacherTimetableScripts.js"></script>
 <script src="scripts/initAttendanceButtonsOnclick.js"></script>
 
-<script>create_subject_buttons_onclick_action(PANE_WITHOUT_ADD_BUTTON);
+<script>create_teacher_subject_buttons_onclick_action(PANE_WITHOUT_ADD_BUTTON);
     create_add_favourite_element_onclick_action();
     create_delete_favourite_element_onclick_action();</script>
 </body>

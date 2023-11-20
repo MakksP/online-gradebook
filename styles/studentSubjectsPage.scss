@@ -1,0 +1,14 @@
+@import "variables";
+@import "styleSchemes";
+
+.subject_button_s{
+  @include subject_button_style;
+}
+
+.delete_favourite_button{
+  grid-column: 1/3;
+}
+
+.favourite_button{
+  grid-column: 1/3;
+}

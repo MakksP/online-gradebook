@@ -295,4 +295,15 @@ function get_student_email_and_attendance(){
                 WHERE gradeId = ?)
                 LIMIT 1";
     }
+
+    function get_learning_subjects(){
+        return "
+                SELECT DISTINCT subjectName, subjects.subjectId FROM subjects
+                JOIN lessonplanssubjects ON
+                lessonplanssubjects.subjectId
+                = subjects.subjectId JOIN
+                users ON users.lessonPlanId
+                = lessonplanssubjects.lessonPlanId
+                WHERE userId = ?";
+    }
 ?>

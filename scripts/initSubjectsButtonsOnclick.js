@@ -2,6 +2,7 @@ const not_teaching_subjects_buttons = document.getElementsByClassName("not_teach
 const not_teaching_subjects_labels = document.getElementsByClassName("not_teaching_subject_label");
 const delete_subject_button = document.getElementsByClassName("delete_button");
 const subjects_buttons = document.getElementsByClassName("subject_button");
+const subjects_buttons_s = document.getElementsByClassName("subject_button_s");
 const favourite_buttons = document.getElementsByClassName("favourite_button")
 const delete_favourite_buttons = document.getElementsByClassName("delete_favourite_button");
 const add_subject_button = document.getElementById("new_subject_button");
@@ -22,11 +23,31 @@ for (let delete_button_index = 0; delete_button_index < delete_subject_button.le
     }
 }
 
-function create_subject_buttons_onclick_action(dont_consider_add_subject_button) {
+function create_teacher_subject_buttons_onclick_action(dont_consider_add_subject_button) {
+
     for (let button_index = 0; button_index < subjects_buttons.length - dont_consider_add_subject_button; button_index += 1) {
         if (subjects_buttons[button_index] != null) {
             subjects_buttons[button_index].onclick = function () {
                 const button_text = subjects_buttons[button_index].innerHTML;
+                subjects_table.innerHTML = '';
+                subjects_table.style.display = "table";
+                add_grade_and_attendance_buttons_to_subject_table();
+                add_header_to_grades_table();
+
+                create_grades_onclick_action();
+                draw_students_labels_in_subject(button_text, student_grade_buttons, get_and_draw_students_grades);
+            }
+        }
+
+    }
+}
+
+function create_student_subject_buttons_onclick_action(dont_consider_add_subject_button) {
+    for (let button_index = 0; button_index < subjects_buttons_s.length - dont_consider_add_subject_button; button_index += 1) {
+        console.log(subjects_buttons_s[button_index])
+        if (subjects_buttons_s[button_index] != null) {
+            subjects_buttons_s[button_index].onclick = function () {
+                const button_text = subjects_buttons_s[button_index].innerHTML;
                 subjects_table.innerHTML = '';
                 subjects_table.style.display = "table";
                 add_grade_and_attendance_buttons_to_subject_table();

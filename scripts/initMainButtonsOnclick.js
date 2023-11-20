@@ -38,7 +38,14 @@ if (logout_button != null){
 
 if (subjects_button != null){
     subjects_button.onclick = function (){
-        window.location.href = "./teacherSubjectsPage.php";
+        let user_role = document.getElementById("user_data").innerHTML;
+        user_role = user_role.substring(user_role.indexOf("(") + 1, user_role.indexOf(")"))
+        if (user_role === 'teacher'){
+            window.location.href = "./teacherSubjectsPage.php";
+        } else if (user_role === 'student'){
+            window.location.href = "./studentSubjectsPage.php";
+        }
+
     }
 }
 
