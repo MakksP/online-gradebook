@@ -273,6 +273,7 @@
 .student_data{
   @include button_in_table_style;
   @include timetable_appearing_pane_main_element_style;
+  @include timetable_font;
   &:hover{
     background-color: darken($nav_bar_color, 10%);
   }

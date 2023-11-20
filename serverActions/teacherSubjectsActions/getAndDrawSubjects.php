@@ -16,11 +16,19 @@ function get_and_draw_subjects(){
             while ($prepared_sql_query->fetch()){
                 foreach ($favourite_elements as $favourite_element){
                     if (strcmp($favourite_element, $subject) == 0){
-                        echo "<div class='subject_div'>
+                        if ($_SESSION["role"] == "teacher"){
+                            echo "<div class='subject_div'>
                            <button type='button' class='subject_button' id='$subjectId'>$subject</button>
                            <button class='delete_button'><i class='icon-trash'></i></button>
                            <button class='delete_favourite_button'><i class='icon-block'></i></button>
                        </div>";
+                        } else {
+                            echo "<div class='subject_div'>
+                           <button type='button' class='subject_button' id='$subjectId'>$subject</button>
+                           <button class='delete_favourite_button' style='grid-column: 1/3'><i class='icon-block'></i></button>
+                       </div>";
+                        }
+
                         $is_favourite_flag = true;
                         break;
                     }
@@ -29,14 +37,28 @@ function get_and_draw_subjects(){
                     $is_favourite_flag = false;
                     continue;
                 }
-                echo "<div class='subject_div'>
+
+                if ($_SESSION["role"] == "teacher"){
+                    echo "<div class='subject_div'>
                            <button type='button' class='subject_button' id='$subjectId'>$subject</button>
                            <button class='delete_button'><i class='icon-trash'></i></button>
                            <button class='favourite_button'><i class='icon-star-circled'></i></button>
                        </div>";
+                } else {
+                    echo "<div class='subject_div'>
+                           <button type='button' class='subject_button' id='$subjectId'>$subject</button>
+                           <button class='favourite_button' style='grid-column: 1/3'><i class='icon-star-circled'></i></button>
+                       </div>";
+                }
             }
-            $add_subject_button_content = '<i class="icon-plus-circled"></i>';
-            echo "<div  class='subject_div'><button type='button' class='subject_button' id='new_subject_button'>$add_subject_button_content</button></div>";
+            if ($_SESSION["role"] == "teacher"){
+                $add_subject_button_content = '<i class="icon-plus-circled"></i>';
+                echo "<div  class='subject_div'>
+                    <button type='button' class='subject_button' id='new_subject_button'>$add_subject_button_content
+                    </button>
+                  <div>";
+            }
+
         } else{
             $prepared_sql_query->close();
             $db_connection->close();
