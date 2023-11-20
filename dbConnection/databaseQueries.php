@@ -249,4 +249,28 @@ function get_student_email_and_attendance(){
         return "SELECT subjectName FROM subjects
                 WHERE subjectId = ?";
     }
+
+    function delete_all_grades_from_subject(){
+        return "
+                DELETE FROM grades WHERE gradeId IN
+                (SELECT gradeId FROM grades
+                JOIN subjects ON grades.subjectId 
+                = subjects.subjectId WHERE subjectName = ?)";
+    }
+
+    function delete_all_teachers_subjects(){
+        return "
+                DELETE FROM teachers_with_subjects
+                WHERE subjectId =
+                (SELECT subjectid FROM subjects
+                WHERE subjectName = ?)";
+    }
+
+    function delete_subject_from_all_timetables(){
+        return "
+                DELETE FROM lessonplanssubjects
+                WHERE subjectId =
+                (SELECT subjectId FROM subjects
+                WHERE subjectName = ?)";
+    }
 ?>
