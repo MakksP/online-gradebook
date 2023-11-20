@@ -7,9 +7,27 @@
 
 .student_data_element{
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   @include timetable_font;
   border: {
     bottom: 2px solid black;
   }
+}
+
+#table_container{
+  align-items: end;
+}
+
+#total_student_average{
+  width: min-content;
+  justify-self: right;
+  margin-right: 5%;
+}
+
+.archive_element_subjects{
+  width: 30%;
+}
+
+.archive_element_grades{
+  overflow: auto;
 }

@@ -59,7 +59,9 @@
         <header id="subjects_header">
             <h2 id="header_text">Historie ocenowe studenta: <script>add_site_params_to_header();</script></h2>
         </header>
+
         <section id="table_container">
+            <div id="total_student_average"></div>
             <div id="subjects_table">
 
                 <?php require 'serverActions/studentDataActions/getAndDrawStudentData.php'; get_and_draw_student_data(); ?>

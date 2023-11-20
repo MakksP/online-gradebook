@@ -36,6 +36,7 @@ function get_and_draw_student_data(){
             $tmp_average_name_div = $tmp_subject_name . "_average_name_div";
             $tmp_grades_name_div = $tmp_subject_name . "_grades_name_div";
             calculate_student_average_from_subject($tmp_grades_name_div, $tmp_average_name_div);
+            calculate_average_for_all_subjects();
 
         } else{
             $prepared_sql_query->close();
@@ -56,9 +57,33 @@ function get_and_draw_student_data(){
 /**
  * @return void
  */
+function calculate_average_for_all_subjects(): void
+{
+    echo " <script>
+                            Array.from(document.getElementsByClassName('archive_element_average')).forEach(div => {
+                                averages.push(div.innerText.substring(div.innerText.indexOf(' ') + 1));
+                            });
+                            averages = averages.map(average =>{
+                                return parseFloat(average);
+                            });
+                            total_average = averages.reduce((sum, next_average) => {
+                                return sum + next_average;
+                            });
+                            
+                            total_average = (total_average / averages.length).toFixed(2);
+                            document.getElementById('total_student_average')
+                            .insertAdjacentHTML('beforeend', total_average); </script>";
+}
+
+/**
+ * @return void
+ */
 function declare_variables(): void
 {
-    echo "<script>let grades;</script>";
+    echo "<script>
+            let averages = [];
+            let total_average;
+            let grades;</script>";
 }
 
 /**
@@ -69,16 +94,19 @@ function declare_variables(): void
 function calculate_student_average_from_subject(string $tmp_grades_name_div, string $tmp_average_name_div): void
 {
     echo "<script>
-                                grades = document.getElementById('$tmp_grades_name_div').innerHTML;
-                                grades = grades.match(/\d+/g)
-                                grades = grades.map(grade => {
-                                    return parseInt(grade, 10);
-                                });
-                                
-                                avg = grades.reduce((sum, next_grade) => sum + next_grade);
-                                avg = avg / grades.length;
-                                document.getElementById('$tmp_average_name_div')
-                              .insertAdjacentHTML('beforeend', avg.toFixed(2)) </script>";
+                                if (document.getElementById('$tmp_grades_name_div') !== null){
+                                    grades = document.getElementById('$tmp_grades_name_div').innerHTML;
+                                    grades = grades.match(/\d+/g)
+                                    grades = grades.map(grade => {
+                                        return parseInt(grade, 10);
+                                    });
+                                    
+                                    avg = grades.reduce((sum, next_grade) => sum + next_grade);
+                                    avg = avg / grades.length;
+                                    document.getElementById('$tmp_average_name_div')
+                                  .insertAdjacentHTML('beforeend', avg.toFixed(2))
+                                }
+                                 </script>";
 }
 
 /**
@@ -106,13 +134,13 @@ function add_next_grade_to_table(string $grades_name_div, $grade): void
 function create_new_container_for_subject(string $main_div_name, string $subject_name_div, $subjectName, string $grades_name_div, $grade, string $average_name_div): void
 {
     echo "<div id='$main_div_name' class='student_data_element'>
-                                <div id='$subject_name_div'>
+                                <div id='$subject_name_div' class='archive_element_subjects'>
                                     $subjectName
                                 </div>
-                                <div id='$grades_name_div'>
+                                <div id='$grades_name_div' class='archive_element_grades'>
                                     Oceny cząstkowe: $grade
                                 </div>
-                                <div id='$average_name_div'>
+                                <div id='$average_name_div' class='archive_element_average'>
                                     Średnia: 
                                 </div>
                             </div>";
