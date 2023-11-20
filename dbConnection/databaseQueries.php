@@ -287,4 +287,12 @@ function get_student_email_and_attendance(){
                 WHERE gradeId = ?)
                 LIMIT 1";
     }
+
+    function update_grade_in_archive(){
+        return "Update archives SET grade = ?
+                WHERE grade =
+                (SELECT grade FROM grades
+                WHERE gradeId = ?)
+                LIMIT 1";
+    }
 ?>
