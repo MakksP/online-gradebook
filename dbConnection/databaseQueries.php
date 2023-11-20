@@ -279,4 +279,12 @@ function get_student_email_and_attendance(){
                 SELECT subjectName, grade FROM archives
                 WHERE email = ?";
     }
+
+    function delete_grade_from_archive(){
+        return "DELETE FROM archives WHERE
+                grade =
+                (SELECT grade FROM grades
+                WHERE gradeId = ?)
+                LIMIT 1";
+    }
 ?>
