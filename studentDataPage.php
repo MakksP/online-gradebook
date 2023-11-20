@@ -61,7 +61,7 @@
         </header>
 
         <section id="table_container">
-            <div id="total_student_average"></div>
+            <div id="total_student_average">Średnia całkowita: </div>
             <div id="subjects_table">
 
                 <?php require 'serverActions/studentDataActions/getAndDrawStudentData.php'; get_and_draw_student_data(); ?>

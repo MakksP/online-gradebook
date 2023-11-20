@@ -19,9 +19,19 @@
 }
 
 #total_student_average{
-  width: min-content;
+  width: 12%;
   justify-self: right;
   margin-right: 5%;
+  background-color: $nav_bar_color;
+  @include timetable_font;
+  color: $white_contrast_color;
+  @include thin_border;
+  border: {
+    bottom: 0;
+    top-left-radius: 5px;
+    top-right-radius: 5px;
+  };
+
 }
 
 .archive_element_subjects{
