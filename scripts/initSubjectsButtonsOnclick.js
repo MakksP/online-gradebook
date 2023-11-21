@@ -71,7 +71,13 @@ function create_add_favourite_element_onclick_action() {
     Array.from(favourite_buttons).forEach(button => {
         if (button !== null) {
             button.onclick = function () {
-                const subject_name = button.closest("div").querySelector(".subject_button").innerHTML;
+                let subject_name;
+                if (document.getElementsByClassName("subject_button_s").length !== 0){
+                    subject_name = button.closest("div").querySelector(".subject_button_s").innerHTML;
+
+                } else {
+                    subject_name = button.closest("div").querySelector(".subject_button").innerHTML;
+                }
                 favourite_element_action(subject_name, "addNewFavouriteItem.php");
             }
         }
@@ -83,7 +89,13 @@ function create_delete_favourite_element_onclick_action() {
     Array.from(delete_favourite_buttons).forEach(button => {
         if (button !== null) {
             button.onclick = function () {
-                const subject_name = button.closest("div").querySelector(".subject_button").innerHTML;
+                let subject_name;
+                if (document.getElementsByClassName("subject_button_s").length !== 0){
+                    subject_name = button.closest("div").querySelector(".subject_button_s").innerHTML;
+
+                } else {
+                    subject_name = button.closest("div").querySelector(".subject_button").innerHTML;
+                }
                 favourite_element_action(subject_name, "deleteFavouriteItem.php");
             }
         }
