@@ -42,19 +42,25 @@ function create_teacher_subject_buttons_onclick_action(dont_consider_add_subject
     }
 }
 
+function repaint_your_grades_table(button_text) {
+    subjects_table.innerHTML = '';
+    subjects_table.style.alignContent = "baseline";
+    add_grade_and_attendance_buttons_to_subject_table();
+    add_header_to_your_grades_table();
+
+    create_your_grades_onclick_action();
+    document.getElementById("header_text").innerText = button_text;
+
+    serve_getting_your_grades_from_database(button_text);
+}
+
 function create_student_subject_buttons_onclick_action(dont_consider_add_subject_button) {
     for (let button_index = 0; button_index < subjects_buttons_s.length - dont_consider_add_subject_button; button_index += 1) {
         console.log(subjects_buttons_s[button_index])
         if (subjects_buttons_s[button_index] != null) {
             subjects_buttons_s[button_index].onclick = function () {
                 const button_text = subjects_buttons_s[button_index].innerHTML;
-                subjects_table.innerHTML = '';
-                subjects_table.style.display = "table";
-                add_grade_and_attendance_buttons_to_subject_table();
-                add_header_to_grades_table();
-
-                create_grades_onclick_action();
-                draw_students_labels_in_subject(button_text, student_grade_buttons, get_and_draw_students_grades);
+                repaint_your_grades_table(button_text);
             }
         }
 

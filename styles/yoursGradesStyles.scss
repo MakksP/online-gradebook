@@ -1,0 +1,16 @@
+@import "variables";
+@import "styleSchemes";
+
+.your_grade_button{
+ @include button_in_table_style;
+ width: 25px;
+ height: 25px;
+ margin: {
+  left: 10px;
+  top: 10px;
+ };
+}
+
+.your_grade_value:hover{
+ cursor: pointer;
+}

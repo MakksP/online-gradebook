@@ -306,4 +306,13 @@ function get_student_email_and_attendance(){
                 = lessonplanssubjects.lessonPlanId
                 WHERE userId = ?";
     }
+
+    function get_all_your_grades(){
+        return "SELECT dateOfAssessment, description, grade, gradeId
+                FROM grades JOIN users ON 
+                users.userId = grades.userId
+                JOIN subjects ON grades.subjectId
+                = subjects.subjectId
+                WHERE grades.userId = ? AND subjectName = ?";
+    }
 ?>

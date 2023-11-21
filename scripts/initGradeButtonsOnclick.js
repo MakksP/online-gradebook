@@ -12,14 +12,14 @@ function create_add_new_grade_button_onclick_action(){
 }
 
 
-function init_student_grade_on_click_action(student_grade_buttons) {
-    student_grade_buttons = document.getElementsByClassName("grade_button");
+function init_student_grade_on_click_action(button_class_name) {
+    let student_grade_buttons = document.getElementsByClassName(button_class_name);
 
     for (let student_grade_button_index = 0; student_grade_button_index < student_grade_buttons.length; student_grade_button_index += 1) {
 
         if (student_grade_buttons[student_grade_button_index] != null) {
             student_grade_buttons[student_grade_button_index].onclick = function () {
-                create_grade_edit_pane(student_grade_buttons[student_grade_button_index].id)
+                create_grade_edit_pane(student_grade_buttons[student_grade_button_index].id, button_class_name)
 
             }
         }
@@ -34,7 +34,7 @@ function create_change_grade_button_onclick_action(available_grades_buttons, gra
         const description_and_date = get_current_grade_description_and_date();
         document.getElementById("grade_edit_pane").remove();
         grade = get_grade_value_of_pressed_button(button);
-        repaint_grade_edit_pane(name, surname, grade, description_and_date.description, description_and_date.date, grade_id);
+        repaint_grade_edit_pane(name, surname, grade, description_and_date.description, description_and_date.date, grade_id, "grade_button");
     });
     return {available_grades_buttons, grade};
 }
@@ -77,5 +77,15 @@ function create_grades_onclick_action() {
         document.getElementById("subjects_table").innerHTML = "";
         add_header_to_grades_table();
         draw_students_labels_in_subject(get_subject_name(), student_grade_buttons, get_and_draw_students_grades);
+    }
+}
+
+function create_your_grades_onclick_action() {
+    document.getElementById("grades_section").onclick = function () {
+        serve_subject_table_buttons_color_after_click("attendances_section", "grades_section");
+        document.getElementById("subjects_table").innerHTML = "";
+        add_header_to_your_grades_table();
+        document.getElementById("subjects_table_buttons_div").remove();
+        repaint_your_grades_table(get_subject_name());
     }
 }

@@ -37,6 +37,26 @@ function get_grade_edit_pane(name, surname, grade, description, date){
     `
 }
 
+function get_your_grade_details_pane(name, surname, grade, description, date){
+    return `
+        <div id="grade_edit_pane" class="appearing_pane">
+            <div id="grade_edit_close_button_div">
+                <button id="grade_edit_close_button"><i class="icon-cancel-circled"></i></button>
+            </div>
+            <div id="student_name_label">
+                <label>Twoja ocena:<br>${grade}</label>
+            </div>
+
+            <div id="description">
+                <label>Opis: ${description} </label>
+            </div>
+            <div id="date">
+                <label>Data: ${date}</label>
+            </div>
+        </div>
+    `
+}
+
 function get_add_grade_pane(name, surname){
     const available_grades = [2, 3, 4, 5];
     return `
@@ -81,6 +101,12 @@ function get_new_grade_button(){
 function get_students_in_subject_header(){
     return `<div id="gradebook_grid_header">
         <label id="gradebook_grid_students_header">Studenci:</label>
+        <label id="gradebook_grid_grades_header">Oceny:</label>
+    </div>`
+}
+
+function get_your_grades_header(){
+    return `<div id="gradebook_grid_header">
         <label id="gradebook_grid_grades_header">Oceny:</label>
     </div>`
 }

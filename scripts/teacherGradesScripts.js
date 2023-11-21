@@ -1,5 +1,9 @@
-function add_grade_edit_pane_to_main_container(name, surname, grade, description, date) {
-    document.getElementById("main_container").insertAdjacentHTML("beforeend", get_grade_edit_pane(name, surname, grade, description, date));
+function add_grade_edit_pane_to_main_container(name, surname, grade, description, date, button_class_name) {
+    if (button_class_name === "your_grade_button"){
+        document.getElementById("main_container").insertAdjacentHTML("beforeend", get_your_grade_details_pane(name, surname, grade, description, date));
+    } else {
+        document.getElementById("main_container").insertAdjacentHTML("beforeend", get_grade_edit_pane(name, surname, grade, description, date));
+    }
     appearing_pane_close_button_onclick("grade_edit_close_button", "grade_edit_pane");
 }
 
@@ -15,21 +19,23 @@ function get_current_grade_description_and_date() {
 }
 
 
-function repaint_grade_edit_pane(name, surname, grade, description, date, grade_id) {
-    add_grade_edit_pane_to_main_container(name, surname, grade, description, date);
-    let available_grades_buttons = Array.from(document.getElementsByClassName("available_grade_button"));
-    const new_grade_data_package = create_change_grade_button_onclick_action(available_grades_buttons, grade, name, surname, grade_id);
+function repaint_grade_edit_pane(name, surname, grade, description, date, grade_id, button_class_name) {
+    add_grade_edit_pane_to_main_container(name, surname, grade, description, date, button_class_name);
 
-    available_grades_buttons = new_grade_data_package.available_grades_buttons;
-    grade = new_grade_data_package.grade;
-    available_grades_buttons.forEach(available_grade_button => {
-        set_specific_grade_button_color(available_grade_button)
-    });
-    create_save_button_onclick_action(grade, grade_id);
-    create_delete_grade_button_onclick_action(grade_id);
+    if (button_class_name === "grade_button"){
+        let available_grades_buttons = Array.from(document.getElementsByClassName("available_grade_button"));
+        const new_grade_data_package = create_change_grade_button_onclick_action(available_grades_buttons, grade, name, surname, grade_id);
+        available_grades_buttons = new_grade_data_package.available_grades_buttons;
+        grade = new_grade_data_package.grade;
+        available_grades_buttons.forEach(available_grade_button => {
+            set_specific_grade_button_color(available_grade_button)
+        });
+        create_save_button_onclick_action(grade, grade_id);
+        create_delete_grade_button_onclick_action(grade_id);
+    }
 }
 
-function create_grade_edit_pane(grade_id){
+function create_grade_edit_pane(grade_id, button_class_name){
     $.ajax({
         type: "GET",
         url: "../serverActions/teacherGradesActions/getGradeData.php",
@@ -41,7 +47,7 @@ function create_grade_edit_pane(grade_id){
             let grade = response[2];
             let description = response[3];
             let date = response[4];
-            repaint_grade_edit_pane(name, surname, grade, description, date, grade_id);
+            repaint_grade_edit_pane(name, surname, grade, description, date, grade_id, button_class_name);
 
         },
         error: function (response){
@@ -174,6 +180,10 @@ function delete_grade_from_database(grade_id) {
 
 function add_header_to_grades_table() {
     subjects_table.insertAdjacentHTML("beforeend", get_students_in_subject_header());
+}
+
+function add_header_to_your_grades_table() {
+    subjects_table.insertAdjacentHTML("beforeend", get_your_grades_header());
 }
 
 function add_grade_to_archive(email, grade, name, surname, subject_name) {

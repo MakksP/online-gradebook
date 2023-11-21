@@ -7,7 +7,7 @@ function get_and_draw_students_grades(subject_name, student_grade_buttons) {
         dataType: "json",
         success: function (response) {
             add_students_button(response, "grade");
-            student_grade_buttons = init_student_grade_on_click_action(student_grade_buttons);
+            student_grade_buttons = init_student_grade_on_click_action("grade_button");
         },
         error: function (response) {
             console.log(response);
