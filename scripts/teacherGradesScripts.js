@@ -82,6 +82,27 @@ function create_attendance_edit_pane(attendance_id){
     });
 }
 
+function create_yours_attendance_edit_pane(attendance_id){
+    $.ajax({
+        type: "GET",
+        url: "../serverActions/teacherGradesActions/getAttendanceData.php",
+        data: {attendance_id: attendance_id},
+        dataType: "json",
+        success: function (response){
+            const name = response[0];
+            const surname = response[1];
+            let wasPresent = response[2];
+            let date = response[3];
+            console.log(response)
+            add_new_appearing_with_parameters_pane_to_main_container(get_edit_your_attendance_pane,
+                null, "attendance_edit_close_button", "edit_attendance_pane", name, surname, wasPresent, date, attendance_id);
+        },
+        error: function (response){
+            console.log(response);
+        }
+    });
+}
+
 
 function send_update_attendance_to_database(date, was_present, attendance_id) {
     $.ajax({
@@ -94,7 +115,7 @@ function send_update_attendance_to_database(date, was_present, attendance_id) {
         },
         success: function (response) {
             repaint_attendance_part();
-            document.getElementById("add_attendance_pane").remove();
+            document.getElementById("edit_attendance_pane").remove();
             console.log(response);
         },
         error: function (response) {

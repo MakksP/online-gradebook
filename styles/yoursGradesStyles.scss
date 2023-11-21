@@ -14,3 +14,15 @@
 .your_grade_value:hover{
  cursor: pointer;
 }
+
+.your_attendance_button{
+ @include button_in_table_style;
+ color: $white_contrast_color;
+ width: min-content;
+ height: 25px;
+ margin: {
+  left: 10px;
+  top: 10px;
+ };
+
+}

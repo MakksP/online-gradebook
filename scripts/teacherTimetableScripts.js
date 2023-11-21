@@ -125,7 +125,10 @@ function add_new_appearing_pane_to_main_container(pane_content, confirm_button_o
 function add_new_appearing_with_parameters_pane_to_main_container(pane_content, confirm_button_onclick_action,
                                                                   close_button_id, pane_id, name, surname, was_present, date, attendance_id){
     document.getElementById("main_container").insertAdjacentHTML("beforeend", pane_content(name, surname, was_present, date));
-    confirm_button_onclick_action(attendance_id);
+    if (confirm_button_onclick_action !== null){
+        confirm_button_onclick_action(attendance_id);
+    }
+
     appearing_pane_close_button_onclick(close_button_id, pane_id);
 }
 

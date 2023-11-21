@@ -315,4 +315,12 @@ function get_student_email_and_attendance(){
                 = subjects.subjectId
                 WHERE grades.userId = ? AND subjectName = ?";
     }
+
+    function get_all_your_attendances(){
+        return "
+                SELECT wasPresent, attendanceId date FROM attendances
+                JOIN subjects ON subjects.subjectId = attendances.subjectId
+                JOIN users ON users.userId = attendances.userId
+                WHERE subjectName = ? AND attendances.userId = ?";
+    }
 ?>

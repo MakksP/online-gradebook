@@ -249,7 +249,14 @@ function favourite_element_action(subject_name, action_file) {
 
 function add_grade_and_attendance_buttons_to_subject_table() {
     document.getElementById("table_container").insertAdjacentHTML("afterbegin", get_subjects_table_grade_and_attendance_buttons());
-    create_attendance_onclick_action();
+    let user_data = document.getElementById("user_data").innerText
+    user_data = user_data.substring(user_data.indexOf("(") + 1, user_data.indexOf(")"))
+    if (user_data === "teacher"){
+        create_attendance_onclick_action();
+    } else {
+        create_your_attendance_onclick_action();
+    }
+
     create_grades_onclick_action();
 }
 
@@ -264,7 +271,11 @@ function change_grades_header(header) {
 }
 
 function clear_whole_students_table() {
-    document.getElementById("student_names").remove();
+    const pane_children = Array.from(document.getElementById("subjects_table").children);
+    pane_children.shift();
+    pane_children.forEach(element => {
+        element.remove();
+    })
 }
 
 
@@ -285,6 +296,36 @@ function repaint_attendance_part() {
     clear_whole_students_table();
     const subject_name = document.getElementById("header_text").innerHTML;
     draw_students_labels_in_subject(subject_name, student_grade_buttons, get_and_draw_students_attendances);
+    change_grades_header("Obecności:");
+}
+
+function repaint_your_attendance_part() {
+    serve_subject_table_buttons_color_after_click("grades_section", "attendances_section");
+    clear_whole_students_table();
+    const subject_name = document.getElementById("header_text").innerHTML;
+    $.ajax({
+        type: "GET",
+        url: "../serverActions/studentGradesActions/getAllYourAttendances.php",
+        data: {
+            subjectName: subject_name
+        },
+        dataType: "json",
+        success: function (response){
+            for (let attendance_index = 0; attendance_index < response.length; attendance_index += 2){
+                let attendance_value = response[attendance_index] === 1 ? "Obecny" : "Nieobecny";
+                const attendance_color = attendance_value === "Obecny" ? "#257324" : "#FE0000"
+                document.getElementById("subjects_table").insertAdjacentHTML("beforeend",`
+                <button class="your_attendance_button" id="${response[attendance_index + 1]}" style="background-color: ${attendance_color}">
+                    <label class="grade_label">${attendance_value}</label>    
+                </button>`);
+            }
+            init_yours_attendance_on_click_action();
+        },
+        error: function (response){
+            console.log(response);
+        }
+    });
+
     change_grades_header("Obecności:");
 }
 

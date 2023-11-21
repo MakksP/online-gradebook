@@ -63,6 +63,25 @@ function get_edit_attendance_pane(name, surname, was_present, date){
     `
 }
 
+function get_edit_your_attendance_pane(name, surname, was_present, date){
+    const current_attendance = parse_int_attendance_to_string(was_present);
+    return `
+        <div id="edit_attendance_pane" class="appearing_pane">
+            <div id="attendance_edit_close_button_div">
+                <button id="attendance_edit_close_button"><i class="icon-cancel-circled"></i></button>
+            </div>
+            <div id="student_name_label">
+                <label>Twoja obecność:<br>${current_attendance}</label>
+            </div>
+           
+            <div id="date">
+                <label>Data: ${date}</label>
+            </div>
+        </div>
+    `
+}
+
+
 
 function get_new_attendance_button(){
     return "<button class='new_attendance_button'><i class=\"icon-plus-circled\"></i></button>";

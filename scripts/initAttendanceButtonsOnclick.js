@@ -13,6 +13,21 @@ function init_student_attendance_on_click_action(student_attendance_buttons) {
     return student_attendance_buttons;
 }
 
+function init_yours_attendance_on_click_action(student_attendance_buttons) {
+    student_attendance_buttons = document.getElementsByClassName("your_attendance_button");
+
+    for (let student_attendance_button_index = 0; student_attendance_button_index < student_attendance_buttons.length; student_attendance_button_index += 1) {
+
+        if (student_attendance_buttons[student_attendance_button_index] != null) {
+            student_attendance_buttons[student_attendance_button_index].onclick = function () {
+                create_yours_attendance_edit_pane(student_attendance_buttons[student_attendance_button_index].id)
+
+            }
+        }
+    }
+    return student_attendance_buttons;
+}
+
 
 function create_save_grade_attendance_button_onclick_action(response, save_button_id) {
     document.getElementById(save_button_id).onclick = function () {
@@ -63,5 +78,11 @@ function create_add_new_attendance_button_onclick_action(){
 function create_attendance_onclick_action() {
     document.getElementById("attendances_section").onclick = function () {
         repaint_attendance_part();
+    }
+}
+
+function create_your_attendance_onclick_action() {
+    document.getElementById("attendances_section").onclick = function () {
+        repaint_your_attendance_part();
     }
 }
