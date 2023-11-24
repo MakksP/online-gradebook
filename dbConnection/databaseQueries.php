@@ -127,6 +127,12 @@ function get_student_email_and_attendance(){
                 ";
     }
 
+    function get_yours_timetables_id(){
+        return "
+                SELECT lessonPlanId FROM users
+                WHERE userId = ?";
+    }
+
     function get_timetable_details(){
         return "
                 SELECT dayOfWeek, startTime, endTime, subjectName

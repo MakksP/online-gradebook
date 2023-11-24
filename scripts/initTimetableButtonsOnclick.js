@@ -19,10 +19,12 @@ timetable_tag_buttons.forEach(button => {
     }
 });
 
-
-edit_subjects.onclick = function (){
-    repaint_edit_subject_pane();
+if (edit_subjects !== null){
+    edit_subjects.onclick = function (){
+        repaint_edit_subject_pane();
+    }
 }
+
 
 function create_delete_subject_no_onclick_action() {
     document.getElementById("delete_subject_no").onclick = function () {
@@ -118,9 +120,10 @@ function get_current_timetable_id() {
 }
 
 
-
-add_new_student_button.onclick = function (){
-    paint_add_student_to_timetable_pane();
+if (add_new_student_button !== null){
+    add_new_student_button.onclick = function (){
+        paint_add_student_to_timetable_pane();
+    }
 }
 
 
@@ -132,9 +135,10 @@ function create_delete_student_from_timetable_onclick_action(delete_student_from
         }
     });
 }
-
-new_timetable_button.onclick = function (){
-    add_timetable_to_database();
+if (new_timetable_button !== null){
+    new_timetable_button.onclick = function (){
+        add_timetable_to_database();
+    }
 }
 
 

@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="styles/teacherHomePageStyles.css">
     <link rel="stylesheet" href="styles/teacherSubjectsPage.css">
     <link rel="stylesheet" href="styles/teacherTimetableStyles.css">
+    <link rel="stylesheet" href="styles/studentTimetablesStyles.css">
     <link rel="stylesheet" href="styles/appearingPanesInTimetableStyles.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="scripts/constHtmlElements.js"></script>
@@ -56,20 +57,14 @@
         <h2 id="header_text">Plany lekcji</h2>
     </header>
     <section id="subjects_container">
-        <button id="add_subject_button"><label id="add_subject_label">Edytuj przedmioty</label></button>
         <aside id="timetables_panel">
             <div id="timetable_buttons_container">
-                <?php require './serverActions/teacherTimetablesActions/getAllTimetables.php'; get_all_timetables_buttons(); ?>
+                <?php require './serverActions/studentTimetablesActions/getYoursTimetables.php'; get_yours_timetables_buttons(); ?>
             </div>
-            <button id="new_timetable_button"><i class="icon-list-add"></i></button>
         </aside>
         <div id="timetable">
             <header id="hours">
                 <div class="hour_div" id="filler">
-                    <button id="add_new_student_button">
-                        <i class="icon-user-plus"></i>
-                    </button>
-
                 </div>
                 <div class="hour_div" id="first_hour">
                     <label>8:15 - 9:00</label>
@@ -120,7 +115,7 @@
                 </div>
             </header>
             <script src="scripts/teacherTimetableScripts.js"></script>
-            <script>fill_timetable_with_elements(get_single_raw_timetable_element)</script>
+            <script>fill_timetable_with_elements(get_single_raw_timetable_div)</script>
         </div>
 
     </section>

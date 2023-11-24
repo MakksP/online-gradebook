@@ -17,6 +17,10 @@ function get_single_raw_timetable_element(element_index){
     return "<button class='timetable_element_button' id='timetable_" + element_index + "'><label class='timetable_element_label'></label></button>"
 }
 
+function get_single_raw_timetable_div(element_index){
+    return "<div class='timetable_element_div' id='timetable_" + element_index + "'><label class='timetable_element_label'></label></div>"
+}
+
 function get_edit_subject_pane(){
     return `
         <div id="edit_subject_pane">

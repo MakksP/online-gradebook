@@ -6,6 +6,7 @@ const subjects_button = document.getElementById("subjects_button");
 const observed_button = document.getElementById("observed_button")
 const observed_button_student = document.getElementById("observed_button_student");
 const lesson_plans_button = document.getElementById("lesson_plans_button");
+const student_lesson_plans_button = document.getElementById("student_lesson_plans_button");
 const subjects_table = document.getElementById("subjects_table");
 let student_grade_buttons;
 const ADD_SUBJECT_BUTTON = 1;
@@ -50,9 +51,15 @@ if (subjects_button != null){
     }
 }
 
-if (lesson_plans_button != null){
+if (lesson_plans_button !== null){
     lesson_plans_button.onclick = function (){
         window.location.href = "./teacherLessonPlansPage.php";
+    }
+}
+
+if (student_lesson_plans_button !== null){
+    student_lesson_plans_button.onclick = function (){
+        window.location.href = "./studentLessonPlansPage.php";
     }
 }
 

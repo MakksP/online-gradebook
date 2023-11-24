@@ -1,0 +1,11 @@
+@import "variables";
+
+.timetable_element_div{
+  background-color: $button_area_color;
+  border: none;
+  border-right: 2px solid black;
+  font: {
+    family: $main_site_font;
+  };
+  text-align: left;
+}

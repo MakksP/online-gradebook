@@ -57,7 +57,7 @@
             </div>
 
             <div class="options_table_div">
-                <button id="lesson_plans_button" class="options_table_button">
+                <button id="student_lesson_plans_button" class="options_table_button">
                     <img src="/images/timetableButton.png" alt="subjects" class="option_button_image">
 
                 </button>
