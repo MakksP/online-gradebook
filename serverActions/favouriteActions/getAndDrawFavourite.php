@@ -10,10 +10,11 @@ function get_and_draw_favourites(){
     if ($prepared_sql_query = $db_connection->prepare($sql_query)){
         $prepared_sql_query->bind_param("s", $_SESSION["userId"]);
         if ($prepared_sql_query->execute()){
-            $prepared_sql_query->bind_result($subject);;
+            $prepared_sql_query->bind_result($subject);
+
             while ($prepared_sql_query->fetch()){
                 echo "<div class='subject_div'>
-                   <button type='button' class='subject_button'>$subject</button>
+                   <button type='button' class='subject_button_s'>$subject</button>
                    <button class='delete_favourite_button' style='grid-column: 1/3'><i class='icon-block'></i></button>
                </div>";
             }

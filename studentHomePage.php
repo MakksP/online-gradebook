@@ -11,24 +11,15 @@
     <link rel="stylesheet" href="fontello/css/fontello.css">
     <link rel="stylesheet" href="styles/startPageStyles.css">
     <link rel="stylesheet" href="styles/teacherHomePageStyles.css">
-    <link rel="stylesheet" href="styles/teacherSubjectsPage.css">
-    <link rel="stylesheet" href="styles/gradeEditPaneStyles.css">
-    <link rel="stylesheet" href="styles/subjectsEditPane.css">
-    <link rel="stylesheet" href="styles/studentSubjectsPage.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="scripts/constHtmlElements.js"></script>
-    <script src="scripts/teacherHomePageScripts.js"></script>
-    <script src="scripts/calculateFunctions.js"></script>
-    <script src="scripts/initGradeButtonsOnclick.js"></script>
     <script src="scripts/constMainHtmlElements.js"></script>
-    <script src="scripts/constGradesHtmlElements.js"></script>
-    <script src="scripts/constAttendanceHtmlElements.js"></script>
+
 </head>
 <body>
 
 
 <main id="main_container">
-
     <nav id="nav_panel">
         <ul id="nav_list">
             <li>
@@ -53,34 +44,42 @@
         </ul>
     </nav>
 
-
-    <section id="subjects_container">
+    <div id="options_table">
         <header id="subjects_header">
-            <h2 id="header_text">Obserwowane:</h2>
+            <h2 id="header_text">Dostępne opcje:</h2>
         </header>
-        <section id="table_container">
-            <div id="subjects_table">
-                <?php require 'serverActions/favouriteActions/getAndDrawFavourite.php'; get_and_draw_favourites(); ?>
+        <div id="buttons_area">
+            <div class="options_table_div">
+                <button id="subjects_button" class="options_table_button">
+                    <img src="/images/subjects.png" alt="subjects" class="option_button_image">
+                </button>
+                <label class="button_description">Twoje przedmioty</label>
             </div>
-        </section>
 
+            <div class="options_table_div">
+                <button id="lesson_plans_button" class="options_table_button">
+                    <img src="/images/timetableButton.png" alt="subjects" class="option_button_image">
 
-    </section>
+                </button>
+                <label class="button_description">Plany lekcji</label>
+            </div>
+            <div class="options_table_div">
+                <button id="observed_button_student" class="options_table_button">
+                    <img src="/images/favourite.png" alt="subjects" class="option_button_image">
+
+                </button>
+                <label class="button_description">Obserwowane</label>
+            </div>
+
+        </div>
+    </div>
 
     <script>get_footer("main_container")</script>
 
 
 </main>
-
+<script src="scripts/teacherHomePageScripts.js"></script>
 <script src="scripts/initMainButtonsOnclick.js"></script>
-<script src="scripts/initSubjectsButtonsOnclick.js"></script>
 <script src="scripts/studentsInSubjectsScripts.js"></script>
-<script src="scripts/teacherGradesScripts.js"></script>
-<script src="scripts/teacherTimetableScripts.js"></script>
-<script src="scripts/initAttendanceButtonsOnclick.js"></script>
-
-<script>create_teacher_subject_buttons_onclick_action(PANE_WITHOUT_ADD_BUTTON);
-    create_add_favourite_element_onclick_action();
-    create_delete_favourite_element_onclick_action();</script>
 </body>
 </html>

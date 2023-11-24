@@ -19,7 +19,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
                     $_SESSION["name"] = $name;
                     $_SESSION["surname"] = $surname;
                     $_SESSION["role"] = $role;
-                    $response = array("redirect" => "./teacherHomePage.php");
+                    if ($_SESSION["role"] == "teacher"){
+                        $response = array("redirect" => "./teacherHomePage.php");
+                    } else if ($_SESSION["role"] == "student"){
+                        $response = array("redirect" => "./studentHomePage.php");
+                    }
                     echo json_encode($response);
                 } else {
                     $prepared_sql_query->close();

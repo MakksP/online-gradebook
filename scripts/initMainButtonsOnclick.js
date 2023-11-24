@@ -4,6 +4,7 @@ const home_page_button = document.getElementById("logo_button");
 const logout_button = document.getElementById("logout_button");
 const subjects_button = document.getElementById("subjects_button");
 const observed_button = document.getElementById("observed_button")
+const observed_button_student = document.getElementById("observed_button_student");
 const lesson_plans_button = document.getElementById("lesson_plans_button");
 const subjects_table = document.getElementById("subjects_table");
 let student_grade_buttons;
@@ -61,6 +62,11 @@ if (observed_button !== null){
     }
 }
 
+if (observed_button_student !== null){
+    observed_button_student.onclick = function (){
+        window.location.href = "./studentFavouritePage.php";
+    }
+}
 
 function appearing_pane_close_button_onclick(button_id, element_to_remove_id) {
     document.getElementById(button_id).onclick = function () {

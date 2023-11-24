@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="styles/gradeEditPaneStyles.css">
     <link rel="stylesheet" href="styles/subjectsEditPane.css">
     <link rel="stylesheet" href="styles/studentSubjectsPage.css">
+    <link rel="stylesheet" href="styles/yoursGradesStyles.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="scripts/constHtmlElements.js"></script>
     <script src="scripts/teacherHomePageScripts.js"></script>
@@ -76,10 +77,11 @@
 <script src="scripts/initSubjectsButtonsOnclick.js"></script>
 <script src="scripts/studentsInSubjectsScripts.js"></script>
 <script src="scripts/teacherGradesScripts.js"></script>
+<script src="scripts/studentGradesScripts.js"></script>
 <script src="scripts/teacherTimetableScripts.js"></script>
 <script src="scripts/initAttendanceButtonsOnclick.js"></script>
 
-<script>create_teacher_subject_buttons_onclick_action(PANE_WITHOUT_ADD_BUTTON);
+<script>create_student_subject_buttons_onclick_action(PANE_WITHOUT_ADD_BUTTON);
     create_add_favourite_element_onclick_action();
     create_delete_favourite_element_onclick_action();</script>
 </body>
