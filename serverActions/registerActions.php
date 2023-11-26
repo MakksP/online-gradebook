@@ -1,10 +1,18 @@
 <?php
 const TEACHER_ROLE_STRING = "teacher";
 const STUDENT_ROLE_STRING = "student";
-const TEACHER_PASSWORD = "imteacher";
+const TEACHER_PASSWORD = "$2y$10$6XYpE.3WZmVDqn5VRNcl4uiyizQ4rl9yqwTrPlaqrNXZxTu07YSP.";
 
 require "../dbConnection/databaseConnect.php";
 require "../dbConnection/databaseQueries.php";
+
+function cleanInput($data): string
+{
+    $data = trim($data);
+    $data = stripslashes($data);
+    $data = htmlspecialchars($data);
+    return $data;
+}
 
 /**
  * @return array
@@ -24,7 +32,7 @@ function getDataFromNewUser(): array
  * @param $teacher_password
  * @return bool
  */
-function entered_teacher_password($teacher_password)
+function entered_teacher_password($teacher_password): bool
 {
     return strlen($teacher_password) != 0;
 }
@@ -33,7 +41,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
     $db_connection = connect_to_database();
     list($email, $password, $name, $surname, $teacher_password) = getDataFromNewUser();
     if (entered_teacher_password($teacher_password)){
-        if (strcmp($teacher_password, TEACHER_PASSWORD) == 0){
+        if (password_verify($teacher_password, TEACHER_PASSWORD)){
             $role = TEACHER_ROLE_STRING;
         } else {
             http_response_code(400);

@@ -1,5 +1,5 @@
 const email_pattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{1,}$/;
-const name_surname_pattern = /^[A-Z][a-z]+$/
+const name_surname_pattern = /^[A-ZĄĆĘŁŃÓŚŹŻ][a-ząćęłńóśźż]+$/;
 
 $(document).ready(function (){
     $("#registration_form").on('submit', function (e){
