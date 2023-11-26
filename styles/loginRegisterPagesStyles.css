@@ -9,6 +9,7 @@
   font-family: "Tilt Neon", sans-serif;
   font-size: 25px;
   font-size: 2.3vw;
+  margin-bottom: 15px;
 }
 
 .main_pane {
@@ -17,8 +18,9 @@
   left: 15%;
   top: 10%;
   text-align: center;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(230px, 1fr));
+  grid-column-gap: 80%;
 }
 
 #login_main_pane {
@@ -31,12 +33,16 @@
   width: 90%;
   position: relative;
   left: 5%;
+  display: grid;
+  text-align: left;
 }
 
 #registration_form {
   width: 90%;
   position: relative;
   left: 5%;
+  display: grid;
+  text-align: left;
 }
 
 .login_label {
@@ -45,14 +51,11 @@
   display: block;
   position: relative;
   left: 10%;
-  margin-bottom: 5px;
-  width: 40%;
   text-align: left;
 }
 
 .form_element {
   width: 100%;
-  height: 20%;
 }
 
 .button_container {
@@ -64,12 +67,10 @@
 
 #login_button {
   width: 100%;
-  height: 100%;
   background-color: #985c84;
   border: none;
   font-family: "Tilt Neon", sans-serif;
   font-size: 25px;
-  font-size: 2.5vw;
   margin-top: 10%;
 }
 #login_button:hover {
@@ -91,8 +92,8 @@
 .form_field {
   display: inline-flex;
   background-color: #e0e4ec;
-  width: 80%;
   justify-content: space-between;
+  width: 100%;
 }
 
 #icon_login {
@@ -108,27 +109,23 @@
 }
 
 .login_icon {
-  width: 20%;
-  height: 35%;
-  position: relative;
-  left: 60%;
-  bottom: 40%;
+  display: inline-grid;
+  align-content: center;
+  grid-column: 2;
 }
 
 .login_icon_image {
   width: 100%;
-  height: auto;
 }
 
 #registration_button {
   width: 100%;
-  height: 100%;
   background-color: #985c84;
   border: none;
   font-family: "Tilt Neon", sans-serif;
   font-size: 25px;
-  font-size: 2.5vw;
   margin-top: 10%;
+  width: auto;
 }
 #registration_button:hover {
   cursor: pointer;

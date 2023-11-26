@@ -24,10 +24,10 @@
 
     <section class="main_pane">
 
-        <label id="login_label">Stwórz konto:</label>
+
 
         <form id="registration_form">
-
+            <label id="login_label">Stwórz konto:</label>
             <div class="form_element">
                 <label for="name" class="login_label">Imię</label>
                 <span class="form_field">
@@ -86,12 +86,11 @@
             </div>
 
         </form>
-
+        <aside class="login_icon">
+            <img src="images/newUser.png" alt="schoolSymbol" id="new_user"  class="login_icon_image">
+        </aside>
     </section>
 
-    <aside class="login_icon">
-        <img src="images/newUser.png" alt="schoolSymbol" id="new_user"  class="login_icon_image">
-    </aside>
 
 
 </main>

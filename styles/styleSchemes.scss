@@ -66,11 +66,10 @@
 }
 
 @mixin login_register_button_style{
-  @include whole_area_style;
+  width: 100%;
   background-color: $login_register_button_color;
   border: none;
   @include standard_header_font;
-  font-size: 2.5vw;
   margin-top: 10%;
 }
 
@@ -88,6 +87,8 @@
   width: 90%;
   position: relative;
   left: 5%;
+  display: grid;
+  text-align: left;
 }
 
 @mixin user_container_style {

@@ -24,9 +24,8 @@
 
         <section class="main_pane" id="login_main_pane">
 
-            <label id="login_label">Logowanie:</label>
-
             <form id="login_form">
+                <label id="login_label">Logowanie:</label>
                 <div class="form_element">
                     <label for="email" class="login_label">Email</label>
                     <span class="form_field"><i class="icon-user" id="icon_login"></i>
@@ -50,12 +49,13 @@
                 <span id="incorrect_email_password"></span>
             </form>
 
+            <aside class="login_icon" id="login_div">
+                <img src="images/schoolSymbol.png" alt="schoolSymbol" class="login_icon_image">
+            </aside>
 
         </section>
 
-        <aside class="login_icon" id="login_div">
-            <img src="images/schoolSymbol.png" alt="schoolSymbol" class="login_icon_image">
-        </aside>
+
 
 
     </main>
