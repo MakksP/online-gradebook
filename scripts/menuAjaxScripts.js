@@ -25,17 +25,27 @@ $(document).ready(function (){
             return;
         }
 
+        const password = $(this).find('input[name="password"]').val();
+        const confirm_password = $(this).find('input[name="rewrite_password"]').val();
+
+        if (password !== confirm_password){
+            document.getElementById("wrong_registration_data").innerText
+                = "Hasło potwierdzające różni się"
+            return;
+        }
+
         $.ajax({
             type: "POST",
             url: "./serverActions/registerActions.php",
             data: $(this).serialize(),
             success:function (response) {
                 $("#registration_form").text("Pomyślnie utworzono konto!\nteraz możesz sie zalogować")
-                    .css("color", "green").css("font-size", "30px")
+                    .css("color", "green").css("font-size", "30px").css("width", "100%")
+                    .css("text-align", "center");
 
             },
             error: function (response){
-                $("#wrong_registration_data").text("Niepoprawne hasło nauczyciela").css("color", "red")
+                $("#wrong_registration_data").text("Niepoprawne hasło nauczyciela").css("color", "red");
 
             }
         })
