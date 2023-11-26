@@ -115,3 +115,8 @@
 #login_div{
   bottom: 15%;
 }
+
+#incorrect_email_password{
+  @include standard_header_font;
+  color: $delete_color;
+}
