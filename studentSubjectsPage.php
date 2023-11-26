@@ -14,9 +14,9 @@
     <link rel="stylesheet" href="styles/teacherSubjectsPage.css">
     <link rel="stylesheet" href="styles/gradeEditPaneStyles.css">
     <link rel="stylesheet" href="styles/subjectsEditPane.css">
-    <link rel="stylesheet" href="styles/studentSubjectsPage.css">
     <link rel="stylesheet" href="styles/yoursGradesStyles.css">
     <link rel="stylesheet" href="styles/studentDataStyles.css">
+    <link rel="stylesheet" href="styles/studentSubjectsPage.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="scripts/constHtmlElements.js"></script>

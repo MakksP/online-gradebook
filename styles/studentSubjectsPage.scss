@@ -1,6 +1,14 @@
 @import "variables";
 @import "styleSchemes";
 
+#subjects_table{
+  flex-direction: row;
+}
+
+#table_container{
+  align-items: normal;
+}
+
 .subject_button_s{
   @include subject_button_style;
 }

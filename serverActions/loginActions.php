@@ -4,10 +4,18 @@ require "../dbConnection/databaseQueries.php";
 
 session_start();
 
+function cleanInput($data): string
+{
+    $data = trim($data);
+    $data = stripslashes($data);
+    $data = htmlspecialchars($data);
+    return $data;
+}
+
 if ($_SERVER["REQUEST_METHOD"] == "POST"){
     $db_connection = connect_to_database();
-    $email = $_POST["email"];
-    $password = $_POST["password"];
+    $email = cleanInput($_POST["email"]);
+    $password = cleanInput($_POST["password"]);
     $sql_query = get_logging_in_user_data();
     if ($prepared_sql_query= $db_connection->prepare($sql_query)){
         $prepared_sql_query->bind_param("s", $email);

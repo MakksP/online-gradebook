@@ -9,15 +9,16 @@ require "../dbConnection/databaseQueries.php";
 /**
  * @return array
  */
-function getDataFromNewUser()
+function getDataFromNewUser(): array
 {
-    $email = $_POST["email"];
-    $password = $_POST["password"];
-    $name = $_POST["name"];
-    $surname = $_POST["surname"];
-    $teacher_password = $_POST["teacher_password"];
+    $email = cleanInput($_POST["email"]);
+    $password = cleanInput($_POST["password"]);
+    $name = cleanInput($_POST["name"]);
+    $surname = cleanInput($_POST["surname"]);
+    $teacher_password = cleanInput($_POST["teacher_password"]);
     return array($email, $password, $name, $surname, $teacher_password);
 }
+
 
 /**
  * @param $teacher_password
