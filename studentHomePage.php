@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="fontello/css/fontello.css">
     <link rel="stylesheet" href="styles/startPageStyles.css">
     <link rel="stylesheet" href="styles/teacherHomePageStyles.css">
+    <link rel="stylesheet" href="styles/studentDataStyles.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="scripts/constHtmlElements.js"></script>
     <script src="scripts/constMainHtmlElements.js"></script>
@@ -58,5 +59,6 @@
 <script src="scripts/teacherHomePageScripts.js"></script>
 <script src="scripts/initMainButtonsOnclick.js"></script>
 <script src="scripts/studentsInSubjectsScripts.js"></script>
+<script src="scripts/studentGradesHistoryButtonScript.js"></script>
 </body>
 </html>

@@ -41,3 +41,12 @@
 .archive_element_grades{
   overflow: auto;
 }
+
+#your_grades_history_button{
+  background-color: transparent;
+  border: none;
+  color: $white_contrast_color;
+  &:hover{
+    cursor: pointer;
+  }
+}

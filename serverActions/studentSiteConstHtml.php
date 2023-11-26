@@ -18,6 +18,7 @@ function get_nav_bar_after_login(){
                     <div id="user_data">
                         <i class="icon-user"></i> ' . $_SESSION["name"] . " " . $_SESSION["surname"] . " (" . $_SESSION["role"] . ")" . '
                     </div>
+                    <button id="your_grades_history_button"><i class="icon-graduation-cap"></i></button>
                     <button id="logout_button">Wyloguj się <i class="icon-logout"></i></button>
                 </div>
             </div>

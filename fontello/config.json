@@ -65,6 +65,12 @@
       "css": "block",
       "code": 59400,
       "src": "typicons"
+    },
+    {
+      "uid": "20fc52f9a88bb7bda023ef209acac095",
+      "css": "graduation-cap",
+      "code": 61853,
+      "src": "fontawesome"
     }
   ]
 }
