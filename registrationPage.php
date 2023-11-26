@@ -81,8 +81,8 @@
                 <input type="submit" id="registration_button" class="form_button" value="Zarejestruj się">
 
             </div>
-            <div id="wrong_registration_data">
-                <span id="incorrect_email_password"></span>
+            <div class="incorrect_email_password">
+                <span id="wrong_registration_data"></span>
             </div>
 
         </form>

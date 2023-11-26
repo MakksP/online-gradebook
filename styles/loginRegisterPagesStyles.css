@@ -10,6 +10,7 @@
   font-size: 25px;
   font-size: 2.3vw;
   margin-bottom: 15px;
+  text-align: center;
 }
 
 .main_pane {
@@ -56,6 +57,7 @@
 
 .form_element {
   width: 100%;
+  margin-bottom: 15px;
 }
 
 .button_container {
@@ -136,10 +138,12 @@
   bottom: 15%;
 }
 
-#incorrect_email_password {
+.incorrect_email_password {
   font-family: "Tilt Neon", sans-serif;
-  font-size: 25px;
+  font-size: 20px;
+  text-align: center;
   color: #f83c54;
+  min-height: 60px;
 }
 
 /*# sourceMappingURL=loginRegisterPagesStyles.css.map */

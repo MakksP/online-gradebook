@@ -7,21 +7,21 @@ $(document).ready(function (){
 
         const user_email = $(this).find('input[name="email"]').val();
         if (email_pattern.test(user_email) === false){
-            document.getElementById("incorrect_email_password").innerText
+            document.getElementById("wrong_registration_data").innerText
                 = "Email nie spełnia wzorca text@text.text"
             return;
         }
         const user_name = $(this).find('input[name="name"]').val();
         if (name_surname_pattern.test(user_name) === false){
-            document.getElementById("incorrect_email_password").innerText
-                = "Imię nie zaczyna się z wielkiej litery\nlub zawiera niedozwolone znaki"
+            document.getElementById("wrong_registration_data").innerText
+                = "Niepoprawnie wpisano imię"
             return;
         }
 
         const user_surname = $(this).find('input[name="surname"]').val();
         if (name_surname_pattern.test(user_surname) === false){
-            document.getElementById("incorrect_email_password").innerText
-                = "Nazwisko nie zaczyna się z wielkiej litery\nlub zawiera niedozwolone znaki"
+            document.getElementById("wrong_registration_data").innerText
+                = "Niepoprawnie wpisano nazwisko"
             return;
         }
 
@@ -32,12 +32,10 @@ $(document).ready(function (){
             success:function (response) {
                 $("#registration_form").text("Pomyślnie utworzono konto!\nteraz możesz sie zalogować")
                     .css("color", "green").css("font-size", "30px")
-                    .css("text-shadow", "-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000");
 
             },
             error: function (response){
-                $("#incorrect_email_password").text("Niepoprawne hasło nauczyciela").css("color", "red")
-                    .css("text-shadow", "-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000");
+                $("#wrong_registration_data").text("Niepoprawne hasło nauczyciela").css("color", "red")
 
             }
         })

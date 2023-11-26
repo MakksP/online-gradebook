@@ -10,6 +10,7 @@
   @include standard_header_font;
   font-size: 2.3vw;
   margin-bottom: 15px;
+  text-align: center;
 }
 
 .main_pane{
@@ -50,6 +51,7 @@
 
 .form_element{
   width: 100%;
+  margin-bottom: 15px;
 }
 
 .button_container{
@@ -113,7 +115,12 @@
   bottom: 15%;
 }
 
-#incorrect_email_password{
-  @include standard_header_font;
+.incorrect_email_password{
+  font: {
+    family: $main_site_font;
+    size: 20px;
+  };
+  text-align: center;
   color: $delete_color;
+  min-height: 60px;
 }
