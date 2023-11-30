@@ -296,11 +296,10 @@ function get_student_email_and_attendance(){
     }
 
     function delete_grade_from_archive(){
-        return "DELETE FROM archives WHERE
-                grade =
-                (SELECT grade FROM grades
-                WHERE gradeId = ?)
-                LIMIT 1";
+        return "
+                DELETE FROM archives
+                WHERE email = (SELECT email FROM users JOIN grades ON users.userId = grades.userId WHERE gradeId = ? LIMIT 1)
+                AND grade = (SELECT grade FROM grades WHERE gradeId = ? LIMIT 1)";
     }
 
     function update_grade_in_archive(){
