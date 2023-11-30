@@ -198,7 +198,7 @@ function get_student_email_and_attendance(){
 
     function add_student_to_timetable(){
         return "
-                UPDATE users SET lessonPlanId = 1
+                UPDATE users SET lessonPlanId = ?
                 WHERE email = ?";
     }
 

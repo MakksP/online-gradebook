@@ -95,10 +95,13 @@ function confirm_setting_new_subject_onclick_action(){
 function add_student_to_timetable_onclick_action() {
     document.getElementById("add_student_to_timetable_button").onclick = function () {
         const email = get_student_email_from_select();
+        let timetable_id = get_current_timetable_id();
+        console.log()
         $.ajax({
             type: "POST",
             url: "../serverActions/teacherTimetablesActions/addStudentToTimetable.php",
             data: {
+                timetable_id: timetable_id,
                 student_email: email
             },
             success: function (response){

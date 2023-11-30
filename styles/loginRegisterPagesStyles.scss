@@ -105,7 +105,6 @@
 
 #registration_button{
   @include login_register_button_style;
-  width: auto;
   &:hover{
     @include login_register_button_style_hover;
   }
