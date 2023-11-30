@@ -5,9 +5,7 @@
     <title>Online gradebook</title>
     <meta name="description" content="Welcome to my gradebook">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="fontello/css/fontello.css">
     <link rel="stylesheet" href="styles/startPageStyles.css">
     <link rel="stylesheet" href="styles/teacherHomePageStyles.css">

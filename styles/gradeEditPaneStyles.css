@@ -1,4 +1,12 @@
 @import "buttonAnimatoins.css";
+@font-face {
+  font-family: "Tilt Neon";
+  src: local("Tilt Neon"), url("/online-gradebook-frontend/fonts/TiltNeon-Regular-VariableFont_XROT,YROT.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Tilt Neon";
+  src: local("Tilt Neon"), url("/online-gradebook-frontend/fonts/TiltNeon-Regular-VariableFont_XROT,YROT.ttf") format("truetype");
+}
 .appearing_pane {
   position: relative;
   height: 40%;
@@ -6,7 +14,7 @@
   background-color: #FFFFFF;
   border: 2px solid black;
   border-radius: 10px;
-  font-family: "Tilt Neon", sans-serif;
+  font-family: "Tilt Neon";
   font-size: 100%;
   display: flex;
   flex-direction: column;
@@ -19,7 +27,7 @@
 
 .available_grade_button {
   height: 85%;
-  font-family: "Tilt Neon", sans-serif;
+  font-family: "Tilt Neon";
   border: 2px solid black;
   border-radius: 5px;
 }
@@ -181,7 +189,7 @@
 }
 
 #save_grade_button {
-  font-family: "Tilt Neon", sans-serif;
+  font-family: "Tilt Neon";
   font-size: 100%;
   background: linear-gradient(#258518 100%, #9BD33F 5%);
   border: 2px solid black;
@@ -193,7 +201,7 @@
 }
 
 #save_changes_button {
-  font-family: "Tilt Neon", sans-serif;
+  font-family: "Tilt Neon";
   font-size: 100%;
   background: linear-gradient(#258518 100%, #9BD33F 5%);
   border: 2px solid black;
@@ -206,7 +214,7 @@
 
 #delete_grade_button {
   border: 2px solid black;
-  font-family: "Tilt Neon", sans-serif;
+  font-family: "Tilt Neon";
   font-size: 100%;
   border-radius: 5px;
   background-color: #f83c54;
@@ -217,7 +225,7 @@
 }
 
 #save_attendance_button {
-  font-family: "Tilt Neon", sans-serif;
+  font-family: "Tilt Neon";
   font-size: 100%;
   background: linear-gradient(#258518 100%, #9BD33F 5%);
   border: 2px solid black;
@@ -254,13 +262,13 @@
 
 .available_attendance_edit_button {
   border: 2px solid black;
-  font-family: "Tilt Neon", sans-serif;
+  font-family: "Tilt Neon";
   font-size: 100%;
   border-radius: 5px;
 }
 
 #save_attendance_edit_button {
-  font-family: "Tilt Neon", sans-serif;
+  font-family: "Tilt Neon";
   font-size: 100%;
   background: linear-gradient(#258518 100%, #9BD33F 5%);
   border: 2px solid black;
@@ -273,7 +281,7 @@
 
 #delete_attendance_edit_button {
   border: 2px solid black;
-  font-family: "Tilt Neon", sans-serif;
+  font-family: "Tilt Neon";
   font-size: 100%;
   border-radius: 5px;
   background-color: #f83c54;

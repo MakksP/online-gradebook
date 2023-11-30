@@ -1,5 +1,13 @@
 @charset "UTF-8";
 @import "buttonAnimatoins.css";
+@font-face {
+  font-family: "Tilt Neon";
+  src: local("Tilt Neon"), url("/online-gradebook-frontend/fonts/TiltNeon-Regular-VariableFont_XROT,YROT.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Tilt Neon";
+  src: local("Tilt Neon"), url("/online-gradebook-frontend/fonts/TiltNeon-Regular-VariableFont_XROT,YROT.ttf") format("truetype");
+}
 #subjects_container {
   width: 60%;
   height: 60%;
@@ -33,7 +41,7 @@
 }
 
 .subject_button {
-  font-family: "Tilt Neon", sans-serif;
+  font-family: "Tilt Neon";
   font-size: 100%;
   width: 100%;
   height: 100%;
@@ -251,7 +259,7 @@
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   border-bottom: 2px solid black;
-  font-family: "Tilt Neon", sans-serif;
+  font-family: "Tilt Neon";
   font-size: 25px;
   color: #FFFFFF;
   text-align: left;
@@ -277,7 +285,7 @@
 .student_label_div {
   height: 100%;
   font-size: 15px;
-  font-family: "Tilt Neon", sans-serif;
+  font-family: "Tilt Neon";
   border-right: 2px solid black;
   border-bottom: 2px solid black;
   display: flex;
@@ -304,7 +312,7 @@
 
 .subject_section_button {
   border: 2px solid black;
-  font-family: "Tilt Neon", sans-serif;
+  font-family: "Tilt Neon";
   font-size: 100%;
   color: #FFFFFF;
   border-top-left-radius: 5px;

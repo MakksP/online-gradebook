@@ -1,5 +1,5 @@
 $site_background_color: #FFFFFF;
-$main_site_font: 'Tilt Neon', sans-serif;
+$main_site_font: 'Tilt Neon';
 $form_font_size: 15px;
 $header_font_size: 25px;
 $white_contrast_color: #FFFFFF;
@@ -27,3 +27,8 @@ $thin_border_properties: (
         style: solid,
         color: black
 );
+
+@font-face {
+  font-family: $main_site_font;
+  src: local('Tilt Neon'), url('/online-gradebook-frontend/fonts/TiltNeon-Regular-VariableFont_XROT,YROT.ttf') format('truetype');
+}

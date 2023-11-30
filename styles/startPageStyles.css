@@ -1,4 +1,12 @@
 @import "buttonAnimatoins.css";
+@font-face {
+  font-family: "Tilt Neon";
+  src: local("Tilt Neon"), url("/online-gradebook-frontend/fonts/TiltNeon-Regular-VariableFont_XROT,YROT.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Tilt Neon";
+  src: local("Tilt Neon"), url("/online-gradebook-frontend/fonts/TiltNeon-Regular-VariableFont_XROT,YROT.ttf") format("truetype");
+}
 body {
   margin: 0;
   padding: 0;
@@ -37,7 +45,7 @@ body {
 }
 
 .nav_pane_button {
-  font-family: "Tilt Neon", sans-serif;
+  font-family: "Tilt Neon";
   border: none;
   background-color: transparent;
   width: 100%;
@@ -95,7 +103,7 @@ body {
   display: block;
   position: relative;
   left: 10%;
-  font-family: "Tilt Neon", sans-serif;
+  font-family: "Tilt Neon";
   font-size: 25px;
 }
 

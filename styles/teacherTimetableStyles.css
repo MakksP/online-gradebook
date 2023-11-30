@@ -1,4 +1,12 @@
 @import "buttonAnimatoins.css";
+@font-face {
+  font-family: "Tilt Neon";
+  src: local("Tilt Neon"), url("/online-gradebook-frontend/fonts/TiltNeon-Regular-VariableFont_XROT,YROT.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Tilt Neon";
+  src: local("Tilt Neon"), url("/online-gradebook-frontend/fonts/TiltNeon-Regular-VariableFont_XROT,YROT.ttf") format("truetype");
+}
 #subjects_container {
   width: 75%;
   display: grid;
@@ -40,7 +48,7 @@
 
 #hours {
   display: contents;
-  font-family: "Tilt Neon", sans-serif;
+  font-family: "Tilt Neon";
   font-size: 100%;
   height: min-content;
   justify-content: right;
@@ -50,7 +58,7 @@
 #days {
   display: contents;
   color: #FFFFFF;
-  font-family: "Tilt Neon", sans-serif;
+  font-family: "Tilt Neon";
   font-size: 100%;
 }
 
@@ -113,7 +121,7 @@
   background-color: #D9D9D9;
   border: none;
   border-right: 2px solid black;
-  font-family: "Tilt Neon", sans-serif;
+  font-family: "Tilt Neon";
   text-align: left;
 }
 .timetable_element_button:hover {
@@ -322,7 +330,7 @@
 
 .timetable_tag_button {
   border: 2px solid black;
-  font-family: "Tilt Neon", sans-serif;
+  font-family: "Tilt Neon";
   font-size: 100%;
   margin-top: 5%;
   border-radius: 5px;
@@ -360,7 +368,7 @@
 #add_new_student_button {
   width: 60%;
   height: 70%;
-  font-family: "Tilt Neon", sans-serif;
+  font-family: "Tilt Neon";
   font-size: 100%;
   background: linear-gradient(#258518 100%, #9BD33F 5%);
   border: 2px solid black;
