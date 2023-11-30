@@ -189,6 +189,15 @@ function get_student_email_and_attendance(){
                 WHERE email = ?";
     }
 
+    function delete_all_students_from_timetable(){
+        return "UPDATE users SET lessonPlanId = null
+                WHERE users.lessonPlanId = ?";
+    }
+
+    function delete_all_subjects_from_timetable(){
+        return "DELETE FROM lessonplanssubjects
+                WHERE lessonPlanId = ?";
+    }
     function get_not_assigned_to_timetable_students(){
         return "
             SELECT name, surname, email FROM
