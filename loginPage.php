@@ -43,7 +43,7 @@
                     <input type="submit" id="login_button" class="form_button" value="Zaloguj">
 
                 </div>
-                <span class="incorrect_email_password"></span>
+                <span id="incorrect_email_password"></span>
             </form>
 
             <aside class="login_icon" id="login_div">

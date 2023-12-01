@@ -145,7 +145,7 @@
   bottom: 15%;
 }
 
-.incorrect_email_password {
+#incorrect_email_password {
   font-family: "Tilt Neon";
   font-size: 20px;
   text-align: center;
